@@ -1,0 +1,237 @@
+/* Isla Studio's base styles. Tokens come from ../brand/isla-tokens.css;
+   this file self-hosts the faces and themes every browser surface. */
+
+@font-face { font-family: "Michroma"; src: url("../brand/fonts/Michroma-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Chakra Petch"; src: url("../brand/fonts/ChakraPetch-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Chakra Petch"; src: url("../brand/fonts/ChakraPetch-Medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Chakra Petch"; src: url("../brand/fonts/ChakraPetch-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("../brand/fonts/Inter-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("../brand/fonts/Inter-Medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("../brand/fonts/Inter-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+
+:root {
+  color-scheme: dark;
+  --red: #FF2B2B;
+  --red-dim: #C71515;
+  --red-deep: #3D0505;
+  --black: #050505;
+  --white: #F2F2F2;
+  --steel: #B4B4B4;
+  --dim: #8A8A8A;
+  --grid: #262626;
+  --rule: #3A3A3A;
+  --idle: #2A2A2A;
+  --track: #1C1C1C;
+  --neutral: #5C5C5C;
+  --panel: rgba(5, 5, 5, 0.86);
+
+  --display: "Michroma", "Eurostile", sans-serif;
+  --hud: "Chakra Petch", sans-serif;
+  --body: "Inter", system-ui, sans-serif;
+
+  --neon-line: 0 0 4px rgba(255, 43, 43, 0.65), 0 0 14px rgba(255, 43, 43, 0.4);
+  --neon-text: 0 0 6px rgba(255, 43, 43, 0.55);
+  --tube-white: 0 0 10px rgba(255, 255, 255, 0.22);
+  --glow-dot: 0 0 6px rgba(255, 43, 43, 0.7);
+  --glow-marker: 0 0 6px var(--red), 0 0 14px rgba(255, 43, 43, 0.6);
+  --glow-marker-white: 0 0 6px rgba(255, 255, 255, 0.4);
+  --glow-filter: drop-shadow(0 0 3px rgba(255, 43, 43, 0.75));
+  --glow-filter-small: drop-shadow(0 0 2px rgba(255, 43, 43, 0.85));
+
+  /* One-off surfaces, named so the light theme can restate them. */
+  --hover: #0D0D0D;
+  --red-faint: #0C0505;
+  --red-wash: #120404;
+  --leader: rgba(242, 242, 242, 0.45);
+  --tag: rgba(5, 5, 5, 0.82);
+  --chart-grid: #1C1C1C;
+  --curve-area: rgba(255, 43, 43, 0.08);
+  --band: rgba(255, 43, 43, 0.25);
+  --ramp-lo: #5C5C5C;
+  --ramp-hi: #F2F2F2;
+  --scrim: rgba(5, 5, 5, 0);
+  --veil: rgba(5, 5, 5, 0.74);
+  --blueprint: #0A0A0A;
+
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --t: 180ms;
+  --bar: 56px; /* top bar height */
+}
+
+/* The light theme: pale ground, near-black ink, a deeper red that
+   holds 4.5:1 for small labels on the light surface, and crisp lines where the dark theme glows. */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --red: #C8161B;
+  --red-dim: #A31014;
+  --red-deep: #FBE3E3;
+  --black: #F4F4F2;
+  --white: #121212;
+  --steel: #3B3B3B;
+  --dim: #5F5F5F;
+  --grid: #DEDEDA;
+  --rule: #C2C2BE;
+  --idle: #D6D6D2;
+  --track: #E8E8E5;
+  --neutral: #8A8A86;
+  --panel: rgba(244, 244, 242, 0.92);
+  --neon-line: none;
+  --neon-text: none;
+  --tube-white: none;
+  --glow-dot: none;
+  --glow-marker: 0 0 0 1.5px rgba(244, 244, 242, 0.95);
+  --glow-marker-white: none;
+  --glow-filter: none;
+  --glow-filter-small: none;
+  --hover: #EAEAE6;
+  --red-faint: #FDF2F2;
+  --red-wash: #FCEBEB;
+  --leader: rgba(18, 18, 18, 0.42);
+  --tag: rgba(244, 244, 242, 0.94);
+  --chart-grid: #DEDEDA;
+  --curve-area: rgba(200, 22, 27, 0.08);
+  --band: rgba(200, 22, 27, 0.2);
+  --ramp-lo: #8A8A8A;
+  --ramp-hi: #121212;
+  --scrim: rgba(244, 244, 242, 0);
+  --veil: rgba(244, 244, 242, 0.8);
+  --blueprint: #E4E4E0;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--black);
+  color: var(--steel);
+  font: 400 16px/1.5 var(--body);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+#app { height: 100%; }
+h1, h2, h3, h4, p { margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+::selection { background: var(--red); color: var(--black); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; box-shadow: var(--neon-line); }
+input, textarea { caret-color: var(--red); }
+
+/* Scrollbars: hairline tracks, a rule-grey thumb that warms on hover. */
+* { scrollbar-width: thin; scrollbar-color: var(--rule) transparent; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--rule); border: 2px solid var(--black); }
+::-webkit-scrollbar-thumb:hover { background: var(--neutral); }
+
+/* Type roles. Michroma and Chakra Petch set names, labels and figures; sentences are Inter. */
+.t-display { font: 400 2rem/1 var(--display); letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); text-shadow: var(--tube-white); }
+.t-headline { font: 400 1.125rem/1.15 var(--display); letter-spacing: 0.075em; text-transform: uppercase; color: var(--white); }
+.t-title { font: 600 1.0625rem/1.25 var(--hud); color: var(--white); }
+.t-label { font: 500 0.75rem/1.2 var(--hud); letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+.t-label.quiet { color: var(--dim); }
+.t-data { font: 600 1.5rem/1 var(--hud); color: var(--white); font-variant-numeric: tabular-nums; }
+.t-figure { font: 600 2.75rem/0.9 var(--hud); color: var(--red); text-shadow: var(--neon-text); font-variant-numeric: tabular-nums; }
+.t-body { font: 400 1rem/1.5 var(--body); color: var(--steel); max-width: 68ch; }
+.t-meta { font: 400 0.875rem/1.45 var(--body); color: var(--dim); }
+.num { font-family: var(--hud); font-variant-numeric: tabular-nums; }
+
+/* Readout: a red key over a white value, the brand's answer to the card. */
+.readout { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.readout .key { font: 500 0.75rem/1.2 var(--hud); letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); overflow-wrap: anywhere; }
+.readout .value { font: 600 1.25rem/1.05 var(--hud); color: var(--white); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.readout .value small { font: 500 0.75rem var(--hud); letter-spacing: 0.12em; color: var(--dim); margin-left: 4px; }
+/* Assumed until measured: said on a line of its own, so a narrow label never runs into the next. */
+.readout.assumed .key::after { content: "assumed"; display: block; margin-top: 3px; color: var(--dim); letter-spacing: 0.12em; }
+
+/* Buttons: sharp, outlined, red fills on hover. */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 40px; padding: 0 18px; border: 1px solid var(--red); background: var(--black); color: var(--red);
+  font: 500 0.75rem/1 var(--hud); letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; white-space: nowrap;
+  transition: background var(--t) var(--ease), color var(--t) var(--ease), border-color var(--t) var(--ease), box-shadow var(--t) var(--ease);
+}
+.btn:hover:not(:disabled, .is-blocked) { background: var(--red); color: var(--black); box-shadow: var(--neon-line); }
+.btn:active:not(:disabled, .is-blocked) { transform: translateY(1px); }
+.btn.ghost { border-color: var(--rule); color: var(--white); }
+.btn.ghost:hover:not(:disabled, .is-blocked) { background: var(--black); border-color: var(--red); color: var(--white); box-shadow: none; }
+/* Not available yet: greyed, but a click still answers with what to do first. */
+.btn:disabled, .btn.is-blocked { border-color: var(--idle); color: var(--dim); cursor: help; box-shadow: none; }
+.btn.is-blocked:hover { color: var(--steel); border-color: var(--rule); }
+.btn.small { height: 32px; padding: 0 12px; }
+.btn.icon { width: 32px; height: 32px; padding: 0; }
+.btn svg { width: 16px; height: 16px; }
+
+/* Fields: black, a rule-line underline, red on focus. */
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field > span { font: 500 0.75rem/1.2 var(--hud); letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); }
+.input, select.input {
+  height: 40px; padding: 0 12px; background: var(--black); border: 1px solid var(--grid); border-bottom-color: var(--rule);
+  color: var(--white); font: 400 1rem var(--body); border-radius: 0; min-width: 0;
+  transition: border-color var(--t) var(--ease), box-shadow var(--t) var(--ease);
+}
+.input.num-input { font: 600 1rem var(--hud); font-variant-numeric: tabular-nums; }
+.input:focus { border-color: var(--red); box-shadow: var(--neon-line); outline: none; }
+.input:disabled { color: var(--neutral); }
+select.input { appearance: none; padding-right: 32px; background-image: linear-gradient(45deg, transparent 50%, var(--steel) 50%), linear-gradient(135deg, var(--steel) 50%, transparent 50%); background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%; background-size: 5px 5px; background-repeat: no-repeat; }
+option { background: var(--black); color: var(--white); }
+
+/* Range sliders: a hairline track, a red segment up to the value, a square thumb. */
+input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 24px; background: transparent; cursor: pointer; }
+input[type="range"]::-webkit-slider-runnable-track { height: 2px; background: linear-gradient(to right, var(--red) 0 var(--fill, 50%), var(--idle) var(--fill, 50%) 100%); }
+input[type="range"]::-moz-range-track { height: 2px; background: var(--idle); }
+input[type="range"]::-moz-range-progress { height: 2px; background: var(--red); }
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; margin-top: -5px; background: var(--black); border: 2px solid var(--red); box-shadow: var(--neon-line); }
+input[type="range"]::-moz-range-thumb { width: 10px; height: 10px; background: var(--black); border: 2px solid var(--red); border-radius: 0; }
+input[type="range"]:focus-visible { outline: none; }
+input[type="range"]:focus-visible::-webkit-slider-thumb { background: var(--red); }
+
+/* Toggles and segmented choices. */
+.seg-choice { display: inline-flex; border: 1px solid var(--rule); }
+.seg-choice button { height: 32px; padding: 0 12px; background: transparent; border: 0; border-right: 1px solid var(--rule); color: var(--dim); font: 500 0.75rem var(--hud); letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; }
+.seg-choice button:last-child { border-right: 0; }
+.seg-choice button[aria-pressed="true"] { color: var(--white); background: var(--red-deep); box-shadow: inset 0 -2px 0 var(--red); }
+.seg-choice button:hover:not([aria-pressed="true"]) { color: var(--white); }
+.seg-choice button.is-blocked { color: var(--neutral); cursor: help; }
+.seg-choice button.is-blocked:hover { color: var(--dim); }
+
+/* The HUD progress bar: one segment per step, the current one taller and glowing. */
+.segments { display: grid; gap: 4px; align-items: center; }
+.segments i { display: block; height: 2px; background: var(--idle); }
+.segments i.done { background: var(--red); }
+.segments i.now { height: 4px; background: var(--red); box-shadow: var(--neon-line); }
+
+/* Hairlines, dashed group dividers, corner brackets. */
+.rule { height: 1px; background: var(--grid); border: 0; margin: 0; }
+.dashed { border-top: 1px dashed var(--rule); }
+.brackets { position: relative; }
+.brackets::before, .brackets::after { content: ""; position: absolute; width: 14px; height: 14px; border-color: var(--red); border-style: solid; pointer-events: none; }
+.brackets::before { left: -1px; top: -1px; border-width: 1px 0 0 1px; }
+.brackets::after { right: -1px; bottom: -1px; border-width: 0 1px 1px 0; }
+.brackets.grey::before, .brackets.grey::after { border-color: var(--rule); }
+
+/* Tables of live values: fixed columns, only the numbers change. */
+.table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.table th { position: sticky; top: 0; background: var(--black); text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--rule); font: 500 0.75rem/1.2 var(--hud); letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); white-space: nowrap; }
+.table th button { all: unset; cursor: pointer; }
+.table td { padding: 8px; border-bottom: 1px solid var(--grid); font: 500 0.875rem/1.3 var(--hud); color: var(--steel); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
+.table tr:hover td { background: var(--hover); color: var(--white); }
+.table tr[aria-selected="true"] td { background: var(--red-deep); color: var(--white); }
+
+/* Status: never colour alone. A shape and a word go with every state. */
+.status { display: inline-flex; align-items: center; gap: 8px; font: 500 0.75rem/1 var(--hud); letter-spacing: 0.16em; text-transform: uppercase; color: var(--steel); }
+.status::before { content: ""; width: 8px; height: 8px; border: 1.5px solid var(--neutral); border-radius: 50%; }
+.status.ok::before { background: var(--red); border-color: var(--red); box-shadow: var(--glow-dot); }
+.status.ok { color: var(--white); }
+.status.off { color: var(--dim); }
+.status.warn::before { border-radius: 0; transform: rotate(45deg); border-color: var(--red); }
+.status.fault { color: var(--red); }
+.status.fault::before { border-radius: 0; background: var(--red); border-color: var(--red); animation: blink 0.5s steps(2, start) infinite; }
+.status.busy::before { border-color: var(--red); animation: pulse 1.6s ease-in-out infinite; }
+@keyframes blink { to { visibility: hidden; } }
+@keyframes pulse { 50% { opacity: 0.25; } }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}

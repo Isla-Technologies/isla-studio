@@ -1,0 +1,53 @@
+/* Isla Studio's design tokens: colour, type, light, shape and space. */
+
+@font-face { font-family: "Michroma"; src: url("./fonts/Michroma-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Chakra Petch"; src: url("./fonts/ChakraPetch-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Chakra Petch"; src: url("./fonts/ChakraPetch-Medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Chakra Petch"; src: url("./fonts/ChakraPetch-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("./fonts/Inter-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("./fonts/Inter-Medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("./fonts/Inter-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+
+:root {
+  color-scheme: dark;
+
+  /* colour */
+  --isla-signal-red: #FF2B2B;
+  --isla-void-black: #050505;
+  --isla-photon-white: #F2F2F2;
+  --isla-steel-text: #B4B4B4;
+  --isla-dim-readout: #8A8A8A;
+  --isla-grid-line: #262626;
+  --isla-rule-line: #3A3A3A;
+  --isla-idle-segment: #2A2A2A;
+  --isla-track: #1C1C1C;
+  --isla-neutral-bar: #5C5C5C;
+
+  /* type */
+  --isla-font-display: "Michroma", "Eurostile", sans-serif;
+  --isla-font-hud: "Chakra Petch", sans-serif;
+  --isla-font-body: "Inter", system-ui, sans-serif;
+  --isla-tracking-label: 0.2em;
+  --isla-tracking-headline: 0.075em;
+
+  /* light (no shadows: things glow) */
+  --isla-neon-line: 0 0 4px rgba(255, 43, 43, 0.65), 0 0 14px rgba(255, 43, 43, 0.40);
+  --isla-neon-red-text: 0 0 6px rgba(255, 43, 43, 0.55);
+  --isla-tube-white-text: 0 0 10px rgba(255, 255, 255, 0.22);
+
+  /* shape and space */
+  --isla-radius: 0px;
+  --isla-space-xs: 4px;
+  --isla-space-sm: 8px;
+  --isla-space-md: 16px;
+  --isla-space-lg: 24px;
+  --isla-space-xl: 48px;
+  --isla-space-2xl: 96px;
+
+  /* motion: product UI stays quick and quiet; video can be richer */
+  --isla-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --isla-duration-ui: 180ms;
+  --isla-duration-reveal: 600ms;
+}
+
+::selection { background: var(--isla-signal-red); color: var(--isla-void-black); }
