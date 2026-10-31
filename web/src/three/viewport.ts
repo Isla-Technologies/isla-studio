@@ -26,7 +26,7 @@ export function gridMaterial(): THREE.ShaderMaterial {
   return new THREE.ShaderMaterial({
     transparent: true,
     depthWrite: false,
-    uniforms: { center: { value: new THREE.Vector2() }, minorGrey: { value: 0.1 }, majorGrey: { value: 0.2 } },
+    uniforms: { center: { value: new THREE.Vector2() }, minorGrey: { value: 0.17 }, majorGrey: { value: 0.32 } },
     vertexShader: /* glsl */ `
       varying vec3 vWorld;
       void main() {

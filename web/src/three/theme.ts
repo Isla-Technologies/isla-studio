@@ -27,8 +27,8 @@ export interface Palette {
 export const PALETTES: Record<Theme, Palette> = {
   dark: {
     background: 0x050505,
-    gridMinor: 0.1,
-    gridMajor: 0.2,
+    gridMinor: 0.17,
+    gridMajor: 0.32,
     shadow: 0.45,
     hemiGround: 0x080808,
     hemi: 0.35,

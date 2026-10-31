@@ -27,8 +27,8 @@ const GLOW = new THREE.Color(SIGNAL.r * 7, SIGNAL.g, SIGNAL.b);
 /** The bay's own colours. By day (light) there is no bloom to carry a glow: plain accent
  * lines, a pale platform, and the light cone left out, as white light does not show on white. */
 const BAY = {
-  dark: { disc: 0x0c0c0c, metalness: 0.75, roughness: 0.32, grey: 0x5c5c5c, dim: 0x2a2a2a, box: 0x3a3a3a, ground: 0x080808, fill: 0.2, shadow: 0.5 },
-  light: { disc: 0xd6d6d2, metalness: 0.15, roughness: 0.6, grey: 0x8e8e8a, dim: 0xc4c4c0, box: 0xb0b0ac, ground: 0x8f9092, fill: 0.5, shadow: 0.28 },
+  dark: { grid: [0.12, 0.24], disc: 0x0c0c0c, metalness: 0.75, roughness: 0.32, grey: 0x5c5c5c, dim: 0x2a2a2a, box: 0x3a3a3a, ground: 0x080808, fill: 0.2, shadow: 0.5 },
+  light: { grid: [0.74, 0.56], disc: 0xd6d6d2, metalness: 0.15, roughness: 0.6, grey: 0x8e8e8a, dim: 0xc4c4c0, box: 0xb0b0ac, ground: 0x8f9092, fill: 0.5, shadow: 0.28 },
 } as const;
 const TURN = 0.1; // rad/s.
 const SCAN_MS = 1100;
@@ -187,8 +187,8 @@ export class HangarView {
     (this.scene.background as THREE.Color).set(p.background);
     (this.scene.fog as THREE.Fog).color.set(p.background);
     const grid = (this.grid.material as THREE.ShaderMaterial).uniforms;
-    grid.minorGrey.value = p.gridMinor;
-    grid.majorGrey.value = p.gridMajor;
+    // The bay is lit without tone mapping, so its floor needs less grey than the stage's to read the same.
+    [grid.minorGrey.value, grid.majorGrey.value] = BAY[theme].grid;
     (this.shadowFloor.material as THREE.ShadowMaterial).opacity = BAY[theme].shadow;
     this.bloom.enabled = p.bloom > 0;
     // Added light shows on black but not on a pale ground: by day the scanner is painted on.
