@@ -1,0 +1,1017 @@
+<mujoco model="URDF">
+    <compiler angle="radian" eulerseq="XYZ" inertiafromgeom="false" />
+    <option timestep="0.002" integrator="implicitfast" gravity="0 0 -9.81" />
+    <asset>
+        <texture name="floor_grid" type="2d" builtin="checker" rgb1="0.32 0.34 0.36" rgb2="0.24 0.26 0.28" width="512" height="512" />
+        <material name="floor_grid" texture="floor_grid" texrepeat="10 10" texuniform="true" />
+        <material name="component_black" rgba="0.08 0.08 0.09 1" specular="0.25" shininess="0.3" />
+        <material name="component_white" rgba="0.88 0.89 0.9 1" specular="0.3" shininess="0.35" />
+        <material name="component_metal" rgba="0.55 0.57 0.6 1" specular="0.8" shininess="0.7" />
+        <material name="carbon_fiber_dark_gray" rgba="0.18 0.19 0.2 1" specular="0.35" shininess="0.45" />
+        <material name="visor_screen_tinted_black" rgba="0.015 0.02 0.03 0.6" specular="0.5" shininess="0.9" />
+        <material name="eye_led" rgba="1 1 1 1" emission="0.9" />
+        <mesh name="hip_yaw_left_1" file="meshes/hip_yaw_left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="hip_yaw_right_1" file="meshes/hip_yaw_right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="hip_roll_left_1" file="meshes/hip_roll_left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="hip_roll_right_1" file="meshes/hip_roll_right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="hip_pitch_right_1" file="meshes/hip_pitch_right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="hip_pitch_left_1" file="meshes/hip_pitch_left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="knee_pitch_left_1" file="meshes/knee_pitch_left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="knee_pitch_right_1" file="meshes/knee_pitch_right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-foot-M16-shaft-circlip_1" file="meshes/right-foot-M16-shaft-circlip_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-foot-M16-shaft-circlip_1" file="meshes/left-foot-M16-shaft-circlip_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR105ZZ-LR_1" file="meshes/MR105ZZ-LR_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR105ZZ-LL_1" file="meshes/MR105ZZ-LL_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-ankle-joint-M5-circlip_1" file="meshes/left-ankle-joint-M5-circlip_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-ankle-joint-M5-circlip_1" file="meshes/right-ankle-joint-M5-circlip_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR105ZZ-RL_1" file="meshes/MR105ZZ-RL_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR105ZZ-RR_1" file="meshes/MR105ZZ-RR_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-LLL_1" file="meshes/MR104ZZ-LLL_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-LLR_1" file="meshes/MR104ZZ-LLR_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-LRL_1" file="meshes/MR104ZZ-LRL_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-LRR_1" file="meshes/MR104ZZ-LRR_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-ankle-joint-M4-circlip_1" file="meshes/left-ankle-joint-M4-circlip_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-RRR_1" file="meshes/MR104ZZ-RRR_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-RRL_1" file="meshes/MR104ZZ-RRL_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-RLR_1" file="meshes/MR104ZZ-RLR_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-RLL_1" file="meshes/MR104ZZ-RLL_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-ankle-joint-M4-circlip_1" file="meshes/right-ankle-joint-M4-circlip_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-hip-pitch-connector_1" file="meshes/left-hip-pitch-connector_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-hip-pitch-connector-cover_1" file="meshes/left-hip-pitch-connector-cover_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-thigh-carbon-rod_1" file="meshes/left-thigh-carbon-rod_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-thigh-carbon-rod-1_1" file="meshes/left-thigh-carbon-rod-1_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-hip-pitch-connector-cover_1" file="meshes/right-hip-pitch-connector-cover_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-thigh-carbon-rod_1" file="meshes/right-thigh-carbon-rod_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-thigh-carbon-rod-1_1" file="meshes/right-thigh-carbon-rod-1_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-hip-pitch-connector_1" file="meshes/right-hip-pitch-connector_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-hip-yaw-connector_1" file="meshes/right-hip-yaw-connector_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-hip-yaw-connector_1" file="meshes/left-hip-yaw-connector_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-hip-roll-connector_1" file="meshes/right-hip-roll-connector_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-foot_1" file="meshes/left-foot_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-knee-pitch-connector-cover_1" file="meshes/left-knee-pitch-connector-cover_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-foot-connector-L_1" file="meshes/left-foot-connector-L_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-knee-pitch-connector_1" file="meshes/left-knee-pitch-connector_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-hip-roll-connector_1" file="meshes/left-hip-roll-connector_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-knee-pitch-connector-cover_1" file="meshes/right-knee-pitch-connector-cover_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-ankle-bracket_1" file="meshes/left-ankle-bracket_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-shin-carbon-rod-1_1" file="meshes/left-shin-carbon-rod-1_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-shin-carbon-rod_1" file="meshes/left-shin-carbon-rod_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-knee-pitch-connector_1" file="meshes/right-knee-pitch-connector_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-foot-connector-R_1" file="meshes/left-foot-connector-R_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-anke-163010-Bearing-L_1" file="meshes/left-anke-163010-Bearing-L_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-foot-ankle-joint-R_1" file="meshes/right-foot-ankle-joint-R_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-foot-sole_1" file="meshes/right-foot-sole_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-ankle-M16-shaft_1" file="meshes/right-ankle-M16-shaft_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-ankle-M16-shaft_1" file="meshes/left-ankle-M16-shaft_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-foot-connector-L_1" file="meshes/right-foot-connector-L_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-shin-carbon-rod_1" file="meshes/right-shin-carbon-rod_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-knee-bracket_1" file="meshes/left-knee-bracket_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-foot-sole_1" file="meshes/left-foot-sole_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-foot-ankle-M5-shaft_1" file="meshes/left-foot-ankle-M5-shaft_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-foot_1" file="meshes/right-foot_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-foot-ankle-joint-R_1" file="meshes/left-foot-ankle-joint-R_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-ankle-163010-Bearing-R_1" file="meshes/right-ankle-163010-Bearing-R_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-ankle-163010-Bearing-R_1" file="meshes/left-ankle-163010-Bearing-R_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-shin-carbon-rod-1_1" file="meshes/right-shin-carbon-rod-1_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-ankle-163010-Bearing-L_1" file="meshes/right-ankle-163010-Bearing-L_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="base_link" file="meshes/base_link.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-knee-bracket_1" file="meshes/right-knee-bracket_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-foot-connector-R_1" file="meshes/right-foot-connector-R_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-foot-M5-shaft_1" file="meshes/right-foot-M5-shaft_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-foot-ankle-joint-L_1" file="meshes/right-foot-ankle-joint-L_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-foot-damper-M4-shaft_1" file="meshes/right-foot-damper-M4-shaft_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-ankle-bracket_1" file="meshes/right-ankle-bracket_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-foot-damper-M4-shaft_1" file="meshes/left-foot-damper-M4-shaft_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-foot-ankle-joint-L_1" file="meshes/left-foot-ankle-joint-L_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-shoulder-pitch_1" file="meshes/right-shoulder-pitch_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-shoulder-pitch_1" file="meshes/left-shoulder-pitch_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-shoulder-roll_1" file="meshes/left-shoulder-roll_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-shoulder-roll-CRBTF305AT-Bearing_1" file="meshes/left-shoulder-roll-CRBTF305AT-Bearing_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-shoulder-roll-CRBTF305AT-Bearing_1" file="meshes/right-shoulder-roll-CRBTF305AT-Bearing_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-shoulder-roll_1" file="meshes/right-shoulder-roll_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="90deg-bracket_1" file="meshes/90deg-bracket_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="90deg-bracketMirror_1" file="meshes/90deg-bracketMirror_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="shoulder-yaw-right_1" file="meshes/shoulder-yaw-right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="shoulder-yaw-left_1" file="meshes/shoulder-yaw-left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="elbow-pitch-left_1" file="meshes/elbow-pitch-left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="elbow-pitch-right_1" file="meshes/elbow-pitch-right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="wrist-pitch-left_1" file="meshes/wrist-pitch-left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="wrist-pitch-right_1" file="meshes/wrist-pitch-right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="battery_1" file="meshes/battery_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="back-cover_1" file="meshes/back-cover_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="back-cover-right-holder_1" file="meshes/back-cover-right-holder_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="back-cover-left-holder_1" file="meshes/back-cover-left-holder_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="torso-cover-right_1" file="meshes/torso-cover-right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="torso-cover-left_1" file="meshes/torso-cover-left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="torso-plate-right_1" file="meshes/torso-plate-right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="torso-plate-left_1" file="meshes/torso-plate-left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="waist-bottom-plate_1" file="meshes/waist-bottom-plate_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="visor_1" file="meshes/visor_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="visor-screen_1" file="meshes/visor-screen_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="eye-R_1" file="meshes/eye-R_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="eye-L_1" file="meshes/eye-L_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="shoulder-roll-bracket-right_1" file="meshes/shoulder-roll-bracket-right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="shoulder-roll-bracket-left_1" file="meshes/shoulder-roll-bracket-left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="shoulder-yaw-right-bracket_1" file="meshes/shoulder-yaw-right-bracket_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="shoulder-yaw-right-bracket-cover-F_1" file="meshes/shoulder-yaw-right-bracket-cover-F_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="shoulder-yaw-right-bracket-cover-R_1" file="meshes/shoulder-yaw-right-bracket-cover-R_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="shoulder-yaw-left-bracket_1" file="meshes/shoulder-yaw-left-bracket_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="shoulder-yaw-left-bracket-cover-F_1" file="meshes/shoulder-yaw-left-bracket-cover-F_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="shoulder-yaw-left-bracket-cover-R_1" file="meshes/shoulder-yaw-left-bracket-cover-R_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="waist-holder_1" file="meshes/waist-holder_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="elbow-pitch-right-bracket_1" file="meshes/elbow-pitch-right-bracket_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="elbow-pitch-left-bracket_1" file="meshes/elbow-pitch-left-bracket_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="18mm-CF-tube-shin-right-R_1" file="meshes/18mm-CF-tube-shin-right-R_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="18mm-CF-tube-shin-right-F_1" file="meshes/18mm-CF-tube-shin-right-F_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="18mm-CF-tube-shin-left-R_1" file="meshes/18mm-CF-tube-shin-left-R_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="18mm-CF-tube-shin-left-F_1" file="meshes/18mm-CF-tube-shin-left-F_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="upper-shin-inner-right_1" file="meshes/upper-shin-inner-right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="upper-shin-outer-right_1" file="meshes/upper-shin-outer-right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="upper-shin-inner-left_1" file="meshes/upper-shin-inner-left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="upper-shin-outer-left_1" file="meshes/upper-shin-outer-left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="lower-shin-inner-right_1" file="meshes/lower-shin-inner-right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="lower-shin-outer-right_1" file="meshes/lower-shin-outer-right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="lower-shin-inner-left_1" file="meshes/lower-shin-inner-left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="lower-shin-outer-left_1" file="meshes/lower-shin-outer-left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="upper-shin-cover-right_1" file="meshes/upper-shin-cover-right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="lower-shin-cover-right_1" file="meshes/lower-shin-cover-right_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="upper-shin-cover-left_1" file="meshes/upper-shin-cover-left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="lower-shin-cover-left_1" file="meshes/lower-shin-cover-left_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="torso-support-rod-1_1" file="meshes/torso-support-rod-1_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="torso-support-rod-2_1" file="meshes/torso-support-rod-2_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="frontal-cover_1" file="meshes/frontal-cover_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="frontal-cover-upper-part_1" file="meshes/frontal-cover-upper-part_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="wrist-pitch-left-bracket_1" file="meshes/wrist-pitch-left-bracket_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="wrist-pitch-right-bracket_1" file="meshes/wrist-pitch-right-bracket_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-foot-ankle-front-M5-shaft_1" file="meshes/left-foot-ankle-front-M5-shaft_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR105ZZ-LLF_1" file="meshes/MR105ZZ-LLF_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-ankle-joint-front-M5-circlip-1_1" file="meshes/left-ankle-joint-front-M5-circlip-1_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR105ZZ-LRF_1" file="meshes/MR105ZZ-LRF_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-foot-damper-front-M4-shaft_1" file="meshes/left-foot-damper-front-M4-shaft_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-LLRF_1" file="meshes/MR104ZZ-LLRF_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-ankle-joint-front-M4-circlip_1" file="meshes/left-ankle-joint-front-M4-circlip_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-LRLF_1" file="meshes/MR104ZZ-LRLF_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-LLLF_1" file="meshes/MR104ZZ-LLLF_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-LRRF_1" file="meshes/MR104ZZ-LRRF_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-foot-front-damper-bracket-L_1" file="meshes/left-foot-front-damper-bracket-L_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-foot-front-damper-bracket-R_1" file="meshes/left-foot-front-damper-bracket-R_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-foot-front-damper-bracket-R_1" file="meshes/right-foot-front-damper-bracket-R_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-foot-front-damper-bracket-L_1" file="meshes/right-foot-front-damper-bracket-L_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-foot-ankle-front-M5-shaft-_1" file="meshes/right-foot-ankle-front-M5-shaft-_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR105ZZ-RRF_1" file="meshes/MR105ZZ-RRF_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="left-ankle-joint-front-M5-circlip_1" file="meshes/left-ankle-joint-front-M5-circlip_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR105ZZ-RLF_1" file="meshes/MR105ZZ-RLF_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-foot-damper-front-M4-shaft_1" file="meshes/right-foot-damper-front-M4-shaft_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-RRLF_1" file="meshes/MR104ZZ-RRLF_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="right-ankle-joint-front-M4-circlip_1" file="meshes/right-ankle-joint-front-M4-circlip_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-RLLF_1" file="meshes/MR104ZZ-RLLF_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-RRRF_1" file="meshes/MR104ZZ-RRRF_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MR104ZZ-RLRF_1" file="meshes/MR104ZZ-RLRF_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="waist_yaw_1" file="meshes/waist_yaw_1.stl" scale="0.001 0.001 0.001" />
+    </asset>
+    <!-- Edit each geom's rgba attribute to assign colors. -->
+    <worldbody>
+        <geom name="floor" type="plane" pos="0 0 0" size="0 0 0.1" material="floor_grid" contype="1" conaffinity="1" rgba="1 1 1 1" />
+        <light directional="true" pos="-0.5 0.5 3" dir="0 0 -1" />
+        <body name="base_link" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+            <freejoint name="base_link_free" />
+            <geom name="base_link_geom" type="mesh" mesh="base_link" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+            <geom name="base_link_collision" type="mesh" mesh="base_link" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+            <inertial mass="0.52" pos="2.399600842780389e-07 -0.008672202905171079 0.5507677221854029" fullinertia="0.03291383921986757 0.08764596293467619 0.11020203596132792 -1.2206256517311793e-07 6.407282490276861e-09 7.477723638624895e-05" />
+            <site name="imu_site" pos="0 -0.008672 0.550768" size="0.01" />
+            <body name="hip_yaw_right_1" pos="-0.10800000000001525 -0.0012894635449786388 0.5546000000000024" euler="3.141592653589793 1.3700404791612409e-14 1.6653343256780076e-16">
+                <geom name="hip_yaw_right_1_geom" type="mesh" mesh="hip_yaw_right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                <geom name="hip_yaw_right_1_collision" type="mesh" mesh="hip_yaw_right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                <inertial mass="1.1" pos="0.0001554654783538153 0.006467682111223489 0.012049309029641008" fullinertia="0.004469489373782998 0.004525290267701432 0.00505712997442612 1.9831425252020308e-05 1.412817042290821e-05 -3.278380786713608e-05" />
+                <body name="right-hip-yaw-connector_1" pos="0.10799999999998995 -0.00128946354498227 0.5545998828523067" euler="-3.1415926535897922 1.3700404791612409e-14 1.2671078290112502e-29">
+                    <joint name="hip_yaw_right" type="hinge" axis="-2.9942729486288376e-59 8.974001396335865e-16 1.0" pos="-0.1079999999999671 -0.008130000000003182 0.5025668828523057" range="-0.785398 0.785398" limited="true" />
+                    <geom name="right-hip-yaw-connector_1_geom" type="mesh" mesh="right-hip-yaw-connector_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                    <geom name="right-hip-yaw-connector_1_collision" type="mesh" mesh="right-hip-yaw-connector_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                    <inertial mass="0.24" pos="-0.10800022016707253 0.02704231185557025 0.4657576928505904" fullinertia="0.014356752487053592 0.015922116008957772 0.014978116263603167 -4.603795734541368e-08 -7.048326046970983e-07 0.003429173626910447" />
+                    <body name="hip_roll_right_1" pos="-0.10799999999998601 0.0871204193073241 0.40910988285230604" euler="1.5707963267948386 6.479841949998788e-14 -1.8381129951450195e-13">
+                        <geom name="hip_roll_right_1_geom" type="mesh" mesh="hip_roll_right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                        <geom name="hip_roll_right_1_collision" type="mesh" mesh="hip_roll_right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                        <inertial mass="1.1" pos="0.00015546547835382357 0.010684757281709959 0.029857213763079808" fullinertia="0.004469477253008006 0.004525279217941783 0.005057128903410748 1.98314349594032e-05 1.4128211415505453e-05 -3.278023817840214e-05" />
+                        <body name="right-hip-roll-connector_1" pos="0.10800000000000168 -0.4091098828523112 0.08712041930728028" euler="-1.5707963267948377 1.836447660819305e-13 1.6408306828597046e-28">
+                            <joint name="hip_roll_right" type="hinge" axis="-3.6350710512584224e-27 1.0 -1.7670447036666321e-15" pos="-0.10799999999996747 0.0172799999999969 0.4201668828523058" range="-1.396263 0.349066" limited="true" />
+                            <geom name="right-hip-roll-connector_1_geom" type="mesh" mesh="right-hip-roll-connector_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                            <geom name="right-hip-roll-connector_1_collision" type="mesh" mesh="right-hip-roll-connector_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                            <inertial mass="0.11" pos="-0.11449731982318748 -0.03858488129577348 0.41163745776175625" fullinertia="0.007086203002800665 0.003924571816373344 0.004302609468208726 -4.457633338445005e-05 -3.1605848214655245e-05 -0.00047496256309971036" />
+                            <body name="hip_pitch_right_1" pos="-0.075000000000009 -0.04287958069268331 0.40710988285231103" euler="1.5707963267948306 -5.766686440932976e-14 -1.570796326795083">
+                                <geom name="hip_pitch_right_1_geom" type="mesh" mesh="hip_pitch_right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                <geom name="hip_pitch_right_1_collision" type="mesh" mesh="hip_pitch_right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                <inertial mass="1.1" pos="0.004995868939834541 -0.0013153122016431366 0.043016914526629514" fullinertia="0.004469464718130485 0.004525264649089339 0.005057130198989665 1.9831313067148625e-05 1.4131324748585547e-05 -3.278579954309663e-05" />
+                                <body name="right-hip-pitch-connector_1" pos="-0.04287958069269749 -0.40710988285231475 -0.07500000000000712" euler="-1.5707963267948966 1.5707963267947096 0">
+                                    <joint name="hip_pitch_right" type="hinge" axis="1.0 -7.270142102516845e-27 1.1659673494090176e-13" pos="-0.1579999999999668 -0.047720000000003246 0.4061668828523029" range="-2.181662 0.785398" limited="true" />
+                                    <geom name="right-hip-pitch-connector_1_geom" type="mesh" mesh="right-hip-pitch-connector_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                    <geom name="right-hip-pitch-connector_1_collision" type="mesh" mesh="right-hip-pitch-connector_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                    <inertial mass="0.048" pos="-0.16574857248738628 -0.04767273519124966 0.40670711806288506" fullinertia="0.0015908565469833482 0.0008248635921849492 0.0008082305624397309 3.244463700393163e-07 3.708947558128349e-06 -1.466513706345906e-06" />
+                                    <body name="right-hip-pitch-connector-cover_1" pos="1.7763568394002505e-17 0.0 0.0" euler="0.0 -0.0 -1.2621774481353661e-29">
+                                        <geom name="right-hip-pitch-connector-cover_1_geom" type="mesh" mesh="right-hip-pitch-connector-cover_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                        <geom name="right-hip-pitch-connector-cover_1_collision" type="mesh" mesh="right-hip-pitch-connector-cover_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                        <inertial mass="0.058" pos="-0.18641097996014747 -0.04750731232217949 0.40859770814654284" fullinertia="0.0019158401318788748 0.001072941834649511 0.0009720436244734251 -1.5046405348100875e-06 -1.7199492211018525e-05 -8.89500720026105e-06" />
+                                        <body name="right-thigh-carbon-rod_1" pos="4.881428594671646e-14 1.8252066524825963e-15 2.0818902157770937e-14" euler="8.247014854570959e-18 -1.1571105174323232e-13 1.012340527219443e-14">
+                                            <geom name="right-thigh-carbon-rod_1_geom" type="mesh" mesh="right-thigh-carbon-rod_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                            <geom name="right-thigh-carbon-rod_1_collision" type="mesh" mesh="right-thigh-carbon-rod_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                            <inertial mass="0.032" pos="-0.180000000000012 -0.024806574604086012 0.32385706090948263" fullinertia="0.0005991561314243332 0.0005947154681627946 1.9000814237539698e-05 1.3010426069869127e-18 -1.3877787807771946e-17 -5.075701333813113e-05" />
+                                        </body>
+                                        <body name="right-thigh-carbon-rod-1_1" pos="4.881428594671646e-14 1.8207657603840954e-15 2.0818902157770937e-14" euler="-5.630772953243498e-18 -1.1571105174323237e-13 1.0123405272194434e-14">
+                                            <geom name="right-thigh-carbon-rod-1_1_geom" type="mesh" mesh="right-thigh-carbon-rod-1_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                            <geom name="right-thigh-carbon-rod-1_1_collision" type="mesh" mesh="right-thigh-carbon-rod-1_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                            <inertial mass="0.032" pos="-0.18000000000001 -0.08457825648959076 0.3290864054743425" fullinertia="0.0005991561314243644 0.0005947154681628362 1.900081423754663e-05 3.656738297696717e-30 1.7347234760193355e-18 -5.075701333812592e-05" />
+                                            <body name="right-knee-pitch-connector-cover_1" pos="-9.947598300641404e-16 9.769962616702387e-17 0.0" euler="9.71445146547012e-17 -7.383836680481823e-26 6.461321723324674e-27">
+                                                <geom name="right-knee-pitch-connector-cover_1_geom" type="mesh" mesh="right-knee-pitch-connector-cover_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                <geom name="right-knee-pitch-connector-cover_1_collision" type="mesh" mesh="right-knee-pitch-connector-cover_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                <inertial mass="0.058" pos="-0.1864109810411302 -0.06187753227306755 0.2443457267085739" fullinertia="0.0019158414589915823 0.001072941858693833 0.0009720449861980096 1.5045069176956389e-06 1.7199089264536557e-05 -8.89429082620376e-06" />
+                                                <body name="right-knee-pitch-connector_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 4.6487030021910186e-31">
+                                                    <geom name="right-knee-pitch-connector_1_geom" type="mesh" mesh="right-knee-pitch-connector_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                    <geom name="right-knee-pitch-connector_1_collision" type="mesh" mesh="right-knee-pitch-connector_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                    <inertial mass="0.048" pos="-0.16574857369736445 -0.06171209556240694 0.24623635304011307" fullinertia="0.0015908569097556058 0.0008248637514203796 0.0008082307844544596 -3.2444384860550976e-07 -3.708912382167257e-06 -1.4665070363133261e-06" />
+                                                    <body name="knee_pitch_right_1" pos="-0.0750000000000196 -0.04287958069269251 0.247109882852311" euler="1.5707963267948306 -5.766686440932976e-14 -1.5707963267950826">
+                                                        <joint name="knee_pitch_right" type="hinge" axis="1.7599160701833016e-13 -6.698395868365695e-14 1.0" pos="0.01878541930731757 -0.0003340000000179885 0.082999999999945" range="-1.745329 2.094395" limited="true" />
+                                                        <geom name="knee_pitch_right_1_geom" type="mesh" mesh="knee_pitch_right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                        <geom name="knee_pitch_right_1_collision" type="mesh" mesh="knee_pitch_right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                        <inertial mass="1.1" pos="0.01883910090271142 -0.0007339971393748444 0.04301691472538224" fullinertia="0.004483117730171524 0.004511606722056865 0.0050571253327230045 3.112421375396996e-05 5.173377239589422e-06 -3.5324936898243756e-05" />
+                                                        <body name="right-knee-bracket_1" pos="-0.04287958069272071 -0.24710988285230356 -0.07500000000002795" euler="-1.570796326794839 1.5707963267946992 0">
+                                                            <geom name="right-knee-bracket_1_geom" type="mesh" mesh="right-knee-bracket_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                            <geom name="right-knee-bracket_1_collision" type="mesh" mesh="right-knee-bracket_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                            <inertial mass="0.125" pos="-0.11425891342473948 -0.05507901679293689 0.2221974521803959" fullinertia="0.009302583102364065 0.006469817673020364 0.004297068751951065 -1.608862721707915e-05 6.002824626786685e-05 0.0006272173078642221" />
+                                                            <body name="right-shin-carbon-rod-1_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 4.6487030021910186e-31">
+                                                                <geom name="right-shin-carbon-rod-1_1_geom" type="mesh" mesh="right-shin-carbon-rod-1_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                <geom name="right-shin-carbon-rod-1_1_collision" type="mesh" mesh="right-shin-carbon-rod-1_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                <inertial mass="0.018" pos="-0.10749999999999893 -0.013996381816463486 0.13842157848059086" fullinertia="0.00010247742032481761 9.614917466586141e-05 1.4336328695773097e-05 2.673848344091768e-19 -1.2007301108152822e-18 2.361733432199929e-05" />
+                                                            </body>
+                                                            <body name="right-shin-carbon-rod_1" pos="-3.1974423109202086e-16 2.3980817331902633e-15 1.3855583347321954e-15" euler="1.3877787807808147e-17 -3.357204991261668e-15 -8.995603662342957e-16">
+                                                                <geom name="right-shin-carbon-rod_1_geom" type="mesh" mesh="right-shin-carbon-rod_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                <geom name="right-shin-carbon-rod_1_collision" type="mesh" mesh="right-shin-carbon-rod_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                <inertial mass="0.018" pos="-0.1075000000000121 -0.04876971156287005 0.1291040928569004" fullinertia="0.00010247742032481089 9.614917466585358e-05 1.433632869577331e-05 3.2526065174583636e-19 -3.469446951953646e-18 2.3617334321997577e-05" />
+                                                                <body name="right-ankle-bracket_1" pos="0.0 2.0194839173657903e-30 -1.6940658945086007e-23" euler="6.310887241768096e-30 -0.0 -4.840106313032846e-31">
+                                                                    <geom name="right-ankle-bracket_1_geom" type="mesh" mesh="right-ankle-bracket_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                                    <geom name="right-ankle-bracket_1_collision" type="mesh" mesh="right-ankle-bracket_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                    <inertial mass="0.09" pos="-0.10749999008317884 -0.01606237962383888 0.0794193868244882" fullinertia="0.0016945293349086114 0.0012358855620171927 0.0006929684723465117 -1.4933044865617874e-10 3.6922036988068973e-10 0.00011549996614481682" />
+                                                                    <body name="MR104ZZ-RRR_1" pos="-0.121450000000012 0.032022250856239394 0.142927005046398" euler="-3.141592653589793 5.551115123125783e-17 -3.141592653589793">
+                                                                        <geom name="MR104ZZ-RRR_1_geom" type="mesh" mesh="MR104ZZ-RRR_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-RRR_1_collision" type="mesh" mesh="MR104ZZ-RRR_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="-5.634311334603566e-10 -0.015398636930180584 0.013512489848378651" fullinertia="2.3148768262784054e-08 1.3614771998656576e-08 1.3614701120000035e-08 -4.906175390150849e-17 -8.127383013789671e-16 2.154448460725061e-14" />
+                                                                        <body name="right-foot-damper-M4-shaft_1" pos="-0.121450000000012 -0.0320222508562394 0.14292700504639802" euler="-3.141592653589793 -5.551115123125743e-17 -3.141592653589793">
+                                                                            <geom name="right-foot-damper-M4-shaft_1_geom" type="mesh" mesh="right-foot-damper-M4-shaft_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                            <geom name="right-foot-damper-M4-shaft_1_collision" type="mesh" mesh="right-foot-damper-M4-shaft_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                            <inertial mass="0.004" pos="-0.1087900588680855 0.01662360623606903 0.12941449769843483" fullinertia="1.0375661758233031e-08 5.213832368115924e-07 5.213832379021033e-07 3.2132742588176452e-18 1.4920409535302936e-18 1.494267762909648e-16" />
+                                                                            <body name="right-ankle-joint-M4-circlip_1" pos="2.6500681610258287e-16 0.03672073355056026 0.08517730243858904" euler="-6.310887241768096e-30 1.8808286810519074e-15 3.1415926535897887">
+                                                                                <geom name="right-ankle-joint-M4-circlip_1_geom" type="mesh" mesh="right-ankle-joint-M4-circlip_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                <geom name="right-ankle-joint-M4-circlip_1_collision" type="mesh" mesh="right-ankle-joint-M4-circlip_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.0008" pos="0.09114999999999976 0.020043798305468905 0.044846748620383466" fullinertia="6.169741056775211e-10 2.3039926303450046e-10 3.913166053608713e-10 -8.110449758549543e-23 1.0679678168673465e-22 -1.4187034557988366e-11" />
+                                                                            </body>
+                                                                        </body>
+                                                                    </body>
+                                                                    <body name="MR104ZZ-RLR_1" pos="-0.09945000000001102 0.03202225085623939 0.14292700504639796" euler="-3.141592653589793 5.551115123125783e-17 -3.141592653589793">
+                                                                        <geom name="MR104ZZ-RLR_1_geom" type="mesh" mesh="MR104ZZ-RLR_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-RLR_1_collision" type="mesh" mesh="MR104ZZ-RLR_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="-5.634314709681561e-10 -0.015398636930180643 0.01351248984837881" fullinertia="2.3148768262777278e-08 1.3614771998656576e-08 1.3614701120000035e-08 -4.9061330385034864e-17 -8.127383013789671e-16 2.154448460725061e-14" />
+                                                                    </body>
+                                                                    <body name="MR104ZZ-RLL_1" pos="-0.093550000000011 0.03202225085623939 0.142927005046398" euler="-3.141592653589793 5.551115123125783e-17 -3.141592653589793">
+                                                                        <geom name="MR104ZZ-RLL_1_geom" type="mesh" mesh="MR104ZZ-RLL_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-RLL_1_collision" type="mesh" mesh="MR104ZZ-RLL_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="-5.634314532045877e-10 -0.015398636930180724 0.013512489848378757" fullinertia="2.3148768262777278e-08 1.3614771998643023e-08 1.3614701119996647e-08 -4.9061330385034864e-17 -8.127416895107561e-16 2.1544483336701188e-14" />
+                                                                    </body>
+                                                                    <body name="MR104ZZ-RRL_1" pos="-0.115550000000012 0.032022250856239394 0.142927005046398" euler="-3.141592653589793 5.551115123125783e-17 -3.141592653589793">
+                                                                        <geom name="MR104ZZ-RRL_1_geom" type="mesh" mesh="MR104ZZ-RRL_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-RRL_1_collision" type="mesh" mesh="MR104ZZ-RRL_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="-5.63431826239524e-10 -0.015398636930180547 0.013512489848378651" fullinertia="2.314876826277389e-08 1.3614771998636247e-08 1.3614701120003423e-08 -4.9060906868561237e-17 -8.127416895107561e-16 2.1544484183734136e-14" />
+                                                                    </body>
+                                                                    <body name="MR104ZZ-RLLF_1" pos="-0.05352218688851301 -0.04961384082882301 0.06048324573784511" euler="3.141592653589793 -2.7755575615628914e-17 3.141592653589793">
+                                                                        <geom name="MR104ZZ-RLLF_1_geom" type="mesh" mesh="MR104ZZ-RLLF_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-RLLF_1_collision" type="mesh" mesh="MR104ZZ-RLLF_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="0.0400278125447831 -0.016103360453644577 -0.04686837692430992" fullinertia="2.3148768298071447e-08 1.3614772020842063e-08 1.3614701147094925e-08 -6.018160322692954e-17 -8.224046405791601e-16 2.1527042504800777e-14" />
+                                                                    </body>
+                                                                    <body name="MR104ZZ-RRLF_1" pos="-0.07552218688851402 -0.049613840828823016 0.060483245737845207" euler="3.141592653589793 -2.7755575615628914e-17 3.141592653589793">
+                                                                        <geom name="MR104ZZ-RRLF_1_geom" type="mesh" mesh="MR104ZZ-RRLF_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-RRLF_1_collision" type="mesh" mesh="MR104ZZ-RRLF_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="0.04002781256632593 -0.016103360459840864 -0.04686837692496115" fullinertia="2.3148768065398272e-08 1.3614771872211498e-08 1.3614700971047597e-08 -7.186049350367266e-17 -8.236277561549945e-16 2.1529952910007543e-14" />
+                                                                    </body>
+                                                                    <body name="MR104ZZ-RRRF_1" pos="-0.08142218688851402 -0.04961384082882301 0.0604832457378452" euler="3.141592653589793 -2.7755575615628914e-17 3.141592653589793">
+                                                                        <geom name="MR104ZZ-RRRF_1_geom" type="mesh" mesh="MR104ZZ-RRRF_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-RRRF_1_collision" type="mesh" mesh="MR104ZZ-RRRF_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="0.040027812566326454 -0.0161033604598409 -0.04686837692496112" fullinertia="2.314876806540166e-08 1.3614771872204721e-08 1.3614700971044209e-08 -7.186049350367266e-17 -8.236311442867835e-16 2.1529956298139332e-14" />
+                                                                        <body name="right-foot-damper-front-M4-shaft_1" pos="-0.12145000000001202 -0.032022250856239436 0.1429270050463984" euler="-5.551115123126415e-17 5.551115123125783e-17 5.5511151231257605e-17">
+                                                                            <geom name="right-foot-damper-front-M4-shaft_1_geom" type="mesh" mesh="right-foot-damper-front-M4-shaft_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                            <geom name="right-foot-damper-front-M4-shaft_1_collision" type="mesh" mesh="right-foot-damper-front-M4-shaft_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                            <inertial mass="0.004" pos="0.14881787197959692 0.015918882718557015 -0.18979536446595546" fullinertia="1.0375661754763585e-08 5.21383236805819e-07 5.213832378997655e-07 -2.9354049021901907e-18 -1.3337035084383347e-18 -1.4976897760165577e-16" />
+                                                                            <body name="right-ankle-joint-front-M4-circlip_1" pos="1.9539925233402755e-16 0.07921004515637417 -0.10336076363896744" euler="3.141592653589793 6.4128428855415725e-16 -1.5067204585796146e-15">
+                                                                                <geom name="right-ankle-joint-front-M4-circlip_1_geom" type="mesh" mesh="right-ankle-joint-front-M4-circlip_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                <geom name="right-ankle-joint-front-M4-circlip_1_collision" type="mesh" mesh="right-ankle-joint-front-M4-circlip_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.0008" pos="0.131177813111507 0.06323783342879459 0.08704415418752068" fullinertia="6.169741056779446e-10 2.3039926303534754e-10 3.913166053605537e-10 -4.091193460649009e-24 -2.1151507334834542e-22 -1.4187034557882558e-11" />
+                                                                            </body>
+                                                                        </body>
+                                                                    </body>
+                                                                    <body name="MR104ZZ-RLRF_1" pos="-0.05942218688851301 -0.04961384082882301 0.0604832457378452" euler="3.141592653589793 -2.7755575615628914e-17 3.141592653589793">
+                                                                        <geom name="MR104ZZ-RLRF_1_geom" type="mesh" mesh="MR104ZZ-RLRF_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-RLRF_1_collision" type="mesh" mesh="MR104ZZ-RLRF_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="0.04002781254478307 -0.016103360453644584 -0.046868376924309875" fullinertia="2.3148768298071447e-08 1.3614772020855615e-08 1.3614701147098313e-08 -6.018160322692954e-17 -8.224012524473711e-16 2.1527042504800777e-14" />
+                                                                    </body>
+                                                                    <body name="right-foot-connector-R_1" pos="1.438849039914203e-15 -6.23945339839449e-16 1.7674750382625902e-15" euler="-1.8932661725304283e-29 -5.729649684319706e-15 -9.223844905973283e-15">
+                                                                        <joint name="ankle_pitch_right" type="hinge" axis="1.0 -5.75769853198186e-28 -8.20117147798583e-15" pos="-0.12274999999996793 -0.010935999999987461 0.0574548828523004" range="-0.610865 0.872665" limited="true" />
+                                                                        <geom name="right-foot-connector-R_1_geom" type="mesh" mesh="right-foot-connector-R_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                        <geom name="right-foot-connector-R_1_collision" type="mesh" mesh="right-foot-connector-R_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.03" pos="-0.1262500000000007 -0.010936369559118333 0.03658076054300455" fullinertia="0.00010572899440551388 6.621153563215543e-05 4.080838736748903e-05 -1.1113072267873002e-18 -1.616627203259342e-18 1.2564340233976859e-15" />
+                                                                        <body name="right-ankle-163010-Bearing-R_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                            <geom name="right-ankle-163010-Bearing-R_1_geom" type="mesh" mesh="right-ankle-163010-Bearing-R_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                            <geom name="right-ankle-163010-Bearing-R_1_collision" type="mesh" mesh="right-ankle-163010-Bearing-R_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                            <inertial mass="0.028" pos="-0.12624999999999986 -0.0109363695586895 0.05745468804153147" fullinertia="3.760482334421689e-06 1.974793491953857e-06 1.9747934979396286e-06 3.313592889649841e-18 8.256119433221362e-19 -1.0893013108283088e-15" />
+                                                                            <body name="right-ankle-M16-shaft_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                                <geom name="right-ankle-M16-shaft_1_geom" type="mesh" mesh="right-ankle-M16-shaft_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                <geom name="right-ankle-M16-shaft_1_collision" type="mesh" mesh="right-ankle-M16-shaft_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.09" pos="-0.10894993771828328 -0.010936369558807555 0.05745468804157312" fullinertia="3.135921877351613e-06 2.3655732786329476e-05 2.3655732832162605e-05 5.303103876156006e-17 3.324762523551463e-16 -1.4469701207621893e-14" />
+                                                                                <body name="right-foot-M16-shaft-circlip_1" pos="-0.07695000000001218 0.013938331971262602 0.05465464803940649" euler="1.5707963267948966 4.628275184846112e-15 1.970597140158651e-15">
+                                                                                    <geom name="right-foot-M16-shaft-circlip_1_geom" type="mesh" mesh="right-foot-M16-shaft-circlip_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                    <geom name="right-foot-M16-shaft-circlip_1_collision" type="mesh" mesh="right-foot-M16-shaft-circlip_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                    <inertial mass="0.0026" pos="-0.007499999999988078 0.0032540031896759656 0.022300148357626483" fullinertia="3.437526703871894e-07 1.2851018104197233e-07 2.1582984724468497e-07 2.6504072187651542e-21 1.8893737788443652e-21 -1.5890879681885637e-08" />
+                                                                                </body>
+                                                                            </body>
+                                                                        </body>
+                                                                        <body name="right-foot_1" pos="9.9298347322474e-15 2.986499936241681e-15 -1.687538997430238e-16" euler="7.573064690121713e-29 6.685541792351901e-15 4.930380658005639e-31">
+                                                                            <geom name="right-foot_1_geom" type="mesh" mesh="right-foot_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                            <geom name="right-foot_1_collision" type="mesh" mesh="right-foot_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                            <inertial mass="0.095" pos="-0.10750003355166554 -0.029236960469846245 0.011836276393685324" fullinertia="0.004813799250696587 0.00031561180459263117 0.005069960994537241 -1.2940881387142592e-09 -8.058499748788e-11 1.126070487004566e-05" />
+                                                                            <body name="right-foot-front-damper-bracket-R_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 -2.2420775429197073e-44">
+                                                                                <geom name="right-foot-front-damper-bracket-R_1_geom" type="mesh" mesh="right-foot-front-damper-bracket-R_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                                <geom name="right-foot-front-damper-bracket-R_1_collision" type="mesh" mesh="right-foot-front-damper-bracket-R_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.005" pos="-0.118950000000009 -0.08204810890304133 0.018049600266618476" fullinertia="5.032342067922302e-06 1.716649229710542e-06 3.3901459215009903e-06 -5.347632200514413e-20 1.106356592691629e-20 4.841463756543196e-07" />
+                                                                                <body name="MR105ZZ-RRF_1" pos="-0.07692218688851692 -0.11396220947681299 0.0581192409308826" euler="-3.141592653589793 1.17421378168956e-16 -3.141592653589793">
+                                                                                    <geom name="MR105ZZ-RRF_1_geom" type="mesh" mesh="MR105ZZ-RRF_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                    <geom name="MR105ZZ-RRF_1_collision" type="mesh" mesh="MR105ZZ-RRF_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                    <inertial mass="0.00125" pos="0.0420278131114925 0.022281306490613568 0.030399391594566987" fullinertia="1.983252071121759e-08 1.1725091317687218e-08 1.1725091380150815e-08 -7.453889935838397e-20 -9.911609467484277e-20 4.235164771151247e-22" />
+                                                                                    <body name="right-foot-ankle-front-M5-shaft-_1" pos="-0.1169500000000122 -0.07800000116229 0.05900000084936623" euler="-1.1102230246250934e-16 -0.0 2.2364886824356544e-31">
+                                                                                        <geom name="right-foot-ankle-front-M5-shaft-_1_geom" type="mesh" mesh="right-foot-ankle-front-M5-shaft-_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                        <geom name="right-foot-ankle-front-M5-shaft-_1_collision" type="mesh" mesh="right-foot-ankle-front-M5-shaft-_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                        <inertial mass="0.006" pos="0.14867982091615298 0.10028130765269719 -0.028600609254796575" fullinertia="2.197175816929923e-08 5.338754104511226e-07 5.338754128945755e-07 -3.1509625637858497e-18 2.6639075509756096e-18 -2.778268065632387e-19" />
+                                                                                        <body name="left-ankle-joint-front-M5-circlip_1" pos="0.09350000000001252 0.1088500878049341 -0.06867991523319586" euler="-1.5707963267948966 -2.8470015887639836e-15 1.4784322543528164e-15">
+                                                                                            <geom name="left-ankle-joint-front-M5-circlip_1_geom" type="mesh" mesh="left-ankle-joint-front-M5-circlip_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                            <geom name="left-ankle-joint-front-M5-circlip_1_collision" type="mesh" mesh="left-ankle-joint-front-M5-circlip_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                            <inertial mass="0.002" pos="0.0400778131114926 -0.04007930597844309 -0.007825186897734905" fullinertia="2.2872189018586065e-09 8.633050416084227e-10 1.4429788201031705e-09 5.931876827003447e-23 -1.2481517672875426e-24 8.524663142134149e-23" />
+                                                                                        </body>
+                                                                                    </body>
+                                                                                </body>
+                                                                            </body>
+                                                                            <body name="right-foot-front-damper-bracket-L_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 -2.2420775429197073e-44">
+                                                                                <geom name="right-foot-front-damper-bracket-L_1_geom" type="mesh" mesh="right-foot-front-damper-bracket-L_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                                <geom name="right-foot-front-damper-bracket-L_1_collision" type="mesh" mesh="right-foot-front-damper-bracket-L_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.005" pos="-0.09605000000000931 -0.08204810890304133 0.018049600266618473" fullinertia="5.032342067922275e-06 1.7166492297104878e-06 3.390145921500936e-06 -2.6371267693006882e-20 1.783982950495216e-20 4.841463756543264e-07" />
+                                                                                <body name="MR105ZZ-RLF_1" pos="-0.0540221868885169 -0.11396220947681299 0.0581192409308826" euler="-3.141592653589793 1.17421378168956e-16 -3.141592653589793">
+                                                                                    <geom name="MR105ZZ-RLF_1_geom" type="mesh" mesh="MR105ZZ-RLF_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                    <geom name="MR105ZZ-RLF_1_collision" type="mesh" mesh="MR105ZZ-RLF_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                    <inertial mass="0.00125" pos="0.04202781311149301 0.022281306490613745 0.03039939159456698" fullinertia="1.9832520711220977e-08 1.1725091317688912e-08 1.1725091380150815e-08 -7.623296525289251e-20 -9.826906172758839e-20 8.470329507387157e-22" />
+                                                                                </body>
+                                                                            </body>
+                                                                            <body name="right-foot-ankle-joint-L_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 -2.2420775429197073e-44">
+                                                                                <geom name="right-foot-ankle-joint-L_1_geom" type="mesh" mesh="right-foot-ankle-joint-L_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                                <geom name="right-foot-ankle-joint-L_1_collision" type="mesh" mesh="right-foot-ankle-joint-L_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.006" pos="-0.0960500000000007 0.052834874645183404 0.02379031784920617" fullinertia="6.81962098644551e-06 2.4045511469756103e-06 4.502843880639291e-06 -1.3620215171496418e-21 2.359367815558015e-20 -8.986505939120014e-07" />
+                                                                                <body name="MR105ZZ-RL_1" pos="-0.09405000000001232 0.07800000116229061 0.059000000849366206" euler="-3.141592653589793 -0.0 -3.141592653589793">
+                                                                                    <geom name="MR105ZZ-RL_1_geom" type="mesh" mesh="MR105ZZ-RL_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                    <geom name="MR105ZZ-RL_1_collision" type="mesh" mesh="MR105ZZ-RL_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                    <inertial mass="0.00125" pos="0.0019999999999886922 -0.012728594538415244 0.021402995274430528" fullinertia="1.9832520711219283e-08 1.1725091317687218e-08 1.1725091380147427e-08 -7.538593230563826e-20 -9.911514268931728e-20 4.235164771118387e-22" />
+                                                                                </body>
+                                                                            </body>
+                                                                            <body name="right-foot-ankle-joint-R_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 -2.2420775429197073e-44">
+                                                                                <geom name="right-foot-ankle-joint-R_1_geom" type="mesh" mesh="right-foot-ankle-joint-R_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                                <geom name="right-foot-ankle-joint-R_1_collision" type="mesh" mesh="right-foot-ankle-joint-R_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.006" pos="-0.11895000000000103 0.052834874645183355 0.02379031784920627" fullinertia="6.819620986445375e-06 2.4045511469757187e-06 4.502843880639074e-06 -2.8467075829287983e-20 3.714620531164731e-20 -8.986505939119811e-07" />
+                                                                                <body name="MR105ZZ-RR_1" pos="-0.11695000000001203 0.07800000116229061 0.059000000849366206" euler="-3.141592653589793 -0.0 -3.141592653589793">
+                                                                                    <geom name="MR105ZZ-RR_1_geom" type="mesh" mesh="MR105ZZ-RR_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                    <geom name="MR105ZZ-RR_1_collision" type="mesh" mesh="MR105ZZ-RR_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                    <inertial mass="0.00125" pos="0.001999999999988337 -0.012728594538415145 0.02140299527443053" fullinertia="1.9832520711221824e-08 1.1725091317687218e-08 1.1725091380147427e-08 -7.792703114740112e-20 -9.826810974206284e-20 8.4703295074246e-22" />
+                                                                                    <body name="right-foot-M5-shaft_1" pos="-0.11695000000001203 -0.0780000011622906 0.05900000084936622" euler="-3.141592653589793 -0.0 -3.141592653589793">
+                                                                                        <geom name="right-foot-M5-shaft_1_geom" type="mesh" mesh="right-foot-M5-shaft_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                        <geom name="right-foot-M5-shaft_1_collision" type="mesh" mesh="right-foot-M5-shaft_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                        <inertial mass="0.006" pos="-0.10865200780464701 0.0652714066236673 0.03759700557493286" fullinertia="2.1971758170105605e-08 5.338754104528844e-07 5.338754128971369e-07 4.275822317739546e-18 2.9044047995632687e-18 1.0503208532330076e-19" />
+                                                                                        <body name="right-ankle-joint-M5-circlip_1" pos="-0.09350000000001231 0.08940608523324585 0.043730733158079634" euler="1.5707963267948966 -2.9700112624260945e-15 -3.141592653589792">
+                                                                                            <geom name="right-ankle-joint-M5-circlip_1_geom" type="mesh" mesh="right-ankle-joint-M5-circlip_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                            <geom name="right-ankle-joint-M5-circlip_1_collision" type="mesh" mesh="right-ankle-joint-M5-circlip_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                            <inertial mass="0.002" pos="4.999999998831288e-05 -0.006133727583190794 -0.023391085355075343" fullinertia="2.28721890185903e-09 8.633050416084227e-10 1.4429788201025353e-09 -2.0709140852875574e-24 1.3692258585033997e-24 3.230707221791241e-23" />
+                                                                                        </body>
+                                                                                    </body>
+                                                                                </body>
+                                                                            </body>
+                                                                            <body name="right-foot-connector-L_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 -2.2420775429197073e-44">
+                                                                                <geom name="right-foot-connector-L_1_geom" type="mesh" mesh="right-foot-connector-L_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                                <geom name="right-foot-connector-L_1_collision" type="mesh" mesh="right-foot-connector-L_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.03" pos="-0.08875000000000059 -0.010936369559117727 0.0365807605430051" fullinertia="0.00010572899440550849 6.621153563215283e-05 4.080838736748708e-05 -2.439454888073359e-19 -4.236562509818649e-19 1.2583720347810037e-15" />
+                                                                                <body name="right-ankle-163010-Bearing-L_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 -2.2420775429197073e-44">
+                                                                                    <geom name="right-ankle-163010-Bearing-L_1_geom" type="mesh" mesh="right-ankle-163010-Bearing-L_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                    <geom name="right-ankle-163010-Bearing-L_1_collision" type="mesh" mesh="right-ankle-163010-Bearing-L_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                    <inertial mass="0.028" pos="-0.08875 -0.010936369558689131 0.057454688041532816" fullinertia="3.7604823344216482e-06 1.9747934919532063e-06 1.9747934979390323e-06 3.361026734703374e-18 6.749199147937494e-19 -1.08929792269652e-15" />
+                                                                                </body>
+                                                                            </body>
+                                                                            <body name="right-foot-sole_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 -2.2420775429197073e-44">
+                                                                                <geom name="right-foot-sole_1_geom" type="mesh" mesh="right-foot-sole_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                                                <geom name="right-foot-sole_1_collision" type="mesh" mesh="right-foot-sole_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" friction="1.0 0.005 0.0001" />
+                                                                                <inertial mass="0.07" pos="-0.10750000000000745 -0.02743636955872807 -0.00042269341717721793" fullinertia="0.002601906546399655 0.00016078078496674364 0.0027530853207108318 -3.989863994746638e-17 -2.8278609834609183e-17 1.2647666128193258e-18" />
+                                                                            </body>
+                                                                        </body>
+                                                                    </body>
+                                                                </body>
+                                                            </body>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                            </body>
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+            <body name="hip_yaw_left_1" pos="0.1080000000000133 -0.0012894635449778136 0.5546000000000014" euler="3.141592653589793 1.2836953722228313e-14 -3.141592653589793">
+                <geom name="hip_yaw_left_1_geom" type="mesh" mesh="hip_yaw_left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                <geom name="hip_yaw_left_1_collision" type="mesh" mesh="hip_yaw_left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                <inertial mass="1.1" pos="0.0001554654783533285 -0.007213147972853625 0.012049309029640012" fullinertia="0.00446948922277568 0.004525290267701765 0.0050571298234185665 1.9831393759673403e-05 1.4128170422907709e-05 -3.278624867154534e-05" />
+                <body name="left-hip-yaw-connector_1" pos="0.1079999999999891 0.0012894635449806026 0.5545998828523057" euler="3.1415926535897922 -1.2836953722228313e-14 -3.141592653589793">
+                    <joint name="hip_yaw_left" type="hinge" axis="2.7016745730158972e-59 -8.974001396364293e-16 1.0" pos="0.10799999999996868 -0.008130000000003227 0.5025668828523057" range="-0.785398 0.785398" limited="true" />
+                    <geom name="left-hip-yaw-connector_1_geom" type="mesh" mesh="left-hip-yaw-connector_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                    <geom name="left-hip-yaw-connector_1_collision" type="mesh" mesh="left-hip-yaw-connector_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                    <inertial mass="0.24" pos="0.10799981727345002 0.027042607296511385 0.465755289335754" fullinertia="0.014361240974703371 0.01592745454379462 0.014978209671711158 -2.9327703107792272e-08 -5.011612285438068e-07 0.0034288116211292014" />
+                    <body name="hip_roll_left_1" pos="0.10837218688851702 0.0871098828523094 0.40910988285230804" euler="1.570796326794856 -1.2614909117303401e-14 -2.149390572877649e-16">
+                        <geom name="hip_roll_left_1_geom" type="mesh" mesh="hip_roll_left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                        <geom name="hip_roll_left_1_collision" type="mesh" mesh="hip_roll_left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                        <inertial mass="1.1" pos="-0.0002167235652496361 0.010684757281713898 0.029846677247046288" fullinertia="0.004469477262322719 0.004525279226918916 0.005057128903073634 1.983137607690378e-05 1.412804690943031e-05 -3.2780239845363406e-05" />
+                        <body name="left-hip-roll-connector_1" pos="-0.10837218688851875 -0.4091098828523122 0.08710988285228254" euler="-1.5707963267948377 4.840562472050249e-17 0.0">
+                            <joint name="hip_roll_left" type="hinge" axis="5.131047150396919e-28 1.0 -1.7374990335378866e-14" pos="0.10799999999997058 0.017279999999994303 0.4201668828523061" range="-0.349066 1.396263" limited="true" />
+                            <geom name="left-hip-roll-connector_1_geom" type="mesh" mesh="left-hip-roll-connector_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                            <geom name="left-hip-roll-connector_1_collision" type="mesh" mesh="left-hip-roll-connector_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                            <inertial mass="0.11" pos="0.11449639130579936 -0.03858475346667226 0.4116345085102633" fullinertia="0.007088711249939206 0.003927318785202621 0.004302611709190449 4.464489674175692e-05 3.0883031029222014e-05 -0.0004747425971299578" />
+                            <body name="hip_pitch_left_1" pos="0.07537218688851531 -0.042890117147690504 0.40710988285231303" euler="1.5707963267948832 3.9875540439721644e-14 1.5707963267948752">
+                                <geom name="hip_pitch_left_1_geom" type="mesh" mesh="hip_pitch_left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                <geom name="hip_pitch_left_1_collision" type="mesh" mesh="hip_pitch_left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                <inertial mass="1.1" pos="-0.00467440146708947 -0.0013153122016364522 0.042644725483055854" fullinertia="0.0044694651902027465 0.004525265167190514 0.005057130245018691 1.983150139986862e-05 1.4125191139146377e-05 -3.2785792294584634e-05" />
+                                <body name="left-hip-pitch-connector_1" pos="0.04289011714768843 -0.40710988285231536 -0.0753721868885239" euler="-1.5707963267948968 -1.5707963267948686 0">
+                                    <joint name="hip_pitch_left" type="hinge" axis="-1.0 -5.679798517591285e-28 8.076814504680761e-15" pos="0.15799999999997077 -0.04772000000000547 0.4061668828523104" range="-0.785398 2.181662" limited="true" />
+                                    <geom name="left-hip-pitch-connector_1_geom" type="mesh" mesh="left-hip-pitch-connector_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                    <geom name="left-hip-pitch-connector_1_collision" type="mesh" mesh="left-hip-pitch-connector_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                    <inertial mass="0.048" pos="0.1657485717194919 -0.04767273672312098 0.40670686344439294" fullinertia="0.00159087547894185 0.0008248717538618944 0.0008082416983019626 -3.2448077948332465e-07 -3.7089891528404587e-06 -1.465938943869299e-06" />
+                                    <body name="left-hip-pitch-connector-cover_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 -3.155443620885325e-30">
+                                        <geom name="left-hip-pitch-connector-cover_1_geom" type="mesh" mesh="left-hip-pitch-connector-cover_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                        <geom name="left-hip-pitch-connector-cover_1_collision" type="mesh" mesh="left-hip-pitch-connector-cover_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                        <inertial mass="0.058" pos="0.1864109959201355 -0.047507309889785916 0.40859761620287005" fullinertia="0.0019158281506269918 0.0010729353249094857 0.0009720378653498487 1.5048446707662932e-06 1.719887419448303e-05 -8.89451131253406e-06" />
+                                        <body name="left-thigh-carbon-rod_1" pos="-3.375077994860464e-15 1.243449787579837e-16 1.4921397450962103e-15" euler="-3.500531206224393e-18 8.015462024263302e-15 -7.012620600455936e-16">
+                                            <geom name="left-thigh-carbon-rod_1_geom" type="mesh" mesh="left-thigh-carbon-rod_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                            <geom name="left-thigh-carbon-rod_1_collision" type="mesh" mesh="left-thigh-carbon-rod_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                            <inertial mass="0.032" pos="0.1800000000000107 -0.024806574604077567 0.3238570609094915" fullinertia="0.0005991561314242742 0.0005947154681627323 1.900081423752746e-05 -4.336808689951551e-19 3.6429192995511445e-17 -5.075701333813272e-05" />
+                                            <body name="left-knee-pitch-connector-cover_1" pos="3.0198066269804257e-15 2.2204460492503637e-17 7.105427357601002e-17" euler="1.2490009027032698e-16 2.0687877239421035e-27 -1.8104750724590827e-28">
+                                                <geom name="left-knee-pitch-connector-cover_1_geom" type="mesh" mesh="left-knee-pitch-connector-cover_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                <geom name="left-knee-pitch-connector-cover_1_collision" type="mesh" mesh="left-knee-pitch-connector-cover_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                <inertial mass="0.058" pos="0.18641098832918657 -0.06187749585784713 0.24434571013982515" fullinertia="0.0019158338373602285 0.0010729375140630937 0.000972041546473345 -1.5046788006911562e-06 -1.719984953273143e-05 -8.89491954914178e-06" />
+                                                <body name="left-knee-pitch-connector_1" pos="0.0 5.048709793414476e-31 -1.6940658945086007e-23" euler="3.155443620884048e-30 -0.0 1.0234104580875516e-31">
+                                                    <geom name="left-knee-pitch-connector_1_geom" type="mesh" mesh="left-knee-pitch-connector_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                    <geom name="left-knee-pitch-connector_1_collision" type="mesh" mesh="left-knee-pitch-connector_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                    <inertial mass="0.048" pos="0.1657485738855455 -0.061712097066663994 0.2462363964139086" fullinertia="0.0015908599135585483 0.0008248652133238663 0.0008082323881601348 3.244888456895397e-07 3.708912820816994e-06 -1.4664127701877597e-06" />
+                                                    <body name="knee_pitch_left_1" pos="0.0753721868885175 -0.042890117147696916 0.24710988285231758" euler="1.5707963267949128 -6.123233995672702e-17 1.5707963267948761">
+                                                        <joint name="knee_pitch_left" type="hinge" axis="2.1219137558156e-14 1.5982319175839902e-14 1.0" pos="-0.01877488285230326 -0.00033400000000645576 0.08262781311145079" range="-2.094395 1.745329" limited="true" />
+                                                        <geom name="knee_pitch_left_1_geom" type="mesh" mesh="knee_pitch_left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                        <geom name="knee_pitch_left_1_collision" type="mesh" mesh="knee_pitch_left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                        <inertial mass="1.1" pos="-0.018528228179411185 -0.0006535222558059135 0.042644725768263794" fullinertia="0.004463287993380307 0.0045314375570491144 0.005057125506672366 3.224771521056668e-06 2.2120394072080294e-05 -2.801161596626361e-05" />
+                                                        <body name="left-knee-bracket_1" pos="0.04289011714769522 -0.24710988285229835 -0.0753721868885479" euler="-1.5707963267948968 -1.5707963267947767 0">
+                                                            <geom name="left-knee-bracket_1_geom" type="mesh" mesh="left-knee-bracket_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                            <geom name="left-knee-bracket_1_collision" type="mesh" mesh="left-knee-bracket_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                            <inertial mass="0.125" pos="0.11425891930592215 -0.05507906571077828 0.22219745945444314" fullinertia="0.009302577737009949 0.006469813515301598 0.00429706491748722 1.6081893968605625e-05 -6.0031413612987605e-05 0.0006272190957520806" />
+                                                            <body name="left-shin-carbon-rod-1_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                <geom name="left-shin-carbon-rod-1_1_geom" type="mesh" mesh="left-shin-carbon-rod-1_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                <geom name="left-shin-carbon-rod-1_1_collision" type="mesh" mesh="left-shin-carbon-rod-1_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                <inertial mass="0.018" pos="0.10750000000000742 -0.013996381816467736 0.13842157848059" fullinertia="0.00010247742032481631 9.614917466586168e-05 1.4336328695774778e-05 -2.942365117953608e-19 -1.4064722703697963e-18 2.361733432199917e-05" />
+                                                            </body>
+                                                            <body name="left-shin-carbon-rod_1" pos="2.6929569685309467e-14 6.794564910706237e-15 -1.2434497875801753e-14" euler="4.163336344880999e-17 -1.251283704671041e-13 -3.352804581688282e-14">
+                                                                <geom name="left-shin-carbon-rod_1_geom" type="mesh" mesh="left-shin-carbon-rod_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                <geom name="left-shin-carbon-rod_1_collision" type="mesh" mesh="left-shin-carbon-rod_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                <inertial mass="0.018" pos="0.10750000000001948 -0.04876971156287416 0.1291040928568992" fullinertia="0.00010247742032481349 9.614917466585732e-05 1.4336328695773687e-05 -6.505213034910164e-19 1.5178830414786828e-18 2.3617334321998645e-05" />
+                                                                <body name="left-ankle-bracket_1" pos="0.0 0.0 -1.6940658945086007e-23" euler="3.155443620884048e-30 -0.0 -7.222190692252164e-31">
+                                                                    <geom name="left-ankle-bracket_1_geom" type="mesh" mesh="left-ankle-bracket_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                                    <geom name="left-ankle-bracket_1_collision" type="mesh" mesh="left-ankle-bracket_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                    <inertial mass="0.09" pos="0.10750000396851932 -0.016062428217097413 0.07941942400820172" fullinertia="0.0016945303298065949 0.0012358834464033775 0.0006929679836761031 -3.3550516138490756e-10 1.0290714286864519e-09 0.00011550068070119586" />
+                                                                    <body name="MR104ZZ-LLLF_1" pos="0.081422186888514 -0.04961384082882301 0.0604832457378452" euler="3.3306690738755017e-16 -2.7755575615628914e-17 2.775557561562757e-17">
+                                                                        <geom name="MR104ZZ-LLLF_1_geom" type="mesh" mesh="MR104ZZ-LLLF_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-LLLF_1_collision" type="mesh" mesh="MR104ZZ-LLLF_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="0.04002781132661653 -0.016103353152107935 0.04686834256846549" fullinertia="2.314882396567305e-08 1.3614776599969938e-08 1.361475730434256e-08 -1.9641984481172128e-16 -1.6951567875585868e-15 4.671940663655006e-14" />
+                                                                        <body name="left-foot-damper-front-M4-shaft_1" pos="-0.121450000000012 -0.032022250856239436 -0.1429270050463984" euler="5.5511151231261e-17 -5.551115123125783e-17 5.551115123125859e-17">
+                                                                            <geom name="left-foot-damper-front-M4-shaft_1_geom" type="mesh" mesh="left-foot-damper-front-M4-shaft_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                            <geom name="left-foot-damper-front-M4-shaft_1_collision" type="mesh" mesh="left-foot-damper-front-M4-shaft_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                            <inertial mass="0.004" pos="0.14881787197959048 0.015918882718556144 0.18979536446594766" fullinertia="1.037566175999486e-08 5.213832368141945e-07 5.213832379030587e-07 -3.276473316496839e-18 -2.7286062048502994e-18 1.4932852046911997e-16" />
+                                                                            <body name="left-ankle-joint-front-M4-circlip_1" pos="4.796163466380677e-16 0.07921004515637439 0.10336076363896667" euler="-3.141592653589793 -1.917073723498175e-15 -4.65799829592596e-15">
+                                                                                <geom name="left-ankle-joint-front-M4-circlip_1_geom" type="mesh" mesh="left-ankle-joint-front-M4-circlip_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                <geom name="left-ankle-joint-front-M4-circlip_1_collision" type="mesh" mesh="left-ankle-joint-front-M4-circlip_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.0008" pos="0.13117781311150647 0.06323783342879986 -0.0870441541875159" fullinertia="6.287634197966084e-10 2.34801796722731e-10 3.9879399272303093e-10 1.968481727028929e-22 3.165822647801404e-22 1.4458124391373644e-11" />
+                                                                            </body>
+                                                                        </body>
+                                                                    </body>
+                                                                    <body name="MR104ZZ-LLRF_1" pos="0.075522186888514 -0.04961384082882301 0.0604832457378452" euler="3.3306690738755017e-16 -2.7755575615628914e-17 2.775557561562757e-17">
+                                                                        <geom name="MR104ZZ-LLRF_1_geom" type="mesh" mesh="MR104ZZ-LLRF_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-LLRF_1_collision" type="mesh" mesh="MR104ZZ-LLRF_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="0.040027811291316696 -0.01610335314386469 0.046868342647357564" fullinertia="2.314882460551835e-08 1.3614776892121766e-08 1.3614757811566217e-08 -1.976277137944966e-16 -1.540021009203062e-15 4.659904494881112e-14" />
+                                                                    </body>
+                                                                    <body name="MR104ZZ-LRLF_1" pos="0.053522186888513006 -0.04961384082882301 0.060483245737845096" euler="3.330669073875533e-16 -2.7755575615628914e-17 2.775557561562757e-17">
+                                                                        <geom name="MR104ZZ-LRLF_1_geom" type="mesh" mesh="MR104ZZ-LRLF_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-LRLF_1_collision" type="mesh" mesh="MR104ZZ-LRLF_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="0.04002781132332348 -0.01610335315518946 0.046868342561205756" fullinertia="2.3148824000973996e-08 1.3614776636853141e-08 1.3614757316749898e-08 -2.0217797478715567e-16 -1.7087194791100223e-15 4.670673332959324e-14" />
+                                                                    </body>
+                                                                    <body name="MR104ZZ-LRRF_1" pos="0.059422186888513 -0.04961384082882301 0.0604832457378452" euler="3.330669073875533e-16 -2.7755575615628914e-17 2.775557561562757e-17">
+                                                                        <geom name="MR104ZZ-LRRF_1_geom" type="mesh" mesh="MR104ZZ-LRRF_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-LRRF_1_collision" type="mesh" mesh="MR104ZZ-LRRF_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="0.04002781133327855 -0.016103353153930244 0.046868342574067426" fullinertia="2.3148823893509232e-08 1.3614776557679277e-08 1.3614757245860017e-08 -1.9992656121335522e-16 -1.684372364074145e-15 4.6708681505371926e-14" />
+                                                                    </body>
+                                                                    <body name="MR104ZZ-LRR_1" pos="0.093550000000011 0.0320222508562394 0.14292700504639796" euler="-5.5511151231248367e-17 5.551115123125783e-17 -5.5511151231257303e-17">
+                                                                        <geom name="MR104ZZ-LRR_1_geom" type="mesh" mesh="MR104ZZ-LRR_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-LRR_1_collision" type="mesh" mesh="MR104ZZ-LRR_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="-1.8266245229530235e-09 -0.015398629554043334 -0.013512524245877901" fullinertia="2.3148824593707324e-08 1.361477695885441e-08 1.361475775126086e-08 -4.625064334855284e-17 -1.7823639108822373e-15 4.6968111603489933e-14" />
+                                                                    </body>
+                                                                    <body name="MR104ZZ-LLR_1" pos="0.11555000000001203 0.03202225085623939 0.142927005046398" euler="-5.551115123125152e-17 5.551115123125783e-17 -5.5511151231257303e-17">
+                                                                        <geom name="MR104ZZ-LLR_1_geom" type="mesh" mesh="MR104ZZ-LLR_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-LLR_1_collision" type="mesh" mesh="MR104ZZ-LLR_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="-1.8266250025693702e-09 -0.015398629554043464 -0.01351252424587799" fullinertia="2.3148824593703936e-08 1.3614776958874739e-08 1.3614757751257471e-08 -4.625021983207921e-17 -1.7823639108822373e-15 4.696810990942404e-14" />
+                                                                    </body>
+                                                                    <body name="MR104ZZ-LLL_1" pos="0.12145000000001202 0.032022250856239394 0.14292700504639796" euler="-5.551115123125152e-17 5.551115123125783e-17 -5.5511151231257303e-17">
+                                                                        <geom name="MR104ZZ-LLL_1_geom" type="mesh" mesh="MR104ZZ-LLL_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-LLL_1_collision" type="mesh" mesh="MR104ZZ-LLL_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="-1.8266240433366769e-09 -0.01539862955404355 -0.013512524245878078" fullinertia="2.3148824593720877e-08 1.3614776958888291e-08 1.3614757751271024e-08 -4.625191389797372e-17 -1.7823639108822373e-15 4.6968109485907565e-14" />
+                                                                        <body name="left-foot-damper-M4-shaft_1" pos="-0.12145000000001199 -0.032022250856239394 -0.142927005046398" euler="5.5511151231261e-17 -5.551115123125783e-17 5.5511151231257605e-17">
+                                                                            <geom name="left-foot-damper-M4-shaft_1_geom" type="mesh" mesh="left-foot-damper-M4-shaft_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                            <geom name="left-foot-damper-M4-shaft_1_collision" type="mesh" mesh="left-foot-damper-M4-shaft_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                            <inertial mass="0.004" pos="0.10879005886809893 0.016623606236065548 0.1294144976984373" fullinertia="1.037566175602397e-08 5.21383236807879e-07 5.213832379005854e-07 -2.987677631411296e-18 3.3422238249295715e-19 1.497079912294895e-16" />
+                                                                            <body name="left-ankle-joint-M4-circlip_1" pos="1.79645751399909e-16 0.03672073355055904 0.08517730243859131" euler="-3.141592653589793 -1.880828681051907e-15 -4.6790439173942714e-15">
+                                                                                <geom name="left-ankle-joint-M4-circlip_1_geom" type="mesh" mesh="left-ankle-joint-M4-circlip_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                <geom name="left-ankle-joint-M4-circlip_1_collision" type="mesh" mesh="left-ankle-joint-M4-circlip_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.0008" pos="0.0911500000000098 0.020043798305470796 -0.0448467486203797" fullinertia="6.287634197989378e-10 2.348017967233663e-10 3.987939927243015e-10 -1.4949431256764562e-23 -2.128393031460533e-22 1.4458124390367756e-11" />
+                                                                            </body>
+                                                                        </body>
+                                                                    </body>
+                                                                    <body name="MR104ZZ-LRL_1" pos="0.09945000000001103 0.0320222508562394 0.142927005046398" euler="-5.5511151231248367e-17 5.551115123125783e-17 -5.5511151231257303e-17">
+                                                                        <geom name="MR104ZZ-LRL_1_geom" type="mesh" mesh="MR104ZZ-LRL_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                        <geom name="MR104ZZ-LRL_1_collision" type="mesh" mesh="MR104ZZ-LRL_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.0014" pos="-1.8266245051894551e-09 -0.015398629554043365 -0.013512524245877918" fullinertia="2.3148824593707324e-08 1.3614776958874739e-08 1.361475775126086e-08 -4.625106686502647e-17 -1.7823639108822373e-15 4.6968109485907565e-14" />
+                                                                    </body>
+                                                                    <body name="left-foot-connector-L_1" pos="-4.973799150319773e-16 -3.304023721284528e-15 2.0250467799756268e-15" euler="-2.3034738432453545e-28 2.136708741579112e-15 3.352804581688252e-14">
+                                                                        <joint name="ankle_pitch_left" type="hinge" axis="-1.0 -1.5777218104420236e-29 -1.1120521541994966e-14" pos="0.12274999999997425 -0.010936000000001082 0.05745488285230228" range="-0.872665 0.523599" limited="true" />
+                                                                        <geom name="left-foot-connector-L_1_geom" type="mesh" mesh="left-foot-connector-L_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                        <geom name="left-foot-connector-L_1_collision" type="mesh" mesh="left-foot-connector-L_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.03" pos="0.12625000000000908 -0.010936369559121481 0.03658076054300278" fullinertia="0.00010572899440550548 6.621153563214719e-05 4.080838736748773e-05 5.421010861029305e-20 1.0472116608313188e-18 1.2567120832695948e-15" />
+                                                                        <body name="left-anke-163010-Bearing-L_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                            <geom name="left-anke-163010-Bearing-L_1_geom" type="mesh" mesh="left-anke-163010-Bearing-L_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                            <geom name="left-anke-163010-Bearing-L_1_collision" type="mesh" mesh="left-anke-163010-Bearing-L_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                            <inertial mass="0.028" pos="0.12625000000000886 -0.010936369558771681 0.057454688041516135" fullinertia="3.760482334421716e-06 1.9747934919537484e-06 1.9747934979393034e-06 -3.313592889646692e-18 -7.6618878387866235e-19 -1.0892911464327424e-15" />
+                                                                            <body name="left-ankle-M16-shaft_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                                <geom name="left-ankle-M16-shaft_1_geom" type="mesh" mesh="left-ankle-M16-shaft_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                <geom name="left-ankle-M16-shaft_1_collision" type="mesh" mesh="left-ankle-M16-shaft_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.09" pos="0.10894993771829262 -0.010936369558811691 0.05745468804157182" fullinertia="3.1359218773512336e-06 2.3655732786326657e-05 2.3655732832159786e-05 -5.300393370721676e-17 -3.3145195469408337e-16 -1.446987061420982e-14" />
+                                                                                <body name="left-foot-M16-shaft-circlip_1" pos="0.07695000000001206 -0.008136329556612712 0.08232938957151788" euler="0.0 1.888868509730494e-15 3.1415926535897887">
+                                                                                    <geom name="left-foot-M16-shaft-circlip_1_geom" type="mesh" mesh="left-foot-M16-shaft-circlip_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                    <geom name="left-foot-M16-shaft-circlip_1_collision" type="mesh" mesh="left-foot-M16-shaft-circlip_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                    <inertial mass="0.0026" pos="-0.007499999999996926 0.00325400318967703 -0.022300148357628776" fullinertia="3.4375267038723174e-07 1.2851018104198483e-07 2.1582984724471652e-07 7.281043168842789e-22 -1.2551302777176592e-21 1.5890879681948583e-08" />
+                                                                                </body>
+                                                                            </body>
+                                                                        </body>
+                                                                        <body name="left-foot_1" pos="3.552713678800501e-17 -2.524354896707238e-31 1.1102230246251566e-17" euler="0.0 7.343327978039877e-17 3.9443045260921895e-30">
+                                                                            <geom name="left-foot_1_geom" type="mesh" mesh="left-foot_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                            <geom name="left-foot_1_collision" type="mesh" mesh="left-foot_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                            <inertial mass="0.095" pos="0.10749999638571363 -0.029236609891207334 0.011836273960706425" fullinertia="0.004813839924264253 0.0003156136875306232 0.005070003343038785 1.5415310768730675e-10 -8.851320116070956e-12 1.1260811373568647e-05" />
+                                                                            <body name="left-foot-front-damper-bracket-R_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                                <geom name="left-foot-front-damper-bracket-R_1_geom" type="mesh" mesh="left-foot-front-damper-bracket-R_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                                <geom name="left-foot-front-damper-bracket-R_1_collision" type="mesh" mesh="left-foot-front-damper-bracket-R_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.005" pos="0.09605000000000839 -0.08204810890304132 0.018049600266618473" fullinertia="5.032342067922221e-06 1.7166492297105742e-06 3.3901459215007955e-06 7.589565028021272e-20 -1.9461212625663564e-21 4.841463756543077e-07" />
+                                                                                <body name="MR105ZZ-LRF_1" pos="0.0540221868885169 -0.11396220947681299 0.0581192409308826" euler="-4.946175073976644e-17 1.174213781689568e-16 -1.199008164268062e-32">
+                                                                                    <geom name="MR105ZZ-LRF_1_geom" type="mesh" mesh="MR105ZZ-LRF_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                    <geom name="MR105ZZ-LRF_1_collision" type="mesh" mesh="MR105ZZ-LRF_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                    <inertial mass="0.00125" pos="0.04202781311149206 0.022281306490613727 -0.030399391594566838" fullinertia="1.9832520711220977e-08 1.172509131768383e-08 1.1725091380147427e-08 -7.623296525288923e-20 9.834752806467536e-20 -1.4030583492177482e-30" />
+                                                                                </body>
+                                                                            </body>
+                                                                            <body name="left-foot-front-damper-bracket-L_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                                <geom name="left-foot-front-damper-bracket-L_1_geom" type="mesh" mesh="left-foot-front-damper-bracket-L_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                                <geom name="left-foot-front-damper-bracket-L_1_collision" type="mesh" mesh="left-foot-front-damper-bracket-L_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.005" pos="0.11895000000000801 -0.08204810890304132 0.018049600266618476" fullinertia="5.032342067922194e-06 1.7166492297105742e-06 3.390145921500958e-06 1.0300070459234989e-19 1.8382669471535347e-20 4.841463756543077e-07" />
+                                                                                <body name="MR105ZZ-LLF_1" pos="0.07692218688851692 -0.11396220947681299 0.0581192409308826" euler="-1.049729019710148e-16 1.174213781689568e-16 -2.2222953592261746e-31">
+                                                                                    <geom name="MR105ZZ-LLF_1_geom" type="mesh" mesh="MR105ZZ-LLF_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                    <geom name="MR105ZZ-LLF_1_collision" type="mesh" mesh="MR105ZZ-LLF_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                    <inertial mass="0.00125" pos="0.0420278131114916 0.022281306490613568 -0.030399391594566973" fullinertia="1.983252071121759e-08 1.1725091317687218e-08 1.1725091380150815e-08 -7.623296525288926e-20 9.919456101192958e-20 -1.4065257284142557e-30" />
+                                                                                    <body name="left-foot-ankle-front-M5-shaft_1" pos="-0.1169500000000122 -0.07800000116229 -0.059000000849366206" euler="1.1102230246250619e-16 -0.0 2.23648868243543e-31">
+                                                                                        <geom name="left-foot-ankle-front-M5-shaft_1_geom" type="mesh" mesh="left-foot-ankle-front-M5-shaft_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                        <geom name="left-foot-ankle-front-M5-shaft_1_collision" type="mesh" mesh="left-foot-ankle-front-M5-shaft_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                        <inertial mass="0.006" pos="0.14867982091615195 0.10028130765269719 0.028600609254796575" fullinertia="2.1971758169312783e-08 5.338754104512039e-07 5.33875412894711e-07 -3.1509625637859403e-18 -2.6756381845623505e-18 2.7613274075014955e-19" />
+                                                                                        <body name="left-ankle-joint-front-M5-circlip-1_1" pos="0.09350000000001252 0.1088500878049341 0.06867991523319587" euler="1.5707963267948966 2.847001588763983e-15 1.4784322543528164e-15">
+                                                                                            <geom name="left-ankle-joint-front-M5-circlip-1_1_geom" type="mesh" mesh="left-ankle-joint-front-M5-circlip-1_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                            <geom name="left-ankle-joint-front-M5-circlip-1_1_collision" type="mesh" mesh="left-ankle-joint-front-M5-circlip-1_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                            <inertial mass="0.002" pos="0.040077813111491604 -0.04007930597844311 0.007825186897735086" fullinertia="2.3309237216401036e-09 8.798013162890489e-10 1.4705516637984518e-09 -1.382731383775619e-22 1.2720018010543722e-24 -6.617162826718075e-23" />
+                                                                                        </body>
+                                                                                    </body>
+                                                                                </body>
+                                                                            </body>
+                                                                            <body name="left-foot-ankle-joint-L_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                                <geom name="left-foot-ankle-joint-L_1_geom" type="mesh" mesh="left-foot-ankle-joint-L_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                                <geom name="left-foot-ankle-joint-L_1_collision" type="mesh" mesh="left-foot-ankle-joint-L_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.006" pos="0.11895000000000897 0.052834874645179726 0.023790317849204757" fullinertia="6.819620986445442e-06 2.404551146975334e-06 4.502843880639133e-06 -4.415065447546188e-20 -1.1711560576195095e-21 -8.986505939120129e-07" />
+                                                                                <body name="MR105ZZ-LL_1" pos="0.11695000000001202 0.07800000116229061 0.059000000849366206" euler="-1.1102230246250619e-16 -0.0 -1.976004122941304e-31">
+                                                                                    <geom name="MR105ZZ-LL_1_geom" type="mesh" mesh="MR105ZZ-LL_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                    <geom name="MR105ZZ-LL_1_collision" type="mesh" mesh="MR105ZZ-LL_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                    <inertial mass="0.00125" pos="0.0019999999999970883 -0.012728594538418833 -0.02140299527443197" fullinertia="1.983252071122013e-08 1.1725091317690606e-08 1.1725091380147427e-08 -7.623296525288923e-20 9.834657607914989e-20 -1.4067421604341291e-30" />
+                                                                                    <body name="left-foot-ankle-M5-shaft_1" pos="-0.11695000000001202 -0.0780000011622906 -0.05900000084936622" euler="1.1102230246250619e-16 -0.0 1.976004122941304e-31">
+                                                                                        <geom name="left-foot-ankle-M5-shaft_1_geom" type="mesh" mesh="left-foot-ankle-M5-shaft_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                        <geom name="left-foot-ankle-M5-shaft_1_collision" type="mesh" mesh="left-foot-ankle-M5-shaft_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                        <inertial mass="0.006" pos="0.10865200780465395 0.06527140662366276 0.03759700557493083" fullinertia="2.197175817055284e-08 5.338754104538195e-07 5.338754128983295e-07 -4.811147140404353e-18 -3.2210672941615562e-18 -8.639736067474646e-20" />
+                                                                                        <body name="left-ankle-joint-M5-circlip_1" pos="0.09350000000001232 0.09223451235799202 0.046559160282822906" euler="1.5707963267948966 2.9103274139960757e-15 1.5417580795849093e-15">
+                                                                                            <geom name="left-ankle-joint-M5-circlip_1_geom" type="mesh" mesh="left-ankle-joint-M5-circlip_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                            <geom name="left-ankle-joint-M5-circlip_1_collision" type="mesh" mesh="left-ankle-joint-M5-circlip_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                            <inertial mass="0.002" pos="4.9999999997073985e-05 -0.008962154707935302 0.026219512479825045" fullinertia="2.3309237216401036e-09 8.798013162890489e-10 1.4705516637986636e-09 -1.9129119684985748e-22 2.1308472238519212e-22 3.044052861565738e-22" />
+                                                                                        </body>
+                                                                                    </body>
+                                                                                </body>
+                                                                            </body>
+                                                                            <body name="left-foot-ankle-joint-R_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                                <geom name="left-foot-ankle-joint-R_1_geom" type="mesh" mesh="left-foot-ankle-joint-R_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                                <geom name="left-foot-ankle-joint-R_1_collision" type="mesh" mesh="left-foot-ankle-joint-R_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.006" pos="0.09605000000000935 0.052834874645179795 0.023790317849204785" fullinertia="6.81962098644532e-06 2.404551146975605e-06 4.502843880639079e-06 3.7164508460950424e-20 -1.1711560576184502e-21 -8.986505939119654e-07" />
+                                                                                <body name="MR105ZZ-LR_1" pos="0.0940500000000123 0.07800000116229061 0.059000000849366206" euler="-5.551115123125783e-17 -0.0 -3.851859888774472e-34">
+                                                                                    <geom name="MR105ZZ-LR_1_geom" type="mesh" mesh="MR105ZZ-LR_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                    <geom name="MR105ZZ-LR_1_collision" type="mesh" mesh="MR105ZZ-LR_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                    <inertial mass="0.00125" pos="0.0019999999999975857 -0.012728594538418835 -0.021402995274431867" fullinertia="1.983252071122013e-08 1.1725091317690606e-08 1.1725091380147427e-08 -7.707999820014355e-20 9.919360902640417e-20 -8.470329486575848e-22" />
+                                                                                </body>
+                                                                            </body>
+                                                                            <body name="left-foot-connector-R_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                                <geom name="left-foot-connector-R_1_geom" type="mesh" mesh="left-foot-connector-R_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                                <geom name="left-foot-connector-R_1_collision" type="mesh" mesh="left-foot-connector-R_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.03" pos="0.08875000000000893 -0.010936369559121712 0.036580760543002376" fullinertia="0.00010572899440550613 6.621153563214849e-05 4.0808387367487946e-05 1.0842021723448391e-19 7.267183421858099e-19 1.2566714256881266e-15" />
+                                                                                <body name="left-ankle-163010-Bearing-R_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                                    <geom name="left-ankle-163010-Bearing-R_1_geom" type="mesh" mesh="left-ankle-163010-Bearing-R_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                                                    <geom name="left-ankle-163010-Bearing-R_1_collision" type="mesh" mesh="left-ankle-163010-Bearing-R_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                    <inertial mass="0.028" pos="0.08875000000000881 -0.010936369558770994 0.05745468804151781" fullinertia="3.7604823344215805e-06 1.9747934919529895e-06 1.974793497938951e-06 -3.3474742075367888e-18 -5.221121660814921e-19 -1.0893148633552655e-15" />
+                                                                                </body>
+                                                                            </body>
+                                                                            <body name="left-foot-sole_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                                <geom name="left-foot-sole_1_geom" type="mesh" mesh="left-foot-sole_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                                                <geom name="left-foot-sole_1_collision" type="mesh" mesh="left-foot-sole_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" friction="1.0 0.005 0.0001" />
+                                                                                <inertial mass="0.07" pos="0.10750000000000183 -0.02743636955873233 -0.00042269341717839255" fullinertia="0.00260190654640155 0.00016078078496760753 0.002753085320713569 1.5612511283791917e-17 -2.986121606354878e-17 1.4362964323936105e-18" />
+                                                                            </body>
+                                                                        </body>
+                                                                    </body>
+                                                                </body>
+                                                            </body>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                            </body>
+                                        </body>
+                                        <body name="left-thigh-carbon-rod-1_1" pos="-3.375077994860464e-15 1.1546319456098246e-16 1.4921397450962103e-15" euler="-1.737831901403885e-17 8.015462024263301e-15 -7.012620600455936e-16">
+                                            <geom name="left-thigh-carbon-rod-1_1_geom" type="mesh" mesh="left-thigh-carbon-rod-1_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                            <geom name="left-thigh-carbon-rod-1_1_collision" type="mesh" mesh="left-thigh-carbon-rod-1_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                            <inertial mass="0.032" pos="0.18000000000000843 -0.08457825648958243 0.32908640547435075" fullinertia="0.0005991561314243575 0.000594715468162826 1.900081423754394e-05 -9.936539429021745e-32 -1.7347234759783085e-18 -5.075701333813032e-05" />
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+            <body name="waist_yaw_1" pos="2.0948429967619603e-67 -3.4211388289184004e-51 0.535" euler="0.0 -0.0 -3.141592653589793">
+                <geom name="waist_yaw_1_geom" type="mesh" mesh="waist_yaw_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                <geom name="waist_yaw_1_collision" type="mesh" mesh="waist_yaw_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                <inertial mass="1.1" pos="0.00015546547835337625 0.006467682111223549 0.033984288412442894" fullinertia="0.004469474422773456 0.004525275316692112 0.005057129974426105 1.9831425252021453e-05 1.4128220915754536e-05 -3.278170726267287e-05" />
+                <body name="waist-bottom-plate_1" pos="-7.792183644218499e-67 -3.4211388289184004e-51 -0.535" euler="0.0 -0.0 3.141592653589793">
+                    <joint name="waist_yaw" type="hinge" axis="-0.0 -0.0 -1.0" pos="0.0 -0.00684 0.608967" />
+                    <geom name="waist-bottom-plate_1_geom" type="mesh" mesh="waist-bottom-plate_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                    <geom name="waist-bottom-plate_1_collision" type="mesh" mesh="waist-bottom-plate_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                    <inertial mass="0.22" pos="1.6793006170216565e-14 -0.006945520753044144 0.6119674261869411" fullinertia="0.0019956855491548575 0.006767848490850992 0.008755026804192332 8.30805248056027e-17 2.2659924723093524e-17 -5.204170427930421e-18" />
+                    <body name="waist-holder_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                        <geom name="waist-holder_1_geom" type="mesh" mesh="waist-holder_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                        <geom name="waist-holder_1_collision" type="mesh" mesh="waist-holder_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                        <inertial mass="0.2" pos="-3.459462499598091e-16 -0.021371001886576688 0.6438808415794678" fullinertia="0.009017774003454049 0.02126527998059613 0.025194183400372064 1.2651656604443306e-15 -3.925467271618104e-16 0.000981240522785115" />
+                        <body name="battery_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                            <geom name="battery_1_geom" type="mesh" mesh="battery_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                            <geom name="battery_1_collision" type="mesh" mesh="battery_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                            <inertial mass="3.0" pos="3.1932834228438985e-09 0.0031194027094071947 0.662460698906032" fullinertia="0.039412690665283634 0.08266146022651988 0.10047421952734854 -4.076555106350172e-09 2.4538668072778466e-09 7.96198116484459e-06" />
+                        </body>
+                        <body name="torso-plate-right_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                            <geom name="torso-plate-right_1_geom" type="mesh" mesh="torso-plate-right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                            <geom name="torso-plate-right_1_collision" type="mesh" mesh="torso-plate-right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                            <inertial mass="0.2" pos="-0.11400000000000152 -0.012791074673789586 0.7438737950530306" fullinertia="0.01347514368985081 0.009532079516559322 0.003946590402064281 -9.365338365929787e-16 -5.689893001203927e-16 -0.000539055503199411" />
+                            <body name="90deg-bracketMirror_1" pos="0.007996927616540899 0.0021030726665856 0.7459" euler="-3.141592653589793 2.0816681711721619e-16 1.570796326794913">
+                                <geom name="90deg-bracketMirror_1_geom" type="mesh" mesh="90deg-bracketMirror_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                <geom name="90deg-bracketMirror_1_collision" type="mesh" mesh="90deg-bracketMirror_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                <inertial mass="0.0195" pos="-0.006943448100941455 -0.11572236607024047 0.1237349254235324" fullinertia="3.4708902116702134e-06 3.127441483717977e-05 2.9860140079002694e-05 -2.6385205500027156e-18 -4.045708370038289e-18 -8.93441165182151e-07" />
+                            </body>
+                            <body name="torso-cover-right_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                <geom name="torso-cover-right_1_geom" type="mesh" mesh="torso-cover-right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                <geom name="torso-cover-right_1_collision" type="mesh" mesh="torso-cover-right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                <inertial mass="0.28" pos="-0.12821291859328043 -0.013023348750667392 0.7411426327139575" fullinertia="0.07626469691392757 0.0542672508500468 0.02283131476237027 -1.8993020721660633e-05 -0.00021383535441610313 -0.003263477407008747" />
+                                <body name="torso-support-rod-2_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                    <geom name="torso-support-rod-2_1_geom" type="mesh" mesh="torso-support-rod-2_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                    <geom name="torso-support-rod-2_1_collision" type="mesh" mesh="torso-support-rod-2_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                    <inertial mass="0.04" pos="-3.89519783211334e-14 -0.08084037653703954 0.7101673199021964" fullinertia="1.3849899709150737e-05 0.0013013578841874346 0.0013013578841871785 5.492994531065056e-19 -8.34975133555677e-18 -1.0408340855860843e-17" />
+                                </body>
+                                <body name="right-shoulder-pitch_1" pos="-0.27192081311602906 -0.0112894635449463 0.7741486504289741" euler="-3.1415926535895586 1.5707963267948453 0">
+                                    <geom name="right-shoulder-pitch_1_geom" type="mesh" mesh="right-shoulder-pitch_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                    <geom name="right-shoulder-pitch_1_collision" type="mesh" mesh="right-shoulder-pitch_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                    <inertial mass="1.1" pos="-0.052866387108090905 0.00039205078170380565 -0.16390509671872464" fullinertia="0.0044690943602792455 0.004524853254866052 0.005057089209298052 1.9831103475585458e-05 1.4256443814889518e-05 -3.2785913235626754e-05" />
+                                    <body name="shoulder-roll-bracket-right_1" pos="0.13789488578741882 -0.01128946354477206 0.7431692367610526" euler="3.141592653589558 4.4603210014316226e-14 -2.2515313931250917e-15">
+                                        <joint name="shoulder_pitch_right" type="hinge" axis="-6.800116025829082e-15 -3.6830297892467406e-16 1.0" pos="-0.1909162353584125 -0.012054000000000018 0.8670900498770847" />
+                                        <geom name="shoulder-roll-bracket-right_1_geom" type="mesh" mesh="shoulder-roll-bracket-right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                        <geom name="shoulder-roll-bracket-right_1_collision" type="mesh" mesh="shoulder-roll-bracket-right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                        <inertial mass="0.095" pos="-0.18961823624085491 -0.009251521558499976 0.8303427501510197" fullinertia="0.002133431431958251 0.0029086069012080884 0.002321451730741276 -1.7883121786821934e-05 3.3211240744567095e-05 2.4177800207698602e-05" />
+                                        <body name="right-shoulder-roll_1" pos="-0.18955035915021193 0.0196861326051536 0.7697987523388281" euler="-1.570796326794897 -5.201394870368865e-14 -3.141592653589792">
+                                            <geom name="right-shoulder-roll_1_geom" type="mesh" mesh="right-shoulder-roll_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                            <geom name="right-shoulder-roll_1_collision" type="mesh" mesh="right-shoulder-roll_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                            <inertial mass="0.32" pos="-2.940345047016216e-05 -0.05552283500899922 0.04305771583748913" fullinertia="0.0007528776230126197 0.0007543932516167473 0.0006275213373837518 -4.288378534501301e-07 -7.959948056806203e-07 4.552166765852496e-06" />
+                                            <body name="shoulder-yaw-right-bracket_1" pos="-0.8255006813903331 -0.24524637189623175 0.019686132605153436" euler="-1.5707963267948966 -1.539425817300155e-17 -1.5707963267948966">
+                                                <joint name="shoulder_roll_right" type="hinge" axis="9.383438837845715e-29 1.0 -1.5251742968821291e-15" pos="-0.189547074357975 -0.05385400000000019 0.8254975575985364" range="-0.174533 2.96706" limited="true" />
+                                                <geom name="shoulder-yaw-right-bracket_1_geom" type="mesh" mesh="shoulder-yaw-right-bracket_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                <geom name="shoulder-yaw-right-bracket_1_collision" type="mesh" mesh="shoulder-yaw-right-bracket_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                <inertial mass="0.1" pos="-0.20202025985106803 -0.013748199930377214 0.76831543657789" fullinertia="0.003723559609819218 0.0024401352904328544 0.0025817421925114553 -4.345014348416712e-06 -0.00030172629398907364 -8.800439586561417e-06" />
+                                                <body name="shoulder-yaw-right-bracket-cover-R_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                    <geom name="shoulder-yaw-right-bracket-cover-R_1_geom" type="mesh" mesh="shoulder-yaw-right-bracket-cover-R_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                    <geom name="shoulder-yaw-right-bracket-cover-R_1_collision" type="mesh" mesh="shoulder-yaw-right-bracket-cover-R_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                    <inertial mass="0.004" pos="-0.18940345334712205 0.0326457571707975 0.825659978826458" fullinertia="4.359685043517358e-06 8.665657334962218e-06 4.359685043519527e-06 1.3143661818760522e-32 -1.2740026582121565e-31 -2.2340779275909596e-19" />
+                                                </body>
+                                                <body name="shoulder-yaw-right-bracket-cover-F_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                    <geom name="shoulder-yaw-right-bracket-cover-F_1_geom" type="mesh" mesh="shoulder-yaw-right-bracket-cover-F_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                    <geom name="shoulder-yaw-right-bracket-cover-F_1_collision" type="mesh" mesh="shoulder-yaw-right-bracket-cover-F_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                    <inertial mass="0.004" pos="-0.189547400997468 -0.06035424282920255 0.8254977232375924" fullinertia="4.3596850435104195e-06 8.66565733495181e-06 4.3596850435199605e-06 -1.626303258728165e-19 -2.6020852139657707e-18 -2.2340779275908893e-19" />
+                                                </body>
+                                                <body name="shoulder-yaw-right_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                    <geom name="shoulder-yaw-right_1_geom" type="mesh" mesh="shoulder-yaw-right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                    <geom name="shoulder-yaw-right_1_collision" type="mesh" mesh="shoulder-yaw-right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                    <inertial mass="0.32" pos="-0.20654349271526412 -0.013880674790064745 0.7439529966664851" fullinertia="0.0007516123617358225 0.0007517807777610575 0.0006292025641994792 -3.5265608155017496e-07 -1.5786847217001433e-05 8.104713040948957e-07" />
+                                                    <body name="elbow-pitch-right-bracket_1" pos="-1.6697754290362355e-15 -1.350031197944191e-15 -2.842170943040401e-16" euler="-1.5139592548078688e-15 1.0187996986964892e-15 1.2818851747462606e-16">
+                                                        <joint name="shoulder_yaw_right" type="hinge" axis="0.08715599999994046 -2.95898516486891e-23 0.9961950000000053" pos="-0.20937507435796754 -0.013854000000000066 0.7135995575985351" />
+                                                        <geom name="elbow-pitch-right-bracket_1_geom" type="mesh" mesh="elbow-pitch-right-bracket_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                        <geom name="elbow-pitch-right-bracket_1_collision" type="mesh" mesh="elbow-pitch-right-bracket_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                        <inertial mass="0.042" pos="-0.209586338372218 -0.013853945293625627 0.6747042504407271" fullinertia="0.0008467229195564005 0.0006003196257427514 0.0004510991731108493 -3.865035961857672e-08 -2.2396784007731844e-05 1.2286019731699044e-07" />
+                                                        <body name="elbow-pitch-right_1" pos="-0.9603219456895761 5.37858646509903e-14 0.8860942210939581" euler="1.2907243357977213e-13 1.570796326794676 0">
+                                                            <geom name="elbow-pitch-right_1_geom" type="mesh" mesh="elbow-pitch-right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                            <geom name="elbow-pitch-right_1_collision" type="mesh" mesh="elbow-pitch-right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                            <inertial mass="0.32" pos="0.21912187572320638 -0.01403049744925217 0.7497177760468478" fullinertia="0.0007513251163138682 0.0007535853084793553 0.0006282758684500423 8.20405435309328e-07 -9.881804065246486e-06 4.487601057193585e-06" />
+                                                            <body name="upper-shin-inner-right_1" pos="0.8860942210939244 2.7754383005060513e-14 0.960321945689549" euler="1.0722212179106628e-14 -1.5707963267947715 0">
+                                                                <joint name="elbow_pitch_right" type="hinge" axis="0.9961950000000156 -5.1482092062473897e-20 -0.08715599999982049" pos="-0.24097407435796483 -0.01385400000000116 0.669602557598531" range="-1.919862 1.919862" limited="true" />
+                                                                <geom name="upper-shin-inner-right_1_geom" type="mesh" mesh="upper-shin-inner-right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                                <geom name="upper-shin-inner-right_1_collision" type="mesh" mesh="upper-shin-inner-right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                <inertial mass="0.02" pos="-0.24512329100824204 -0.013854242829176506 0.6702237603683245" fullinertia="0.0002481719530114982 0.0001267506773556526 0.00012670515538863345 2.2176738924064723e-15 -1.0413280148133568e-05 4.972867086976206e-14" />
+                                                                <body name="upper-shin-outer-right_1" pos="4.492564215558797e-05 -1.458612853247582e-13 -0.00030344240142851837" euler="-2.2302194731732694e-13 -1.8017531910885078e-13 1.9511892107766652e-14">
+                                                                    <geom name="upper-shin-outer-right_1_geom" type="mesh" mesh="upper-shin-outer-right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                    <geom name="upper-shin-outer-right_1_collision" type="mesh" mesh="upper-shin-outer-right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                    <inertial mass="0.032" pos="-0.2593735402317934 -0.013854237476138467 0.6747730704239314" fullinertia="0.0005146540591769999 0.00028471720160833103 0.0002808752116736854 3.426674742568192e-11 -2.5749826759985384e-05 1.1852396321343495e-10" />
+                                                                    <body name="upper-shin-cover-right_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                        <geom name="upper-shin-cover-right_1_geom" type="mesh" mesh="upper-shin-cover-right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                        <geom name="upper-shin-cover-right_1_collision" type="mesh" mesh="upper-shin-cover-right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.004" pos="-0.2689127192210054 -0.013854242829236198 0.6723468593029065" fullinertia="5.755223534582854e-06 2.896509893967822e-06 2.918391240857828e-06 -4.0657581468206416e-20 -2.5010503637741544e-07 2.7701365507004638e-17" />
+                                                                    </body>
+                                                                    <body name="18mm-CF-tube-shin-right-R_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                        <geom name="18mm-CF-tube-shin-right-R_1_geom" type="mesh" mesh="18mm-CF-tube-shin-right-R_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                        <geom name="18mm-CF-tube-shin-right-R_1_collision" type="mesh" mesh="18mm-CF-tube-shin-right-R_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.014" pos="-0.26131616998132895 0.008145757170798856 0.6214912554853513" fullinertia="6.784873345387979e-05 6.83288024575443e-05 5.609661488454459e-06 1.0842021724855044e-19 -5.487213820872666e-06 -3.2526065174565133e-19" />
+                                                                    </body>
+                                                                    <body name="18mm-CF-tube-shin-right-F_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                        <geom name="18mm-CF-tube-shin-right-F_1_geom" type="mesh" mesh="18mm-CF-tube-shin-right-F_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                        <geom name="18mm-CF-tube-shin-right-F_1_collision" type="mesh" mesh="18mm-CF-tube-shin-right-F_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.014" pos="-0.26131616998132917 -0.03585424282920124 0.6214912554853516" fullinertia="6.784873345386244e-05 6.832880245753736e-05 5.6096614884501225e-06 5.421010862427522e-19 -5.487213820876136e-06 4.336808689942018e-19" />
+                                                                        <body name="lower-shin-outer-right_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                            <geom name="lower-shin-outer-right_1_geom" type="mesh" mesh="lower-shin-outer-right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                            <geom name="lower-shin-outer-right_1_collision" type="mesh" mesh="lower-shin-outer-right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                            <inertial mass="0.032" pos="-0.2686553375098373 -0.013854246337685687 0.5686815179292929" fullinertia="0.0005164098876044854 0.00028471575023286677 0.0002791170909525603 -4.466988411111483e-12 -1.5781749097790176e-05 8.162501057007443e-11" />
+                                                                            <body name="lower-shin-cover-right_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                                <geom name="lower-shin-cover-right_1_geom" type="mesh" mesh="lower-shin-cover-right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                                <geom name="lower-shin-cover-right_1_collision" type="mesh" mesh="lower-shin-cover-right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.004" pos="-0.27762829349584356 -0.013854242829235974 0.5727273894937304" fullinertia="5.755223534712958e-06 2.8965098941204775e-06 2.918391240887535e-06 -1.4501204056993622e-18 -2.5010503631843484e-07 3.0791341698588326e-17" />
+                                                                            </body>
+                                                                            <body name="lower-shin-inner-right_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                                <geom name="lower-shin-inner-right_1_geom" type="mesh" mesh="lower-shin-inner-right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                                                <geom name="lower-shin-inner-right_1_collision" type="mesh" mesh="lower-shin-inner-right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.02" pos="-0.2539285404521339 -0.013854242299278086 0.5703961975948265" fullinertia="0.00024807063058326917 0.00012675055136238123 0.00012680619020949066 6.657124938108661e-13 -1.098678619867316e-05 -4.3895516561864856e-12" />
+                                                                                <body name="wrist-pitch-right_1" pos="-0.9603219456895821 7.713829575095591e-14 0.7760942210939581" euler="1.2907243357991112e-13 1.570796326794676 0">
+                                                                                    <joint name="wrist_pitch_right" type="hinge" axis="-0.08715599999994038 -1.1007909471265386e-13 -0.9961950000000053" pos="0.20580722109391264 -0.013854000000029112 0.7105869456895961" range="-2.094395 2.094395" limited="true" />
+                                                                                    <geom name="wrist-pitch-right_1_geom" type="mesh" mesh="wrist-pitch-right_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                                    <geom name="wrist-pitch-right_1_collision" type="mesh" mesh="wrist-pitch-right_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                    <inertial mass="0.32" pos="0.20843792268908304 -0.014030492205632145 0.7409574173499581" fullinertia="0.000751244147403582 0.0007535026493822323 0.0006282746013545593 8.199886295668984e-07 -9.867000876620634e-06 4.485725459611332e-06" />
+                                                                                    <body name="wrist-pitch-right-bracket_1" pos="0.7760942210939007 -1.1794309885178957e-13 0.9603219456896285" euler="-2.1228852009613047e-13 -1.5707963267947544 0">
+                                                                                        <geom name="wrist-pitch-right-bracket_1_geom" type="mesh" mesh="wrist-pitch-right-bracket_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                                        <geom name="wrist-pitch-right-bracket_1_collision" type="mesh" mesh="wrist-pitch-right-bracket_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                        <inertial mass="0.042" pos="-0.2197118548140946 -0.013853973898322505 0.5597883803822006" fullinertia="0.0008412348159257954 0.0005983361725865055 0.0004546030346944917 -3.819731484019581e-08 -4.2380944674236254e-05 9.805824385637762e-08" />
+                                                                                    </body>
+                                                                                </body>
+                                                                            </body>
+                                                                        </body>
+                                                                    </body>
+                                                                </body>
+                                                            </body>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                            </body>
+                                        </body>
+                                        <body name="right-shoulder-roll-CRBTF305AT-Bearing_1" pos="-0.1594140402378921 0.0323861326051533 0.8210018779430936" euler="1.4835298641951802 -2.38685688791572e-16 1.5707963267948966">
+                                            <geom name="right-shoulder-roll-CRBTF305AT-Bearing_1_geom" type="mesh" mesh="right-shoulder-roll-CRBTF305AT-Bearing_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                            <geom name="right-shoulder-roll-CRBTF305AT-Bearing_1_collision" type="mesh" mesh="right-shoulder-roll-CRBTF305AT-Bearing_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                            <inertial mass="0.021" pos="-0.008780462857700415 0.007262007530281961 -0.029487196069245557" fullinertia="5.0518985164796387e-05 2.5437898249550215e-05 2.543789965194265e-05 1.7520556501097616e-11 1.4227582065465081e-11 -3.3391608531868524e-12" />
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                            <body name="frontal-cover-upper-part_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                <geom name="frontal-cover-upper-part_1_geom" type="mesh" mesh="frontal-cover-upper-part_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                <geom name="frontal-cover-upper-part_1_collision" type="mesh" mesh="frontal-cover-upper-part_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                <inertial mass="0.32" pos="-3.0733248078168164e-10 -0.00337211540382132 0.8531264706204001" fullinertia="0.03565973380711851 0.03792144996283309 0.056901488816583204 -4.024775640370015e-12 -5.931936711833978e-12 -0.007942932860964196" />
+                                <body name="visor_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                    <geom name="visor_1_geom" type="mesh" mesh="visor_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                    <geom name="visor_1_collision" type="mesh" mesh="visor_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                    <inertial mass="0.48" pos="-4.0767384079586066e-14 -0.03053934209524943 0.9072121517311829" fullinertia="0.05323426193746705 0.05219740649978277 0.08136366795543556 3.300659102854809e-15 -1.4265485181773745e-15 -0.007105295529460931" />
+                                    <body name="visor-screen_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                        <geom name="visor-screen_1_geom" type="mesh" mesh="visor-screen_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="visor_screen_tinted_black" />
+                                        <geom name="visor-screen_1_collision" type="mesh" mesh="visor-screen_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                        <inertial mass="0.2" pos="-3.6784181483158726e-14 -0.1062133572748526 0.8697385143938445" fullinertia="0.00019668381914653144 0.0007325425731520563 0.0005390172894033742 -7.295037426864751e-19 2.8283914797551296e-18 -1.710083543404392e-05" />
+                                        <body name="eye-L_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                            <geom name="eye-L_1_geom" type="mesh" mesh="eye-L_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="eye_led" />
+                                            <geom name="eye-L_1_collision" type="mesh" mesh="eye-L_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                            <inertial mass="0.0" pos="0.03499999999998156 -0.10575695572632919 0.8860210727986111" fullinertia="4.4318134575973417e-07 6.429215390958178e-07 2.0646457354381355e-07 0.0 -2.0328790734103208e-20 -3.844637212191133e-08" />
+                                        </body>
+                                        <body name="eye-R_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                            <geom name="eye-R_1_geom" type="mesh" mesh="eye-R_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="eye_led" />
+                                            <geom name="eye-R_1_collision" type="mesh" mesh="eye-R_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                            <inertial mass="0.0" pos="-0.03499999999999393 -0.10575695572632919 0.8860210727986111" fullinertia="4.431813457588668e-07 6.429215390949504e-07 2.0646457354380339e-07 8.470329472543003e-22 -1.3552527156068805e-20 -3.844637212196554e-08" />
+                                        </body>
+                                    </body>
+                                </body>
+                                <body name="frontal-cover_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                    <geom name="frontal-cover_1_geom" type="mesh" mesh="frontal-cover_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                    <geom name="frontal-cover_1_collision" type="mesh" mesh="frontal-cover_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                    <inertial mass="0.29" pos="-1.469987097674035e-15 -0.10163390936354723 0.6880142550765481" fullinertia="0.016364587091784344 0.042427458868955714 0.027164692923949393 -4.592430900560156e-18 -2.9834801446841757e-17 0.00026656073540315406" />
+                                </body>
+                                <body name="back-cover_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                    <geom name="back-cover_1_geom" type="mesh" mesh="back-cover_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                    <geom name="back-cover_1_collision" type="mesh" mesh="back-cover_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                    <inertial mass="0.07" pos="5.73348517727298e-14 0.07930796789779666 0.7661623493081249" fullinertia="0.0009139359217429921 0.0030009941557976316 0.0020925223904781024 3.5836659224886984e-17 -2.7098397966107813e-17 -2.1846437032638222e-05" />
+                                </body>
+                                <body name="back-cover-left-holder_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                    <geom name="back-cover-left-holder_1_geom" type="mesh" mesh="back-cover-left-holder_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                    <geom name="back-cover-left-holder_1_collision" type="mesh" mesh="back-cover-left-holder_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                    <inertial mass="0.015" pos="0.1037201428493496 0.07387442001041815 0.7712503430366315" fullinertia="0.0003011490806909267 0.00030461011886340206 1.4718930005367357e-05 2.445323979264214e-06 8.608310457406537e-06 -8.683878909218623e-07" />
+                                </body>
+                                <body name="back-cover-right-holder_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                    <geom name="back-cover-right-holder_1_geom" type="mesh" mesh="back-cover-right-holder_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                    <geom name="back-cover-right-holder_1_collision" type="mesh" mesh="back-cover-right-holder_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                    <inertial mass="0.015" pos="-0.1037201428493558 0.073874420010409 0.7712503430366264" fullinertia="0.00030114908069139856 0.00030461011886390166 1.4718930005388608e-05 -2.4453239792681172e-06 -8.608310457406537e-06 -8.683878909374748e-07" />
+                                </body>
+                                <body name="torso-plate-left_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                    <geom name="torso-plate-left_1_geom" type="mesh" mesh="torso-plate-left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                    <geom name="torso-plate-left_1_collision" type="mesh" mesh="torso-plate-left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                    <inertial mass="0.2" pos="0.11399999999999869 -0.012791074673787504 0.7438737950530478" fullinertia="0.013475143689853475 0.009532079516561986 0.0039465904020643955 9.593020822151743e-16 6.106226635438361e-16 -0.0005390555031993902" />
+                                    <body name="90deg-bracket_1" pos="-0.00799692761654089 0.0021030726665856 0.7459" euler="-2.5353513761238183e-31 2.0816681711721619e-16 1.5707963267948803">
+                                        <geom name="90deg-bracket_1_geom" type="mesh" mesh="90deg-bracket_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                        <geom name="90deg-bracket_1_collision" type="mesh" mesh="90deg-bracket_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                        <inertial mass="0.00195" pos="-0.0069434481009416705 -0.11572236607023692 -0.12373492542353538" fullinertia="3.470890211673683e-06 3.127441483718324e-05 2.9860140079008874e-05 -2.332816986161044e-18 2.7446905610294872e-18 8.934411651830183e-07" />
+                                    </body>
+                                    <body name="torso-cover-left_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                        <geom name="torso-cover-left_1_geom" type="mesh" mesh="torso-cover-left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                        <geom name="torso-cover-left_1_collision" type="mesh" mesh="torso-cover-left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                        <inertial mass="0.28" pos="0.12821286569526716 -0.013023316265043161 0.7411423517928712" fullinertia="0.07626643994569804 0.0542690710187923 0.02283134499557163 1.899823263226859e-05 0.00021352593910106688 -0.003263422916600728" />
+                                        <body name="torso-support-rod-1_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                            <geom name="torso-support-rod-1_1_geom" type="mesh" mesh="torso-support-rod-1_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                            <geom name="torso-support-rod-1_1_collision" type="mesh" mesh="torso-support-rod-1_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                            <inertial mass="0.04" pos="-3.9014804092618735e-14 -0.08084037653703945 0.6701673193061494" fullinertia="1.3849899709025837e-05 0.0013013578841873236 0.0013013578841871954 -3.318924173299428e-19 5.278084479726027e-19 1.5612511283791264e-17" />
+                                        </body>
+                                        <body name="left-shoulder-pitch_1" pos="0.27589988285231604 -0.0149546975914822 0.7861863696123841" euler="3.1415926535897625 -1.5707963267946834 0">
+                                            <geom name="left-shoulder-pitch_1_geom" type="mesh" mesh="left-shoulder-pitch_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                            <geom name="left-shoulder-pitch_1_collision" type="mesh" mesh="left-shoulder-pitch_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                            <inertial mass="1.1" pos="0.04113952917963361 -0.0032732044875456033 -0.16788418949492992" fullinertia="0.004469074655804126 0.0045248500295735836 0.0050571053757582085 1.982941652135365e-05 1.4025877572890989e-05 -3.2776825200599034e-05" />
+                                            <body name="shoulder-roll-bracket-left_1" pos="-0.7861863696123709 -0.014954697591312611 -0.27589988285236294" euler="3.1415926535895884 -1.5707963267948302 0">
+                                                <joint name="shoulder_pitch_left" type="hinge" axis="-1.0 0.0 0.0" pos="0.148 -0.012054 0.82717" />
+                                                <geom name="shoulder-roll-bracket-left_1_geom" type="mesh" mesh="shoulder-roll-bracket-left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                <geom name="shoulder-roll-bracket-left_1_collision" type="mesh" mesh="shoulder-roll-bracket-left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                <inertial mass="0.095" pos="0.18474692198158366 -0.009251523412449511 0.8258721393734529" fullinertia="0.002321373045352848 0.0029079062087475904 0.002132809499956423 -2.4171212107862005e-05 3.3079910524647094e-05 1.7880737255724852e-05" />
+                                                <body name="left-shoulder-roll_1" pos="0.19298811632809304 0.019686132605153502 0.798346884044129" euler="-1.5707963267948968 -5.190292640122605e-14 -3.141592653589792">
+                                                    <geom name="left-shoulder-roll_1_geom" type="mesh" mesh="left-shoulder-roll_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                    <geom name="left-shoulder-roll_1_collision" type="mesh" mesh="left-shoulder-roll_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                    <inertial mass="0.32" pos="0.003414276295682027 -0.026974644693306658 0.04305771645847351" fullinertia="0.0007528819036248802 0.0007543932093647954 0.000627525588675848 -4.290041712429904e-07 -7.957347893778327e-07 4.55440247129969e-06" />
+                                                    <body name="shoulder-yaw-left-bracket_1" pos="0.19298811632805166 0.798346884044139 0.01968613260515334" euler="-1.5707963267948968 -1.59594559789866e-15 -3.141592653589741">
+                                                        <joint name="shoulder_roll_left" type="hinge" axis="0.0 1.0 0.0" pos="0.189547 -0.053854 0.825498" range="-2.96706 0.174533" limited="true" />
+                                                        <geom name="shoulder-yaw-left-bracket_1_geom" type="mesh" mesh="shoulder-yaw-left-bracket_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                        <geom name="shoulder-yaw-left-bracket_1_collision" type="mesh" mesh="shoulder-yaw-left-bracket_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                        <inertial mass="0.1" pos="0.20202022211930604 -0.013748200769229488 0.768315333056629" fullinertia="0.0037236875911721423 0.0024402705167918537 0.002581750270435057 4.345456295238789e-06 0.0003016921657325866 -8.798819952806139e-06" />
+                                                        <body name="shoulder-yaw-left-bracket-cover-F_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                            <geom name="shoulder-yaw-left-bracket-cover-F_1_geom" type="mesh" mesh="shoulder-yaw-left-bracket-cover-F_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                            <geom name="shoulder-yaw-left-bracket-cover-F_1_collision" type="mesh" mesh="shoulder-yaw-left-bracket-cover-F_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                            <inertial mass="0.004" pos="0.18954740099746606 -0.060354242829200704 0.825497723237595" fullinertia="4.359685043520828e-06 8.665657334958748e-06 4.359685043519527e-06 -1.0842021724855044e-19 0.0 4.336808689942018e-19" />
+                                                        </body>
+                                                        <body name="shoulder-yaw-left-bracket-cover-R_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                            <geom name="shoulder-yaw-left-bracket-cover-R_1_geom" type="mesh" mesh="shoulder-yaw-left-bracket-cover-R_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                            <geom name="shoulder-yaw-left-bracket-cover-R_1_collision" type="mesh" mesh="shoulder-yaw-left-bracket-cover-R_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                            <inertial mass="0.004" pos="0.18940345334712005 0.0326457571707993 0.8256599788264611" fullinertia="4.359685043524297e-06 8.665657334965687e-06 4.359685043519744e-06 2.710505431213761e-20 0.0 -3.2526065174565133e-19" />
+                                                        </body>
+                                                        <body name="shoulder-yaw-left_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                            <geom name="shoulder-yaw-left_1_geom" type="mesh" mesh="shoulder-yaw-left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                            <geom name="shoulder-yaw-left_1_collision" type="mesh" mesh="shoulder-yaw-left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                            <inertial mass="0.32" pos="0.20654349271504838 -0.013827869147925722 0.7439529966666107" fullinertia="0.0007516123643862005 0.0007517807776978858 0.0006292025669128384 -3.6327375122066283e-07 1.5786847237853063e-05 -8.487153129264208e-07" />
+                                                            <body name="elbow-pitch-left-bracket_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                <joint name="shoulder_yaw_left" type="hinge" axis="-0.087156 0.0 0.996195" pos="0.209375 -0.013854 0.7136" />
+                                                                <geom name="elbow-pitch-left-bracket_1_geom" type="mesh" mesh="elbow-pitch-left-bracket_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                <geom name="elbow-pitch-left-bracket_1_collision" type="mesh" mesh="elbow-pitch-left-bracket_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                <inertial mass="0.042" pos="0.20958623136626447 -0.013853945881961816 0.6747038471314215" fullinertia="0.0008469078095464377 0.0006005229403220347 0.0004511171721554262 3.9900059042776576e-08 2.2338978818259303e-05 1.2683266624024386e-07" />
+                                                                <body name="elbow-pitch-left_1" pos="0.9603219456895761 0.0 0.490999419098934" euler="-0.0 -1.5707963267948368 0">
+                                                                    <geom name="elbow-pitch-left_1_geom" type="mesh" mesh="elbow-pitch-left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                    <geom name="elbow-pitch-left_1_collision" type="mesh" mesh="elbow-pitch-left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                    <inertial mass="0.32" pos="0.17592096079974232 -0.014030546874190267 0.7497137239894679" fullinertia="0.0007506911053089037 0.0007532307054425313 0.0006285561280716682 2.4981229858755305e-08 1.1926850165537942e-05 4.556202838284109e-06" />
+                                                                    <body name="upper-shin-inner-left_1" pos="-0.49099941909899153 0.0 0.9603219456895467" euler="-0.0 1.5707963267948368 0">
+                                                                        <joint name="elbow_pitch_left" type="hinge" axis="-0.996195 0.0 -0.087156" pos="0.240974 -0.013854 0.669603" range="-1.919862 1.919862" limited="true" />
+                                                                        <geom name="upper-shin-inner-left_1_geom" type="mesh" mesh="upper-shin-inner-left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                                        <geom name="upper-shin-inner-left_1_collision" type="mesh" mesh="upper-shin-inner-left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                        <inertial mass="0.02" pos="0.24512329128646798 -0.01385424392418478 0.6702237169851897" fullinertia="0.00024817256383422026 0.00012675104294543327 0.00012670542029208712 -3.8640314906079887e-13 1.0413282350962838e-05 -9.10368351883517e-12" />
+                                                                        <body name="upper-shin-outer-left_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                            <geom name="upper-shin-outer-left_1_geom" type="mesh" mesh="upper-shin-outer-left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                            <geom name="upper-shin-outer-left_1_collision" type="mesh" mesh="upper-shin-outer-left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                            <inertial mass="0.032" pos="0.25932857927995867 -0.013854227459972617 0.6744695863249713" fullinertia="0.0005146551509772612 0.00028471812495622917 0.0002808756593539949 1.3934843686932985e-10 2.5749127949531436e-05 3.295228274274864e-10" />
+                                                                            <body name="upper-shin-cover-left_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                                                                                <geom name="upper-shin-cover-left_1_geom" type="mesh" mesh="upper-shin-cover-left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                                <geom name="upper-shin-cover-left_1_collision" type="mesh" mesh="upper-shin-cover-left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.004" pos="0.26886779357900803 -0.013854242829235544 0.6720434169014425" fullinertia="5.755223534588058e-06 2.8965098939695566e-06 2.918391240858695e-06 4.0657581468206416e-20 2.501050363782828e-07 -2.7592945289756088e-17" />
+                                                                            </body>
+                                                                            <body name="18mm-CF-tube-shin-left-F_1" pos="7.971823433088332e-06 0.00134943033063275 -9.111835879807018e-05" euler="5.099138342470889e-19 -4.336808689942018e-19 -1.734723475976807e-18">
+                                                                                <geom name="18mm-CF-tube-shin-left-F_1_geom" type="mesh" mesh="18mm-CF-tube-shin-left-F_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                                <geom name="18mm-CF-tube-shin-left-F_1_collision" type="mesh" mesh="18mm-CF-tube-shin-left-F_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.014" pos="0.2612632725158975 -0.037203673159833396 0.6212789314426846" fullinertia="6.78487334538555e-05 6.83288024575304e-05 5.6096614884587944e-06 -6.506370370627723e-19 5.487213820881339e-06 -4.34591303603715e-19" />
+                                                                                <body name="lower-shin-outer-left_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 5.796656434909494e-36">
+                                                                                    <geom name="lower-shin-outer-left_1_geom" type="mesh" mesh="lower-shin-outer-left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                                    <geom name="lower-shin-outer-left_1_collision" type="mesh" mesh="lower-shin-outer-left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                    <inertial mass="0.032" pos="0.26860242909474447 -0.0152036530500249 0.568469253155216" fullinertia="0.0005164116853144662 0.0002847173045549266 0.0002791176192784155 1.5036338970757218e-10 1.578193994868082e-05 -3.700570032733602e-10" />
+                                                                                    <body name="lower-shin-cover-left_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 5.796656434909494e-36">
+                                                                                        <geom name="lower-shin-cover-left_1_geom" type="mesh" mesh="lower-shin-cover-left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                                        <geom name="lower-shin-cover-left_1_collision" type="mesh" mesh="lower-shin-cover-left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                        <inertial mass="0.004" pos="0.277575396030414 -0.01520367315986812 0.5725150654510681" fullinertia="5.755223534659182e-06 2.896509894054557e-06 2.9183912408732226e-06 8.538043137206411e-19 2.5010503634402196e-07 -2.612930958404438e-17" />
+                                                                                    </body>
+                                                                                    <body name="lower-shin-inner-left_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 5.796656434909494e-36">
+                                                                                        <geom name="lower-shin-inner-left_1_geom" type="mesh" mesh="lower-shin-inner-left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_black" />
+                                                                                        <geom name="lower-shin-inner-left_1_collision" type="mesh" mesh="lower-shin-inner-left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                        <inertial mass="0.02" pos="0.2538756432569027 -0.015203673729113118 0.5701839185689042" fullinertia="0.0002480712683499142 0.00012675093777957108 0.00012680646166492513 -6.120481727744955e-13 1.0986784000965864e-05 4.696141911211551e-12" />
+                                                                                        <body name="wrist-pitch-left_1" pos="0.9603219456895741 3.552713678800501e-17 0.390999419098932" euler="-3.469446951953611e-18 -1.5707963267948368 0">
+                                                                                            <joint name="wrist_pitch_left" type="hinge" axis="0.0871560000000596 3.5006877564389805e-18 -0.9961949999999948" pos="0.1790756992598236 -0.015203430330632779 0.7106399175130179" range="-2.094395 2.094395" limited="true" />
+                                                                                            <geom name="wrist-pitch-left_1_geom" type="mesh" mesh="wrist-pitch-left_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                                            <geom name="wrist-pitch-left_1_collision" type="mesh" mesh="wrist-pitch-left_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                            <inertial mass="0.32" pos="0.1763925623938771 -0.015379972412653329 0.7410059296349609" fullinertia="0.0007508254615799775 0.0007533715084447332 0.000628561470984114 2.508111413754497e-08 1.1898573585849102e-05 4.556668687813201e-06" />
+                                                                                            <body name="wrist-pitch-left-bracket_1" pos="-0.39099941909898944 -3.885780586188048e-17 0.9603219456895506" euler="9.829946436152454e-31 1.5707963267948368 0">
+                                                                                                <geom name="wrist-pitch-left-bracket_1_geom" type="mesh" mesh="wrist-pitch-left-bracket_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_white" />
+                                                                                                <geom name="wrist-pitch-left-bracket_1_collision" type="mesh" mesh="wrist-pitch-left-bracket_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                                <inertial mass="0.042" pos="0.2196589158724941 -0.015203394519299187 0.5595761028427244" fullinertia="0.0008412316435938427 0.0005983316795749591 0.00045460267122963613 4.21157122503381e-08 4.238135907214113e-05 1.0731408273903424e-07" />
+                                                                                            </body>
+                                                                                        </body>
+                                                                                    </body>
+                                                                                </body>
+                                                                            </body>
+                                                                            <body name="18mm-CF-tube-shin-left-R_1" pos="7.971823433088332e-06 0.00134943033063275 -9.111835879807018e-05" euler="5.099138342470889e-19 -4.336808689942018e-19 -1.734723475976807e-18">
+                                                                                <geom name="18mm-CF-tube-shin-left-R_1_geom" type="mesh" mesh="18mm-CF-tube-shin-left-R_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                                                                <geom name="18mm-CF-tube-shin-left-R_1_collision" type="mesh" mesh="18mm-CF-tube-shin-left-R_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                                                <inertial mass="0.014" pos="0.26126327251589754 0.006796326840166741 0.6212789314426852" fullinertia="6.784873345383816e-05 6.832880245748182e-05 5.609661488446651e-06 -5.432584219574485e-20 5.4872138208744e-06 -1.6354076048233838e-19" />
+                                                                            </body>
+                                                                        </body>
+                                                                    </body>
+                                                                </body>
+                                                            </body>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                                <body name="left-shoulder-roll-CRBTF305AT-Bearing_1" pos="0.19680000000001102 0.0323861326051534 0.796002886966602" euler="2.6530707325879098e-17 2.7646611893095902e-17 1.5707963267948966">
+                                                    <geom name="left-shoulder-roll-CRBTF305AT-Bearing_1_geom" type="mesh" mesh="left-shoulder-roll-CRBTF305AT-Bearing_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" material="component_metal" />
+                                                    <geom name="left-shoulder-roll-CRBTF305AT-Bearing_1_collision" type="mesh" mesh="left-shoulder-roll-CRBTF305AT-Bearing_1" pos="0 0 0" euler="0 0 0" contype="1" conaffinity="1" group="3" rgba="0.0 0.0 0.0 0.0" />
+                                                    <inertial mass="0.021" pos="-0.008780462857698536 0.007381857382472497 0.02966902029291916" fullinertia="5.0518978341088094e-05 2.5437895537938626e-05 2.5437895539838582e-05 -5.932655828471255e-19 -1.5171896345176676e-18 2.1510571102112413e-16" />
+                                                </body>
+                                            </body>
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <!-- kv = peak torque / rated speed; these are damping ratings, not hard joint-speed limits. -->
+    <actuator>
+        <position name="hip_yaw_right_macro" joint="hip_yaw_right" kp="160" kv="5.35" forcelimited="true" forcerange="-56 56" />
+        <position name="hip_roll_right_macro" joint="hip_roll_right" kp="120" kv="5.35" forcelimited="true" forcerange="-56 56" />
+        <position name="hip_pitch_right_macro" joint="hip_pitch_right" kp="160" kv="5.35" forcelimited="true" forcerange="-56 56" />
+        <position name="knee_pitch_right_macro" joint="knee_pitch_right" kp="160" kv="5.35" forcelimited="true" forcerange="-56 56" />
+        <position name="hip_yaw_left_macro" joint="hip_yaw_left" kp="160" kv="5.35" forcelimited="true" forcerange="-56 56" />
+        <position name="hip_roll_left_macro" joint="hip_roll_left" kp="120" kv="5.35" forcelimited="true" forcerange="-56 56" />
+        <position name="hip_pitch_left_macro" joint="hip_pitch_left" kp="160" kv="5.35" forcelimited="true" forcerange="-56 56" />
+        <position name="knee_pitch_left_macro" joint="knee_pitch_left" kp="160" kv="5.35" forcelimited="true" forcerange="-56 56" />
+        <position name="waist_yaw_macro" joint="waist_yaw" kp="160" kv="5.35" forcelimited="true" forcerange="-56 56" />
+        <position name="shoulder_pitch_right_macro" joint="shoulder_pitch_right" kp="160" kv="5.35" forcelimited="true" forcerange="-56 56" />
+        <position name="shoulder_pitch_left_macro" joint="shoulder_pitch_left" kp="160" kv="5.35" forcelimited="true" forcerange="-56 56" />
+        <position name="shoulder_roll_right_micro" joint="shoulder_roll_right" kp="45" kv="1.02" forcelimited="true" forcerange="-16 16" />
+        <position name="shoulder_yaw_right_micro" joint="shoulder_yaw_right" kp="45" kv="1.02" forcelimited="true" forcerange="-16 16" />
+        <position name="elbow_pitch_right_micro" joint="elbow_pitch_right" kp="45" kv="1.02" forcelimited="true" forcerange="-16 16" />
+        <position name="wrist_pitch_right_micro" joint="wrist_pitch_right" kp="45" kv="1.02" forcelimited="true" forcerange="-16 16" />
+        <position name="shoulder_roll_left_micro" joint="shoulder_roll_left" kp="45" kv="1.02" forcelimited="true" forcerange="-16 16" />
+        <position name="shoulder_yaw_left_micro" joint="shoulder_yaw_left" kp="45" kv="1.02" forcelimited="true" forcerange="-16 16" />
+        <position name="elbow_pitch_left_micro" joint="elbow_pitch_left" kp="45" kv="1.02" forcelimited="true" forcerange="-16 16" />
+        <position name="wrist_pitch_left_micro" joint="wrist_pitch_left" kp="45" kv="1.02" forcelimited="true" forcerange="-16 16" />
+    </actuator>
+    <sensor>
+        <accelerometer name="torso_imu_accelerometer" site="imu_site" />
+        <gyro name="torso_imu_gyroscope" site="imu_site" />
+        <framequat name="torso_imu_orientation" objtype="site" objname="imu_site" />
+    </sensor>
+</mujoco>
