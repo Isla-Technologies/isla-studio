@@ -1,0 +1,34 @@
+# Environments and caches: rebuilt on each computer.
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+.cache/
+.pytest_cache/
+.ruff_cache/
+web/node_modules/
+MUJOCO_LOG.TXT
+
+# Training runs (checkpoints are large), exported policies and this computer's settings.
+runs/
+policies/
+settings/
+
+# Working files.
+.scratch/
+*.isla.urdf
+
+# CAD exports as they arrive: importing one copies it into robots/<id>/source.
+/*.zip
+
+# The built web app (web/dist) is kept: running Isla Studio needs no Node.
+
+# Logs of a server started from a terminal.
+/*.log
+
+# Editors and operating systems.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

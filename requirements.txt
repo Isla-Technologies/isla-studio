@@ -1,0 +1,9 @@
+# What Isla Studio needs to run, on Windows, macOS and Linux (Python 3.10 or newer).
+# The run scripts (run.cmd, run.sh, run.command) install these on the first start.
+mujoco==3.15.0
+numpy>=1.26,<3
+fastapi>=0.115
+uvicorn>=0.30
+websockets>=13
+python-can>=4.3
+pyserial>=3.5

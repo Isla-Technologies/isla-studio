@@ -1,0 +1,6 @@
+# One line ending everywhere, so checkouts on Windows, macOS and Linux match.
+* text=auto eol=lf
+
+# cmd.exe reads batch files best with Windows line endings.
+*.cmd text eol=crlf
+*.bat text eol=crlf

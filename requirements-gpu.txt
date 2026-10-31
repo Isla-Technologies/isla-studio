@@ -1,0 +1,8 @@
+# Training on an NVIDIA GPU (Windows and Linux, CUDA 12 driver). The Train tab's
+# "Install NVIDIA GPU support" button installs these; or, from the project folder:
+#   .venv/Scripts/python -m pip install -r requirements-gpu.txt     (Windows)
+#   .venv/bin/python -m pip install -r requirements-gpu.txt         (Linux)
+# macOS trains on the processor.
+warp-lang==1.18.0
+mujoco-warp==3.15.0
+cupy-cuda12x[ctk]>=13.3
