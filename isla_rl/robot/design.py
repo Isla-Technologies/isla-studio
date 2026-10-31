@@ -123,7 +123,7 @@ def solve_stand(model: mujoco.MjModel, profile: RobotProfile, info: BuildInfo) -
     base_body = model.body(info.base).id
     free = next(
         j for j in range(model.njnt)
-        if model.jnt_bodyid[j] == base_body and model.jnt_type[j] == mujoco.mjtJoint.mjJNT_FREE
+        if model.jnt_bodyid[j] == base_body and int(model.jnt_type[j]) == mujoco.mjtJoint.mjJNT_FREE.value
     )
     adr = model.jnt_qposadr[free]
     keyframe = stand.get("keyframe")

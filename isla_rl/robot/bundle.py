@@ -246,7 +246,7 @@ def meta(profile: RobotProfile, built: Built) -> dict:
                 "id": g,
                 "body": int(model.geom_bodyid[g]),
                 "type": int(model.geom_type[g]),
-                "mesh": int(model.geom_dataid[g]) if model.geom_type[g] == mujoco.mjtGeom.mjGEOM_MESH else -1,
+                "mesh": int(model.geom_dataid[g]) if int(model.geom_type[g]) == mujoco.mjtGeom.mjGEOM_MESH.value else -1,
                 "pos": model.geom_pos[g].round(7).tolist(),
                 "quat": model.geom_quat[g].round(9).tolist(),
                 "size": model.geom_size[g].round(7).tolist(),

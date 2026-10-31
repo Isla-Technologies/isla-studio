@@ -94,7 +94,7 @@ class LiveSession:
         self.targets = self.stand_ctrl.copy()
         self.touch = {f.side: model.sensor_adr[model.sensor(f.touch).id] for f in self.info.feet}
         self.struts = [(s, model.tendon(s.tendon).id) for s in self.info.struts]
-        free = next(j for j in range(model.njnt) if model.jnt_type[j] == mujoco.mjtJoint.mjJNT_FREE)
+        free = next(j for j in range(model.njnt) if int(model.jnt_type[j]) == mujoco.mjtJoint.mjJNT_FREE.value)
         self.free_q = int(model.jnt_qposadr[free])
         self.harness = model.equality(GANTRY).id
         self.hook = int(model.body_mocapid[model.body(GANTRY).id])
@@ -244,9 +244,9 @@ class LiveSession:
     def _step(self) -> None:
         model, data = self.model, self.data
         if self.mode == "policy" and self.runner is not None:
-            joints = {name: float(data.qpos[model.jnt_qposadr[j]]) for name, j in self.joint_ids.items() if model.jnt_type[j] == mujoco.mjtJoint.mjJNT_HINGE}
-            speeds = {name: float(data.qvel[model.jnt_dofadr[j]]) for name, j in self.joint_ids.items() if model.jnt_type[j] == mujoco.mjtJoint.mjJNT_HINGE}
-            free = model.jnt_qposadr[next(j for j in range(model.njnt) if model.jnt_type[j] == mujoco.mjtJoint.mjJNT_FREE)]
+            joints = {name: float(data.qpos[model.jnt_qposadr[j]]) for name, j in self.joint_ids.items() if int(model.jnt_type[j]) == mujoco.mjtJoint.mjJNT_HINGE.value}
+            speeds = {name: float(data.qvel[model.jnt_dofadr[j]]) for name, j in self.joint_ids.items() if int(model.jnt_type[j]) == mujoco.mjtJoint.mjJNT_HINGE.value}
+            free = model.jnt_qposadr[next(j for j in range(model.njnt) if int(model.jnt_type[j]) == mujoco.mjtJoint.mjJNT_FREE.value)]
             targets = self.runner.step(TIMESTEP, data.qpos[free + 3 : free + 7], data.qvel[3:6], joints, speeds)
             for i, joint in enumerate(self.actuator_joints):
                 if joint in targets:

@@ -183,7 +183,7 @@ def _body_name(model: mujoco.MjModel, body: int) -> str:
 def _detect(model: mujoco.MjModel) -> dict:
     """Base, stance, feet, facing, IMU and torso, read off a compiled model."""
     data = mujoco.MjData(model)
-    free = [j for j in range(model.njnt) if model.jnt_type[j] == mujoco.mjtJoint.mjJNT_FREE]
+    free = [j for j in range(model.njnt) if int(model.jnt_type[j]) == mujoco.mjtJoint.mjJNT_FREE.value]
     base = int(model.jnt_bodyid[free[0]]) if free else int(np.flatnonzero(model.body_parentid == 0)[1])
     keyframe = None
     if model.nkey:
@@ -275,14 +275,14 @@ def _motors(model: mujoco.MjModel) -> tuple[dict, list[dict]]:
     motors = []
     nodes: dict[str, int] = {}
     for a in range(model.nu):
-        if model.actuator_trntype[a] != mujoco.mjtTrn.mjTRN_JOINT:
+        if int(model.actuator_trntype[a]) != mujoco.mjtTrn.mjTRN_JOINT.value:
             continue
         joint = int(model.actuator_trnid[a, 0])
-        if model.jnt_type[joint] not in (mujoco.mjtJoint.mjJNT_HINGE, mujoco.mjtJoint.mjJNT_SLIDE):
+        if int(model.jnt_type[joint]) not in (mujoco.mjtJoint.mjJNT_HINGE.value, mujoco.mjtJoint.mjJNT_SLIDE.value):
             continue
         name = mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_JOINT, joint)
         gear = abs(float(model.actuator_gear[a, 0])) or 1.0
-        servo = model.actuator_biastype[a] == mujoco.mjtBias.mjBIAS_AFFINE and model.actuator_gainprm[a, 0] > 0
+        servo = int(model.actuator_biastype[a]) == mujoco.mjtBias.mjBIAS_AFFINE.value and model.actuator_gainprm[a, 0] > 0
         if model.actuator_forcelimited[a]:
             peak = float(np.abs(model.actuator_forcerange[a]).max())
         elif not servo and model.actuator_ctrllimited[a]:

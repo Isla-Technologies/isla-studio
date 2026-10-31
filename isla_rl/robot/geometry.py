@@ -52,7 +52,7 @@ def geom_world_vertices(model: mujoco.MjModel, data: mujoco.MjData, geom: int) -
 
 def is_drawn(model: mujoco.MjModel, geom: int) -> bool:
     """A geom that draws the robot: not a plane, not an invisible collision copy."""
-    if model.geom_type[geom] in (mujoco.mjtGeom.mjGEOM_PLANE, mujoco.mjtGeom.mjGEOM_HFIELD):
+    if int(model.geom_type[geom]) in (mujoco.mjtGeom.mjGEOM_PLANE.value, mujoco.mjtGeom.mjGEOM_HFIELD.value):
         return False
     if model.geom_group[geom] >= 3:
         return False
@@ -73,23 +73,23 @@ def visual_geoms(model: mujoco.MjModel, body: int, group: int | None = None) -> 
 
 def geom_world_points(model: mujoco.MjModel, data: mujoco.MjData, geom: int) -> NDArray:
     """Points outlining a geom in the world: mesh vertices, or a primitive's corners and rims."""
-    kind = model.geom_type[geom]
-    if kind == mujoco.mjtGeom.mjGEOM_MESH:
+    kind = int(model.geom_type[geom])
+    if kind == mujoco.mjtGeom.mjGEOM_MESH.value:
         return geom_world_vertices(model, data, geom)
     size = model.geom_size[geom]
-    if kind == mujoco.mjtGeom.mjGEOM_BOX:
+    if kind == mujoco.mjtGeom.mjGEOM_BOX.value:
         local = np.array([[sx, sy, sz] for sx in (-1, 1) for sy in (-1, 1) for sz in (-1, 1)]) * size
-    elif kind == mujoco.mjtGeom.mjGEOM_SPHERE:
+    elif kind == mujoco.mjtGeom.mjGEOM_SPHERE.value:
         r = size[0]
         local = np.array([[r, 0, 0], [-r, 0, 0], [0, r, 0], [0, -r, 0], [0, 0, r], [0, 0, -r]])
-    elif kind == mujoco.mjtGeom.mjGEOM_ELLIPSOID:
+    elif kind == mujoco.mjtGeom.mjGEOM_ELLIPSOID.value:
         local = np.array([[size[0], 0, 0], [-size[0], 0, 0], [0, size[1], 0], [0, -size[1], 0], [0, 0, size[2]], [0, 0, -size[2]]])
-    elif kind in (mujoco.mjtGeom.mjGEOM_CYLINDER, mujoco.mjtGeom.mjGEOM_CAPSULE):
+    elif kind in (mujoco.mjtGeom.mjGEOM_CYLINDER.value, mujoco.mjtGeom.mjGEOM_CAPSULE.value):
         r, h = size[0], size[1]
         angles = np.linspace(0, 2 * np.pi, 12, endpoint=False)
         rim = np.stack([np.cos(angles) * r, np.sin(angles) * r], axis=1)
         local = np.concatenate([np.column_stack([rim, np.full(12, z)]) for z in (-h, h)])
-        if kind == mujoco.mjtGeom.mjGEOM_CAPSULE:
+        if kind == mujoco.mjtGeom.mjGEOM_CAPSULE.value:
             local = np.concatenate([local, [[0, 0, h + r], [0, 0, -h - r]]])
     else:
         return np.zeros((0, 3))

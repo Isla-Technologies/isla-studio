@@ -393,7 +393,7 @@ def build(
     passive = [
         _name(model, mujoco.mjtObj.mjOBJ_JOINT, j)
         for j in range(model.njnt)
-        if model.jnt_type[j] in (mujoco.mjtJoint.mjJNT_HINGE, mujoco.mjtJoint.mjJNT_SLIDE)
+        if int(model.jnt_type[j]) in (mujoco.mjtJoint.mjJNT_HINGE.value, mujoco.mjtJoint.mjJNT_SLIDE.value)
         and _name(model, mujoco.mjtObj.mjOBJ_JOINT, j) not in {m.joint for m in motors}
     ]
     info = BuildInfo(
@@ -810,7 +810,7 @@ def top_height(model: mujoco.MjModel, data: mujoco.MjData, cad: dict) -> float:
 def _free_joint(model: mujoco.MjModel, base: str) -> int:
     body = model.body(base).id
     for j in range(model.jnt_bodyid.size):
-        if model.jnt_bodyid[j] == body and model.jnt_type[j] == mujoco.mjtJoint.mjJNT_FREE:
+        if model.jnt_bodyid[j] == body and int(model.jnt_type[j]) == mujoco.mjtJoint.mjJNT_FREE.value:
             return j
     raise ValueError(f"{base} has no free joint")
 

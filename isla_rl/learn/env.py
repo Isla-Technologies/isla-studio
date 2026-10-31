@@ -203,7 +203,7 @@ class PracticeRobots:
         base = model.body(info.base).id
         free = next(
             j for j in range(model.njnt)
-            if model.jnt_bodyid[j] == base and model.jnt_type[j] == mujoco.mjtJoint.mjJNT_FREE
+            if model.jnt_bodyid[j] == base and int(model.jnt_type[j]) == mujoco.mjtJoint.mjJNT_FREE.value
         )
         if model.jnt_qposadr[free] != 0 or model.jnt_dofadr[free] != 0:
             raise ValueError("Training needs the robot's free-moving base first in the model")

@@ -210,7 +210,7 @@ class Bench:
                 Motor(joint, kind, a, int(s.actuator_dofs[a]), float(types[kind].get("peak_torque", 0.0)), types[kind].get("no_load_speed"))
             )
         self.limit_tendon = int(mujoco.mjtConstraint.mjCNSTR_LIMIT_TENDON)
-        free = next(j for j in range(model.njnt) if model.jnt_type[j] == mujoco.mjtJoint.mjJNT_FREE)
+        free = next(j for j in range(model.njnt) if int(model.jnt_type[j]) == mujoco.mjtJoint.mjJNT_FREE.value)
         self.free_dof = int(model.jnt_dofadr[free])
         self.window: Window | None = None
         self.last_height = 0.0
