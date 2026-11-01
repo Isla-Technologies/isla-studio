@@ -7,7 +7,7 @@ build/
 .cache/
 .pytest_cache/
 .ruff_cache/
-web/node_modules/
+ui/node_modules/
 MUJOCO_LOG.TXT
 
 # Training runs (checkpoints are large), exported policies and this computer's settings.
@@ -22,7 +22,7 @@ settings/
 # CAD exports as they arrive: importing one copies it into robots/<id>/source.
 /*.zip
 
-# The built web app (web/dist) is kept: running Isla Studio needs no Node.
+# Studio's built interface (ui/dist) is kept: running Isla Studio needs no Node.
 
 # Logs of a server started from a terminal.
 /*.log

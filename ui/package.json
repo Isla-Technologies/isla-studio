@@ -1,9 +1,9 @@
 {
-  "name": "isla-studio",
+  "name": "isla-studio-ui",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Isla Studio: the web app of the Isla RL Platform.",
+  "description": "Isla Studio's interface: the screens its Python server shows in your browser, on your own computer.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",

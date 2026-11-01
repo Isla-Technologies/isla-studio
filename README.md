@@ -121,7 +121,7 @@ Every trial records each shock absorber's stroke, shaft speed and force, and eac
 | `isla_rl/runtime/` | What runs on the robot's own computer |
 | `isla_rl/learn/` | Practice robots (CPU and GPU), PPO, skills and rewards, co-design, testing in full physics |
 | `isla_rl/server/` | The local server behind the web app |
-| `web/` | The web app (Preact, TypeScript, Three.js); `web/dist` is the built copy the server serves |
+| `ui/` | Studio's interface (Preact, TypeScript, Three.js); `ui/dist` is the built copy the server serves |
 | `robots/` | Each robot's profile and its CAD source (meshes, URDF) |
 | `tests/` | The test suite (`python -m pytest`) |
 
@@ -135,4 +135,4 @@ python -m pytest
 python -m ruff check isla_rl tests
 ```
 
-The web app needs Node 22 only to change it: `cd web`, `npm ci`, then `npm run dev` (Vite on port 5173, talking to the Python server on 8848) or `npm run build` to update `web/dist`. `.github/workflows/ci.yml` runs the tests on Windows, macOS and Linux and builds the web app.
+The interface needs Node 22 only to change it: `cd ui`, `npm ci`, then `npm run dev` (Vite on port 5173, talking to the Python server on 8848) or `npm run build` to update `ui/dist`. `.github/workflows/ci.yml` runs the tests on Windows, macOS and Linux and builds the web app.

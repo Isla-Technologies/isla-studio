@@ -20,7 +20,7 @@ gpu = ["warp-lang==1.18.0", "mujoco-warp==3.15.0", "cupy-cuda12x[ctk]>=13.3"]
 dev = ["pytest>=8", "httpx>=0.27", "ruff>=0.6"]
 
 [project.scripts]
-# Works from a checkout installed with `pip install -e .`: robots, runs and the web app live beside the code.
+# Works from a checkout installed with `pip install -e .`: robots, runs and the interface live beside the code.
 isla-studio = "isla_rl.server.__main__:main"
 
 [build-system]
@@ -33,7 +33,7 @@ include = ["isla_rl*"]
 [tool.ruff]
 line-length = 160
 target-version = "py310"
-extend-exclude = [".scratch", "web"]
+extend-exclude = [".scratch", "ui"]
 
 [tool.ruff.lint]
 select = ["E4", "E7", "E9", "F", "W", "I", "B", "UP"]

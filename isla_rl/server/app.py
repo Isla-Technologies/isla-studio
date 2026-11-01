@@ -620,14 +620,14 @@ def create_app(robot: str | None = None) -> FastAPI:
             task.cancel()
             state.hub.clients.discard(queue)
 
-    # The web app itself.
+    # Studio's interface itself.
 
-    dist = paths.WEB_DIST
+    dist = paths.UI_DIST
     if dist.exists():
         app.mount("/assets", StaticFiles(directory=dist / "assets"), name="assets")
 
         @app.get("/{path:path}")
-        def web(path: str):
+        def interface(path: str):
             target = (dist / path).resolve()
             if path and target.is_file() and dist.resolve() in target.parents:
                 return FileResponse(target)
@@ -636,7 +636,7 @@ def create_app(robot: str | None = None) -> FastAPI:
 
         @app.get("/")
         def missing():
-            return JSONResponse({"message": "The web app is not built: run `npm run build` in web/."}, status_code=503)
+            return JSONResponse({"message": "Studio's interface is not built: run `npm run build` in ui/."}, status_code=503)
 
     return app
 
