@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'preact/hooks';
 import { api, ApiError } from '../lib/api';
 import { compact, designValue, duration, fixed, percent } from '../lib/format';
-import { activeRun, design, meta, robotRuns, runLive, runs, runsLoaded, say, status, updateRun, viewMode } from '../lib/store';
+import { activeRun, design, gpuInstalling, meta, robotRuns, runLive, runs, runsLoaded, say, status, updateRun, viewMode } from '../lib/store';
 import type { CodesignReport, ProgressMessage, RunSummary } from '../lib/types';
 import { Icon } from '../components/icons';
 import { DesignTracks, RewardBars } from '../components/charts';
@@ -326,6 +326,17 @@ function Composer({ cat, onStarted, initial: asked }: { cat: Catalogue | null; o
 
   const estimate = (millions * 1e6) / (gpu && device !== 'cpu' ? (robots >= 8192 ? 50000 : 40000) : 12000);
 
+  async function installGpu(): Promise<void> {
+    gpuInstalling.value = true;
+    try {
+      await api.post('/api/gpu/install', {});
+      say('Installing NVIDIA GPU support: a large download that takes a few minutes. Studio says here when it is done.');
+    } catch (error) {
+      gpuInstalling.value = false;
+      say((error as Error).message, 'error');
+    }
+  }
+
   async function start(): Promise<void> {
     setBusy(true);
     const runName = name.trim() || `${meta.value?.robot.id ?? 'robot'}-${preset === 'codesign' ? 'design' : skill}-${new Date().toISOString().slice(5, 16).replace(/[-T:]/g, '')}`;
@@ -363,6 +374,18 @@ function Composer({ cat, onStarted, initial: asked }: { cat: Catalogue | null; o
         About {duration(estimate)} on {gpu && device !== 'cpu' ? status.value?.gpu.name : `this computer's processor (${status.value?.cpus ?? '?'} threads)`}.
         {!gpu ? ' An NVIDIA GPU trains about five times faster.' : ''}
       </p>
+      {status.value && !status.value.gpu.installed && status.value.os !== 'Darwin' ? (
+        <div class="actions">
+          <Action
+            class="btn ghost"
+            onClick={installGpu}
+            blocked={gpuInstalling.value && 'Installing NVIDIA GPU support: a few minutes. Runs can start on the processor meanwhile.'}
+            title="Installs CUDA and the GPU packages into Studio's own environment (a large download)"
+          >
+            <Icon name="download" /> {gpuInstalling.value ? 'Installing GPU support' : 'Install NVIDIA GPU support'}
+          </Action>
+        </div>
+      ) : null}
       <details class="block" open={advanced} onToggle={(e) => setAdvanced((e.currentTarget as HTMLDetailsElement).open)}>
         <summary class="block-title">Every option</summary>
         <div class="form-grid">

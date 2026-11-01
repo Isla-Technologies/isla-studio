@@ -40,6 +40,8 @@ export interface RunLive {
 }
 
 export const status = signal<PlatformStatus | null>(null);
+/** NVIDIA GPU support is being installed (one install at a time, whichever page asked). */
+export const gpuInstalling = signal(false);
 export const meta = signal<Meta | null>(null);
 export const loading = signal<string>('Connecting to Isla Studio');
 export const connected = signal(false);

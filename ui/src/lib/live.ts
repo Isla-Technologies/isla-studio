@@ -5,6 +5,7 @@ import {
   activeRobot,
   activeRun,
   connected,
+  gpuInstalling,
   hardware,
   hardwareLog,
   live,
@@ -12,8 +13,10 @@ import {
   runs,
   say,
   simState,
+  status,
   tests,
   updateRun,
+  type PlatformStatus,
 } from './store';
 import type { CodesignReport, Frame, HardwareStatus, ProgressMessage, SwarmMessage } from './types';
 
@@ -100,7 +103,14 @@ function handle(message: { type: string; [key: string]: unknown }): void {
       updateRun(String(message.run), (r) => ({ ...r, state: String(message.state) }));
       break;
     case 'gpu.install':
-      if (message.done) say(message.code === 0 ? 'NVIDIA GPU support installed.' : 'Installing GPU support failed: see runs/gpu-install.log', message.code === 0 ? 'info' : 'error');
+      if (message.done) {
+        const gpu = message.gpu as PlatformStatus['gpu'] | undefined;
+        gpuInstalling.value = false;
+        if (gpu && status.value) status.value = { ...status.value, gpu };
+        if (message.code !== 0) say('Installing GPU support failed: see runs/gpu-install.log', 'error');
+        else if (gpu?.ready) say(`NVIDIA GPU support installed: new runs train on the ${gpu.name}.`);
+        else say(`NVIDIA GPU support installed, but the GPU cannot be used yet: ${gpu?.problem ?? 'see runs/gpu-install.log'}`, 'error');
+      }
       break;
     case 'design':
       break;
