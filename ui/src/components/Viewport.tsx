@@ -9,7 +9,7 @@ import { theme } from '../lib/theme';
 import type { SwarmMessage } from '../lib/types';
 import { MainView, type Pose } from '../three/viewport';
 import { Icon } from './icons';
-import { Action, Choice } from './ui';
+import { Action, Choice, Notice } from './ui';
 
 interface Clip {
   data: Float32Array;
@@ -115,61 +115,65 @@ export function Viewport({ assets }: { assets: RobotAssets }) {
   return (
     <div class="stage">
       <canvas ref={canvas} class="stage-canvas" aria-label="Live view of the robot. Drag to orbit, scroll to zoom, double-click to frame it, shift-drag on the robot to push it." />
-      <div class="stage-tools" role="toolbar" aria-label="Simulation">
-        <button class="btn ghost small" type="button" onClick={() => send({ type: 'sim.play', playing: !state.playing })} aria-label={state.playing ? 'Pause the simulation' : 'Run the simulation'}>
-          <Icon name={state.playing ? 'pause' : 'play'} />
-          {state.playing ? 'Pause' : 'Run'}
-        </button>
-        <button class="btn ghost small" type="button" onClick={() => send({ type: 'sim.reset' })}>
-          <Icon name="reset" />
-          Reset
-        </button>
-        <button
-          class="btn ghost small"
-          type="button"
-          aria-pressed={state.gantry}
-          onClick={() => send({ type: 'sim.gantry', on: !state.gantry })}
-          title={
-            state.gantry
-              ? 'Let the robot out of the gantry'
-              : state.standsAlone
-                ? 'Hang the robot in a gantry'
-                : 'This robot needs a policy to balance: hang it in a gantry until one runs'
-          }
-        >
-          <Icon name="gantry" />
-          Gantry
-        </button>
-        {state.mode === 'policy' && viewMode.value === 'live' ? (
-          <Action
+      {/* One column between the side panels: the toolbar wraps when narrow, and what follows moves down. */}
+      <div class="stage-top">
+        <div class="stage-tools" role="toolbar" aria-label="Simulation">
+          <button class="btn ghost small" type="button" onClick={() => send({ type: 'sim.play', playing: !state.playing })} aria-label={state.playing ? 'Pause the simulation' : 'Run the simulation'}>
+            <Icon name={state.playing ? 'pause' : 'play'} />
+            {state.playing ? 'Pause' : 'Run'}
+          </button>
+          <button class="btn ghost small" type="button" onClick={() => send({ type: 'sim.reset' })}>
+            <Icon name="reset" />
+            Reset
+          </button>
+          <button
             class="btn ghost small"
-            pressed={state.jumping}
-            onClick={jump}
-            blocked={state.canJump ? state.jumping && 'Already jumping: wait for it to land.' : `${state.policy} never learned to jump: watch a jump policy to jump.`}
-            title="Jump (J)"
+            type="button"
+            aria-pressed={state.gantry}
+            onClick={() => send({ type: 'sim.gantry', on: !state.gantry })}
+            title={
+              state.gantry
+                ? 'Let the robot out of the gantry'
+                : state.standsAlone
+                  ? 'Hang the robot in a gantry'
+                  : 'This robot needs a policy to balance: hang it in a gantry until one runs'
+            }
           >
-            <Icon name="jump" />
-            {state.jumping ? 'Jumping' : 'Jump'}
-          </Action>
-        ) : null}
-        <Choice
-          label="What the stage shows"
-          value={viewMode.value}
-          options={[
-            { value: 'live', label: 'Live robot' },
-            { value: 'swarm', label: 'Practice robots', blocked: viewMode.value !== 'swarm' && swarmBlocked() },
-          ]}
-          onChange={(v) => (viewMode.value = v)}
-        />
+            <Icon name="gantry" />
+            Gantry
+          </button>
+          {state.mode === 'policy' && viewMode.value === 'live' ? (
+            <Action
+              class="btn ghost small"
+              pressed={state.jumping}
+              onClick={jump}
+              blocked={state.canJump ? state.jumping && 'Already jumping: wait for it to land.' : `${state.policy} never learned to jump: watch a jump policy to jump.`}
+              title="Jump (J)"
+            >
+              <Icon name="jump" />
+              {state.jumping ? 'Jumping' : 'Jump'}
+            </Action>
+          ) : null}
+          <Choice
+            label="What the stage shows"
+            value={viewMode.value}
+            options={[
+              { value: 'live', label: 'Live robot' },
+              { value: 'swarm', label: 'Practice robots', blocked: viewMode.value !== 'swarm' && swarmBlocked() },
+            ]}
+            onChange={(v) => (viewMode.value = v)}
+          />
+        </div>
+        <p class="stage-readout num" aria-live="off">
+          {viewMode.value === 'swarm'
+            ? run?.swarm
+              ? `${run.swarm.shape[1]} practice robots of run ${activeRun.value}`
+              : 'Start or pick a training run to watch its practice robots'
+            : `${modeLabel(state.mode, state.policy)}${state.gantry ? ' in the gantry' : ''} · tilt ${state.tilt.toFixed(1)}° · ${state.t.toFixed(1)} s`}
+        </p>
+        {state.message ? <p class="stage-message" role="status">{state.message}</p> : null}
+        <Notice />
       </div>
-      <p class="stage-readout num" aria-live="off">
-        {viewMode.value === 'swarm'
-          ? run?.swarm
-            ? `${run.swarm.shape[1]} practice robots of run ${activeRun.value}`
-            : 'Start or pick a training run to watch its practice robots'
-          : `${modeLabel(state.mode, state.policy)}${state.gantry ? ' in the gantry' : ''} · tilt ${state.tilt.toFixed(1)}° · ${state.t.toFixed(1)} s`}
-      </p>
-      {state.message ? <p class="stage-message" role="status">{state.message}</p> : null}
     </div>
   );
 }

@@ -1,8 +1,20 @@
 // Small building blocks in the brand's vocabulary: readouts, segments, panels.
 
 import type { ComponentChildren } from 'preact';
-import { say } from '../lib/store';
+import { notice, say } from '../lib/store';
 import { Icon } from './icons';
+
+/** The latest notice: what a click did, or what has to happen first. */
+export function Notice() {
+  const shown = notice.value;
+  if (!shown) return null;
+  return (
+    <div class={`notice ${shown.tone}`} role={shown.tone === 'error' ? 'alert' : 'status'}>
+      <Icon name={shown.tone === 'error' ? 'alert' : 'check'} />
+      <span>{shown.text}</span>
+    </div>
+  );
+}
 
 /**
  * A button that always answers. When ``blocked`` says what has to happen first, it looks

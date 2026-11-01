@@ -14,7 +14,6 @@ import {
   hardware,
   loading,
   meta,
-  notice,
   robots,
   say,
   section,
@@ -29,7 +28,7 @@ import { Anatomy } from './components/Anatomy';
 import { ChartsPanel } from './components/ChartsPanel';
 import { CommandBar } from './components/CommandBar';
 import { Icon } from './components/icons';
-import { IconButton, Segments } from './components/ui';
+import { IconButton, Notice, Segments } from './components/ui';
 import { setTheme, theme } from './lib/theme';
 import { Viewport } from './components/Viewport';
 import { Connect } from './sections/Connect';
@@ -243,12 +242,8 @@ export function App() {
             <span>Loading {robots.value?.find((c) => c.id === switching)?.name ?? switching} for training</span>
           </div>
         ) : null}
-        {notice.value ? (
-          <div class={`notice ${notice.value.tone}`} role={notice.value.tone === 'error' ? 'alert' : 'status'}>
-            <Icon name={notice.value.tone === 'error' ? 'alert' : 'check'} />
-            <span>{notice.value.text}</span>
-          </div>
-        ) : null}
+        {/* Elsewhere the notice sits under the live view's toolbar, which may wrap. */}
+        {hangar ? <Notice /> : null}
       </main>
     </div>
   );
