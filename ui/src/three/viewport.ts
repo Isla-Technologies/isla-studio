@@ -351,12 +351,13 @@ export class MainView {
 
     if (this.poses.length) {
       baseSum = baseSum.multiplyScalar(1 / this.poses.length);
+      // The camera keeps the live robot where it is on screen, through resets too: skipping
+      // a jump (a reset after a long walk, or a page opened with the robot far from the
+      // start) left the camera on empty floor.
       if (this.follow && this.count === 1) {
         const delta = baseSum.clone().sub(this.lastBase);
-        if (delta.length() < 1.5) {
-          this.camera.position.add(delta);
-          this.controls.target.add(delta);
-        }
+        this.camera.position.add(delta);
+        this.controls.target.add(delta);
       }
       this.lastBase.copy(baseSum);
       // The command arrow stands under the robot wherever it walks.
