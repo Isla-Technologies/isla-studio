@@ -72,8 +72,9 @@ class Run:
         snapshot = self.path(ROBOT)
         if snapshot.exists():
             data = json.loads(snapshot.read_text(encoding="utf-8"))
-            folder = Path(data.pop("_folder", ""))
-            if not folder.exists():
+            saved = data.pop("_folder", None)  # Absent in the examples: they use the hangar's copy.
+            folder = Path(saved) if saved else None
+            if folder is None or not folder.exists():
                 folder = paths.ROBOTS / data.get("id", self.setup.robot)
             profile = RobotProfile(folder, data)
             profile.validate()

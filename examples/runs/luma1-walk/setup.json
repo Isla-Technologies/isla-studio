@@ -1,0 +1,48 @@
+{
+  "robot": "luma_1",
+  "skill": "walk",
+  "weights": {},
+  "commands": null,
+  "robustness": {
+    "friction": [
+      0.5,
+      1.5
+    ],
+    "added_mass": [
+      -1.0,
+      2.5
+    ],
+    "strength": [
+      0.9,
+      1.1
+    ],
+    "strut_spread": 0.1,
+    "push_speed": null,
+    "push_every": null,
+    "noise": 1.0,
+    "delay": 0.01
+  },
+  "codesign": {
+    "enabled": false,
+    "params": [],
+    "pool": 128,
+    "warmup": 0.15,
+    "finetune": 0.15,
+    "updates": 24,
+    "elite": 0.25,
+    "smoothing": 0.35,
+    "init_std": 0.35,
+    "min_std": 0.03,
+    "min_episodes": 4,
+    "target_height": null,
+    "height_weight": 4.0
+  },
+  "design": {},
+  "arms": false,
+  "robots": 4096,
+  "steps": 216794880,
+  "rollout": 24,
+  "episode": null,
+  "seed": 1,
+  "ppo": null
+}

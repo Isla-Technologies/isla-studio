@@ -12,6 +12,7 @@ POLICIES = Path(os.environ.get("ISLA_POLICIES", ROOT / "policies"))
 SETTINGS = Path(os.environ.get("ISLA_SETTINGS", ROOT / "settings"))
 CACHE = Path(os.environ.get("ISLA_CACHE", ROOT / ".cache"))
 UI_DIST = ROOT / "ui" / "dist"
+EXAMPLES = ROOT / "examples"  # Trained runs that come with Studio, copied into RUNS once.
 DEFAULT_ROBOT = "luma_1"
 
 

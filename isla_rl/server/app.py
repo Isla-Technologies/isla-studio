@@ -27,7 +27,7 @@ from fastapi import FastAPI, HTTPException, Request, WebSocket, WebSocketDisconn
 from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 
-from .. import __version__, paths
+from .. import __version__, examples, paths
 from ..hardware.base import DriverError
 from ..hardware.can_driver import can_available
 from ..hardware.config import HardwareSettings
@@ -93,6 +93,7 @@ class Platform:
 
     def __init__(self, robot: str | None = None) -> None:
         paths.ensure_dirs()
+        examples.install()
         self.hub = Hub()
         self.training = TrainingManager(self.hub.publish)
         robots = list_robots()

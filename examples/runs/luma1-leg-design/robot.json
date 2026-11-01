@@ -1,0 +1,503 @@
+{
+  "format": "isla-robot",
+  "version": 1,
+  "id": "luma_1",
+  "name": "Luma-1",
+  "about": "Isla Technologies' first humanoid: 19 actuators (36:1 macro, 54.5:1 micro), carbon-fibre rod legs, passive ankles on four shock absorbers.",
+  "source": "source/URDF.xml",
+  "frame": {
+    "forward": "-y",
+    "left": "+x"
+  },
+  "base": "base_link",
+  "torso": "waist-bottom-plate_1",
+  "imu_site": "imu_site",
+  "mass": {
+    "target_total": 27.0,
+    "virtual_body": "waist-holder_1",
+    "virtual_box": [
+      0.2,
+      0.12,
+      0.2
+    ],
+    "note": "CAD totals 24.58 kg. The difference (wiring, fasteners, electronics) is carried as a virtual mass at the torso's centre of mass."
+  },
+  "feet": [
+    {
+      "side": "right",
+      "body": "right-foot-connector-R_1",
+      "sole": "right-foot-sole_1"
+    },
+    {
+      "side": "left",
+      "body": "left-foot-connector-L_1",
+      "sole": "left-foot-sole_1"
+    }
+  ],
+  "actuator_types": {
+    "macro": {
+      "label": "Macro actuator",
+      "peak_torque": 66.0,
+      "no_load_speed": 5.8,
+      "corner_speed": 4.9,
+      "kp": 160.0,
+      "kd": 5.35,
+      "armature": 0.0,
+      "driver": "MKS ODrive S / Isla JD-1",
+      "protocol": "odrive",
+      "assumed": [
+        "no_load_speed",
+        "corner_speed"
+      ],
+      "note": "36:1, 3 N·m/A at the output: 66 N·m at 22 A continuous, used as the torque limit (no peak rating yet). 3 N·m/A matches a 90 KV motor through 36:1 at 90% efficiency, so the no-load speed on 6S (22.2 V) is about 5.8 rad/s; measure to confirm.",
+      "gear_ratio": 36.0,
+      "torque_constant": 3.0,
+      "continuous_current": 22.0
+    },
+    "micro": {
+      "label": "Micro actuator",
+      "peak_torque": 23.56,
+      "no_load_speed": 14.0,
+      "corner_speed": 12.0,
+      "kp": 45.0,
+      "kd": 1.02,
+      "armature": 0.0,
+      "driver": "Isla JD-1",
+      "protocol": "mit",
+      "assumed": [
+        "no_load_speed",
+        "corner_speed"
+      ],
+      "note": "Two 7.385:1 stages (54.54:1), 1.36 N·m/A at the output: 23.56 N·m at 17.2 A continuous, used as the torque limit. No-load speed estimated at 14 rad/s on 6S; measure to confirm.",
+      "gear_ratio": 54.538,
+      "torque_constant": 1.36,
+      "continuous_current": 17.2
+    }
+  },
+  "motors": [
+    {
+      "joint": "hip_pitch_left",
+      "type": "macro",
+      "bus": "can0",
+      "node": 1,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "left_leg"
+    },
+    {
+      "joint": "hip_roll_left",
+      "type": "macro",
+      "bus": "can0",
+      "node": 2,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "left_leg"
+    },
+    {
+      "joint": "hip_yaw_left",
+      "type": "macro",
+      "bus": "can0",
+      "node": 3,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "left_leg"
+    },
+    {
+      "joint": "knee_pitch_left",
+      "type": "macro",
+      "bus": "can0",
+      "node": 4,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "left_leg"
+    },
+    {
+      "joint": "hip_pitch_right",
+      "type": "macro",
+      "bus": "can1",
+      "node": 1,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "right_leg"
+    },
+    {
+      "joint": "hip_roll_right",
+      "type": "macro",
+      "bus": "can1",
+      "node": 2,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "right_leg"
+    },
+    {
+      "joint": "hip_yaw_right",
+      "type": "macro",
+      "bus": "can1",
+      "node": 3,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "right_leg"
+    },
+    {
+      "joint": "knee_pitch_right",
+      "type": "macro",
+      "bus": "can1",
+      "node": 4,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "right_leg"
+    },
+    {
+      "joint": "shoulder_pitch_left",
+      "type": "macro",
+      "bus": "can2",
+      "node": 1,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "left_arm"
+    },
+    {
+      "joint": "shoulder_roll_left",
+      "type": "micro",
+      "bus": "can2",
+      "node": 2,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "left_arm"
+    },
+    {
+      "joint": "shoulder_yaw_left",
+      "type": "micro",
+      "bus": "can2",
+      "node": 3,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "left_arm"
+    },
+    {
+      "joint": "elbow_pitch_left",
+      "type": "micro",
+      "bus": "can2",
+      "node": 4,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "left_arm"
+    },
+    {
+      "joint": "wrist_pitch_left",
+      "type": "micro",
+      "bus": "can2",
+      "node": 5,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "left_arm"
+    },
+    {
+      "joint": "shoulder_pitch_right",
+      "type": "macro",
+      "bus": "can3",
+      "node": 1,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "right_arm"
+    },
+    {
+      "joint": "shoulder_roll_right",
+      "type": "micro",
+      "bus": "can3",
+      "node": 2,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "right_arm"
+    },
+    {
+      "joint": "shoulder_yaw_right",
+      "type": "micro",
+      "bus": "can3",
+      "node": 3,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "right_arm"
+    },
+    {
+      "joint": "elbow_pitch_right",
+      "type": "micro",
+      "bus": "can3",
+      "node": 4,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "right_arm"
+    },
+    {
+      "joint": "wrist_pitch_right",
+      "type": "micro",
+      "bus": "can3",
+      "node": 5,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "right_arm"
+    },
+    {
+      "joint": "waist_yaw",
+      "type": "macro",
+      "bus": "can4",
+      "node": 1,
+      "direction": 1,
+      "zero": 0.0,
+      "group": "waist"
+    }
+  ],
+  "operating_ranges": {
+    "hip_pitch_right": [
+      -1.6,
+      0.6
+    ],
+    "hip_pitch_left": [
+      -0.6,
+      1.6
+    ],
+    "knee_pitch_right": [
+      -1.75,
+      0.05
+    ],
+    "knee_pitch_left": [
+      -0.05,
+      1.75
+    ],
+    "hip_roll_right": [
+      -0.5,
+      0.25
+    ],
+    "hip_roll_left": [
+      -0.25,
+      0.5
+    ],
+    "hip_yaw_right": [
+      -0.5,
+      0.5
+    ],
+    "hip_yaw_left": [
+      -0.5,
+      0.5
+    ],
+    "waist_yaw": [
+      -1.2,
+      1.2
+    ],
+    "note": "Training keeps joint targets inside these ranges. Knees bend one way only: the CAD limits allow 120 degrees of hyperextension."
+  },
+  "stand": {
+    "knee_flexion": 0.15,
+    "hips": [
+      "hip_pitch_right",
+      "hip_pitch_left"
+    ],
+    "knees": [
+      "knee_pitch_right",
+      "knee_pitch_left"
+    ],
+    "ankles": [
+      "ankle_pitch_right",
+      "ankle_pitch_left"
+    ],
+    "flexion_sign": {
+      "hip_pitch_right": -1,
+      "hip_pitch_left": 1,
+      "knee_pitch_right": -1,
+      "knee_pitch_left": 1
+    },
+    "note": "Knee flexion is measured from the CAD pose (already 20 degrees bent). Hip pitch is solved so the centre of mass sits over the ankles; the passive ankles are set so each foot is flat."
+  },
+  "struts": {
+    "stroke_mm": 24.0,
+    "note": "Four virtual shock absorbers: front and back of each ankle, compression coilovers. The CAD pose is assumed to sit at mid-stroke.",
+    "items": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "side": "right",
+        "upper": "right-foot-damper-front-M4-shaft_1",
+        "lower": "right-foot-ankle-front-M5-shaft-_1"
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "side": "right",
+        "upper": "right-foot-damper-M4-shaft_1",
+        "lower": "right-foot-M5-shaft_1"
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "side": "left",
+        "upper": "left-foot-damper-front-M4-shaft_1",
+        "lower": "left-foot-ankle-front-M5-shaft_1"
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "side": "left",
+        "upper": "left-foot-damper-M4-shaft_1",
+        "lower": "left-foot-ankle-M5-shaft_1"
+      }
+    ]
+  },
+  "rods": {
+    "note": "Carbon-fibre rods whose length sets the joint-to-joint distance one for one. The moved body and everything below it slides along the segment.",
+    "items": [
+      {
+        "name": "thigh",
+        "side": "right",
+        "rods": [
+          "right-thigh-carbon-rod_1",
+          "right-thigh-carbon-rod-1_1"
+        ],
+        "moved": "right-knee-pitch-connector-cover_1",
+        "from_joint": "hip_pitch_right",
+        "to_joint": "knee_pitch_right"
+      },
+      {
+        "name": "thigh",
+        "side": "left",
+        "rods": [
+          "left-thigh-carbon-rod_1",
+          "left-thigh-carbon-rod-1_1"
+        ],
+        "moved": "left-knee-pitch-connector-cover_1",
+        "from_joint": "hip_pitch_left",
+        "to_joint": "knee_pitch_left"
+      },
+      {
+        "name": "shin",
+        "side": "right",
+        "rods": [
+          "right-shin-carbon-rod_1",
+          "right-shin-carbon-rod-1_1"
+        ],
+        "moved": "right-ankle-bracket_1",
+        "from_joint": "knee_pitch_right",
+        "to_joint": "ankle_pitch_right"
+      },
+      {
+        "name": "shin",
+        "side": "left",
+        "rods": [
+          "left-shin-carbon-rod_1",
+          "left-shin-carbon-rod-1_1"
+        ],
+        "moved": "left-ankle-bracket_1",
+        "from_joint": "knee_pitch_left",
+        "to_joint": "ankle_pitch_left"
+      }
+    ]
+  },
+  "design": {
+    "thigh_rod": {
+      "label": "Thigh rod length",
+      "unit": "mm",
+      "kind": "rod",
+      "rod": "thigh",
+      "range": [
+        -30,
+        100
+      ],
+      "default": 0,
+      "step": 1,
+      "help": "Change in thigh rod length from the CAD. Below -30 mm the hip-pitch and knee housings touch."
+    },
+    "shin_rod": {
+      "label": "Shin rod length",
+      "unit": "mm",
+      "kind": "rod",
+      "rod": "shin",
+      "range": [
+        -40,
+        100
+      ],
+      "default": 0,
+      "step": 1,
+      "help": "Change in shin rod length from the CAD. Below -40 mm the knee housing meets the ankle bracket."
+    },
+    "front_k": {
+      "label": "Front spring rate",
+      "unit": "N/mm",
+      "kind": "strut_k",
+      "position": "front",
+      "range": [
+        2,
+        40
+      ],
+      "default": 12,
+      "step": 0.5,
+      "help": "Coil spring rate of the front shock absorbers."
+    },
+    "back_k": {
+      "label": "Back spring rate",
+      "unit": "N/mm",
+      "kind": "strut_k",
+      "position": "back",
+      "range": [
+        2,
+        40
+      ],
+      "default": 12,
+      "step": 0.5,
+      "help": "Coil spring rate of the back shock absorbers."
+    },
+    "front_c": {
+      "label": "Front damping",
+      "unit": "N·s/m",
+      "kind": "strut_c",
+      "position": "front",
+      "range": [
+        20,
+        600
+      ],
+      "default": 150,
+      "step": 5,
+      "help": "Damping coefficient of the front shock absorbers."
+    },
+    "back_c": {
+      "label": "Back damping",
+      "unit": "N·s/m",
+      "kind": "strut_c",
+      "position": "back",
+      "range": [
+        20,
+        600
+      ],
+      "default": 150,
+      "step": 5,
+      "help": "Damping coefficient of the back shock absorbers."
+    },
+    "front_preload": {
+      "label": "Front preload",
+      "unit": "mm",
+      "kind": "strut_preload",
+      "position": "front",
+      "range": [
+        0,
+        10
+      ],
+      "default": 3,
+      "step": 0.5,
+      "help": "How far the front coil is compressed with the shock fully extended."
+    },
+    "back_preload": {
+      "label": "Back preload",
+      "unit": "mm",
+      "kind": "strut_preload",
+      "position": "back",
+      "range": [
+        0,
+        10
+      ],
+      "default": 3,
+      "step": 0.5,
+      "help": "How far the back coil is compressed with the shock fully extended."
+    }
+  },
+  "aliases": [
+    "isla_v1"
+  ]
+}

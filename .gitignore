@@ -11,9 +11,9 @@ ui/node_modules/
 MUJOCO_LOG.TXT
 
 # Training runs (checkpoints are large), exported policies and this computer's settings.
-runs/
-policies/
-settings/
+/runs/
+/policies/
+/settings/
 
 # Working files.
 .scratch/
