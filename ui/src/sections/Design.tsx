@@ -3,10 +3,11 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { api } from '../lib/api';
 import { designValue, fixed, jointLabel, percent, signed } from '../lib/format';
-import { design, meta, runLive, runs, say } from '../lib/store';
+import { design, meta, robotRuns, runLive, say } from '../lib/store';
 import type { DesignParam } from '../lib/types';
 import { Icon } from '../components/icons';
 import { Action, Meter, Readout } from '../components/ui';
+import { loadRun, refreshRuns } from './Train';
 
 interface Analysis {
   size: { height: number; hip_height: number; com_height: number; lean_deg: number; mass: number; leg_length: number };
@@ -47,6 +48,17 @@ export function Design() {
   const values = { ...applied, ...design.value };
   const changed = Object.keys(params).some((k) => Math.abs((values[k] ?? 0) - (applied[k] ?? 0)) > 1e-9);
 
+  // Design searches that ended before this page opened: fetch the runs (Studio may have
+  // opened here), then what each search chose, once.
+  useEffect(() => {
+    refreshRuns();
+  }, []);
+  useEffect(() => {
+    for (const r of robotRuns.value) {
+      if (r.codesign && !runLive.value[r.name]?.codesign) loadRun(r.name).catch(() => undefined);
+    }
+  }, [robotRuns.value]);
+
   useEffect(() => {
     window.clearTimeout(timer.current);
     timer.current = window.setTimeout(async () => {
@@ -82,7 +94,7 @@ export function Design() {
     design.value = cad;
   }
 
-  const found = runs.value
+  const found = robotRuns.value
     .map((r) => ({ run: r.name, report: runLive.value[r.name]?.codesign }))
     .filter((x) => x.report);
   const rodParams = Object.values(params).filter((p) => p.kind === 'rod');
