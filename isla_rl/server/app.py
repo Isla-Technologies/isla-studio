@@ -574,7 +574,7 @@ def create_app(robot: str | None = None) -> FastAPI:
         def work():
             with log.open("w", encoding="utf-8") as out:
                 process = subprocess.Popen(
-                    [sys.executable, "-m", "pip", "install", "-r", str(requirements)],
+                    [sys.executable, "-u", "-m", "pip", "install", "-r", str(requirements)],  # -u: the log fills as it goes.
                     stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, cwd=str(paths.ROOT),
                 )
                 assert process.stdout is not None
