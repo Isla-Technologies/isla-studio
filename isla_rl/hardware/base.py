@@ -8,7 +8,7 @@ Everything is keyed by the joint a motor drives and expressed at the joint
 from __future__ import annotations
 
 from collections.abc import Mapping
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Protocol
 
 
@@ -42,18 +42,6 @@ class ImuState:
     quaternion: tuple[float, float, float, float] = (1.0, 0.0, 0.0, 0.0)  # w, x, y, z
     gyro: tuple[float, float, float] = (0.0, 0.0, 0.0)  # rad/s, in the IMU's (base's) frame
     age: float = 0.0
-
-
-@dataclass
-class DriverInfo:
-    """What the Connect page shows about a driver."""
-
-    key: str
-    label: str
-    detail: str
-    available: bool = True
-    problem: str = ""
-    settings: dict = field(default_factory=dict)
 
 
 class DriverError(RuntimeError):

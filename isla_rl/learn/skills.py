@@ -14,7 +14,7 @@ from __future__ import annotations
 import json
 import math
 from collections.abc import Mapping
-from dataclasses import asdict, dataclass, field, fields, replace
+from dataclasses import asdict, dataclass, field, fields
 
 from .policy import Commands, Gait
 from .ppo import PPOSettings
@@ -439,9 +439,6 @@ class TrainingSetup:
             return cls.from_dict(json.loads(text))
         except json.JSONDecodeError as error:
             raise ValueError(f"Not a readable training setup: {error}") from None
-
-    def changed(self, **changes) -> TrainingSetup:
-        return replace(self, **changes)
 
 
 def _tuples(kind, values: Mapping) -> dict:

@@ -126,15 +126,6 @@ class CpuPhysics:
         self._states = np.zeros((count, SUBSTEPS, nstate))
         self._sensors = np.zeros((count, SUBSTEPS, model.nsensordata))
 
-    def set_rows(self, name: str, ids: NDArray, rows: NDArray, columns: NDArray | None = None) -> None:
-        """Write a model field for some robots: ``rows[k]`` goes to robot ``ids[k]``."""
-        for robot, row in zip(ids.tolist(), rows, strict=True):
-            field = getattr(self.models[robot], name)
-            if columns is None:
-                field[...] = row
-            else:
-                field[columns] = row
-
     def set_forcerange(self, low: NDArray, high: NDArray) -> None:
         for model, lo, hi in zip(self.models, low, high, strict=True):
             fr = model.actuator_forcerange
@@ -885,20 +876,6 @@ class PracticeRobots:
             about=about,
             stats={**(stats or {}), "design_metrics": metrics},
         )
-
-
-def _quat_multiply(a, b):
-    aw, ax, ay, az = a.T
-    bw, bx, by, bz = b.T
-    return module_of(a).stack(
-        [
-            aw * bw - ax * bx - ay * by - az * bz,
-            aw * bx + ax * bw + ay * bz - az * by,
-            aw * by - ax * bz + ay * bw + az * bx,
-            aw * bz + ax * by - ay * bx + az * bw,
-        ],
-        axis=1,
-    )
 
 
 __all__ = ["DT", "RATE", "Episodes", "PracticeRobots", "envelope", "lean_model", "quat_rotate_inverse"]

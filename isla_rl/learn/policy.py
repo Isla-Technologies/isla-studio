@@ -21,11 +21,10 @@ so the robot's computer needs nothing more.
 from __future__ import annotations
 
 import base64
-import hashlib
 import json
 import math
 from collections.abc import Mapping, Sequence
-from dataclasses import dataclass, field, replace
+from dataclasses import dataclass, field
 from datetime import datetime
 
 import numpy as np
@@ -70,15 +69,6 @@ def quat_rotate_inverse(quaternion: NDArray, vector: NDArray) -> NDArray:
     xp = module_of(quaternion)
     w = quaternion[:, :1]
     u = -quaternion[:, 1:4]
-    t = 2.0 * xp.cross(u, vector)
-    return vector + w * t + xp.cross(u, t)
-
-
-def quat_rotate(quaternion: NDArray, vector: NDArray) -> NDArray:
-    """Bodies' vectors in the world."""
-    xp = module_of(quaternion)
-    w = quaternion[:, :1]
-    u = quaternion[:, 1:4]
     t = 2.0 * xp.cross(u, vector)
     return vector + w * t + xp.cross(u, t)
 
@@ -320,10 +310,6 @@ class Policy:
         }
         return json.dumps(document, separators=(",", ":")) + "\n"
 
-    @property
-    def fingerprint(self) -> str:
-        return hashlib.sha256(self.to_json().encode("utf-8")).hexdigest()[:16]
-
     @classmethod
     def from_document(cls, document: Mapping) -> Policy:
         try:
@@ -367,9 +353,6 @@ class Policy:
         from pathlib import Path
 
         return cls.from_document(json.loads(Path(path).read_text(encoding="utf-8")))
-
-    def renamed(self, name: str) -> Policy:
-        return replace(self, name=name)
 
 
 def _gait_of(document: Mapping) -> Gait | None:

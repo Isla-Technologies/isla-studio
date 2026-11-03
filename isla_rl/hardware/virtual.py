@@ -198,7 +198,3 @@ class VirtualDriver:
         if not np.isfinite(data.qpos).all():
             self.reset_pose()
 
-
-def practice_info() -> dict:
-    return {"key": "virtual", "label": "Practice robot", "detail": "A simulated robot behind the same driver: rehearse bring-up without hardware."}
-
