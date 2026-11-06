@@ -53,6 +53,61 @@ def test_no_examples_folder_is_fine(shelf):
     assert examples.install() == []
 
 
+@pytest.fixture
+def bundled_robots(tmp_path, monkeypatch):
+    source = tmp_path / "bundle" / "robots"
+    robot = source / "luma_1"
+    robot.mkdir(parents=True)
+    (robot / "robot.json").write_text('{"bundled": true}', encoding="utf-8")
+    (robot / "source").mkdir()
+    (robot / "source" / "model.xml").write_text("<mujoco/>", encoding="utf-8")
+    monkeypatch.setattr(paths, "BUNDLED_ROBOTS", source)
+    monkeypatch.setattr(paths, "ROBOTS", tmp_path / "documents" / "robots")
+    return source
+
+
+def test_bundled_robots_are_copied_once_and_deletions_are_kept(bundled_robots):
+    assert examples.install_robots() == ["luma_1"]
+    robot = paths.ROBOTS / "luma_1"
+    assert (robot / "source" / "model.xml").read_text(encoding="utf-8") == "<mujoco/>"
+    assert (robot / "robot.json").read_bytes() == (bundled_robots / "luma_1" / "robot.json").read_bytes()
+    shutil.rmtree(robot)
+    assert examples.install_robots() == []
+    assert not robot.exists()
+    assert not (bundled_robots / examples.ROBOTS_RECORD).exists()  # The installation stays read-only.
+
+
+def test_a_bundled_robot_never_replaces_a_users_robot(bundled_robots):
+    robot = paths.ROBOTS / "luma_1"
+    robot.mkdir(parents=True)
+    own = b'{"own": true}'
+    (robot / "robot.json").write_bytes(own)
+    assert examples.install_robots() == []
+    assert (robot / "robot.json").read_bytes() == own
+    shutil.rmtree(robot)
+    assert examples.install_robots() == []  # A name already in use was offered too.
+    assert not robot.exists()
+
+
+def test_a_checkout_does_not_copy_robots_over_itself(bundled_robots, monkeypatch):
+    monkeypatch.setattr(paths, "ROBOTS", bundled_robots)
+    assert examples.install_robots() == []
+    assert not (bundled_robots / examples.ROBOTS_RECORD).exists()
+
+
+def test_an_interrupted_robot_copy_is_cleaned_up_and_retried(bundled_robots, monkeypatch):
+    def interrupted(source, target, **kwargs):
+        (target / "partial").write_bytes(b"incomplete")
+        raise OSError("copy interrupted")
+
+    with monkeypatch.context() as patch:
+        patch.setattr(shutil, "copytree", interrupted)
+        assert examples.install_robots() == []
+    assert not (paths.ROBOTS / "luma_1").exists()
+    assert examples.install_robots() == ["luma_1"]
+    assert (paths.ROBOTS / "luma_1" / "robot.json").is_file()
+
+
 @pytest.mark.parametrize("name", SHIPPED)
 def test_the_shipped_examples_work(name):
     run = Run(paths.ROOT / "examples" / "runs" / name)

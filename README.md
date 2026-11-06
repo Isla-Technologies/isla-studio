@@ -14,7 +14,7 @@
   <a href="LICENSE">MIT licence</a>
 </p>
 
-Isla Studio takes your robot's model, trains it in MuJoCo physics with reinforcement learning, tests what it learned in the physics the real robot will meet, and runs the result on your hardware over CAN. It is one Python program, and its screen opens in your browser. There is no cloud, no account, and no code to write.
+Isla Studio takes your robot's model, trains it in MuJoCo physics with reinforcement learning, tests what it learned in the physics the real robot will meet, and runs the result on your hardware over CAN. It runs on your own computer, in a Windows desktop window or your browser. There is no cloud, no account, and no code to write.
 
 It comes with **Luma-1**, Isla Technologies' 19-motor humanoid, and two of its trained runs as examples, so you can watch it walk before you train anything. Your own robot comes in the same way, from a URDF or MJCF file: robots from Unitree, AgiBot and Booster import without edits.
 
@@ -49,6 +49,10 @@ It comes with **Luma-1**, Isla Technologies' 19-motor humanoid, and two of its t
 
 ## Get started
 
+**Windows desktop app:** install the Windows setup `.exe`, then open **Isla Studio** from the Start menu. Python and the example robot are included. Your robots, runs and settings live in **Documents/Isla Studio**, separate from the installed app. See [the desktop build guide](desktop/README.md) to build the installer from this checkout. The desktop package currently targets Windows; macOS and Linux use the source launcher below.
+
+**From source, on Windows, macOS or Linux:**
+
 1. **Install Python 3.10 or newer** from [python.org](https://www.python.org/downloads/). On Windows, tick *Add python.exe to PATH* in the installer.
 2. **Download Isla Studio.** On this page choose *Code*, then *Download ZIP*, and unzip it. Or clone it with `git clone https://github.com/Isla-Technologies/isla-studio.git`.
 3. **Start it:**
@@ -70,7 +74,7 @@ The [user manual](docs/README.md) walks through everything from there.
 
 | | |
 | --- | --- |
-| **A computer** | Windows, macOS or Linux, with Python 3.10 or newer. |
+| **A computer** | Windows with the desktop installer, or Windows, macOS or Linux with Python 3.10 or newer for the source launcher. |
 | **An NVIDIA GPU** (optional) | It trains about five times faster than a processor. On a laptop RTX 4050, the stand-and-recover lesson takes about ten minutes. Install GPU support once from **Train**: **New run**, then **Install NVIDIA GPU support**. macOS trains on the processor. |
 | **A robot** (optional) | Everything works in simulation. For hardware you need motor drives that speak the MIT protocol or ODrive CANSimple, and a USB-CAN adapter or a Linux computer on the robot. See [Run it on a real robot](docs/real-robot.md). |
 

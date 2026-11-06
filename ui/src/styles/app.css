@@ -174,14 +174,14 @@ details.block[open] > summary::after { transform: rotate(45deg); }
 .anatomy-leaders { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .anatomy-leaders path { fill: none; stroke: var(--leader); stroke-width: 1; }
 .anatomy-layer { position: absolute; inset: 0; pointer-events: none; }
-.marker { position: absolute; left: 0; top: 0; width: 22px; height: 22px; margin: -11px 0 0 -11px; padding: 0; border: 0; background: none; cursor: pointer; pointer-events: auto; display: grid; place-items: center; }
-.marker i { width: 9px; height: 9px; border-radius: 50%; background: var(--red); box-shadow: var(--glow-marker); transition: transform var(--t) var(--ease); }
-.marker:hover i, .marker:focus-visible i { transform: scale(1.4); }
-.marker[data-state="armed"] i { animation: pulse 1.6s ease-in-out infinite; }
-.marker[data-state="off"] i { background: transparent; border: 1.5px solid var(--neutral); box-shadow: none; }
-.marker[data-state="fault"] i { border-radius: 0; animation: blink 0.5s steps(2, start) infinite; }
-.marker[data-state="passive"] i { width: 8px; height: 8px; border-radius: 0; transform: rotate(45deg); background: transparent; border: 1.5px solid var(--white); box-shadow: var(--glow-marker-white); }
-.marker.selected { background: linear-gradient(var(--red), var(--red)) top left / 7px 1px no-repeat, linear-gradient(var(--red), var(--red)) top left / 1px 7px no-repeat, linear-gradient(var(--red), var(--red)) bottom right / 7px 1px no-repeat, linear-gradient(var(--red), var(--red)) bottom right / 1px 7px no-repeat; }
+.marker { --r: 11px; --bracket: var(--steel); position: absolute; left: 0; top: 0; width: calc(var(--r) * 2); height: calc(var(--r) * 2); margin: calc(var(--r) * -1) 0 0 calc(var(--r) * -1); padding: 0; border: 0; background: none; cursor: pointer; pointer-events: auto; display: grid; place-items: center; }
+/* An actuator glows in the 3D view itself; its marker is a hit area that shows targeting brackets when pointed at, focused or selected. */
+.marker:hover, .marker:focus-visible, .marker.selected { background: linear-gradient(var(--bracket), var(--bracket)) top left / 7px 1px no-repeat, linear-gradient(var(--bracket), var(--bracket)) top left / 1px 7px no-repeat, linear-gradient(var(--bracket), var(--bracket)) top right / 7px 1px no-repeat, linear-gradient(var(--bracket), var(--bracket)) top right / 1px 7px no-repeat, linear-gradient(var(--bracket), var(--bracket)) bottom left / 7px 1px no-repeat, linear-gradient(var(--bracket), var(--bracket)) bottom left / 1px 7px no-repeat, linear-gradient(var(--bracket), var(--bracket)) bottom right / 7px 1px no-repeat, linear-gradient(var(--bracket), var(--bracket)) bottom right / 1px 7px no-repeat; }
+.marker:focus-visible { outline: none; --bracket: var(--red); }
+.marker.selected { --bracket: var(--red); }
+.marker i { display: none; }
+/* A passive joint has no actuator: a white diamond marks its hinge. */
+.marker[data-state="passive"] i { display: block; width: 8px; height: 8px; transform: rotate(45deg); border: 1.5px solid var(--white); box-shadow: var(--glow-marker-white); }
 .tag { position: absolute; left: 0; top: 0; display: inline-flex; flex-direction: column; gap: 1px; padding: 3px 7px; background: var(--tag); border: 1px solid var(--grid); white-space: nowrap; visibility: hidden; }
 .tag b { font: 500 0.6875rem/1.1 var(--hud); letter-spacing: 0.16em; text-transform: uppercase; color: var(--steel); }
 .tag span { font: 600 0.8125rem/1.1 var(--hud); color: var(--white); font-variant-numeric: tabular-nums; }

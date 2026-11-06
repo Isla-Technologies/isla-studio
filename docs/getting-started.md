@@ -2,7 +2,19 @@
 
 ## Install
 
-Isla Studio runs on Windows, macOS and Linux. It needs **Python 3.10 or newer**; the first start installs everything else.
+### Windows desktop app
+
+Run the Windows setup `.exe`, then open **Isla Studio** from the Start menu. It includes Python, the interface, Luma-1 and the trained examples; you do not need to install Python or Node. Studio opens in its own desktop window.
+
+Robots, training runs, policies and settings are kept in **Documents/Isla Studio**, separate from the installed app. Closing the window stops its local server cleanly. Training runs continue in their own processes, just as they do with the source launcher.
+
+If you already use the source launcher, your existing projects stay in that checkout. To use them in the desktop app, stop any training, close Studio, and copy the robots and runs you want, plus their policies and settings, into the matching folders in **Documents/Isla Studio**. Keep the originals until you have opened and checked the copies.
+
+The desktop app still runs the simulation and training locally. Its Rust shell manages the window and server; MuJoCo and the Python training core are bundled inside it. See [the desktop build guide](../desktop/README.md) for building the installer, logs and packaging details. macOS and Linux desktop packages are not built yet.
+
+### From source
+
+The source launcher runs on Windows, macOS and Linux. It needs **Python 3.10 or newer**; the first start installs everything else.
 
 1. Install Python from [python.org](https://www.python.org/downloads/). On Windows, tick **Add python.exe to PATH** in the installer. On Ubuntu or Debian, also run `sudo apt install python3-venv`.
 2. Download Isla Studio: on the [repository page](https://github.com/Isla-Technologies/isla-studio), choose **Code**, then **Download ZIP**, and unzip it anywhere. Or clone it:
@@ -11,7 +23,7 @@ Isla Studio runs on Windows, macOS and Linux. It needs **Python 3.10 or newer**;
    git clone https://github.com/Isla-Technologies/isla-studio.git
    ```
 
-## Start
+## Start from source
 
 | Computer | Start Isla Studio |
 | --- | --- |
@@ -56,7 +68,7 @@ The first training run on a GPU spends a few minutes compiling before it starts.
 - **Top bar.** The six pages: **Hangar**, **Train**, **Design**, **Connect**, **Deploy** and **Robot** (keys 1 to 6). On the right, three lights show the simulation (SIM), the real robot (off, connected or armed) and whether training can use a GPU (GPU) or only the processor (CPU). Then the light and dark switch and the **E-STOP** button.
 - **Left panel.** The page's controls. The `–` button folds it away.
 - **Live view.** The robot in the live simulation, in full physics. Drag to orbit, scroll to zoom, double-click to frame the robot, and Shift-drag on the robot to push it. The toolbar above it pauses, resets and hangs the robot in a gantry, and switches between the live robot and the practice robots of a run.
-- **Anatomy.** The robot drawn as a wireframe, with a point on every motor that lights up as the motor works. Click a motor point or a part to select it. The buttons show every motor's label, switch between the simulation's and the real robot's readings, enlarge it or make it full screen.
+- **Anatomy.** An X-ray of the robot: its shell drawn as dark glass and white edges, and every actuator inside it in red, brighter the harder that motor works. A motor that does not reply turns grey, and a faulted one blinks. Click an actuator or a part to select it. The buttons show every motor's label, switch between the simulation's and the real robot's readings, enlarge it or make it full screen.
 
 ![The anatomy view, full screen, with every motor's angle labelled](images/anatomy.webp)
 

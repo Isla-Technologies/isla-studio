@@ -1,6 +1,7 @@
-// The anatomy HUD: the robot as a glowing wireframe with every motor marked live.
-// It floats top right of the training area; drag its corner to resize, expand it
-// to study the robot, fold it away. Click a motor point or a part to select it.
+// The anatomy HUD: the robot as an X-ray, its shell a glowing wireframe and every
+// actuator glowing red inside it as hard as it works, live. It floats top right of
+// the training area; drag its corner to resize, expand it to study the robot, fold
+// it away. Click an actuator or a part to select it.
 
 import { effect, useComputed, useSignalEffect } from '@preact/signals';
 import { useEffect, useRef, useState } from 'preact/hooks';
@@ -9,7 +10,7 @@ import { anatomySource, design, hardware, live, meta, selection } from '../lib/s
 import type { RobotAssets } from '../lib/robot';
 import { theme } from '../lib/theme';
 import type { JointMeta } from '../lib/types';
-import { AnatomyView, type ScreenPoint } from '../three/anatomy';
+import { AnatomyView, type ActuatorLevel, type ScreenPoint } from '../three/anatomy';
 import { Icon } from './icons';
 import { Choice, IconButton, Meter } from './ui';
 
@@ -50,8 +51,9 @@ export function Anatomy({ assets }: { assets: RobotAssets }) {
     const view = new AnatomyView(canvas.current, assets);
     viewRef.current = view;
     const unfollow = effect(() => view.setTheme(theme.value)); // Light or dark, the wireframe follows.
-    const anchors = new Float64Array(motors.length * 3);
+    const ids = motors.map((j) => j.id);
     const screen: ScreenPoint[] = [];
+    const levels = new Map<number, ActuatorLevel>();
     let raf = 0;
     let last = 0;
     const loop = (now: number) => {
@@ -62,11 +64,16 @@ export function Anatomy({ assets }: { assets: RobotAssets }) {
       const states = markerStates();
       view.update(q, design.value, strutLoads());
       motors.forEach((j, i) => {
-        anchors[i * 3] = view.kin.anchors[j.id * 3];
-        anchors[i * 3 + 1] = view.kin.anchors[j.id * 3 + 1];
-        anchors[i * 3 + 2] = view.kin.anchors[j.id * 3 + 2];
+        const s = states[i];
+        const peak = j.motor?.peak_torque ?? 0;
+        levels.set(j.id, {
+          load: s.torque !== null && peak > 0 ? Math.abs(s.torque) / peak : 0,
+          mode: !s.online ? 'off' : s.fault ? 'fault' : s.armed ? 'armed' : 'ok',
+          lit: hoverRef.current === j.id || selectedRef.current === j.id,
+        });
       });
-      view.project(anchors, motors.length, screen);
+      view.drive((joint) => levels.get(joint), now);
+      view.projectJoints(ids, screen);
       placeMarkers(screen, states);
       view.render();
     };
@@ -167,6 +174,9 @@ export function Anatomy({ assets }: { assets: RobotAssets }) {
       const s = states[i];
       el.style.transform = `translate(${p.x}px, ${p.y}px)`;
       el.style.visibility = p.visible ? 'visible' : 'hidden';
+      // An actuator's hit area and targeting brackets frame it, however near the camera is.
+      const size = `${Math.round(Math.max(11, (p.size ?? 0) * 1.15))}px`;
+      if (el.style.getPropertyValue('--r') !== size) el.style.setProperty('--r', size);
       const j = motors[i];
       const state = j.passive ? 'passive' : !s.online ? 'off' : s.fault ? 'fault' : s.armed ? 'armed' : 'ok';
       if (el.dataset.state !== state) el.dataset.state = state;
@@ -217,6 +227,12 @@ export function Anatomy({ assets }: { assets: RobotAssets }) {
   function onCanvasClick(event: MouseEvent): void {
     const view = viewRef.current;
     if (!view) return;
+    // The actuators show through the shell, so a click lands on them first.
+    const actuator = view.pickActuator(event.clientX, event.clientY);
+    if (actuator !== null) {
+      selection.value = { kind: 'joint', id: actuator };
+      return;
+    }
     const body = view.pick(event.clientX, event.clientY);
     if (body === null) {
       selection.value = null;
@@ -324,7 +340,7 @@ function Details({ joint, body, robot }: { joint: JointMeta | null; body: { labe
   }, []);
   if (!m) return null;
   if (!joint && !body) {
-    return <p class="anatomy-hint t-meta">Click a motor point or a part. Drag to turn the robot, scroll to zoom.</p>;
+    return <p class="anatomy-hint t-meta">Click an actuator or a part. Actuators glow brighter the harder they work. Drag to turn the robot, scroll to zoom.</p>;
   }
   if (body) {
     const link = m.links.find((l) => l.body === body.link);

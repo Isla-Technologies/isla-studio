@@ -60,6 +60,10 @@ Some things the interface holds to:
 - **Both themes.** Every colour is a token with a dark and a light value; check a change in both.
 - **Narrow screens.** Check a layout at 1280, 1440 and 1920 pixels wide.
 
+## Windows desktop app
+
+The desktop app uses a Rust/Tauri shell around the same local server and interface. Its installer includes a private Python runtime so end users need neither Python nor Node. See [desktop/README.md](desktop/README.md) for prerequisites, building and checking the Windows installer. Keep the source launchers working on Windows, macOS and Linux when changing the desktop package.
+
 ## Sending a change
 
 1. Fork the repository and make a branch.

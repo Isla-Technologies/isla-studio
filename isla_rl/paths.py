@@ -6,7 +6,8 @@ import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-ROBOTS = Path(os.environ.get("ISLA_ROBOTS", ROOT / "robots"))
+BUNDLED_ROBOTS = ROOT / "robots"  # The robots that come with Studio.
+ROBOTS = Path(os.environ.get("ISLA_ROBOTS", BUNDLED_ROBOTS))
 RUNS = Path(os.environ.get("ISLA_RUNS", ROOT / "runs"))
 POLICIES = Path(os.environ.get("ISLA_POLICIES", ROOT / "policies"))
 SETTINGS = Path(os.environ.get("ISLA_SETTINGS", ROOT / "settings"))

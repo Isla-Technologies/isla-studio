@@ -13,10 +13,14 @@ export interface Palette {
   hemi: number;
   exposure: number;
   accent: number;
-  /** Anatomy: wireframe ink, the dimming fill behind it, the floor rings, the glow. */
+  /**
+   * Anatomy: wireframe ink; the shell's glass (its tint, how much it dims the actuators
+   * behind it, and the sheen where it turns away); the floor rings; the glow.
+   */
   ink: number;
   fill: number;
   fillOpacity: number;
+  sheen: number;
   ring: number;
   tick: number;
   bloom: number;
@@ -36,11 +40,12 @@ export const PALETTES: Record<Theme, Palette> = {
     accent: 0xff2b2b,
     ink: 0xf2f2f2,
     fill: 0x070707,
-    fillOpacity: 0.86,
+    fillOpacity: 0.32,
+    sheen: 0.35,
     ring: 0x3a3a3a,
     tick: 0x5c5c5c,
     bloom: 0.4,
-    lineGain: 1,
+    lineGain: 1.8,
   },
   light: {
     background: 0xe6e7e9,
@@ -53,7 +58,8 @@ export const PALETTES: Record<Theme, Palette> = {
     accent: 0xc8161b,
     ink: 0x161616,
     fill: 0xf4f4f2,
-    fillOpacity: 0.9,
+    fillOpacity: 0.5,
+    sheen: 0.12,
     ring: 0xbdbdb9,
     tick: 0x8e8e8a,
     bloom: 0,

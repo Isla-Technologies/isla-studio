@@ -93,6 +93,7 @@ class Platform:
 
     def __init__(self, robot: str | None = None) -> None:
         paths.ensure_dirs()
+        examples.install_robots()
         examples.install()
         self.hub = Hub()
         self.training = TrainingManager(self.hub.publish)
@@ -573,9 +574,11 @@ def create_app(robot: str | None = None) -> FastAPI:
 
         def work():
             with log.open("w", encoding="utf-8") as out:
+                hidden = {"creationflags": subprocess.CREATE_NO_WINDOW} if sys.platform == "win32" else {}
                 process = subprocess.Popen(
                     [sys.executable, "-u", "-m", "pip", "install", "-r", str(requirements)],  # -u: the log fills as it goes.
                     stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, cwd=str(paths.ROOT),
+                    **hidden,
                 )
                 assert process.stdout is not None
                 for line in process.stdout:

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Isla Studio</title>
+<style>
+@font-face{font-family:Inter;src:url(fonts/Inter-Regular.ttf)}
+@font-face{font-family:Michroma;src:url(fonts/Michroma-Regular.ttf)}
+body{margin:0;background:#050505;color:#b4b4b4;font:16px/1.5 Inter,system-ui,sans-serif;display:grid;place-items:center;min-height:100vh}
+main{max-width:680px;padding:48px}h1{font:26px/1.4 Michroma,sans-serif;color:#f2f2f2;letter-spacing:.075em;text-transform:uppercase;margin:0 0 30px}
+.progress{height:3px;display:flex;gap:6px;margin-bottom:30px}.progress i{flex:1;background:#2a2a2a}.progress i:first-child{background:#ff2b2b;box-shadow:0 0 10px #ff2b2b80}
+p{margin:0 0 16px}#detail{font-size:14px;color:#8a8a8a;white-space:pre-wrap;overflow-wrap:anywhere}
+</style>
+<main><h1>Isla Studio</h1><div class="progress" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><p id="status" role="status">Starting your studio…</p><p id="detail">Loading the simulation and your robots. The first start may take a moment.</p></main>
+</html>
