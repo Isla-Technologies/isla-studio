@@ -4,11 +4,13 @@
 
 Bring-up goes through **Connect** (reach the robot, check every motor, arm it) and **Deploy** (run a policy). Rehearse all of it with the practice robot first.
 
+These pages work in both the Windows desktop app and browser Studio. The desktop app bundles the existing Python hardware and safety code behind its Rust window. Its robot profiles and motor maps live in **Documents/Isla Studio/robots**, and its connection settings and safety limits in **Documents/Isla Studio/settings**. The source launcher uses `robots/` and `settings/` in its checkout by default. The new desktop package has been checked with simulation and CPU training; real motor operation still needs hardware validation.
+
 ## What you need
 
 - **Motor drives on CAN** that speak the **MIT** protocol or **ODrive CANSimple**.
 - One of:
-  - **USB-CAN adapters** on this computer, through [python-can](https://python-can.readthedocs.io/): CANable and other serial adapters (`slcan`, any computer), candleLight (`gs_usb`; run `pip install gs-usb` in Isla Studio's environment), PEAK (`pcan`, with PEAK's driver), Kvaser (`kvaser`), and SocketCAN on Linux (`socketcan`).
+  - **USB-CAN adapters** on this computer, through [python-can](https://python-can.readthedocs.io/): CANable and other serial adapters (`slcan`), candleLight (`gs_usb`, with the extra `gs-usb` Python package), PEAK (`pcan`, with PEAK's driver), Kvaser (`kvaser`), and SocketCAN on Linux (`socketcan`). Install any adapter-specific system drivers first. The desktop installer includes the standard Studio dependencies; it does not bundle `gs-usb`. For that optional package, use a source environment and run `.venv\Scripts\python -m pip install gs-usb` on Windows, or `.venv/bin/python -m pip install gs-usb` on Linux or macOS.
   - **The robot's own computer** (a Jetson or a Raspberry Pi running Linux) owning the CAN buses and the IMU, with this computer connecting over Wi-Fi. This is the way to walk without a cable.
 - The robot's **motor map**: which bus and node each joint's drive is on, its direction and its zero. Set it on the **Robot** page (see [Robots](robots.md#the-robot-page)).
 
@@ -31,7 +33,7 @@ The **practice robot** is a simulated robot behind the same driver as real hardw
      ![The CAN adapter settings: adapter, channel and bit rate for each bus, and the protocol and gear ratio of each actuator type](images/connect-can.webp)
 
    - **The robot's computer**: enter its address, such as `192.168.4.1:47210` (see below).
-2. Press **Connect**. Every motor starts **relaxed**. Move each joint by hand and check that the model follows, in the same direction, on the anatomy view (**Show it in 3D**). If one is reversed or offset, fix its direction or zero on the **Robot** page.
+2. Press **Connect**. Every motor starts **relaxed**. Move each joint by hand and check that the model follows, in the same direction, on the anatomy view (**Show it in 3D**). The X-ray shows the internal actuators; choose **Robot** readings to inspect their measured angle and torque. A motor that stops replying turns grey, and a faulted one blinks. If one is reversed or offset, fix its direction or zero on the **Robot** page.
 
 The panel shows how many motors answer, the control loop's rate and the hottest motor. **Buses** draws every motor on its CAN bus, and the table below gives each motor's angle, torque and temperature. **Scan** looks for drives on the buses. **Log** keeps what happened.
 
@@ -68,7 +70,7 @@ Press **Arm**. Stiffness ramps up from the robot's measured pose over the soft s
 
 1. Open **Deploy** and choose a policy. It shows the design the policy trained for, and warns if that differs from the robot's saved design.
 2. Press **Watch in simulation** first, and **Test in full physics** (see [Training](training.md#test-a-policy-in-full-physics)).
-3. With the robot connected and armed, press **Run on robot**. The robot runs the policy from its own sensor readings, at 50 steps a second. For a jumping policy, **Jump** makes it jump.
+3. With the robot connected and armed, press **Run on robot**. Studio evaluates the policy from the robot's sensor readings at 50 steps a second and sends its targets through the safety filter and driver. Keep Studio connected while it runs. For a jumping policy, **Jump** makes it jump.
 
 **Policy file** downloads the policy as JSON, to run it with your own software.
 
@@ -86,7 +88,9 @@ Deploy's checklist, before the first run on hardware:
 
 ## On the robot's computer
 
-For walking without a cable, the robot's own computer (Linux) owns its CAN buses and IMU and runs the policy; this computer connects to it over Wi-Fi.
+For walking without a USB cable to this computer, the robot's own computer (Linux) owns its CAN buses and IMU. Its Python runtime streams readings and applies motor commands over Wi-Fi; Studio still evaluates the policy and applies its safety filter on the controlling computer. Keep Studio running and connected while controlling the robot. The current robot-side runtime does not run a policy independently.
+
+The Windows desktop installer is for the controlling computer. Set up the source checkout and Python runtime separately on the robot's computer:
 
 1. Copy Isla Studio to the robot's computer and set it up once: `sh run.sh --no-browser`. Stop it with Ctrl+C when it says it is running.
 2. Start the robot's side:
@@ -99,3 +103,5 @@ For walking without a cable, the robot's own computer (Linux) owns its CAN buses
 3. On this computer, in **Connect**, choose **The robot's computer** and enter its address and port.
 
 If this computer falls silent while the motors are enabled (`--watchdog` seconds), the robot relaxes them.
+
+Disarm and disconnect before closing Studio. A normal desktop-window close requests the server's shutdown and disconnects its hardware link; this does not replace the bring-up checks or hardware emergency stop.

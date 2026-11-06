@@ -14,7 +14,9 @@ The panel shows the robot's figures: mass, height, motors, joints, peak torque a
 
 **Train *robot*** (or **Load *robot* for training**) makes it the robot every page works on. Isla Studio remembers it for next time. **Remove from the hangar** deletes a robot you imported.
 
-Each robot is a folder in `robots/`: its model in `source/`, and its profile, `robot.json`.
+Each robot is a folder in `robots/`: its model in `source/`, and its profile, `robot.json`. In the Windows desktop app, that folder is under **Documents/Isla Studio**. With the source launcher, it is under your Isla Studio checkout, unless you set `ISLA_ROBOTS` to another location.
+
+The desktop app copies the bundled Luma-1 into your own robots folder on first use. It preserves an existing robot with the same folder name, and does not put back a bundled robot you have deleted. Imported robots and profile edits belong in this writable folder, separate from the installed app. See [Install and start](getting-started.md) when moving projects from a source checkout.
 
 ## Bring your own robot
 
@@ -25,6 +27,8 @@ Isla Studio trains robots that walk on two feet: humanoids and other bipeds. It 
 1. Open the **Hangar** and click the **Import a robot** bay.
 2. Either press **Choose the robot's folder** and pick the folder that holds the model and its meshes, or type the path of the model file under **From a file on the server's computer** and press **Import from this file**.
 3. Isla Studio reads the model and adds the robot to the hangar. Check what it found (below), then press **Train *robot***.
+
+In the Windows desktop app, the server is bundled on this computer, so the file path is a local Windows path. If you open browser Studio from another device, that field still refers to the computer running Studio; use the folder picker to send files from the device you are using.
 
 The robot needs:
 
@@ -50,7 +54,7 @@ Isla Studio reads off the model:
 | Which way it faces | Its feet reach further ahead of the ankles than behind. |
 | The motors | Every driven joint, with the model's torque limit and servo gains, or gains estimated from the torque. Each joint's limb comes from its name (hip, knee, shoulder…), and each limb gets its own CAN bus in a default motor map. |
 
-All of it is written to `robots/<robot>/robot.json`, which you can open in any text editor. Restart Isla Studio after editing it. The parts worth checking:
+All of it is written to `robots/<robot>/robot.json` under your projects folder, which you can open in any text editor. In the desktop app, for example, Luma-1's profile is **Documents/Isla Studio/robots/luma_1/robot.json**. Close and reopen Studio after editing a profile by hand. The parts worth checking:
 
 | In `robot.json` | What to check |
 | --- | --- |
@@ -67,3 +71,5 @@ Luma-1's `robots/luma_1/robot.json` is a complete example, with notes on where e
 ![The Robot page: Luma-1's mass, motors, actuator table and notes](images/robot.webp)
 
 The **Robot** page shows the loaded robot's profile: its mass (from the CAD, plus any virtual mass for wiring and electronics), its actuators with their peak torque, gains and no-load speed, and the notes behind them. Its **Motor map** sets each motor's bus, node, direction (as is or reversed) and zero, and saves them to `robot.json`. You need the map right before you connect real hardware.
+
+On pages with the **Anatomy** view, the robot's shell is transparent and its internal actuators are red, brighter as their torque rises relative to their rating. Click an actuator or a part to select it; targeting brackets frame the selected motor, and passive joints keep their diamond markers. The drawing uses the robot's own meshes where it can identify an actuator housing, with a simple actuator shape as a fallback. See [the screen tour](getting-started.md#the-screen).

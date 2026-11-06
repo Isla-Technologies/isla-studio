@@ -10,9 +10,13 @@ The page works for robots whose `robot.json` lists hardware values to change. Lu
 
 Move a slider or type a value. The robot in the live view and the anatomy view change at once, and the figures update: height, hip height, leg length, how far the robot leans to stand, and the joint-to-joint lengths.
 
+The anatomy view shows the actuators inside the shell. Click one to inspect its readings; its brightness follows motor load. The view uses the current design, including changes to the leg rods and shock absorbers.
+
 - **Save design** makes these values the robot's design. The simulation, new training runs and the parts list use it.
 - **Back to CAD** returns every value to the robot's CAD model.
 - **Use a run's design** fills in the design a design-search run chose. Save it to adopt it.
+
+Saved changes belong to the robot in your projects folder. In the Windows desktop app that is **Documents/Isla Studio/robots/**; with the source launcher it is the checkout's `robots/` folder, unless you configured another location. The desktop app's bundled Luma-1 is copied there on first start, so your saved design stays separate from the installed files.
 
 ## The parts list
 
@@ -42,4 +46,4 @@ The example run **luma1-leg-design** is the search that chose Luma-1's legs, in 
 
 ## Hardware values for your own robot
 
-To give your robot hardware values, add them to the `design` section of its `robot.json`, with the parts they act on in `rods` and `struts`. Luma-1's `robots/luma_1/robot.json` shows each kind: a rod's length (`rod`), and a shock absorber's spring rate (`strut_k`), damping (`strut_c`) and preload (`strut_preload`), each with its unit, range, step and help text.
+To give your robot hardware values, add them to the `design` section of its `robot.json`, with the parts they act on in `rods` and `struts`. Luma-1's `robots/luma_1/robot.json`, under your projects folder, shows each kind: a rod's length (`rod`), and a shock absorber's spring rate (`strut_k`), damping (`strut_c`) and preload (`strut_preload`), each with its unit, range, step and help text. Close Studio before editing the file, then reopen it to load the changes.

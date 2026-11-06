@@ -24,6 +24,7 @@ It comes with **Luma-1**, Isla Technologies' 19-motor humanoid, and two of its t
 | --- | --- |
 | **Train** | Choose a lesson: stand and recover, walk, walk and run, or jump. Thousands of practice robots learn together on an NVIDIA GPU or on your processor, and the learning curves update live. |
 | **Watch and steer** | Load a trained policy into the live robot and drive it with W A S D. Push it and watch it recover. |
+| **Inspect actuators** | The Anatomy X-ray shows actuators inside the shell, with live motor load and state. Select an actuator to see its readings. |
 | **Test** | One click tries a policy in full physics, every motor held to its torque-speed limit. You get speeds reached, falls, shoves survived, and the peak load on every motor and shock absorber. |
 | **Design** | Change the hardware, such as rod lengths, springs and dampers, and see what the physics says before you build. Or let training choose the design for you (co-design). |
 | **Run on the robot** | Connect over USB-CAN or the robot's own computer. Arming ramps the stiffness up gently under safety limits, and Esc is the emergency stop. A practice robot lets you rehearse all of it with no hardware. |
@@ -49,7 +50,7 @@ It comes with **Luma-1**, Isla Technologies' 19-motor humanoid, and two of its t
 
 ## Get started
 
-**Windows desktop app:** install the Windows setup `.exe`, then open **Isla Studio** from the Start menu. Python and the example robot are included. Your robots, runs and settings live in **Documents/Isla Studio**, separate from the installed app. See [the desktop build guide](desktop/README.md) to build the installer from this checkout. The desktop package currently targets Windows; macOS and Linux use the source launcher below.
+**Windows desktop app:** on Windows 10 or 11 (64-bit), install the Windows setup `.exe`, then open **Isla Studio** from the Start menu. Python, Luma-1 and its trained examples are included. Your robots, runs, policies and settings live in **Documents/Isla Studio**, separate from the installed app. The initial installer is unsigned. See [Install and start](docs/getting-started.md) for moving existing projects and [the desktop build guide](desktop/README.md) to build the installer from this checkout. macOS and Linux use the source launcher below.
 
 **From source, on Windows, macOS or Linux:**
 
@@ -94,6 +95,12 @@ Unitree G1 and H1 and Booster T1 (MuJoCo Menagerie models) and AgiBot X1 (its UR
 4. [Design](docs/hardware-design.md): changing the hardware, and letting training choose it
 5. [Run it on a real robot](docs/real-robot.md): connecting, safety, arming, and running a policy
 6. [Troubleshooting](docs/troubleshooting.md)
+
+## How it is built
+
+The Windows app has a **Rust/Tauri desktop shell** that manages its window, startup and shutdown. The bundled **Python core** still handles robot import, simulation, training, hardware control and the local API. The interface is **TypeScript**, and MuJoCo provides the native physics engine. The public browser demo runs its own TypeScript and WebAssembly runtime.
+
+The core has not been ported to Rust yet. See [Architecture](docs/architecture.md) for the current responsibilities and [the staged Rust migration plan](docs/rust-migration.md) for the proposed work and checks before switching each component.
 
 ## Contributing
 

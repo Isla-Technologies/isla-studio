@@ -2,6 +2,10 @@
 
 Training teaches the loaded robot a skill. Thousands of practice robots try it at once in simulation; the ones that do better shape the policy, and over millions of moves it learns to stand, walk or jump.
 
+The Windows desktop app includes everything needed to train on the processor. NVIDIA GPU support is an optional download from **Train**, under **New run**; see [GPU setup](getting-started.md#nvidia-gpu-support). The same training controls work in the desktop window and the browser version.
+
+In this chapter, `runs/` means **Documents/Isla Studio/runs** in the Windows desktop app, or the checkout's `runs/` folder when using the source launcher. See [Install and start](getting-started.md) before moving projects between them.
+
 ## Start a run
 
 ![A new run: the four lessons, the time it should take, and every option folded below](images/new-run.webp)
@@ -47,13 +51,17 @@ The runs list shows each run's state: **Running**, **Stopped** or **Finished**, 
 
 The curves on the right plot score, falls and speed error (or try length) over the whole run; **Table** shows the same as numbers. **Where the points come from** splits the score into the rewards that make it, such as staying up, walking at the speed asked, and not rocking.
 
-A run saves its policy about every 30 seconds, so you can watch it while it trains. **Stop** halts a run with its progress saved, and **Continue** carries on from there. A run that finished its planned practice cannot continue: start a new run to train further. Training runs as its own process, so closing Isla Studio does not stop it.
+A run saves its policy about every 30 seconds, so you can watch it while it trains. **Stop** halts a run with its progress saved, and **Continue** carries on from there. A run that finished its planned practice cannot continue: start a new run to train further.
+
+Training runs as its own process. Closing the desktop window stops Studio's local server and live simulation, while training continues. Closing the source launcher's terminal also leaves training running. Open Studio again with the same projects folder to follow the run; press **Stop** before closing if you want training to end too. Stop runs before upgrading or uninstalling the desktop app.
 
 ## Watch and steer a policy
 
 ![Luma-1 walking under its policy, steered forward with W](images/watch.webp)
 
 Choose a run and press **Watch policy**. The live robot now runs that policy in full physics.
+
+The **Anatomy** view shows each actuator inside the robot's shell. Its red glow grows with the motor's load in dark mode; light mode uses shading without glow. Click an actuator to inspect its readings, or use **Show every motor label** to keep all the names visible. The view follows the simulated robot while a policy runs; choose **Robot** only after connecting hardware to inspect its readings instead.
 
 - **W A S D** walk, **Q** and **E** turn. **Shift** with **W** runs, if the policy learned to run.
 - **J**, or the **Jump** button, jumps, if the policy learned to jump.
@@ -84,9 +92,11 @@ A walking policy is asked for a ladder of speeds, then backward, sideways, turni
 
 The report is saved as `runs/<run>/evaluation.json`.
 
-## Training from the command line
+## Training from the command line in a source checkout
 
-Runs live in `runs/`, one folder each. To train or test one from a terminal (on this computer, or another with Isla Studio set up), use Isla Studio's own Python: `.venv\Scripts\python` on Windows, `.venv/bin/python` on macOS and Linux.
+The commands below use a source installation. Open a terminal in the checkout and use its own Python: `.venv\Scripts\python` on Windows, `.venv/bin/python` on macOS and Linux. Desktop users can start, stop and test runs through the app without a terminal.
+
+Each run is a folder in that installation's `runs/`. To train an existing run:
 
 ```sh
 .venv/bin/python -m isla_rl.learn train runs/luma1-stand --device gpu

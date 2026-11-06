@@ -4,13 +4,30 @@
 
 ### Windows desktop app
 
-Run the Windows setup `.exe`, then open **Isla Studio** from the Start menu. It includes Python, the interface, Luma-1 and the trained examples; you do not need to install Python or Node. Studio opens in its own desktop window.
+On **64-bit Windows 10 or 11**, run the Windows setup `.exe`, then open **Isla Studio** from the Start menu. It installs for your Windows account and includes Python, MuJoCo, the interface, Luma-1 and the trained examples; you do not need to install Python, Node or Rust. Studio opens in its own desktop window. The installer sets up Microsoft WebView2 if it is missing, which needs an internet connection. The current installer is unsigned.
 
 Robots, training runs, policies and settings are kept in **Documents/Isla Studio**, separate from the installed app. Closing the window stops its local server cleanly. Training runs continue in their own processes, just as they do with the source launcher.
 
 If you already use the source launcher, your existing projects stay in that checkout. To use them in the desktop app, stop any training, close Studio, and copy the robots and runs you want, plus their policies and settings, into the matching folders in **Documents/Isla Studio**. Keep the originals until you have opened and checked the copies.
 
-The desktop app still runs the simulation and training locally. Its Rust shell manages the window and server; MuJoCo and the Python training core are bundled inside it. See [the desktop build guide](../desktop/README.md) for building the installer, logs and packaging details. macOS and Linux desktop packages are not built yet.
+The desktop app runs the simulation and training locally. Its Rust/Tauri shell manages the window, starts the bundled server and stops it when the window closes. The server, robot tools, training and hardware logic remain Python; MuJoCo supplies the physics, and the interface remains TypeScript. See [Architecture](architecture.md) for the current split and [Rust migration](rust-migration.md) for the proposed core migration. [The desktop build guide](../desktop/README.md) covers building the installer. macOS and Linux desktop packages are not built yet.
+
+The desktop app chooses its own local connection automatically. You do not need to open `localhost:8848`, keep a terminal open or use the source launch options below.
+
+### Your files, updates and removal
+
+| What | Windows desktop app | Source launcher |
+| --- | --- | --- |
+| Robots, runs, policies and settings | The matching folders in **Documents/Isla Studio** | `robots/`, `runs/`, `policies/` and `settings/` in the checkout, unless configured otherwise |
+| Cache | `%LOCALAPPDATA%\technologies.isla.studio\cache` | `.cache/` in the checkout |
+| Startup and server log | `%LOCALAPPDATA%\technologies.isla.studio\studio.log` | The terminal output |
+| Optional GPU packages | `%LOCALAPPDATA%\technologies.isla.studio\python313-packages` | The checkout's `.venv` |
+
+Windows can place Documents inside OneDrive or another redirected folder; use your Windows Documents location. The desktop server log is replaced on each launch, so copy it before reopening Studio when reporting a failed start.
+
+To update the desktop app, stop any training, close Studio and run the newer setup `.exe`. There is no in-app updater. Keep a backup of **Documents/Isla Studio** before updating; projects and optional GPU packages are stored separately from the installation.
+
+To uninstall, stop training, close Studio and remove **Isla Studio** through **Windows Settings → Apps**. The uninstaller's **Delete the application data** option removes local caches, logs and downloaded GPU packages. Your projects in **Documents/Isla Studio** are outside that application-data folder and are kept.
 
 ### From source
 
@@ -52,7 +69,9 @@ Add options after the script's name, for example `run.cmd --port 8849`:
 
 An NVIDIA GPU trains about five times faster than a processor. Isla Studio can use one on Windows and Linux, with a current NVIDIA driver (CUDA 12). macOS trains on the processor.
 
-To install GPU support, open **Train**, press **New run**, and press **Install NVIDIA GPU support**. It is a large download and takes a few minutes; Isla Studio tells you when it is done and whether the GPU is ready. You can also install it from a terminal in Isla Studio's folder:
+To install GPU support in either the desktop app or the source version, open **Train**, press **New run**, and press **Install NVIDIA GPU support**. It is a large download and takes a few minutes; Isla Studio tells you when it is done and whether the GPU is ready. The desktop app keeps these optional packages in the location above, separate from its bundled Python runtime. The Windows package has been checked with CPU training; GPU training in that package has not yet been verified.
+
+For the source version, you can also install GPU support from a terminal in the checkout:
 
 ```sh
 .venv\Scripts\python -m pip install -r requirements-gpu.txt     # Windows
@@ -68,7 +87,7 @@ The first training run on a GPU spends a few minutes compiling before it starts.
 - **Top bar.** The six pages: **Hangar**, **Train**, **Design**, **Connect**, **Deploy** and **Robot** (keys 1 to 6). On the right, three lights show the simulation (SIM), the real robot (off, connected or armed) and whether training can use a GPU (GPU) or only the processor (CPU). Then the light and dark switch and the **E-STOP** button.
 - **Left panel.** The page's controls. The `–` button folds it away.
 - **Live view.** The robot in the live simulation, in full physics. Drag to orbit, scroll to zoom, double-click to frame the robot, and Shift-drag on the robot to push it. The toolbar above it pauses, resets and hangs the robot in a gantry, and switches between the live robot and the practice robots of a run.
-- **Anatomy.** An X-ray of the robot: its shell drawn as dark glass and white edges, and every actuator inside it in red, brighter the harder that motor works. A motor that does not reply turns grey, and a faulted one blinks. Click an actuator or a part to select it. The buttons show every motor's label, switch between the simulation's and the real robot's readings, enlarge it or make it full screen.
+- **Anatomy.** An X-ray of the robot: its shell drawn as glass and edges, with red actuators inside. In the dark theme, an actuator glows brighter as its motor works harder; the light theme uses red shading without glow. A motor that does not reply turns grey, and a faulted one blinks. The passive ankle hinges keep their diamond markers. Click an actuator or a part to select it and read its details. The buttons show every motor's label, switch between the simulation's and the real robot's readings, enlarge it or make it full screen.
 
 ![The anatomy view, full screen, with every motor's angle labelled](images/anatomy.webp)
 
