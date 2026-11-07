@@ -17,7 +17,7 @@ New here? Read [Install and start](getting-started.md), then follow [Your first 
 | [5. Run it on a real robot](real-robot.md) | Connecting over CAN or the robot's computer, safety limits, arming, running a policy, and the emergency stop. |
 | [6. Troubleshooting](troubleshooting.md) | What to do when something does not work. |
 
-For maintainers: [Architecture](architecture.md) describes the current Rust shell, Python core and TypeScript interface; [Rust migration](rust-migration.md) sets out the proposed stages for moving the core to Rust. [The desktop guide](../desktop/README.md) covers building and checking the Windows installer.
+[Release notes](release-notes.md) record the current package, validation and limitations. For maintainers: [Architecture](architecture.md) describes the default platform and the native Rust candidate; [Rust migration](rust-migration.md) records implementation status and remaining checks. [Native development](native-development.md) explains how to build and test the candidate. [The desktop guide](../desktop/README.md) covers the current Windows installer.
 
 ## Words this manual uses
 

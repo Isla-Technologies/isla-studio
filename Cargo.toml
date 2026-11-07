@@ -1,0 +1,14 @@
+[workspace]
+members = ["crates/isla-sim", "crates/isla-learn", "crates/isla-hardware", "crates/isla-server"]
+exclude = ["desktop"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["Isla Technologies"]
+
+[profile.release]
+strip = true
+lto = "thin"

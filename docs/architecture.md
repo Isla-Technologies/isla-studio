@@ -1,6 +1,23 @@
 # Architecture
 
-Isla Studio currently combines a Rust desktop shell, a Python core and a TypeScript interface. The Windows installer packages them together. The core migration to Rust is planned in [Rust migration](rust-migration.md); the installer release completed the desktop shell only.
+The default Isla Studio launchers currently combine a Rust desktop shell, a Python core and a TypeScript interface. The Windows installer packages them together. A separate native Rust core candidate now lives in the root Cargo workspace. It does not yet replace the default backend; [Rust migration](rust-migration.md) records implemented components and remaining compatibility gates.
+
+## Native candidate
+
+`isla-server` owns the local Axum HTTP/WebSocket service, project paths, examples
+and run management. `isla-sim` owns MuJoCo models and data through the pinned
+3.15.0 C ABI, builds existing robot profiles, produces mesh bundles and steps
+the live simulation. `isla-learn` executes existing policies and implements
+network gradients, normalization, Adam, PPO losses/updates and NPZ checkpoint
+reading. `isla-hardware` owns protocol codecs, safety, the control thread,
+SLCAN/Linux SocketCAN, a WebSocket relay and native practice dynamics.
+
+The native process does not launch or embed Python. Unported operations return
+an explicit error; they do not silently invoke the reference backend. The
+training environment, co-design, evaluator, importer, design analysis and GPU
+pipeline are not complete. The Tauri installer still launches its Python
+payload. See [native development](native-development.md) to run the candidate
+separately and the [migration status](rust-migration.md) before changing defaults.
 
 ## What runs where
 
@@ -28,7 +45,7 @@ The source launchers still start Python directly and open a browser, normally on
 
 ## Native physics and GPU training
 
-Python calls MuJoCo's native library; the physics engine is already C/C++ with a C API. A Rust port of Studio would still call that engine through bindings. See the [MuJoCo overview](https://mujoco.readthedocs.io/en/stable/overview.html).
+Python calls MuJoCo's native library; the physics engine is already C/C++ with a C API. The Rust candidate calls that same engine through generated C bindings. See the [MuJoCo overview](https://mujoco.readthedocs.io/en/stable/overview.html).
 
 Studio's current GPU path uses CuPy, NVIDIA Warp and MuJoCo Warp through Python. Warp compiles Python-authored kernels for CPU/GPU execution; MuJoCo Warp exposes a Python API for batched GPU simulation. See [Warp](https://nvidia.github.io/warp/stable/) and [MuJoCo Warp](https://mujoco.readthedocs.io/en/stable/mjwarp/index.html). Replacing Python orchestration alone does not establish a speedup; the migration plan requires measurements for each proposed replacement.
 
@@ -38,7 +55,7 @@ The desktop installer includes CPU dependencies. Optional NVIDIA packages are do
 
 Desktop projects live under **Documents/Isla Studio**; logs, caches and optional Python packages live under `%LOCALAPPDATA%/technologies.isla.studio`. Source projects use the checkout by default. The exact paths, overrides and migration steps are in [Install and start](getting-started.md#your-files-updates-and-removal) and the [desktop build guide](../desktop/README.md).
 
-The Windows shell does not change robot profiles, policy files, training checkpoints or API formats. The Rust core plan treats those formats and existing runs as compatibility requirements throughout the transition.
+The Windows shell does not change robot profiles, policy files, training checkpoints or API formats. The Rust migration treats those formats and existing runs as compatibility requirements throughout the transition.
 
 For the source launcher and command-line tools, these environment variables select
 data locations when set before starting the process:

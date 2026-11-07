@@ -1,16 +1,20 @@
 # 1. Install and start
 
+These instructions describe the default Python backend. A Rust core candidate
+is available for development, but it does not yet support every workflow.
+See [native development](native-development.md) and [migration status](rust-migration.md).
+
 ## Install
 
 ### Windows desktop app
 
-On **64-bit Windows 10 or 11**, run the Windows setup `.exe`, then open **Isla Studio** from the Start menu. It installs for your Windows account and includes Python, MuJoCo, the interface, Luma-1 and the trained examples; you do not need to install Python, Node or Rust. Studio opens in its own desktop window. The installer sets up Microsoft WebView2 if it is missing, which needs an internet connection. The current installer is unsigned.
+On **64-bit Windows 10 or 11**, download the setup `.exe` from [GitHub Releases](https://github.com/Isla-Technologies/isla-studio/releases/latest), run it, then open **Isla Studio** from the Start menu. It installs for your Windows account and includes Python, MuJoCo, the interface, Luma-1 and the trained examples; you do not need to install Python, Node or Rust. Studio opens in its own desktop window. The installer sets up Microsoft WebView2 if it is missing, which needs an internet connection. The current installer is unsigned. See [release notes](release-notes.md) for the checks performed and remaining validation.
 
 Robots, training runs, policies and settings are kept in **Documents/Isla Studio**, separate from the installed app. Closing the window stops its local server cleanly. Training runs continue in their own processes, just as they do with the source launcher.
 
 If you already use the source launcher, your existing projects stay in that checkout. To use them in the desktop app, stop any training, close Studio, and copy the robots and runs you want, plus their policies and settings, into the matching folders in **Documents/Isla Studio**. Keep the originals until you have opened and checked the copies.
 
-The desktop app runs the simulation and training locally. Its Rust/Tauri shell manages the window, starts the bundled server and stops it when the window closes. The server, robot tools, training and hardware logic remain Python; MuJoCo supplies the physics, and the interface remains TypeScript. See [Architecture](architecture.md) for the current split and [Rust migration](rust-migration.md) for the proposed core migration. [The desktop build guide](../desktop/README.md) covers building the installer. macOS and Linux desktop packages are not built yet.
+The desktop app runs the simulation and training locally. Its Rust/Tauri shell manages the window, starts the bundled server and stops it when the window closes. The server, robot tools, training and hardware logic remain Python; MuJoCo supplies the physics, and the interface remains TypeScript. See [Architecture](architecture.md) for the current split and [Rust migration](rust-migration.md) for the separate native candidate's progress. [The desktop build guide](../desktop/README.md) covers building the installer. macOS and Linux desktop packages are not built yet.
 
 The desktop app chooses its own local connection automatically. You do not need to open `localhost:8848`, keep a terminal open or use the source launch options below.
 

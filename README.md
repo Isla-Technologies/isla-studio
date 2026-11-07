@@ -50,7 +50,7 @@ It comes with **Luma-1**, Isla Technologies' 19-motor humanoid, and two of its t
 
 ## Get started
 
-**Windows desktop app:** on Windows 10 or 11 (64-bit), install the Windows setup `.exe`, then open **Isla Studio** from the Start menu. Python, Luma-1 and its trained examples are included. Your robots, runs, policies and settings live in **Documents/Isla Studio**, separate from the installed app. The initial installer is unsigned. See [Install and start](docs/getting-started.md) for moving existing projects and [the desktop build guide](desktop/README.md) to build the installer from this checkout. macOS and Linux use the source launcher below.
+**Windows desktop app:** on Windows 10 or 11 (64-bit), download the setup `.exe` from [GitHub Releases](https://github.com/Isla-Technologies/isla-studio/releases/latest), install it, then open **Isla Studio** from the Start menu. Python, Luma-1 and its trained examples are included. Your robots, runs, policies and settings live in **Documents/Isla Studio**, separate from the installed app. The initial installer is unsigned. See [Install and start](docs/getting-started.md) for moving existing projects, [release notes](docs/release-notes.md) for validation and limitations, and [the desktop build guide](desktop/README.md) to build the installer from this checkout. macOS and Linux use the source launcher below.
 
 **From source, on Windows, macOS or Linux:**
 
@@ -100,7 +100,7 @@ Unitree G1 and H1 and Booster T1 (MuJoCo Menagerie models) and AgiBot X1 (its UR
 
 The Windows app has a **Rust/Tauri desktop shell** that manages its window, startup and shutdown. The bundled **Python core** still handles robot import, simulation, training, hardware control and the local API. The interface is **TypeScript**, and MuJoCo provides the native physics engine. The public browser demo runs its own TypeScript and WebAssembly runtime.
 
-The core has not been ported to Rust yet. See [Architecture](docs/architecture.md) for the current responsibilities and [the staged Rust migration plan](docs/rust-migration.md) for the proposed work and checks before switching each component.
+The Rust core migration is in progress in [`crates/`](crates/). The native candidate includes policy execution, PPO math and checkpoint readers, MuJoCo model building and live simulation, hardware control, and a local HTTP/WebSocket service. It is **not yet a complete replacement**: training environments, co-design, evaluation, robot import, design analysis, GPU training and installer integration still need completion and parity checks. The source launchers and desktop installer continue to use the Python backend. See [Architecture](docs/architecture.md), [migration status](docs/rust-migration.md) and [running the native candidate](docs/native-development.md).
 
 ## Contributing
 
@@ -108,6 +108,6 @@ Bug reports and pull requests are welcome. [CONTRIBUTING.md](CONTRIBUTING.md) ex
 
 ## Licence
 
-Isla Studio is open source under the [MIT licence](LICENSE), and so is everything in this repository, including Luma-1's model in `robots/luma_1`. It builds on [MuJoCo](https://github.com/google-deepmind/mujoco) (Apache 2.0). It ships the Michroma, Chakra Petch and Inter fonts (SIL Open Font License) and Tabler icons (MIT), each with its licence in `ui/src/brand`.
+Isla Studio's source and Luma-1's model in `robots/luma_1` are open source under the [MIT licence](LICENSE). It builds on [MuJoCo](https://github.com/google-deepmind/mujoco) (Apache 2.0); generated MuJoCo API declarations retain their [upstream licence](crates/isla-sim/LICENSE-MUJOCO). It ships the Michroma, Chakra Petch and Inter fonts (SIL Open Font License) and Tabler icons (MIT), each with its licence in `ui/src/brand`.
 
 Made by [Isla Technologies](https://github.com/Isla-Technologies) in Penang, Malaysia. Luma-1's actuators are open source too: the [Macro-Actuator](https://github.com/Isla-Technologies/Macro-Actuator) and the [Micro-Actuator](https://github.com/Isla-Technologies/Micro-Actuator).

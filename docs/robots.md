@@ -1,5 +1,8 @@
 # 2. Robots
 
+Import currently uses the default backend. The Rust candidate can open existing
+profiles, but its importer is unfinished; see [migration status](rust-migration.md).
+
 ## The hangar
 
 ![The hangar: Luma-1 on the turntable, its figures in the panel, and its bay below](images/hangar.webp)

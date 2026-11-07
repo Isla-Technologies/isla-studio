@@ -1,5 +1,8 @@
 # 4. Design
 
+Design analysis and co-design currently require the default backend. Their Rust
+ports are incomplete; see [migration status](rust-migration.md).
+
 Some robots have hardware you can still change: the length of a leg rod, the stiffness of a spring. The **Design** page lets you change it and see what the physics says before you build it. Co-design lets training choose it for you.
 
 The page works for robots whose `robot.json` lists hardware values to change. Luma-1 lists eight: its thigh and shin rod lengths, and the spring rate, damping and preload of the front and back shock absorbers at its ankles.

@@ -1,5 +1,9 @@
 # 6. Troubleshooting
 
+This chapter covers the shipped Python backend and Windows desktop app. If you
+started the optional Rust candidate, check its [current limitations](native-development.md#current-limitations)
+first; use the standard launcher for training, import and design analysis.
+
 ## Windows desktop app
 
 **Do I need to install Python or Rust?** No. The setup `.exe` includes Python and the runtime packages. Rust runs the desktop window and manages the local server; the server, training and robot logic remain Python. Windows 10 or 11, 64-bit, is required. macOS and Linux currently use the source launcher.

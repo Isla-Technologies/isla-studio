@@ -1,5 +1,9 @@
 # 5. Run it on a real robot
 
+This guide describes the default backend. Native Rust hardware control remains a
+validation candidate, with fewer adapter drivers and no physical validation yet.
+See [migration status](rust-migration.md) before selecting that backend.
+
 > **Safety first.** A legged robot is heavy and its motors are strong. Hang it in a gantry with its feet clear of the floor until you trust it. Keep a hardware emergency stop that cuts motor power within reach. Isla Studio's limits and its E-stop are software; they are not a substitute.
 
 Bring-up goes through **Connect** (reach the robot, check every motor, arm it) and **Deploy** (run a policy). Rehearse all of it with the practice robot first.

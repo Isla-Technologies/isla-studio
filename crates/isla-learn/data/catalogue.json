@@ -1,0 +1,360 @@
+{
+  "skills": [
+    {
+      "key": "stand",
+      "title": "Stand and recover",
+      "summary": "Keep standing while being pushed, stepping if it must.",
+      "detail": "The quickest skill to learn and the best first lesson. Robots are pushed from every side and learn to catch themselves with hips, knees and steps.",
+      "steps": 30000000,
+      "episode": 12.0,
+      "weights": {
+        "alive": 1.0,
+        "upright": -5.0,
+        "height": -10.0,
+        "vertical_speed": -2.0,
+        "wobble": -0.05,
+        "stay": -0.5,
+        "pose": -0.5,
+        "feet_slip": -0.1,
+        "smooth": -0.01,
+        "joint_accel": -2.5e-07,
+        "torque": -0.05,
+        "joint_limits": -5.0,
+        "impact": -0.5,
+        "strut_limit": -0.5,
+        "fall": -2.0
+      },
+      "gait": null,
+      "commands": null,
+      "jumps": false
+    },
+    {
+      "key": "walk",
+      "title": "Walk",
+      "summary": "Walk forward, backward, sideways and turn at the speed asked.",
+      "detail": "What humanoid teams train first: the robot follows a speed command, as from a joystick, with a gait clock that swings each leg in turn. On a laptop GPU it takes around an hour.",
+      "steps": 100000000,
+      "episode": 16.0,
+      "weights": {
+        "track_speed": 1.0,
+        "track_turn": 0.5,
+        "alive": 0.15,
+        "feet_phase": 0.18,
+        "upright": -2.0,
+        "height": -10.0,
+        "vertical_speed": -4.0,
+        "wobble": -0.5,
+        "hip_pose": -1.0,
+        "waist_pose": -2.0,
+        "swing_height": -20.0,
+        "feet_slip": -0.2,
+        "smooth": -0.01,
+        "joint_accel": -2.5e-07,
+        "joint_speed": -0.001,
+        "torque": -0.05,
+        "joint_limits": -5.0,
+        "impact": -0.5,
+        "strut_limit": -0.5,
+        "fall": -2.0
+      },
+      "gait": {
+        "period": [
+          0.7,
+          0.7
+        ],
+        "stance": [
+          0.55,
+          0.55
+        ],
+        "swing_height": [
+          0.04,
+          0.04
+        ],
+        "speeds": [
+          0.5,
+          1.0
+        ]
+      },
+      "commands": {
+        "forward": [
+          -0.3,
+          0.6
+        ],
+        "sideways": 0.25,
+        "turning": 0.8
+      },
+      "jumps": false
+    },
+    {
+      "key": "move",
+      "title": "Walk and run",
+      "summary": "Walk, run, side-step and turn at the speed asked, in any direction.",
+      "detail": "One policy for moving around: as the commanded speed rises past 0.5 m/s the gait clock shortens the stride and the time each foot is down, until above 1 m/s both feet leave the floor between steps, which is running. Top speeds open up as the robot learns. On a laptop GPU it takes two to three hours.",
+      "steps": 400000000,
+      "episode": 20.0,
+      "weights": {
+        "track_speed": 1.5,
+        "track_turn": 0.6,
+        "alive": 0.15,
+        "feet_phase": 0.25,
+        "upright": -1.0,
+        "height": -10.0,
+        "vertical_speed": -2.0,
+        "wobble": -0.05,
+        "hip_pose": -1.0,
+        "waist_pose": -2.0,
+        "swing_height": -20.0,
+        "feet_slip": -0.2,
+        "smooth": -0.01,
+        "joint_accel": -2.5e-07,
+        "joint_speed": -0.0005,
+        "torque": -0.03,
+        "joint_limits": -5.0,
+        "impact": -0.5,
+        "strut_limit": -0.5,
+        "fall": -2.0
+      },
+      "gait": {
+        "period": [
+          0.7,
+          0.52
+        ],
+        "stance": [
+          0.55,
+          0.38
+        ],
+        "swing_height": [
+          0.04,
+          0.08
+        ],
+        "speeds": [
+          0.5,
+          1.0
+        ]
+      },
+      "commands": {
+        "forward": [
+          -0.4,
+          1.5
+        ],
+        "sideways": 0.3,
+        "turning": 1.0
+      },
+      "jumps": false
+    },
+    {
+      "key": "jump",
+      "title": "Jump",
+      "summary": "Jump on command and land standing.",
+      "detail": "The robot stands until a jump is asked for, then crouches, springs off both feet, and lands back on its feet and its shock absorbers. Practice asks for a jump every few seconds. On a laptop GPU it takes about an hour.",
+      "steps": 200000000,
+      "episode": 12.0,
+      "weights": {
+        "alive": 0.5,
+        "jump_up": 6.0,
+        "airborne": 4.0,
+        "jump_height": 40.0,
+        "grounded": -4.0,
+        "upright": -2.0,
+        "height": -10.0,
+        "vertical_speed": -1.0,
+        "wobble": -0.05,
+        "stay": -0.5,
+        "pose": -0.3,
+        "hip_pose": -1.0,
+        "waist_pose": -2.0,
+        "feet_slip": -0.1,
+        "smooth": -0.03,
+        "joint_accel": -2.5e-07,
+        "joint_speed": -0.0005,
+        "torque": -0.03,
+        "joint_limits": -5.0,
+        "impact": -0.3,
+        "strut_limit": -1.0,
+        "fall": -10.0
+      },
+      "gait": null,
+      "commands": null,
+      "jumps": true
+    }
+  ],
+  "rewards": [
+    {
+      "key": "alive",
+      "label": "Stay up",
+      "help": "Points for every moment it has not fallen."
+    },
+    {
+      "key": "track_speed",
+      "label": "Walk at the speed asked",
+      "help": "Points for moving forward and sideways at the commanded speed."
+    },
+    {
+      "key": "track_turn",
+      "label": "Turn at the rate asked",
+      "help": "Points for turning at the commanded rate."
+    },
+    {
+      "key": "feet_phase",
+      "label": "Step in rhythm",
+      "help": "Points when each foot is down or up as the gait clock says."
+    },
+    {
+      "key": "upright",
+      "label": "Keep the body's lean",
+      "help": "Penalty for the body tilting away from its standing lean."
+    },
+    {
+      "key": "height",
+      "label": "Keep the hips high",
+      "help": "Penalty for the hips sagging below standing height."
+    },
+    {
+      "key": "vertical_speed",
+      "label": "No bouncing",
+      "help": "Penalty for the body moving up and down."
+    },
+    {
+      "key": "wobble",
+      "label": "No rocking",
+      "help": "Penalty for the body rolling or pitching."
+    },
+    {
+      "key": "stay",
+      "label": "Stay in place",
+      "help": "Penalty for drifting across the floor."
+    },
+    {
+      "key": "pose",
+      "label": "Stay near the standing pose",
+      "help": "Penalty for joints far from standing."
+    },
+    {
+      "key": "hip_pose",
+      "label": "Keep the legs straight ahead",
+      "help": "Penalty for hips turning or splaying sideways."
+    },
+    {
+      "key": "waist_pose",
+      "label": "Keep the upper body still",
+      "help": "Penalty for the waist turning."
+    },
+    {
+      "key": "swing_height",
+      "label": "Lift the feet",
+      "help": "Penalty for a swinging foot far from the lift height: no shuffling."
+    },
+    {
+      "key": "feet_slip",
+      "label": "No sliding feet",
+      "help": "Penalty for a foot moving while it is down."
+    },
+    {
+      "key": "smooth",
+      "label": "Move smoothly",
+      "help": "Penalty for actions changing quickly: no jitter."
+    },
+    {
+      "key": "joint_accel",
+      "label": "Gentle joints",
+      "help": "Penalty for joints speeding up or slowing hard."
+    },
+    {
+      "key": "joint_speed",
+      "label": "Unhurried joints",
+      "help": "Penalty for fast joints."
+    },
+    {
+      "key": "torque",
+      "label": "Save effort",
+      "help": "Penalty for motor torque as a share of each motor's peak."
+    },
+    {
+      "key": "power",
+      "label": "Save energy",
+      "help": "Penalty for mechanical power: battery life."
+    },
+    {
+      "key": "joint_limits",
+      "label": "Keep clear of joint limits",
+      "help": "Penalty for joints beyond 90% of their range."
+    },
+    {
+      "key": "impact",
+      "label": "Land softly",
+      "help": "Penalty for a foot striking the floor harder than 1.3 times the robot's weight."
+    },
+    {
+      "key": "strut_limit",
+      "label": "Keep the shocks off their stops",
+      "help": "Penalty for a shock absorber at the end of its stroke."
+    },
+    {
+      "key": "jump_up",
+      "label": "Spring up",
+      "help": "Points for rising fast as a jump takes off."
+    },
+    {
+      "key": "airborne",
+      "label": "Leave the floor",
+      "help": "Points for both feet in the air in the middle of a jump."
+    },
+    {
+      "key": "jump_height",
+      "label": "Jump high",
+      "help": "Points for the hips rising above standing height in the middle of a jump."
+    },
+    {
+      "key": "grounded",
+      "label": "Stay down between jumps",
+      "help": "Penalty for a foot leaving the floor when no jump is asked."
+    },
+    {
+      "key": "fall",
+      "label": "Falling",
+      "help": "Penalty for each fall, in points per fall."
+    }
+  ],
+  "robustness": {
+    "friction": [
+      0.5,
+      1.5
+    ],
+    "added_mass": [
+      -1.0,
+      2.5
+    ],
+    "strength": [
+      0.9,
+      1.1
+    ],
+    "strut_spread": 0.1,
+    "push_speed": null,
+    "push_every": null,
+    "noise": 1.0,
+    "delay": 0.01
+  },
+  "codesign": {
+    "enabled": false,
+    "params": [],
+    "pool": 128,
+    "warmup": 0.15,
+    "finetune": 0.15,
+    "updates": 24,
+    "elite": 0.25,
+    "smoothing": 0.35,
+    "init_std": 0.35,
+    "min_std": 0.03,
+    "min_episodes": 4,
+    "target_height": null,
+    "height_weight": 4.0
+  },
+  "commands": {
+    "forward": [
+      -0.3,
+      0.6
+    ],
+    "sideways": 0.25,
+    "turning": 0.8
+  }
+}

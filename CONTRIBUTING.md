@@ -26,8 +26,18 @@ Run the tests and the linter before sending a change:
 
 ## Where things are
 
+The native Rust candidate is a Cargo workspace at the repository root. See
+[native development](docs/native-development.md) for its MuJoCo dependency,
+commands and validation. Run `cargo fmt --all -- --check` and
+`cargo test --workspace --locked` for Rust changes. The Python suite remains a
+required compatibility baseline while the migration is incomplete.
+
 | Folder | Holds |
 | --- | --- |
+| `crates/isla-learn/` | Rust policy inference, network/PPO math, checkpoint compatibility and parity fixtures |
+| `crates/isla-sim/` | Rust model building, native MuJoCo ownership, meshes and live simulation |
+| `crates/isla-hardware/` | Rust protocols, safety, native transports, practice driver, control loop and relay |
+| `crates/isla-server/` | Candidate Rust HTTP/WebSocket API, paths, run persistence and CLI |
 | `isla_rl/robot/` | Robot profiles, URDF and MJCF import, the simulation model, design physics |
 | `isla_rl/sim/` | The live simulation the 3D view shows |
 | `isla_rl/learn/` | Practice robots (processor and GPU), PPO, skills and rewards, co-design, testing in full physics |
@@ -64,7 +74,7 @@ Some things the interface holds to:
 
 ## Windows desktop app
 
-The desktop app uses a Rust/Tauri shell around the same local server and interface. Its installer includes a private Python runtime so end users need neither Python nor Node. Robot, simulation, training, API and hardware modules still live in `isla_rl/`; the desktop wrapper does not replace them. See [Architecture](docs/architecture.md), [desktop/README.md](desktop/README.md) for building and checking the installer, and [the staged Rust plan](docs/rust-migration.md) before starting core migration work. Keep the source launchers working on Windows, macOS and Linux when changing the desktop package.
+The desktop app uses a Rust/Tauri shell around the same local server and interface. Its installer includes a private Python runtime so end users need neither Python nor Node. The shipped robot, simulation, training, API and hardware modules live in `isla_rl/`; the desktop wrapper does not replace them. See [Architecture](docs/architecture.md), [desktop/README.md](desktop/README.md) for building and checking the installer, and [Rust migration status](docs/rust-migration.md) before extending the separate native candidate. Keep the source launchers working on Windows, macOS and Linux when changing the desktop package.
 
 For a desktop change, prepare the payload, run Rust formatting/type checks, build the installer and check its bundled runtime:
 
@@ -85,6 +95,6 @@ Check a fresh installation as well: load the bundled robot and example policy, u
 3. Run the tests and the linter, and for interface changes, build `ui/dist`.
 4. Open a pull request describing the change and how you checked it.
 
-The repository uses LF line endings everywhere (`.gitattributes`), and `.cmd` files CRLF. Continuous integration runs Python tests on Windows, macOS and Linux, builds the interface, and has a separate Windows installer build and bundled-runtime check for relevant pull requests or manual runs. See [ci.yml](.github/workflows/ci.yml) and [windows-desktop.yml](.github/workflows/windows-desktop.yml).
+The repository uses LF line endings everywhere (`.gitattributes`), and `.cmd` files CRLF. Continuous integration runs Python and Rust tests on Windows, macOS and Linux, builds the interface, and has a separate Windows installer build and bundled-runtime check for relevant pull requests or manual runs. See [ci.yml](.github/workflows/ci.yml) and [windows-desktop.yml](.github/workflows/windows-desktop.yml).
 
 By contributing, you agree that your contribution is licensed under the [MIT licence](LICENSE).

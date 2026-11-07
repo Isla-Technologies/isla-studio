@@ -1,5 +1,10 @@
 # Isla Studio for Windows
 
+This guide builds the current Python-backed installer. The root Cargo workspace
+contains a separate Rust core candidate; it is not packaged here yet. Follow
+[native development](../docs/native-development.md) to test it and
+[migration status](../docs/rust-migration.md) before changing the payload.
+
 The Windows app opens Studio in its own window. Its installer includes Python,
 MuJoCo, the interface, Luma-1 and the trained examples. Users do not need Python,
 Node or a terminal. Windows 10 or 11, 64-bit, is required. The installer installs
@@ -35,7 +40,7 @@ Robot import/building, the live simulation integration, learning, hardware contr
 and the API still run in Python. The UI remains TypeScript, and MuJoCo supplies
 the native physics library. Packaging those components together does not port
 their logic to Rust. See [Architecture](../docs/architecture.md) and the
-[staged core migration plan](../docs/rust-migration.md).
+[core migration status](../docs/rust-migration.md).
 
 ## Project and package locations
 

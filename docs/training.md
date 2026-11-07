@@ -1,5 +1,9 @@
 # 3. Training
 
+This chapter applies to the default backend. The Rust candidate currently ports
+policy execution and PPO/checkpoint math; its training environment, co-design
+and evaluator are unfinished. See [migration status](rust-migration.md).
+
 Training teaches the loaded robot a skill. Thousands of practice robots try it at once in simulation; the ones that do better shape the policy, and over millions of moves it learns to stand, walk or jump.
 
 The Windows desktop app includes everything needed to train on the processor. NVIDIA GPU support is an optional download from **Train**, under **New run**; see [GPU setup](getting-started.md#nvidia-gpu-support). The same training controls work in the desktop window and the browser version.
