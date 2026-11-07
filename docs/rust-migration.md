@@ -1,6 +1,6 @@
 # Staged Rust core migration
 
-Status: planned, following the Windows desktop shell release. Core migration has not started. This plan describes proposed work; the [architecture page](architecture.md) describes what currently ships.
+Status: planned, following the Windows desktop shell release. Core migration has not started. This plan describes proposed work; the [architecture page](architecture.md) describes what currently ships. Upstream references were checked on 6 November 2026; the repository's dependency pins remain authoritative for implementation.
 
 The goal is to move Studio's application logic from Python to Rust while preserving existing robots, policies, training runs, hardware behavior and GPU training. The TypeScript interface can remain in place. MuJoCo remains the native physics engine. Python remains available during the transition wherever a replacement has not passed its checks.
 
