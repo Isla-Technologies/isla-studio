@@ -42,160 +42,191 @@
   "comparison": [
     [
       "All-up simulation mass",
-      "25.56 kg",
-      "30.0 kg (assumed)"
+      "25.56 kg [ASSUMED]",
+      "30.0 kg [ASSUMED]",
+      "PROVISIONAL"
     ],
     [
       "Macro output torque limit",
-      "66 N\u00b7m",
-      "59.64 N\u00b7m calculated peak"
+      "66.0 N\u00b7m [ASSUMED]",
+      "59.64 N\u00b7m [CALC]",
+      "Kt \u00d7 20A"
     ],
     [
-      "Macro torque constant",
-      "3 N\u00b7m/A",
-      "2.982114 N\u00b7m/A"
+      "Macro torque constant (Kt)",
+      "3.0000 N\u00b7m/A [ASSUMED]",
+      "2.982114 N\u00b7m/A [MEAS]",
+      "BENCH 48V"
     ],
     [
       "Macro gear ratio",
-      "36:1",
-      "36.00723:1"
+      "36.000:1 [DS]",
+      "36.00723:1 [MEAS]",
+      "CALIBRATED"
     ],
     [
-      "Macro no-load speed",
-      "5.8 rad/s assumed",
-      "10.682 rad/s at 48 V"
+      "Macro no-load speed (48 V)",
+      "5.80 rad/s [ASSUMED]",
+      "10.682 rad/s [MEAS]",
+      "BENCH EXPORT"
     ],
     [
       "Macro corner speed",
-      "4.9 rad/s assumed",
-      "8.799 rad/s calculated"
+      "4.90 rad/s [ASSUMED]",
+      "8.799 rad/s [CALC]",
+      "AT RATED V"
     ],
     [
-      "Macro continuous rating",
-      "22 A / 66 N\u00b7m stated",
-      "Not measured; 20 A is peak test current"
+      "Macro continuous current rating",
+      "22.0 A [DS]",
+      "Unmeasured [UNVERIFIED]",
+      "REQUIRES DYNAMOMETER"
     ],
     [
-      "Thigh rod cut length (4 pieces)",
+      "Thigh rod cut length (qty 4)",
       "242 mm",
-      "204 mm"
+      "204 mm",
+      "\u221238 mm OPTIMIZED"
     ],
     [
       "Thigh joint-axis spacing",
       "202 mm",
-      "164 mm"
+      "164 mm",
+      "REDUCED KNEE MOMENT"
     ],
     [
-      "Shin rod cut length (4 pieces)",
+      "Shin rod cut length (qty 4)",
       "156 mm",
-      "161 mm"
+      "161 mm",
+      "+5 mm GROUND CLEAR"
     ],
     [
       "Shin joint-axis spacing",
       "242 mm",
-      "247 mm"
+      "247 mm",
+      "PRESERVES STRIDE"
     ],
     [
       "Front spring rate",
       "26 N/mm",
-      "28 N/mm"
+      "28 N/mm",
+      "COILOVER"
     ],
     [
-      "Front damping",
+      "Front damping coefficient",
       "380 N\u00b7s/m",
-      "260 N\u00b7s/m"
+      "260 N\u00b7s/m",
+      "SYMMETRIC"
     ],
     [
       "Front preload at full extension",
       "4 mm",
-      "0.5 mm"
+      "0.5 mm",
+      "AT FULL TRAVEL"
     ],
     [
       "Front usable stroke",
       "24 mm",
-      "32 mm"
+      "32 mm",
+      "+8 mm TRAVEL"
     ],
     [
-      "Front eye-to-eye: extended / compressed",
+      "Front eye-to-eye (extended / compressed)",
       "95.8 / 71.8 mm",
-      "99.8 / 67.8 mm"
+      "99.8 / 67.8 mm",
+      "PIN TO PIN"
     ],
     [
-      "Front nominal model standing spring load",
+      "Front CAD pose standing spring load",
       "416 N",
-      "462 N"
+      "462 N",
+      "NOMINAL POSE"
     ],
     [
       "Rear spring rate",
       "29 N/mm",
-      "29.5 N/mm"
+      "29.5 N/mm",
+      "COILOVER"
     ],
     [
-      "Rear damping",
+      "Rear damping coefficient",
       "410 N\u00b7s/m",
-      "510 N\u00b7s/m"
+      "510 N\u00b7s/m",
+      "SYMMETRIC"
     ],
     [
       "Rear preload at full extension",
       "4.5 mm",
-      "0.5 mm"
+      "0.5 mm",
+      "AT FULL TRAVEL"
     ],
     [
       "Rear usable stroke",
       "24 mm",
-      "32 mm"
+      "32 mm",
+      "+8 mm TRAVEL"
     ],
     [
-      "Rear eye-to-eye: extended / compressed",
+      "Rear eye-to-eye (extended / compressed)",
       "115.9 / 91.9 mm",
-      "119.9 / 87.9 mm"
+      "119.9 / 87.9 mm",
+      "PIN TO PIN"
     ],
     [
-      "Rear nominal model standing spring load",
+      "Rear CAD pose standing spring load",
       "479 N",
-      "487 N"
+      "487 N",
+      "NOMINAL POSE"
     ],
     [
-      "Demo command: forward / reverse",
+      "Demo speed command: forward / reverse",
       "+0.60 / \u22120.30 m/s",
-      "+0.40 / \u22120.15 m/s"
+      "+0.40 / \u22120.15 m/s",
+      "CONSERVATIVE ENVELOPE"
     ],
     [
-      "Demo command: sideways / turn",
+      "Demo turning command: sideways / turn",
       "\u00b10.25 m/s / \u00b10.80 rad/s",
-      "\u00b10.10 m/s / \u00b10.30 rad/s"
+      "\u00b10.10 m/s / \u00b10.30 rad/s",
+      "STABLE CRUISE"
     ],
     [
       "Neural policy weights",
-      "Original trained walking policy",
-      "Same weights; hardware searched and revalidated"
+      "Original trained policy [v0.1.0]",
+      "Same trained weights [ZERO RETRAINING]",
+      "REVALIDATED"
     ]
   ],
   "matched_comparison": [
     [
       "Falls in matched 18-case retest",
       "0/18",
-      "0/18"
+      "0/18",
+      "ROBUST STABILITY"
     ],
     [
       "Minimum shock-stop clearance",
       "0.17 mm",
-      "3.94 mm"
+      "3.94 mm",
+      "+3.77 mm CLEARANCE"
     ],
     [
       "Largest leg-motor trial RMS torque",
       "18.36 N\u00b7m",
-      "16.36 N\u00b7m"
+      "16.36 N\u00b7m",
+      "\u221210.9% MOTOR LOAD"
     ],
     [
       "Largest leg-motor peak torque",
       "44.73 N\u00b7m",
-      "44.73 N\u00b7m"
+      "44.73 N\u00b7m",
+      "AT DERATED CAP"
     ],
     [
-      "Largest straight-forward mean speed error",
+      "Largest straight-forward speed error",
       "0.047 m/s",
-      "0.043 m/s"
+      "0.043 m/s",
+      "BETTER TRACKING"
     ]
   ],
   "shock_loads": [

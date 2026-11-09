@@ -13,14 +13,14 @@
   "torso": "waist-bottom-plate_1",
   "imu_site": "imu_site",
   "mass": {
-    "target_total": 29.96405818533283,
+    "target_total": 27.0,
     "virtual_body": "waist-holder_1",
     "virtual_box": [
       0.2,
       0.12,
       0.2
     ],
-    "note": "Provisional 30 kg all-up test mass; target compensates changed rod mass added by builder. Actual assembled mass is not measured."
+    "note": "CAD totals 24.58 kg. The difference (wiring, fasteners, electronics) is carried as a virtual mass at the torso's centre of mass."
   },
   "feet": [
     {
@@ -37,28 +37,23 @@
   "actuator_types": {
     "macro": {
       "label": "Macro actuator",
-      "peak_torque": 59.64228698466232,
-      "no_load_speed": 10.682032544062158,
-      "corner_speed": 8.799162258157544,
+      "peak_torque": 66.0,
+      "no_load_speed": 5.8,
+      "corner_speed": 4.9,
       "kp": 160.0,
       "kd": 5.35,
-      "armature": 0.16,
-      "driver": "ODrive V3.6 (firmware 0.5.x)",
+      "armature": 0.1,
+      "driver": "MKS ODrive S / Isla JD-1",
       "protocol": "odrive",
       "assumed": [
-        "armature",
-        "frictionloss",
-        "damping"
+        "no_load_speed",
+        "corner_speed",
+        "armature"
       ],
-      "note": "2026-11-08 Macro export, 48 V. Peak torque calculated from Kt times 20 A; continuous rating unmeasured. Invalid negative inertia and friction fits replaced by explicit sensitivity assumptions.",
-      "gear_ratio": 36.00722999999999,
-      "torque_constant": 2.982114349233116,
-      "frictionloss": 0.81,
-      "damping": 0.25,
-      "peak_current": 20,
-      "continuous_current": null,
-      "continuous_torque": null,
-      "public_evidence_note": "48 V bench export: 59.64 N·m is calculated peak torque at 20 A, not a continuous rating. Inertia/friction fits were invalid; positive simulation assumptions were sensitivity-tested."
+      "note": "36:1, 3 N·m/A at the output: 66 N·m at 22 A continuous, used as the torque limit (no peak rating yet). 3 N·m/A matches a 90 KV motor through 36:1 at 90% efficiency, so the no-load speed on 6S (22.2 V) is about 5.8 rad/s; measure to confirm. Armature 0.1 kg·m² is an estimate: an 80 mm-class rotor (about 7.7e-5 kg·m²) through 36:1. Measure or take it from the motor's datasheet.",
+      "gear_ratio": 36.0,
+      "torque_constant": 3.0,
+      "continuous_current": 22.0
     },
     "micro": {
       "label": "Micro actuator",
@@ -316,7 +311,7 @@
     "note": "Knee flexion is measured from the CAD pose (already 20 degrees bent). Hip pitch is solved so the centre of mass sits over the ankles; the passive ankles are set so each foot is flat."
   },
   "struts": {
-    "stroke_mm": 32.0,
+    "stroke_mm": 24.0,
     "note": "Four virtual shock absorbers: front and back of each ankle, compression coilovers. The CAD pose is assumed to sit at mid-stroke.",
     "items": [
       {
@@ -508,23 +503,13 @@
     "isla_v1"
   ],
   "chosen_design": {
-    "thigh_rod": 4.0,
-    "shin_rod": 51.0,
-    "front_k": 28.0,
-    "back_k": 29.5,
-    "front_c": 260.0,
-    "back_c": 510.0,
-    "front_preload": 0.5,
-    "back_preload": 0.5
-  },
-  "public_engineering_review": {
-    "date": "9 November 2026",
-    "summary": "Selected prototype: 204 mm thigh rods, 161 mm shin rods, 32 mm shock travel.",
-    "scope": "Simulation selection at an assumed 30 kg. Existing policy revalidated without retraining. Level ground only; physical endurance and structural qualification remain outstanding.",
-    "candidates": 105,
-    "validation_trials": 56,
-    "validation_falls": 0,
-    "minimum_stroke_margin_mm": 3.26,
-    "report_url": "/robots/luma_1/engineering.html"
+    "thigh_rod": 42.0,
+    "shin_rod": 46.0,
+    "front_k": 26.0,
+    "back_k": 29.0,
+    "front_c": 380.0,
+    "back_c": 410.0,
+    "front_preload": 4.0,
+    "back_preload": 4.5
   }
 }
