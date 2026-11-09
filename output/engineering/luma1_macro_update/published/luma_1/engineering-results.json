@@ -1,0 +1,222 @@
+{
+  "input_sha256": "7f573ebe992a992dc06eea8697520f5bc4875906a4d2bce76785846174720cd9",
+  "selected": {
+    "trials": 18,
+    "falls": 0,
+    "minimum_clearance": 3.94,
+    "peak": 44.73,
+    "rms": 16.36,
+    "speed_error": 0.04253918059128553,
+    "candidate": {
+      "design": {
+        "thigh_rod": 4.0,
+        "shin_rod": 51.0,
+        "front_k": 28.0,
+        "back_k": 29.5,
+        "front_c": 260.0,
+        "back_c": 510.0,
+        "front_preload": 0.5,
+        "back_preload": 0.5
+      },
+      "stroke": 32.0
+    },
+    "screen_score": 23.89350382635257,
+    "index": 0
+  },
+  "validation": {
+    "trials": 56,
+    "falls": 0,
+    "minimum_clearance": 3.26,
+    "peak": 44.73,
+    "rms": 16.36,
+    "speed_error": 0.06898873799277047
+  },
+  "matched_baseline": {
+    "trials": 18,
+    "falls": 0,
+    "minimum_clearance": 0.17,
+    "peak": 44.73,
+    "rms": 18.36,
+    "speed_error": 0.04703216687761841
+  },
+  "comparison": [
+    [
+      "All-up simulation mass",
+      "25.56 kg",
+      "30.0 kg (assumed)"
+    ],
+    [
+      "Macro output torque limit",
+      "66 N\u00b7m",
+      "59.64 N\u00b7m calculated peak"
+    ],
+    [
+      "Macro torque constant",
+      "3 N\u00b7m/A",
+      "2.982114 N\u00b7m/A"
+    ],
+    [
+      "Macro gear ratio",
+      "36:1",
+      "36.00723:1"
+    ],
+    [
+      "Macro no-load speed",
+      "5.8 rad/s assumed",
+      "10.682 rad/s at 48 V"
+    ],
+    [
+      "Macro corner speed",
+      "4.9 rad/s assumed",
+      "8.799 rad/s calculated"
+    ],
+    [
+      "Macro continuous rating",
+      "22 A / 66 N\u00b7m stated",
+      "Not measured; 20 A is peak test current"
+    ],
+    [
+      "Thigh rod cut length (4 pieces)",
+      "242 mm",
+      "204 mm"
+    ],
+    [
+      "Thigh joint-axis spacing",
+      "202 mm",
+      "164 mm"
+    ],
+    [
+      "Shin rod cut length (4 pieces)",
+      "156 mm",
+      "161 mm"
+    ],
+    [
+      "Shin joint-axis spacing",
+      "242 mm",
+      "247 mm"
+    ],
+    [
+      "Front spring rate",
+      "26 N/mm",
+      "28 N/mm"
+    ],
+    [
+      "Front damping",
+      "380 N\u00b7s/m",
+      "260 N\u00b7s/m"
+    ],
+    [
+      "Front preload at full extension",
+      "4 mm",
+      "0.5 mm"
+    ],
+    [
+      "Front usable stroke",
+      "24 mm",
+      "32 mm"
+    ],
+    [
+      "Front eye-to-eye: extended / compressed",
+      "95.8 / 71.8 mm",
+      "99.8 / 67.8 mm"
+    ],
+    [
+      "Front nominal model standing spring load",
+      "416 N",
+      "462 N"
+    ],
+    [
+      "Rear spring rate",
+      "29 N/mm",
+      "29.5 N/mm"
+    ],
+    [
+      "Rear damping",
+      "410 N\u00b7s/m",
+      "510 N\u00b7s/m"
+    ],
+    [
+      "Rear preload at full extension",
+      "4.5 mm",
+      "0.5 mm"
+    ],
+    [
+      "Rear usable stroke",
+      "24 mm",
+      "32 mm"
+    ],
+    [
+      "Rear eye-to-eye: extended / compressed",
+      "115.9 / 91.9 mm",
+      "119.9 / 87.9 mm"
+    ],
+    [
+      "Rear nominal model standing spring load",
+      "479 N",
+      "487 N"
+    ],
+    [
+      "Demo command: forward / reverse",
+      "+0.60 / \u22120.30 m/s",
+      "+0.40 / \u22120.15 m/s"
+    ],
+    [
+      "Demo command: sideways / turn",
+      "\u00b10.25 m/s / \u00b10.80 rad/s",
+      "\u00b10.10 m/s / \u00b10.30 rad/s"
+    ],
+    [
+      "Neural policy weights",
+      "Original trained walking policy",
+      "Same weights; hardware searched and revalidated"
+    ]
+  ],
+  "matched_comparison": [
+    [
+      "Falls in matched 18-case retest",
+      "0/18",
+      "0/18"
+    ],
+    [
+      "Minimum shock-stop clearance",
+      "0.17 mm",
+      "3.94 mm"
+    ],
+    [
+      "Largest leg-motor trial RMS torque",
+      "18.36 N\u00b7m",
+      "16.36 N\u00b7m"
+    ],
+    [
+      "Largest leg-motor peak torque",
+      "44.73 N\u00b7m",
+      "44.73 N\u00b7m"
+    ],
+    [
+      "Largest straight-forward mean speed error",
+      "0.047 m/s",
+      "0.043 m/s"
+    ]
+  ],
+  "shock_loads": [
+    [
+      "Front",
+      "824.5 N",
+      "14.0 N",
+      "910.0 N",
+      "26.0 N",
+      "1600 N"
+    ],
+    [
+      "Rear",
+      "762.7 N",
+      "14.8 N",
+      "958.8 N",
+      "51.0 N",
+      "1900 N"
+    ]
+  ],
+  "candidate_evaluations": 112,
+  "distinct_candidates": 105,
+  "standard_shove_falls": 16
+}

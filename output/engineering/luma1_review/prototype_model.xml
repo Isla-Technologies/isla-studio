@@ -1,0 +1,944 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="luma_1">
+  <compiler angle="radian" />
+
+  <option integrator="implicitfast" />
+
+  <size nkey="1" />
+
+  <asset>
+    <texture type="2d" colorspace="auto" name="floor_grid" builtin="checker" rgb1="0.32 0.34 0.36" rgb2="0.24 0.26 0.28" width="512" height="512" />
+    <material name="floor_grid" texture="floor_grid" texrepeat="10 10" texuniform="true" />
+    <material name="component_black" specular="0.25" shininess="0.3" rgba="0.08 0.08 0.09 1" />
+    <material name="component_white" specular="0.3" shininess="0.35" rgba="0.88 0.89 0.9 1" />
+    <material name="component_metal" specular="0.8" shininess="0.7" rgba="0.55 0.57 0.6 1" />
+    <material name="carbon_fiber_dark_gray" specular="0.35" shininess="0.45" rgba="0.18 0.19 0.2 1" />
+    <material name="visor_screen_tinted_black" shininess="0.9" rgba="0.015 0.02 0.03 0.6" />
+    <material name="eye_led" emission="0.9" />
+    <mesh name="hip_yaw_left_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\hip_yaw_left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="hip_yaw_right_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\hip_yaw_right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="hip_roll_left_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\hip_roll_left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="hip_roll_right_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\hip_roll_right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="hip_pitch_right_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\hip_pitch_right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="hip_pitch_left_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\hip_pitch_left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="knee_pitch_left_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\knee_pitch_left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="knee_pitch_right_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\knee_pitch_right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-foot-M16-shaft-circlip_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-foot-M16-shaft-circlip_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-foot-M16-shaft-circlip_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-foot-M16-shaft-circlip_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR105ZZ-LR_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR105ZZ-LR_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR105ZZ-LL_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR105ZZ-LL_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-ankle-joint-M5-circlip_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-ankle-joint-M5-circlip_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-ankle-joint-M5-circlip_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-ankle-joint-M5-circlip_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR105ZZ-RL_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR105ZZ-RL_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR105ZZ-RR_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR105ZZ-RR_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-LLL_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-LLL_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-LLR_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-LLR_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-LRL_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-LRL_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-LRR_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-LRR_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-ankle-joint-M4-circlip_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-ankle-joint-M4-circlip_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-RRR_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-RRR_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-RRL_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-RRL_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-RLR_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-RLR_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-RLL_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-RLL_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-ankle-joint-M4-circlip_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-ankle-joint-M4-circlip_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-hip-pitch-connector_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-hip-pitch-connector_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-hip-pitch-connector-cover_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-hip-pitch-connector-cover_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-thigh-carbon-rod_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-thigh-carbon-rod_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-thigh-carbon-rod-1_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-thigh-carbon-rod-1_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-hip-pitch-connector-cover_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-hip-pitch-connector-cover_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-thigh-carbon-rod_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-thigh-carbon-rod_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-thigh-carbon-rod-1_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-thigh-carbon-rod-1_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-hip-pitch-connector_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-hip-pitch-connector_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-hip-yaw-connector_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-hip-yaw-connector_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-hip-yaw-connector_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-hip-yaw-connector_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-hip-roll-connector_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-hip-roll-connector_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-foot_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-foot_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-knee-pitch-connector-cover_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-knee-pitch-connector-cover_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-foot-connector-L_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-foot-connector-L_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-knee-pitch-connector_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-knee-pitch-connector_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-hip-roll-connector_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-hip-roll-connector_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-knee-pitch-connector-cover_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-knee-pitch-connector-cover_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-ankle-bracket_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-ankle-bracket_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-shin-carbon-rod-1_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-shin-carbon-rod-1_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-shin-carbon-rod_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-shin-carbon-rod_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-knee-pitch-connector_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-knee-pitch-connector_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-foot-connector-R_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-foot-connector-R_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-anke-163010-Bearing-L_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-anke-163010-Bearing-L_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-foot-ankle-joint-R_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-foot-ankle-joint-R_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-foot-sole_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-foot-sole_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-ankle-M16-shaft_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-ankle-M16-shaft_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-ankle-M16-shaft_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-ankle-M16-shaft_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-foot-connector-L_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-foot-connector-L_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-shin-carbon-rod_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-shin-carbon-rod_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-knee-bracket_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-knee-bracket_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-foot-sole_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-foot-sole_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-foot-ankle-M5-shaft_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-foot-ankle-M5-shaft_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-foot_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-foot_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-foot-ankle-joint-R_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-foot-ankle-joint-R_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-ankle-163010-Bearing-R_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-ankle-163010-Bearing-R_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-ankle-163010-Bearing-R_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-ankle-163010-Bearing-R_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-shin-carbon-rod-1_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-shin-carbon-rod-1_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-ankle-163010-Bearing-L_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-ankle-163010-Bearing-L_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="base_link" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\base_link.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-knee-bracket_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-knee-bracket_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-foot-connector-R_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-foot-connector-R_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-foot-M5-shaft_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-foot-M5-shaft_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-foot-ankle-joint-L_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-foot-ankle-joint-L_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-foot-damper-M4-shaft_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-foot-damper-M4-shaft_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-ankle-bracket_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-ankle-bracket_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-foot-damper-M4-shaft_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-foot-damper-M4-shaft_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-foot-ankle-joint-L_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-foot-ankle-joint-L_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-shoulder-pitch_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-shoulder-pitch_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-shoulder-pitch_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-shoulder-pitch_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-shoulder-roll_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-shoulder-roll_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-shoulder-roll-CRBTF305AT-Bearing_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-shoulder-roll-CRBTF305AT-Bearing_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-shoulder-roll-CRBTF305AT-Bearing_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-shoulder-roll-CRBTF305AT-Bearing_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-shoulder-roll_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-shoulder-roll_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="90deg-bracket_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\90deg-bracket_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="90deg-bracketMirror_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\90deg-bracketMirror_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="shoulder-yaw-right_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\shoulder-yaw-right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="shoulder-yaw-left_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\shoulder-yaw-left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="elbow-pitch-left_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\elbow-pitch-left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="elbow-pitch-right_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\elbow-pitch-right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="wrist-pitch-left_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\wrist-pitch-left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="wrist-pitch-right_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\wrist-pitch-right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="battery_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\battery_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="back-cover_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\back-cover_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="back-cover-right-holder_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\back-cover-right-holder_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="back-cover-left-holder_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\back-cover-left-holder_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="torso-cover-right_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\torso-cover-right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="torso-cover-left_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\torso-cover-left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="torso-plate-right_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\torso-plate-right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="torso-plate-left_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\torso-plate-left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="waist-bottom-plate_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\waist-bottom-plate_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="visor_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\visor_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="visor-screen_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\visor-screen_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="eye-R_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\eye-R_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="eye-L_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\eye-L_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="shoulder-roll-bracket-right_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\shoulder-roll-bracket-right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="shoulder-roll-bracket-left_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\shoulder-roll-bracket-left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="shoulder-yaw-right-bracket_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\shoulder-yaw-right-bracket_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="shoulder-yaw-right-bracket-cover-F_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\shoulder-yaw-right-bracket-cover-F_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="shoulder-yaw-right-bracket-cover-R_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\shoulder-yaw-right-bracket-cover-R_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="shoulder-yaw-left-bracket_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\shoulder-yaw-left-bracket_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="shoulder-yaw-left-bracket-cover-F_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\shoulder-yaw-left-bracket-cover-F_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="shoulder-yaw-left-bracket-cover-R_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\shoulder-yaw-left-bracket-cover-R_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="waist-holder_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\waist-holder_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="elbow-pitch-right-bracket_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\elbow-pitch-right-bracket_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="elbow-pitch-left-bracket_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\elbow-pitch-left-bracket_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="18mm-CF-tube-shin-right-R_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\18mm-CF-tube-shin-right-R_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="18mm-CF-tube-shin-right-F_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\18mm-CF-tube-shin-right-F_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="18mm-CF-tube-shin-left-R_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\18mm-CF-tube-shin-left-R_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="18mm-CF-tube-shin-left-F_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\18mm-CF-tube-shin-left-F_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="upper-shin-inner-right_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\upper-shin-inner-right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="upper-shin-outer-right_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\upper-shin-outer-right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="upper-shin-inner-left_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\upper-shin-inner-left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="upper-shin-outer-left_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\upper-shin-outer-left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="lower-shin-inner-right_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\lower-shin-inner-right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="lower-shin-outer-right_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\lower-shin-outer-right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="lower-shin-inner-left_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\lower-shin-inner-left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="lower-shin-outer-left_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\lower-shin-outer-left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="upper-shin-cover-right_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\upper-shin-cover-right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="lower-shin-cover-right_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\lower-shin-cover-right_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="upper-shin-cover-left_1" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\upper-shin-cover-left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="lower-shin-cover-left_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\lower-shin-cover-left_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="torso-support-rod-1_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\torso-support-rod-1_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="torso-support-rod-2_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\torso-support-rod-2_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="frontal-cover_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\frontal-cover_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="frontal-cover-upper-part_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\frontal-cover-upper-part_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="wrist-pitch-left-bracket_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\wrist-pitch-left-bracket_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="wrist-pitch-right-bracket_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\wrist-pitch-right-bracket_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-foot-ankle-front-M5-shaft_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-foot-ankle-front-M5-shaft_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR105ZZ-LLF_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR105ZZ-LLF_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-ankle-joint-front-M5-circlip-1_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-ankle-joint-front-M5-circlip-1_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR105ZZ-LRF_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR105ZZ-LRF_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-foot-damper-front-M4-shaft_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-foot-damper-front-M4-shaft_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-LLRF_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-LLRF_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-ankle-joint-front-M4-circlip_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-ankle-joint-front-M4-circlip_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-LRLF_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-LRLF_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-LLLF_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-LLLF_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-LRRF_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-LRRF_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-foot-front-damper-bracket-L_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-foot-front-damper-bracket-L_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-foot-front-damper-bracket-R_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-foot-front-damper-bracket-R_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-foot-front-damper-bracket-R_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-foot-front-damper-bracket-R_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-foot-front-damper-bracket-L_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-foot-front-damper-bracket-L_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-foot-ankle-front-M5-shaft-_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-foot-ankle-front-M5-shaft-_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR105ZZ-RRF_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR105ZZ-RRF_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="left-ankle-joint-front-M5-circlip_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\left-ankle-joint-front-M5-circlip_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR105ZZ-RLF_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR105ZZ-RLF_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-foot-damper-front-M4-shaft_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-foot-damper-front-M4-shaft_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-RRLF_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-RRLF_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="right-ankle-joint-front-M4-circlip_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\right-ankle-joint-front-M4-circlip_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-RLLF_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-RLLF_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-RRRF_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-RRRF_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="MR104ZZ-RLRF_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\MR104ZZ-RLRF_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="waist_yaw_1" content_type="model/stl" file="C:\Users\Teh Bing Quan\Desktop\isla-technologies\isla-studio\robots\luma_1\source\meshes\waist_yaw_1.stl" scale="0.001 0.001 0.001" />
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="0 0 0.1" type="plane" conaffinity="0" rgba="1 1 1 1" material="floor_grid" />
+    <light pos="-0.5 0.5 3" type="directional" />
+    <body name="base_link">
+      <inertial pos="2.3996e-07 -0.0086722 0.550768" quat="0.00117128 0.707106 0.00117286 0.707106" mass="0.52" diaginertia="0.110202 0.0876457 0.0329138" />
+      <joint name="base_link_free" type="free" />
+      <geom name="base_link_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="base_link" />
+      <geom name="isla_box_base_link" size="0.175065 0.0568764 0.0740273" pos="-3.19428e-05 -0.00806131 0.555728" quat="-0.00141703 0.0002484 -0.672885 0.739745" type="box" contype="0" group="3" rgba="1 1 1 0" />
+      <site name="imu_site" size="0.01" pos="0 -0.008672 0.550768" />
+      <body name="hip_yaw_right_1" pos="-0.108 -0.00128946 0.5546" quat="0 1 0 0">
+        <inertial pos="0.000155465 0.00646768 0.0120493" quat="0.0946826 0.708498 -0.134369 0.686303" mass="1.1" diaginertia="0.00505943 0.00453026 0.00446222" />
+        <geom name="hip_yaw_right_1_geom" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="hip_yaw_right_1" />
+        <body name="right-hip-yaw-connector_1" pos="0.108 -0.00128946 0.5546" quat="0 -1 0 0">
+          <inertial pos="-0.108 0.0270423 0.465758" quat="0.662089 0.248161 -0.248048 0.662213" mass="0.24" diaginertia="0.0189116 0.0143568 0.0119886" />
+          <joint name="hip_yaw_right" range="-0.785398 0.785398" armature="0.16" damping="0.25" frictionloss="0.81" pos="-0.108 -0.00813 0.502567" axis="0 0 1" limited="true" />
+          <geom name="right-hip-yaw-connector_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="right-hip-yaw-connector_1" />
+          <geom name="isla_box_right-hip-yaw-connector_1" size="0.105108 0.0683228 0.0649324" pos="-0.108321 0.032502 0.450267" quat="0.309626 0.658582 -0.617456 0.29858" type="box" contype="0" group="3" rgba="1 1 1 0" />
+          <body name="hip_roll_right_1" pos="-0.108 0.0871204 0.40911" quat="0.707107 0.707107 0 0">
+            <inertial pos="0.000155465 0.0106848 0.0298572" quat="0.0946826 0.708498 -0.134364 0.686304" mass="1.1" diaginertia="0.00505942 0.00453025 0.00446221" />
+            <geom name="hip_roll_right_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="hip_roll_right_1" />
+            <body name="right-hip-roll-connector_1" pos="0.108 -0.40911 0.0871204" quat="0.707107 -0.707107 0 0">
+              <inertial pos="-0.114497 -0.0385849 0.411637" quat="0.468295 0.883537 -0.0034676 -0.00703327" mass="0.11" diaginertia="0.00708706 0.00462478 0.00360154" />
+              <joint name="hip_roll_right" range="-1.39626 0.349066" armature="0.16" damping="0.25" frictionloss="0.81" pos="-0.108 0.01728 0.420167" axis="0 1 0" limited="true" />
+              <geom name="right-hip-roll-connector_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="right-hip-roll-connector_1" />
+              <geom name="isla_box_right-hip-roll-connector_1" size="0.0661441 0.0652339 0.0435252" pos="-0.116664 -0.0462598 0.406046" quat="0.500825 -0.512572 -0.461331 0.523085" type="box" contype="0" group="3" rgba="1 1 1 0" />
+              <body name="hip_pitch_right_1" pos="-0.075 -0.0428796 0.40711" quat="0.5 0.5 -0.5 -0.5">
+                <inertial pos="0.00499587 -0.00131531 0.0430169" quat="0.0946846 0.708499 -0.134371 0.686301" mass="1.1" diaginertia="0.00505943 0.00453024 0.0044622" />
+                <geom name="hip_pitch_right_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="hip_pitch_right_1" />
+                <body name="right-hip-pitch-connector_1" pos="-0.0428796 -0.40711 -0.075" quat="0.5 -0.5 0.5 0.5">
+                  <inertial pos="-0.165749 -0.0476727 0.406707" quat="0.999045 -0.0436218 -0.00237588 0.000103698" mass="0.048" diaginertia="0.00159087 0.000824992 0.000808085" />
+                  <joint name="hip_pitch_right" range="-2.18166 0.785398" armature="0.16" damping="0.25" frictionloss="0.81" pos="-0.158 -0.04772 0.406167" axis="1 0 0" limited="true" />
+                  <geom name="right-hip-pitch-connector_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="right-hip-pitch-connector_1" />
+                  <geom name="isla_box_right-hip-pitch-connector_1" size="0.133994 0.0539985 0.0200024" pos="-0.178 -0.0546924 0.326472" quat="-0.0308231 -0.706429 0.0308368 0.70644" type="box" contype="0" group="3" rgba="1 1 1 0" />
+                  <body name="right-hip-pitch-connector-cover_1">
+                    <inertial pos="-0.186411 -0.0475073 0.408598" quat="0.999007 -0.043615 0.00912624 -0.000398418" mass="0.058" diaginertia="0.00191616 0.00107372 0.00097095" />
+                    <geom name="right-hip-pitch-connector-cover_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="right-hip-pitch-connector-cover_1" />
+                    <body name="right-thigh-carbon-rod_1" pos="0 0 0" quat="1 0 0 0">
+                      <inertial pos="-0.18 -0.0266369 0.302937" quat="0.0436194 0.999048 -2.40691e-09 0" mass="0.03872" diaginertia="0.000189935 0.000189935 1.936e-06" />
+                      <geom name="right-thigh-carbon-rod_1__rod" size="0.01 0.121" pos="-0.18 -0.0266369 0.302937" quat="0.999048 -0.0436194 1.05088e-10 0" type="cylinder" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                    </body>
+                    <body name="right-thigh-carbon-rod-1_1" pos="0 0 0" quat="1 0 0 0">
+                      <inertial pos="-0.18 -0.0864085 0.308166" quat="0.0436194 0.999048 -5.15843e-09 0" mass="0.03872" diaginertia="0.000189935 0.000189935 1.936e-06" />
+                      <geom name="right-thigh-carbon-rod-1_1__rod" size="0.01 0.121" pos="-0.18 -0.0864085 0.308166" quat="0.999048 -0.0436194 2.25222e-10 0" type="cylinder" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                      <body name="right-knee-pitch-connector-cover_1" pos="0 -0.00366057 -0.0418402">
+                        <inertial pos="-0.186411 -0.0618775 0.244346" quat="0.999007 -0.0436121 -0.00912603 0.000398383" mass="0.058" diaginertia="0.00191616 0.00107372 0.000970951" />
+                        <geom name="right-knee-pitch-connector-cover_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="right-knee-pitch-connector-cover_1" />
+                        <body name="right-knee-pitch-connector_1">
+                          <inertial pos="-0.165749 -0.0617121 0.246236" quat="0.999045 -0.0436218 0.00237585 -0.000103697" mass="0.048" diaginertia="0.00159087 0.000824992 0.000808085" />
+                          <geom name="right-knee-pitch-connector_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="right-knee-pitch-connector_1" />
+                          <body name="knee_pitch_right_1" pos="-0.075 -0.0428796 0.24711" quat="0.5 0.5 -0.5 -0.5">
+                            <inertial pos="0.0188391 -0.000733997 0.0430169" quat="0.183466 0.684901 -0.225705 0.668062" mass="1.1" diaginertia="0.00505942 0.00453024 0.00446219" />
+                            <joint name="knee_pitch_right" range="-1.74533 2.0944" armature="0.16" damping="0.25" frictionloss="0.81" pos="0.0187854 -0.000334 0.083" axis="0 0 1" limited="true" />
+                            <geom name="knee_pitch_right_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="knee_pitch_right_1" />
+                            <geom name="isla_box_knee_pitch_right_1" size="0.147688 0.0640721 0.04697" pos="-0.00363886 -0.0772965 0.0295223" quat="-0.0455841 0.797726 0.598505 0.0578555" type="box" contype="0" group="3" rgba="1 1 1 0" />
+                            <body name="right-knee-bracket_1" pos="-0.0428796 -0.24711 -0.075" quat="0.5 -0.5 0.5 0.5">
+                              <inertial pos="-0.114259 -0.055079 0.222197" quat="0.991427 0.130524 -0.00595352 -0.00078455" mass="0.125" diaginertia="0.00930333 0.00663788 0.00412826" />
+                              <geom name="right-knee-bracket_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="right-knee-bracket_1" />
+                              <body name="right-shin-carbon-rod-1_1">
+                                <inertial pos="-0.1075 -0.00804348 0.116205" quat="0.130527 -0.991445 -1.2049e-09 0" mass="0.0255273" diaginertia="5.24075e-05 5.24075e-05 1.27636e-06" />
+                                <geom name="right-shin-carbon-rod-1_1__rod" size="0.01 0.078" pos="-0.1075 -0.00804348 0.116205" quat="0.991445 0.130527 1.58629e-10 0" type="cylinder" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                              </body>
+                              <body name="right-shin-carbon-rod_1" pos="0 0 0" quat="1 0 0 0">
+                                <inertial pos="-0.1075 -0.0428168 0.106888" quat="0.130527 -0.991445 8.51002e-10 0" mass="0.0255273" diaginertia="5.24075e-05 5.24075e-05 1.27636e-06" />
+                                <geom name="right-shin-carbon-rod_1__rod" size="0.01 0.078" pos="-0.1075 -0.0428168 0.106888" quat="0.991445 0.130527 -1.12037e-10 0" type="cylinder" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                <body name="right-ankle-bracket_1" pos="0 0.0119058 -0.0444326">
+                                  <inertial pos="-0.1075 -0.0160624 0.0794194" quat="0.994947 0.1004 -1.81673e-07 -1.02135e-07" mass="0.09" diaginertia="0.00169453 0.00125944 0.000669419" />
+                                  <geom name="right-ankle-bracket_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="right-ankle-bracket_1" />
+                                  <body name="MR104ZZ-RRR_1" pos="-0.12145 0.0320223 0.142927" quat="0 0 1 0">
+                                    <inertial pos="-5.63431e-10 -0.0153986 0.0135125" quat="0.990691 0.136133 4.18758e-08 -8.3515e-09" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-RRR_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-RRR_1" />
+                                    <body name="right-foot-damper-M4-shaft_1" pos="-0.12145 -0.0320223 0.142927" quat="0 0 1 0">
+                                      <inertial pos="-0.10879 0.0166236 0.129414" quat="0.0472493 0.705526 0.0472493 0.705526" mass="0.004" diaginertia="5.21383e-07 5.21383e-07 1.03757e-08" />
+                                      <geom name="right-foot-damper-M4-shaft_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="right-foot-damper-M4-shaft_1" />
+                                      <site name="isla_strut_back_right_upper" size="0.004" pos="-0.10695 0.0166236 0.129414" />
+                                      <body name="right-ankle-joint-M4-circlip_1" pos="0 0.0367207 0.0851773" quat="0 0 0 1">
+                                        <inertial pos="0.09115 0.0200438 0.0448467" quat="0.67559 0.737277 0 0" mass="0.0008" diaginertia="6.16974e-10 3.92558e-10 2.29158e-10" />
+                                        <geom name="right-ankle-joint-M4-circlip_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="right-ankle-joint-M4-circlip_1" />
+                                      </body>
+                                    </body>
+                                  </body>
+                                  <body name="MR104ZZ-RLR_1" pos="-0.09945 0.0320223 0.142927" quat="0 0 1 0">
+                                    <inertial pos="-5.63431e-10 -0.0153986 0.0135125" quat="0.990691 0.136133 4.18758e-08 -8.35148e-09" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-RLR_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-RLR_1" />
+                                  </body>
+                                  <body name="MR104ZZ-RLL_1" pos="-0.09355 0.0320223 0.142927" quat="0 0 1 0">
+                                    <inertial pos="-5.63431e-10 -0.0153986 0.0135125" quat="0.990691 0.136133 4.1876e-08 -8.3515e-09" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-RLL_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-RLL_1" />
+                                  </body>
+                                  <body name="MR104ZZ-RRL_1" pos="-0.11555 0.0320223 0.142927" quat="0 0 1 0">
+                                    <inertial pos="-5.63432e-10 -0.0153986 0.0135125" quat="0.990691 0.136133 4.1876e-08 -8.35148e-09" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-RRL_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-RRL_1" />
+                                  </body>
+                                  <body name="MR104ZZ-RLLF_1" pos="-0.0535222 -0.0496138 0.0604832" quat="0 0 1 0">
+                                    <inertial pos="0.0400278 -0.0161034 -0.0468684" quat="0.990702 0.136051 4.22994e-08 -8.99477e-09" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-RLLF_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-RLLF_1" />
+                                  </body>
+                                  <body name="MR104ZZ-RRLF_1" pos="-0.0755222 -0.0496138 0.0604832" quat="0 0 1 0">
+                                    <inertial pos="0.0400278 -0.0161034 -0.0468684" quat="0.990706 0.136024 4.22798e-08 -9.60911e-09" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-RRLF_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-RRLF_1" />
+                                  </body>
+                                  <body name="MR104ZZ-RRRF_1" pos="-0.0814222 -0.0496138 0.0604832" quat="0 0 1 0">
+                                    <inertial pos="0.0400278 -0.0161034 -0.0468684" quat="0.990706 0.136024 4.228e-08 -9.60914e-09" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-RRRF_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-RRRF_1" />
+                                    <body name="right-foot-damper-front-M4-shaft_1" pos="-0.12145 -0.0320223 0.142927">
+                                      <inertial pos="0.148818 0.0159189 -0.189795" quat="-0.0472108 0.705529 -0.0472108 0.705529" mass="0.004" diaginertia="5.21383e-07 5.21383e-07 1.03757e-08" />
+                                      <geom name="right-foot-damper-front-M4-shaft_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="right-foot-damper-front-M4-shaft_1" />
+                                      <site name="isla_strut_front_right_upper" size="0.004" pos="0.146978 0.0159189 -0.189795" />
+                                      <body name="right-ankle-joint-front-M4-circlip_1" pos="0 0.07921 -0.103361" quat="0 1 0 0">
+                                        <inertial pos="0.131178 0.0632378 0.0870442" quat="0.67559 0.737277 0 0" mass="0.0008" diaginertia="6.16974e-10 3.92558e-10 2.29158e-10" />
+                                        <geom name="right-ankle-joint-front-M4-circlip_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="right-ankle-joint-front-M4-circlip_1" />
+                                      </body>
+                                    </body>
+                                  </body>
+                                  <body name="MR104ZZ-RLRF_1" pos="-0.0594222 -0.0496138 0.0604832" quat="0 0 1 0">
+                                    <inertial pos="0.0400278 -0.0161034 -0.0468684" quat="0.990702 0.136051 4.22992e-08 -8.99475e-09" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-RLRF_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-RLRF_1" />
+                                  </body>
+                                  <body name="right-foot-connector-R_1" pos="0 0 0" quat="1 0 0 0">
+                                    <inertial pos="-0.12625 -0.0109364 0.0365808" quat="1 2.47299e-11 0 0" mass="0.03" diaginertia="0.000105729 6.62115e-05 4.08084e-05" />
+                                    <joint name="ankle_pitch_right" range="-0.610865 0.872665" pos="-0.12275 -0.010936 0.0574549" axis="1 0 0" limited="true" />
+                                    <geom name="right-foot-connector-R_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="right-foot-connector-R_1" />
+                                    <geom name="isla_sole_right" size="0.0275 0.109465 0.0045" pos="-0.1075 -0.0274364 -0.000645312" quat="1 0 0 0" type="box" contype="2" conaffinity="3" group="3" rgba="1 1 1 0" />
+                                    <site name="isla_sole_right" pos="-0.1075 -0.0274364 -0.00514531" quat="1 0 0 0" />
+                                    <site name="isla_touch_right" size="0.0305 0.112465 0.0105" pos="-0.1075 -0.0274364 -0.000645312" quat="1 0 0 0" type="box" rgba="1 1 1 0" />
+                                    <body name="right-ankle-163010-Bearing-R_1">
+                                      <inertial pos="-0.12625 -0.0109364 0.0574547" quat="0.642789 0.766043 0 0" mass="0.028" diaginertia="3.76048e-06 1.97479e-06 1.97479e-06" />
+                                      <geom name="right-ankle-163010-Bearing-R_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="right-ankle-163010-Bearing-R_1" />
+                                      <body name="right-ankle-M16-shaft_1">
+                                        <inertial pos="-0.10895 -0.0109364 0.0574547" quat="-0.099231 0.700109 -0.099231 0.700109" mass="0.09" diaginertia="2.36557e-05 2.36557e-05 3.13592e-06" />
+                                        <geom name="right-ankle-M16-shaft_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="right-ankle-M16-shaft_1" />
+                                        <body name="right-foot-M16-shaft-circlip_1" pos="-0.07695 0.0139383 0.0546546" quat="0.707107 0.707107 0 0">
+                                          <inertial pos="-0.0075 0.003254 0.0223001" quat="0.642788 0.766044 0 0" mass="0.0026" diaginertia="3.43753e-07 2.18632e-07 1.25708e-07" />
+                                          <geom name="right-foot-M16-shaft-circlip_1_geom" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="right-foot-M16-shaft-circlip_1" />
+                                        </body>
+                                      </body>
+                                    </body>
+                                    <body name="right-foot_1" pos="0 0 0" quat="1 0 0 0">
+                                      <inertial pos="-0.1075 -0.029237 0.0118363" quat="0.500592 0.499407 -0.499408 0.500592" mass="0.095" diaginertia="0.00506999 0.0048138 0.000315585" />
+                                      <geom name="right-foot_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="right-foot_1" />
+                                      <body name="right-foot-front-damper-bracket-R_1">
+                                        <inertial pos="-0.11895 -0.0820481 0.0180496" quat="0.793496 0.608575 0 0" mass="0.005" diaginertia="5.03234e-06 3.52012e-06 1.58668e-06" />
+                                        <geom name="right-foot-front-damper-bracket-R_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="right-foot-front-damper-bracket-R_1" />
+                                        <body name="MR105ZZ-RRF_1" pos="-0.0769222 -0.113962 0.0581192" quat="0 0 1 0">
+                                          <inertial pos="0.0420278 0.0222813 0.0303994" quat="0.707109 0.707104 1.0718e-12 -7.57284e-12" mass="0.00125" diaginertia="1.98325e-08 1.17251e-08 1.17251e-08" />
+                                          <geom name="MR105ZZ-RRF_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR105ZZ-RRF_1" />
+                                          <body name="right-foot-ankle-front-M5-shaft-_1" pos="-0.11695 -0.078 0.059">
+                                            <inertial pos="0.14868 0.100281 -0.0286006" quat="-4.01999e-05 0.707107 -4.01999e-05 0.707107" mass="0.006" diaginertia="5.33875e-07 5.33875e-07 2.19718e-08" />
+                                            <geom name="right-foot-ankle-front-M5-shaft-_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="right-foot-ankle-front-M5-shaft-_1" />
+                                            <site name="isla_strut_front_right_lower" size="0.004" pos="0.146978 0.100281 -0.0286013" />
+                                            <body name="left-ankle-joint-front-M5-circlip_1" pos="0.0935 0.10885 -0.0686799" quat="0.707107 -0.707107 0 0">
+                                              <inertial pos="0.0400778 -0.0400793 -0.00782519" quat="0.707107 0.707107 0 0" mass="0.002" diaginertia="2.28722e-09 1.44298e-09 8.63305e-10" />
+                                              <geom name="left-ankle-joint-front-M5-circlip_1_geom" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="left-ankle-joint-front-M5-circlip_1" />
+                                            </body>
+                                          </body>
+                                        </body>
+                                      </body>
+                                      <body name="right-foot-front-damper-bracket-L_1">
+                                        <inertial pos="-0.09605 -0.0820481 0.0180496" quat="0.793496 0.608575 0 0" mass="0.005" diaginertia="5.03234e-06 3.52012e-06 1.58668e-06" />
+                                        <geom name="right-foot-front-damper-bracket-L_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="right-foot-front-damper-bracket-L_1" />
+                                        <body name="MR105ZZ-RLF_1" pos="-0.0540222 -0.113962 0.0581192" quat="0 0 1 0">
+                                          <inertial pos="0.0420278 0.0222813 0.0303994" quat="0.707112 0.707102 0 -7.60978e-12" mass="0.00125" diaginertia="1.98325e-08 1.17251e-08 1.17251e-08" />
+                                          <geom name="MR105ZZ-RLF_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR105ZZ-RLF_1" />
+                                        </body>
+                                      </body>
+                                      <body name="right-foot-ankle-joint-L_1">
+                                        <inertial pos="-0.09605 0.0528349 0.0237903" quat="0.571495 0.820606 0 0" mass="0.006" diaginertia="6.81962e-06 4.8351e-06 2.07229e-06" />
+                                        <geom name="right-foot-ankle-joint-L_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="right-foot-ankle-joint-L_1" />
+                                        <body name="MR105ZZ-RL_1" pos="-0.09405 0.078 0.059" quat="0 0 1 0">
+                                          <inertial pos="0.002 -0.0127286 0.021403" quat="0.707109 0.707104 1.03482e-12 -7.60974e-12" mass="0.00125" diaginertia="1.98325e-08 1.17251e-08 1.17251e-08" />
+                                          <geom name="MR105ZZ-RL_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR105ZZ-RL_1" />
+                                        </body>
+                                      </body>
+                                      <body name="right-foot-ankle-joint-R_1">
+                                        <inertial pos="-0.11895 0.0528349 0.0237903" quat="0.571495 0.820606 0 0" mass="0.006" diaginertia="6.81962e-06 4.8351e-06 2.07229e-06" />
+                                        <geom name="right-foot-ankle-joint-R_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="right-foot-ankle-joint-R_1" />
+                                        <body name="MR105ZZ-RR_1" pos="-0.11695 0.078 0.059" quat="0 0 1 0">
+                                          <inertial pos="0.002 -0.0127286 0.021403" quat="0.707112 0.707102 0 -7.68361e-12" mass="0.00125" diaginertia="1.98325e-08 1.17251e-08 1.17251e-08" />
+                                          <geom name="MR105ZZ-RR_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR105ZZ-RR_1" />
+                                          <body name="right-foot-M5-shaft_1" pos="-0.11695 -0.078 0.059" quat="0 0 1 0">
+                                            <inertial pos="-0.108652 0.0652714 0.037597" quat="1.51926e-05 0.707107 1.51926e-05 0.707107" mass="0.006" diaginertia="5.33875e-07 5.33875e-07 2.19718e-08" />
+                                            <geom name="right-foot-M5-shaft_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="right-foot-M5-shaft_1" />
+                                            <site name="isla_strut_back_right_lower" size="0.004" pos="-0.10695 0.0652707 0.0375977" />
+                                            <body name="right-ankle-joint-M5-circlip_1" pos="-0.0935 0.0894061 0.0437307" quat="0 0 -0.707107 -0.707107">
+                                              <inertial pos="5e-05 -0.00613373 -0.0233911" quat="0.707107 0.707107 0 0" mass="0.002" diaginertia="2.28722e-09 1.44298e-09 8.63305e-10" />
+                                              <geom name="right-ankle-joint-M5-circlip_1_geom" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="right-ankle-joint-M5-circlip_1" />
+                                            </body>
+                                          </body>
+                                        </body>
+                                      </body>
+                                      <body name="right-foot-connector-L_1">
+                                        <inertial pos="-0.08875 -0.0109364 0.0365808" quat="1 2.4768e-11 0 0" mass="0.03" diaginertia="0.000105729 6.62115e-05 4.08084e-05" />
+                                        <geom name="right-foot-connector-L_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="right-foot-connector-L_1" />
+                                        <body name="right-ankle-163010-Bearing-L_1">
+                                          <inertial pos="-0.08875 -0.0109364 0.0574547" quat="0.642789 0.766043 0 0" mass="0.028" diaginertia="3.76048e-06 1.97479e-06 1.97479e-06" />
+                                          <geom name="right-ankle-163010-Bearing-L_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="right-ankle-163010-Bearing-L_1" />
+                                        </body>
+                                      </body>
+                                      <body name="right-foot-sole_1">
+                                        <inertial pos="-0.1075 -0.0274364 -0.000422693" quat="0.5 0.5 -0.5 0.5" mass="0.07" diaginertia="0.00275309 0.00260191 0.000160781" />
+                                        <geom name="right-foot-sole_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="right-foot-sole_1" />
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="hip_yaw_left_1" pos="0.108 -0.00128946 0.5546" quat="0 0 -1 0">
+        <inertial pos="0.000155465 -0.00721315 0.0120493" quat="0.0946814 0.708498 -0.134371 0.686302" mass="1.1" diaginertia="0.00505943 0.00453026 0.00446222" />
+        <geom name="hip_yaw_left_1_geom" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="hip_yaw_left_1" />
+        <body name="left-hip-yaw-connector_1" pos="0.108 0.00128946 0.5546" quat="0 0 -1 0">
+          <inertial pos="0.108 0.0270426 0.465755" quat="0.662154 0.248019 -0.247938 0.662243" mass="0.24" diaginertia="0.0189143 0.0143612 0.0119913" />
+          <joint name="hip_yaw_left" range="-0.785398 0.785398" armature="0.16" damping="0.25" frictionloss="0.81" pos="0.108 -0.00813 0.502567" axis="0 0 1" limited="true" />
+          <geom name="left-hip-yaw-connector_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="left-hip-yaw-connector_1" />
+          <geom name="isla_box_left-hip-yaw-connector_1" size="0.105371 0.0684798 0.0651662" pos="0.107704 0.0319114 0.450147" quat="-0.661692 0.304927 0.295792 0.617811" type="box" contype="0" group="3" rgba="1 1 1 0" />
+          <body name="hip_roll_left_1" pos="0.108372 0.0871099 0.40911" quat="0.707107 0.707107 0 0">
+            <inertial pos="-0.000216724 0.0106848 0.0298467" quat="0.0946823 0.708498 -0.134364 0.686304" mass="1.1" diaginertia="0.00505942 0.00453025 0.00446221" />
+            <geom name="hip_roll_left_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="hip_roll_left_1" />
+            <body name="left-hip-roll-connector_1" pos="-0.108372 -0.40911 0.0871099" quat="0.707107 -0.707107 0 0">
+              <inertial pos="0.114496 -0.0385848 0.411635" quat="0.467784 0.883808 0.00356533 0.00692379" mass="0.11" diaginertia="0.00708956 0.00462545 0.00360364" />
+              <joint name="hip_roll_left" range="-0.349066 1.39626" armature="0.16" damping="0.25" frictionloss="0.81" pos="0.108 0.01728 0.420167" axis="0 1 0" limited="true" />
+              <geom name="left-hip-roll-connector_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="left-hip-roll-connector_1" />
+              <geom name="isla_box_left-hip-roll-connector_1" size="0.0680841 0.0655809 0.0445268" pos="0.116392 -0.044735 0.406428" quat="-0.550283 0.467968 -0.495561 0.4823" type="box" contype="0" group="3" rgba="1 1 1 0" />
+              <body name="hip_pitch_left_1" pos="0.0753722 -0.0428901 0.40711" quat="0.5 0.5 0.5 0.5">
+                <inertial pos="-0.0046744 -0.00131531 0.0426447" quat="0.0946835 0.708495 -0.134371 0.686304" mass="1.1" diaginertia="0.00505943 0.00453024 0.0044622" />
+                <geom name="hip_pitch_left_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="hip_pitch_left_1" />
+                <body name="left-hip-pitch-connector_1" pos="0.0428901 -0.40711 -0.0753722" quat="0.5 -0.5 -0.5 -0.5">
+                  <inertial pos="0.165749 -0.0476727 0.406707" quat="0.999046 -0.0436127 0.00237588 -0.00010374" mass="0.048" diaginertia="0.00159089 0.000825 0.000808096" />
+                  <joint name="hip_pitch_left" range="-0.785398 2.18166" armature="0.16" damping="0.25" frictionloss="0.81" pos="0.158 -0.04772 0.406167" axis="-1 0 0" limited="true" />
+                  <geom name="left-hip-pitch-connector_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="left-hip-pitch-connector_1" />
+                  <geom name="isla_box_left-hip-pitch-connector_1" size="0.133994 0.0540064 0.0200023" pos="0.178 -0.0546928 0.326471" quat="0.030865 0.706428 -0.0308785 -0.706438" type="box" contype="0" group="3" rgba="1 1 1 0" />
+                  <body name="left-hip-pitch-connector-cover_1">
+                    <inertial pos="0.186411 -0.0475073 0.408598" quat="0.999007 -0.043613 -0.00912598 0.000398583" mass="0.058" diaginertia="0.00191614 0.00107371 0.000970944" />
+                    <geom name="left-hip-pitch-connector-cover_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="left-hip-pitch-connector-cover_1" />
+                    <body name="left-thigh-carbon-rod_1" pos="0 0 0" quat="1 0 0 0">
+                      <inertial pos="0.18 -0.0266369 0.302937" quat="0.0436194 0.999048 2.42532e-09 0" mass="0.03872" diaginertia="0.000189935 0.000189935 1.936e-06" />
+                      <geom name="left-thigh-carbon-rod_1__rod" size="0.01 0.121" pos="0.18 -0.0266369 0.302937" quat="0.999048 -0.0436194 -1.05892e-10 0" type="cylinder" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                      <body name="left-knee-pitch-connector-cover_1" pos="0 -0.00366057 -0.0418402">
+                        <inertial pos="0.186411 -0.0618775 0.244346" quat="0.999007 -0.0436155 0.00912647 -0.000398427" mass="0.058" diaginertia="0.00191615 0.00107372 0.000970948" />
+                        <geom name="left-knee-pitch-connector-cover_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="left-knee-pitch-connector-cover_1" />
+                        <body name="left-knee-pitch-connector_1">
+                          <inertial pos="0.165749 -0.0617121 0.246236" quat="0.999045 -0.0436194 -0.00237585 0.000103732" mass="0.048" diaginertia="0.00159088 0.000824994 0.000808086" />
+                          <geom name="left-knee-pitch-connector_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="left-knee-pitch-connector_1" />
+                          <body name="knee_pitch_left_1" pos="0.0753722 -0.0428901 0.24711" quat="0.5 0.5 0.5 0.5">
+                            <inertial pos="-0.0185282 -0.000653522 0.0426447" quat="0.00429399 0.719968 -0.0407447 0.692797" mass="1.1" diaginertia="0.00505942 0.00453023 0.0044622" />
+                            <joint name="knee_pitch_left" range="-2.0944 1.74533" armature="0.16" damping="0.25" frictionloss="0.81" pos="-0.0187749 -0.000334 0.0826278" axis="0 0 1" limited="true" />
+                            <geom name="knee_pitch_left_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="knee_pitch_left_1" />
+                            <geom name="isla_box_knee_pitch_left_1" size="0.14758 0.0641454 0.0469665" pos="0.0058578 -0.0765193 0.0291825" quat="-0.587006 -0.0574292 0.0460418 -0.80623" type="box" contype="0" group="3" rgba="1 1 1 0" />
+                            <body name="left-knee-bracket_1" pos="0.0428901 -0.24711 -0.0753722" quat="0.5 -0.5 -0.5 -0.5">
+                              <inertial pos="0.114259 -0.0550791 0.222197" quat="0.991427 0.130524 0.00595383 0.000783199" mass="0.125" diaginertia="0.00930332 0.00663788 0.00412826" />
+                              <geom name="left-knee-bracket_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="left-knee-bracket_1" />
+                              <body name="left-shin-carbon-rod-1_1">
+                                <inertial pos="0.1075 -0.00804348 0.116205" quat="0.130527 -0.991445 1.33398e-09 0" mass="0.0255273" diaginertia="5.24075e-05 5.24075e-05 1.27636e-06" />
+                                <geom name="left-shin-carbon-rod-1_1__rod" size="0.01 0.078" pos="0.1075 -0.00804348 0.116205" quat="0.991445 0.130527 -1.75623e-10 0" type="cylinder" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                              </body>
+                              <body name="left-shin-carbon-rod_1" pos="0 0 0" quat="1 0 0 0">
+                                <inertial pos="0.1075 -0.0428168 0.106888" quat="0.130527 -0.991445 -8.75773e-10 0" mass="0.0255273" diaginertia="5.24075e-05 5.24075e-05 1.27636e-06" />
+                                <geom name="left-shin-carbon-rod_1__rod" size="0.01 0.078" pos="0.1075 -0.0428168 0.106888" quat="0.991445 0.130527 1.15298e-10 0" type="cylinder" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                                <body name="left-ankle-bracket_1" pos="0 0.0119058 -0.0444326">
+                                  <inertial pos="0.1075 -0.0160624 0.0794194" quat="0.994947 0.1004 -5.07647e-07 -1.93462e-07" mass="0.09" diaginertia="0.00169453 0.00125943 0.000669418" />
+                                  <geom name="left-ankle-bracket_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="left-ankle-bracket_1" />
+                                  <body name="MR104ZZ-LLLF_1" pos="0.0814222 -0.0496138 0.0604832">
+                                    <inertial pos="0.0400278 -0.0161034 0.0468683" quat="0.942157 0.335173 8.0305e-08 -3.95024e-08" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-LLLF_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-LLLF_1" />
+                                    <body name="left-foot-damper-front-M4-shaft_1" pos="-0.12145 -0.0320223 -0.142927">
+                                      <inertial pos="0.148818 0.0159189 0.189795" quat="0.0472877 0.705524 0.0472877 0.705524" mass="0.004" diaginertia="5.21383e-07 5.21383e-07 1.03757e-08" />
+                                      <geom name="left-foot-damper-front-M4-shaft_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="left-foot-damper-front-M4-shaft_1" />
+                                      <site name="isla_strut_front_left_upper" size="0.004" pos="0.146978 0.0159189 0.189795" />
+                                      <body name="left-ankle-joint-front-M4-circlip_1" pos="0 0.07921 0.103361" quat="0 -1 0 0">
+                                        <inertial pos="0.131178 0.0632378 -0.0870442" quat="0.737277 0.67559 0 0" mass="0.0008" diaginertia="6.28763e-10 4.00059e-10 2.33537e-10" />
+                                        <geom name="left-ankle-joint-front-M4-circlip_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="left-ankle-joint-front-M4-circlip_1" />
+                                      </body>
+                                    </body>
+                                  </body>
+                                  <body name="MR104ZZ-LLRF_1" pos="0.0755222 -0.0496138 0.0604832">
+                                    <inertial pos="0.0400278 -0.0161034 0.0468683" quat="0.942014 0.335573 7.26029e-08 -3.6866e-08" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-LLRF_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-LLRF_1" />
+                                  </body>
+                                  <body name="MR104ZZ-LRLF_1" pos="0.0535222 -0.0496138 0.0604832">
+                                    <inertial pos="0.0400278 -0.0161034 0.0468683" quat="0.942182 0.335101 8.0877e-08 -4.00191e-08" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-LRLF_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-LRLF_1" />
+                                  </body>
+                                  <body name="MR104ZZ-LRRF_1" pos="0.0594222 -0.0496138 0.0604832">
+                                    <inertial pos="0.0400278 -0.0161034 0.0468683" quat="0.942175 0.335123 7.97126e-08 -3.94819e-08" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-LRRF_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-LRRF_1" />
+                                  </body>
+                                  <body name="MR104ZZ-LRR_1" pos="0.09355 0.0320223 0.142927">
+                                    <inertial pos="-1.82662e-09 -0.0153986 -0.0135125" quat="0.941993 0.335631 8.72371e-08 -3.36579e-08" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-LRR_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-LRR_1" />
+                                  </body>
+                                  <body name="MR104ZZ-LLR_1" pos="0.11555 0.0320223 0.142927">
+                                    <inertial pos="-1.82663e-09 -0.0153986 -0.0135125" quat="0.941993 0.335631 8.72371e-08 -3.36579e-08" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-LLR_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-LLR_1" />
+                                  </body>
+                                  <body name="MR104ZZ-LLL_1" pos="0.12145 0.0320223 0.142927">
+                                    <inertial pos="-1.82662e-09 -0.0153986 -0.0135125" quat="0.941993 0.335631 8.72371e-08 -3.3658e-08" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-LLL_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-LLL_1" />
+                                    <body name="left-foot-damper-M4-shaft_1" pos="-0.12145 -0.0320223 -0.142927">
+                                      <inertial pos="0.10879 0.0166236 0.129414" quat="0.0472435 0.705527 0.0472435 0.705527" mass="0.004" diaginertia="5.21383e-07 5.21383e-07 1.03757e-08" />
+                                      <geom name="left-foot-damper-M4-shaft_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="left-foot-damper-M4-shaft_1" />
+                                      <site name="isla_strut_back_left_upper" size="0.004" pos="0.10695 0.0166236 0.129414" />
+                                      <body name="left-ankle-joint-M4-circlip_1" pos="0 0.0367207 0.0851773" quat="0 -1 0 0">
+                                        <inertial pos="0.09115 0.0200438 -0.0448467" quat="0.737277 0.67559 0 0" mass="0.0008" diaginertia="6.28763e-10 4.00059e-10 2.33537e-10" />
+                                        <geom name="left-ankle-joint-M4-circlip_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="left-ankle-joint-M4-circlip_1" />
+                                      </body>
+                                    </body>
+                                  </body>
+                                  <body name="MR104ZZ-LRL_1" pos="0.09945 0.0320223 0.142927">
+                                    <inertial pos="-1.82662e-09 -0.0153986 -0.0135125" quat="0.941993 0.335631 8.72371e-08 -3.36579e-08" mass="0.0014" diaginertia="2.31488e-08 1.36148e-08 1.36147e-08" />
+                                    <geom name="MR104ZZ-LRL_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR104ZZ-LRL_1" />
+                                  </body>
+                                  <body name="left-foot-connector-L_1" pos="0 0 0" quat="1 0 0 0">
+                                    <inertial pos="0.12625 -0.0109364 0.0365808" quat="1 2.47354e-11 0 0" mass="0.03" diaginertia="0.000105729 6.62115e-05 4.08084e-05" />
+                                    <joint name="ankle_pitch_left" range="-0.872665 0.523599" pos="0.12275 -0.010936 0.0574549" axis="-1 0 0" limited="true" />
+                                    <geom name="left-foot-connector-L_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="left-foot-connector-L_1" />
+                                    <geom name="isla_sole_left" size="0.0275 0.109465 0.0045" pos="0.1075 -0.0274364 -0.000645312" quat="-1 0 0 0" type="box" contype="2" conaffinity="3" group="3" rgba="1 1 1 0" />
+                                    <site name="isla_sole_left" pos="0.1075 -0.0274364 -0.00514531" quat="-1 0 0 0" />
+                                    <site name="isla_touch_left" size="0.0305 0.112465 0.0105" pos="0.1075 -0.0274364 -0.000645312" quat="-1 0 0 0" type="box" rgba="1 1 1 0" />
+                                    <body name="left-anke-163010-Bearing-L_1">
+                                      <inertial pos="0.12625 -0.0109364 0.0574547" quat="0.642787 0.766045 0 0" mass="0.028" diaginertia="3.76048e-06 1.97479e-06 1.97479e-06" />
+                                      <geom name="left-anke-163010-Bearing-L_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="left-anke-163010-Bearing-L_1" />
+                                      <body name="left-ankle-M16-shaft_1">
+                                        <inertial pos="0.10895 -0.0109364 0.0574547" quat="-0.0992319 0.700109 -0.0992319 0.700109" mass="0.09" diaginertia="2.36557e-05 2.36557e-05 3.13592e-06" />
+                                        <geom name="left-ankle-M16-shaft_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="left-ankle-M16-shaft_1" />
+                                        <body name="left-foot-M16-shaft-circlip_1" pos="0.07695 -0.00813633 0.0823294" quat="0 0 0 1">
+                                          <inertial pos="-0.0075 0.003254 -0.0223001" quat="0.766044 0.642788 0 0" mass="0.0026" diaginertia="3.43753e-07 2.18632e-07 1.25708e-07" />
+                                          <geom name="left-foot-M16-shaft-circlip_1_geom" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="left-foot-M16-shaft-circlip_1" />
+                                        </body>
+                                      </body>
+                                    </body>
+                                    <body name="left-foot_1">
+                                      <inertial pos="0.1075 -0.0292366 0.0118363" quat="0.500592 0.499408 -0.499408 0.500592" mass="0.095" diaginertia="0.00507003 0.00481384 0.000315587" />
+                                      <geom name="left-foot_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="left-foot_1" />
+                                      <body name="left-foot-front-damper-bracket-R_1">
+                                        <inertial pos="0.09605 -0.0820481 0.0180496" quat="0.793496 0.608575 0 0" mass="0.005" diaginertia="5.03234e-06 3.52012e-06 1.58668e-06" />
+                                        <geom name="left-foot-front-damper-bracket-R_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="left-foot-front-damper-bracket-R_1" />
+                                        <body name="MR105ZZ-LRF_1" pos="0.0540222 -0.113962 0.0581192">
+                                          <inertial pos="0.0420278 0.0222813 -0.0303994" quat="0.707107 0.707107 -7.61321e-12 0" mass="0.00125" diaginertia="1.98325e-08 1.17251e-08 1.17251e-08" />
+                                          <geom name="MR105ZZ-LRF_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR105ZZ-LRF_1" />
+                                        </body>
+                                      </body>
+                                      <body name="left-foot-front-damper-bracket-L_1">
+                                        <inertial pos="0.11895 -0.0820481 0.0180496" quat="0.793496 0.608575 0 0" mass="0.005" diaginertia="5.03234e-06 3.52012e-06 1.58668e-06" />
+                                        <geom name="left-foot-front-damper-bracket-L_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="left-foot-front-damper-bracket-L_1" />
+                                        <body name="MR105ZZ-LLF_1" pos="0.0769222 -0.113962 0.0581192">
+                                          <inertial pos="0.0420278 0.0222813 -0.0303994" quat="0.707107 0.707107 -7.65014e-12 1.00132e-12" mass="0.00125" diaginertia="1.98325e-08 1.17251e-08 1.17251e-08" />
+                                          <geom name="MR105ZZ-LLF_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR105ZZ-LLF_1" />
+                                          <body name="left-foot-ankle-front-M5-shaft_1" pos="-0.11695 -0.078 -0.059">
+                                            <inertial pos="0.14868 0.100281 0.0286006" quat="3.99539e-05 0.707107 3.99539e-05 0.707107" mass="0.006" diaginertia="5.33875e-07 5.33875e-07 2.19718e-08" />
+                                            <geom name="left-foot-ankle-front-M5-shaft_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="left-foot-ankle-front-M5-shaft_1" />
+                                            <site name="isla_strut_front_left_lower" size="0.004" pos="0.146978 0.100281 0.0286013" />
+                                            <body name="left-ankle-joint-front-M5-circlip-1_1" pos="0.0935 0.10885 0.0686799" quat="0.707107 0.707107 0 0">
+                                              <inertial pos="0.0400778 -0.0400793 0.00782519" quat="0.707107 0.707107 0 0" mass="0.002" diaginertia="2.33092e-09 1.47055e-09 8.79801e-10" />
+                                              <geom name="left-ankle-joint-front-M5-circlip-1_1_geom" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="left-ankle-joint-front-M5-circlip-1_1" />
+                                            </body>
+                                          </body>
+                                        </body>
+                                      </body>
+                                      <body name="left-foot-ankle-joint-L_1">
+                                        <inertial pos="0.11895 0.0528349 0.0237903" quat="0.571495 0.820606 0 0" mass="0.006" diaginertia="6.81962e-06 4.8351e-06 2.07229e-06" />
+                                        <geom name="left-foot-ankle-joint-L_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="left-foot-ankle-joint-L_1" />
+                                        <body name="MR105ZZ-LL_1" pos="0.11695 0.078 0.059">
+                                          <inertial pos="0.002 -0.0127286 -0.021403" quat="0.707107 0.707107 -7.61316e-12 0" mass="0.00125" diaginertia="1.98325e-08 1.17251e-08 1.17251e-08" />
+                                          <geom name="MR105ZZ-LL_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR105ZZ-LL_1" />
+                                          <body name="left-foot-ankle-M5-shaft_1" pos="-0.11695 -0.078 -0.059">
+                                            <inertial pos="0.108652 0.0652714 0.037597" quat="-1.24958e-05 0.707107 -1.24958e-05 0.707107" mass="0.006" diaginertia="5.33875e-07 5.33875e-07 2.19718e-08" />
+                                            <geom name="left-foot-ankle-M5-shaft_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="left-foot-ankle-M5-shaft_1" />
+                                            <site name="isla_strut_back_left_lower" size="0.004" pos="0.10695 0.0652707 0.0375977" />
+                                            <body name="left-ankle-joint-M5-circlip_1" pos="0.0935 0.0922345 0.0465592" quat="0.707107 0.707107 0 0">
+                                              <inertial pos="5e-05 -0.00896215 0.0262195" quat="0.707107 0.707107 0 0" mass="0.002" diaginertia="2.33092e-09 1.47055e-09 8.79801e-10" />
+                                              <geom name="left-ankle-joint-M5-circlip_1_geom" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="left-ankle-joint-M5-circlip_1" />
+                                            </body>
+                                          </body>
+                                        </body>
+                                      </body>
+                                      <body name="left-foot-ankle-joint-R_1">
+                                        <inertial pos="0.09605 0.0528349 0.0237903" quat="0.571495 0.820606 0 0" mass="0.006" diaginertia="6.81962e-06 4.8351e-06 2.07229e-06" />
+                                        <geom name="left-foot-ankle-joint-R_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="left-foot-ankle-joint-R_1" />
+                                        <body name="MR105ZZ-LR_1" pos="0.09405 0.078 0.059">
+                                          <inertial pos="0.002 -0.0127286 -0.021403" quat="0.707102 0.707112 -7.68703e-12 0" mass="0.00125" diaginertia="1.98325e-08 1.17251e-08 1.17251e-08" />
+                                          <geom name="MR105ZZ-LR_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="MR105ZZ-LR_1" />
+                                        </body>
+                                      </body>
+                                      <body name="left-foot-connector-R_1">
+                                        <inertial pos="0.08875 -0.0109364 0.0365808" quat="1 2.47346e-11 0 0" mass="0.03" diaginertia="0.000105729 6.62115e-05 4.08084e-05" />
+                                        <geom name="left-foot-connector-R_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="left-foot-connector-R_1" />
+                                        <body name="left-ankle-163010-Bearing-R_1">
+                                          <inertial pos="0.08875 -0.0109364 0.0574547" quat="0.64279 0.766042 0 0" mass="0.028" diaginertia="3.76048e-06 1.97479e-06 1.97479e-06" />
+                                          <geom name="left-ankle-163010-Bearing-R_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="left-ankle-163010-Bearing-R_1" />
+                                        </body>
+                                      </body>
+                                      <body name="left-foot-sole_1">
+                                        <inertial pos="0.1075 -0.0274364 -0.000422693" quat="0.5 0.5 -0.5 0.5" mass="0.07" diaginertia="0.00275309 0.00260191 0.000160781" />
+                                        <geom name="left-foot-sole_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="left-foot-sole_1" />
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                    <body name="left-thigh-carbon-rod-1_1" pos="0 0 0" quat="1 0 0 0">
+                      <inertial pos="0.18 -0.0864085 0.308166" quat="0.0436194 0.999048 5.22575e-09 0" mass="0.03872" diaginertia="0.000189935 0.000189935 1.936e-06" />
+                      <geom name="left-thigh-carbon-rod-1_1__rod" size="0.01 0.121" pos="0.18 -0.0864085 0.308166" quat="0.999048 -0.0436194 -2.28161e-10 0" type="cylinder" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" />
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="waist_yaw_1" pos="0 0 0.535" quat="0 0 0 -1">
+        <inertial pos="0.000155465 0.00646768 0.0339843" quat="0.0946838 0.708497 -0.134367 0.686303" mass="1.1" diaginertia="0.00505942 0.00453025 0.00446221" />
+        <geom name="waist_yaw_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="waist_yaw_1" />
+        <body name="waist-bottom-plate_1" pos="0 0 -0.535" quat="0 0 0 1">
+          <inertial pos="0 -0.00694552 0.611967" quat="0 0.707107 0 0.707107" mass="0.22" diaginertia="0.00875503 0.00676785 0.00199569" />
+          <joint name="waist_yaw" armature="0.16" damping="0.25" frictionloss="0.81" pos="0 -0.00684 0.608967" axis="0 0 -1" />
+          <geom name="waist-bottom-plate_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="waist-bottom-plate_1" />
+          <geom name="isla_box_waist-bottom-plate_1" size="0.148571 0.181044 0.119283" pos="-0.000746888 -0.0236933 0.776895" quat="0.642892 0.765921 0.00456044 -0.00579818" type="box" contype="0" group="3" rgba="1 1 1 0" />
+          <body name="waist-holder_1">
+            <inertial pos="0 -0.021371 0.643881" quat="0.0817082 0.70237 0.0817082 0.70237" mass="0.2" diaginertia="0.0254256 0.0210338 0.00901777" />
+            <geom name="waist-holder_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="waist-holder_1" />
+            <body name="battery_1">
+              <inertial pos="3.19328e-09 0.0031194 0.662461" quat="0.000157999 0.707107 0.000158065 0.707107" mass="3" diaginertia="0.100474 0.0826615 0.0394127" />
+              <geom name="battery_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="battery_1" />
+            </body>
+            <body name="torso-plate-right_1">
+              <inertial pos="-0.114 -0.0127911 0.743874" quat="0.998864 -0.0476507 0 0" mass="0.2" diaginertia="0.0134751 0.00958363 0.00389504" />
+              <geom name="torso-plate-right_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="torso-plate-right_1" />
+              <body name="90deg-bracketMirror_1" pos="0.00799693 0.00210307 0.7459" quat="0 -0.707107 -0.707107 0">
+                <inertial pos="-0.00694345 -0.115722 0.123735" quat="0.59907 0.375653 0.59907 0.375653" mass="0.0195" diaginertia="3.17067e-05 2.94279e-05 3.47089e-06" />
+                <geom name="90deg-bracketMirror_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="90deg-bracketMirror_1" />
+              </body>
+              <body name="torso-cover-right_1">
+                <inertial pos="-0.128213 -0.0130233 0.741143" quat="0.998689 -0.0511569 0.00199695 -3.39724e-05" mass="0.28" diaginertia="0.0762656 0.0546025 0.0224952" />
+                <geom name="torso-cover-right_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="torso-cover-right_1" />
+                <body name="torso-support-rod-2_1">
+                  <inertial pos="0 -0.0808404 0.710167" quat="0.510035 0.489759 0.510035 0.489759" mass="0.04" diaginertia="0.00130136 0.00130136 1.38499e-05" />
+                  <geom name="torso-support-rod-2_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="torso-support-rod-2_1" />
+                </body>
+                <body name="right-shoulder-pitch_1" pos="-0.271921 -0.0112895 0.774149" quat="0 -0.707107 0 0.707107">
+                  <inertial pos="-0.0528664 0.000392051 -0.163905" quat="0.0947937 0.708555 -0.13442 0.686218" mass="1.1" diaginertia="0.00505939 0.00452984 0.00446181" />
+                  <geom name="right-shoulder-pitch_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="right-shoulder-pitch_1" />
+                  <body name="shoulder-roll-bracket-right_1" pos="0.137895 -0.0112895 0.743169" quat="0 1 0 0">
+                    <inertial pos="-0.189618 -0.00925152 0.830343" quat="0.439135 0.544527 0.537935 0.470401" mass="0.095" diaginertia="0.00290995 0.0023264 0.00212713" />
+                    <joint name="shoulder_pitch_right" armature="0.16" damping="0.25" frictionloss="0.81" pos="-0.190916 -0.012054 0.86709" axis="0 0 1" />
+                    <geom name="shoulder-roll-bracket-right_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="shoulder-roll-bracket-right_1" />
+                    <geom name="isla_box_shoulder-roll-bracket-right_1" size="0.0420837 0.0475067 0.0440313" pos="-0.190899 -0.0137413 0.824885" quat="0.731325 0.000445106 0.0208769 -0.681709" type="box" contype="0" group="3" rgba="1 1 1 0" />
+                    <body name="right-shoulder-roll_1" pos="-0.18955 0.0196861 0.769799" quat="0 0 0.707107 -0.707107">
+                      <inertial pos="-2.94035e-05 -0.0555228 0.0430577" quat="0.613317 0.0134328 -0.0122278 0.789628" mass="0.32" diaginertia="0.000754673 0.000752766 0.000627353" />
+                      <geom name="right-shoulder-roll_1_geom" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="right-shoulder-roll_1" />
+                      <body name="shoulder-yaw-right-bracket_1" pos="-0.825501 -0.245246 0.0196861" quat="0.5 -0.5 0.5 -0.5">
+                        <inertial pos="-0.20202 -0.0137482 0.768315" quat="0.651224 0.749138 0.0789551 -0.0920129" mass="0.1" diaginertia="0.00379839 0.00250826 0.00243878" />
+                        <joint name="shoulder_roll_right" range="-0.174533 2.96706" armature="0.03" pos="-0.189547 -0.053854 0.825498" axis="0 1 0" limited="true" />
+                        <geom name="shoulder-yaw-right-bracket_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="shoulder-yaw-right-bracket_1" />
+                        <geom name="isla_box_shoulder-yaw-right-bracket_1" size="0.0743506 0.0490015 0.0415962" pos="-0.199698 -0.0138918 0.785085" quat="0.00438899 0.644355 -0.00676308 -0.764684" type="box" contype="0" group="3" rgba="1 1 1 0" />
+                        <body name="shoulder-yaw-right-bracket-cover-R_1">
+                          <inertial pos="-0.189403 0.0326458 0.82566" quat="0.707107 0 0 0.707107" mass="0.004" diaginertia="8.66566e-06 4.35969e-06 4.35969e-06" />
+                          <geom name="shoulder-yaw-right-bracket-cover-R_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="shoulder-yaw-right-bracket-cover-R_1" />
+                        </body>
+                        <body name="shoulder-yaw-right-bracket-cover-F_1">
+                          <inertial pos="-0.189547 -0.0603542 0.825498" quat="0.558365 0.433853 0.433853 0.558365" mass="0.004" diaginertia="8.66566e-06 4.35969e-06 4.35969e-06" />
+                          <geom name="shoulder-yaw-right-bracket-cover-F_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="shoulder-yaw-right-bracket-cover-F_1" />
+                        </body>
+                        <body name="shoulder-yaw-right_1">
+                          <inertial pos="-0.206543 -0.0138807 0.743953" quat="0.991429 -0.00419204 0.062989 -0.114381" mass="0.32" diaginertia="0.000753721 0.00075168 0.000627195" />
+                          <geom name="shoulder-yaw-right_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="shoulder-yaw-right_1" />
+                          <body name="elbow-pitch-right-bracket_1" pos="0 0 0" quat="1 0 0 0">
+                            <inertial pos="-0.209586 -0.0138539 0.674704" quat="0.999603 0.000397583 0.0281819 -0.000103125" mass="0.042" diaginertia="0.000847987 0.00060032 0.000449835" />
+                            <joint name="shoulder_yaw_right" armature="0.03" pos="-0.209375 -0.013854 0.7136" axis="0.087156 0 0.996195" />
+                            <geom name="elbow-pitch-right-bracket_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="elbow-pitch-right-bracket_1" />
+                            <geom name="isla_box_elbow-pitch-right-bracket_1" size="0.0365383 0.0438379 0.0409908" pos="-0.207163 -0.0139012 0.671012" quat="-0.68236 -0.728676 -0.0562588 -0.0158451" type="box" contype="0" group="3" rgba="1 1 1 0" />
+                            <body name="elbow-pitch-right_1" pos="-0.960322 0 0.886094" quat="0.707107 0 0.707107 0">
+                              <inertial pos="0.219122 -0.0140305 0.749718" quat="0.791431 0.0385625 0.0205968 0.609693" mass="0.32" diaginertia="0.000753869 0.000751993 0.000627324" />
+                              <geom name="elbow-pitch-right_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="elbow-pitch-right_1" />
+                              <body name="upper-shin-inner-right_1" pos="0.886094 0 0.960322" quat="0.707107 0 -0.707107 0">
+                                <inertial pos="-0.245123 -0.0138542 0.670224" quat="0.999099 2.66652e-08 0.0424392 -1.14088e-09" mass="0.02" diaginertia="0.000249058 0.000126751 0.000125819" />
+                                <joint name="elbow_pitch_right" range="-1.91986 1.91986" armature="0.03" pos="-0.240974 -0.013854 0.669603" axis="0.996195 0 -0.087156" limited="true" />
+                                <geom name="upper-shin-inner-right_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="upper-shin-inner-right_1" />
+                                <geom name="isla_box_upper-shin-inner-right_1" size="0.09 0.04 0.0145001" pos="-0.259777 -0.0138543 0.621057" quat="-0.737277 -7.53758e-07 0.67559 -8.48095e-07" type="box" contype="0" group="3" rgba="1 1 1 0" />
+                                <body name="upper-shin-outer-right_1" pos="4.49256e-05 0 -0.000303442" quat="1 0 0 0">
+                                  <inertial pos="-0.259374 -0.0138542 0.674773" quat="0.998531 9.13445e-06 0.0541807 -4.49939e-07" mass="0.032" diaginertia="0.000517457 0.000284717 0.000278073" />
+                                  <geom name="upper-shin-outer-right_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="upper-shin-outer-right_1" />
+                                  <body name="upper-shin-cover-right_1">
+                                    <inertial pos="-0.268913 -0.0138542 0.672347" quat="0.999047 0.00162771 0.0436193 -7.10673e-05" mass="0.004" diaginertia="5.7771e-06 2.89651e-06 2.89651e-06" />
+                                    <geom name="upper-shin-cover-right_1_geom" pos="0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="upper-shin-cover-right_1" />
+                                  </body>
+                                  <body name="18mm-CF-tube-shin-right-R_1">
+                                    <inertial pos="-0.261316 0.00814576 0.621491" quat="0.999048 0 0.0436194 0" mass="0.014" diaginertia="6.83288e-05 6.83288e-05 5.12959e-06" />
+                                    <geom name="18mm-CF-tube-shin-right-R_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="18mm-CF-tube-shin-right-R_1" />
+                                  </body>
+                                  <body name="18mm-CF-tube-shin-right-F_1">
+                                    <inertial pos="-0.261316 -0.0358542 0.621491" quat="0.998105 -0.00189533 0.0435782 -0.0434102" mass="0.014" diaginertia="6.83288e-05 6.83288e-05 5.12959e-06" />
+                                    <geom name="18mm-CF-tube-shin-right-F_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="18mm-CF-tube-shin-right-F_1" />
+                                    <body name="lower-shin-outer-right_1">
+                                      <inertial pos="-0.268655 -0.0138542 0.568682" quat="0.999454 6.1034e-06 0.0330537 -2.23023e-07" mass="0.032" diaginertia="0.000517455 0.000284716 0.000278072" />
+                                      <geom name="lower-shin-outer-right_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="lower-shin-outer-right_1" />
+                                      <body name="lower-shin-cover-right_1">
+                                        <inertial pos="-0.277628 -0.0138542 0.572727" quat="0.999047 0.00177853 0.0436193 -7.76524e-05" mass="0.004" diaginertia="5.7771e-06 2.89651e-06 2.89651e-06" />
+                                        <geom name="lower-shin-cover-right_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="lower-shin-cover-right_1" />
+                                      </body>
+                                      <body name="lower-shin-inner-right_1">
+                                        <inertial pos="-0.253929 -0.0138542 0.570396" quat="0.998996 -2.31161e-06 0.0447997 1.07984e-07" mass="0.02" diaginertia="0.000249058 0.000126751 0.000125819" />
+                                        <geom name="lower-shin-inner-right_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="lower-shin-inner-right_1" />
+                                        <body name="wrist-pitch-right_1" pos="-0.960322 0 0.776094" quat="0.707107 0 0.707107 0">
+                                          <inertial pos="0.208438 -0.0140305 0.740957" quat="0.791432 0.0385456 0.0205679 0.609694" mass="0.32" diaginertia="0.000753787 0.00075191 0.000627325" />
+                                          <joint name="wrist_pitch_right" range="-2.0944 2.0944" armature="0.03" pos="0.205807 -0.013854 0.710587" axis="-0.087156 0 -0.996195" limited="true" />
+                                          <geom name="wrist-pitch-right_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="wrist-pitch-right_1" />
+                                          <geom name="isla_box_wrist-pitch-right_1" size="0.036984 0.044158 0.0409727" pos="0.21265 -0.0136329 0.743522" quat="-0.512422 0.56085 0.487009 0.430922" type="box" contype="0" group="3" rgba="1 1 1 0" />
+                                          <body name="wrist-pitch-right-bracket_1" pos="0.776094 0 0.960322" quat="0.707107 0 -0.707107 0">
+                                            <inertial pos="-0.219712 -0.013854 0.559788" quat="0.998545 0.000309017 0.0539281 -0.000114888" mass="0.042" diaginertia="0.000845826 0.000598336 0.000450012" />
+                                            <geom name="wrist-pitch-right-bracket_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="wrist-pitch-right-bracket_1" />
+                                          </body>
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                    <body name="right-shoulder-roll-CRBTF305AT-Bearing_1" pos="-0.159414 0.0323861 0.821002" quat="0.521334 0.477714 0.477714 0.521334">
+                      <inertial pos="-0.00878046 0.00726201 -0.0294872" quat="0.429957 0.902849 1.93396e-07 4.06251e-07" mass="0.021" diaginertia="5.0519e-05 2.54379e-05 2.54379e-05" />
+                      <geom name="right-shoulder-roll-CRBTF305AT-Bearing_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="right-shoulder-roll-CRBTF305AT-Bearing_1" />
+                    </body>
+                  </body>
+                </body>
+              </body>
+              <body name="frontal-cover-upper-part_1">
+                <inertial pos="-3.07332e-10 -0.00337212 0.853126" quat="0.40576 0.579102 -0.579102 0.40576" mass="0.32" diaginertia="0.0597869 0.0356597 0.0350361" />
+                <geom name="frontal-cover-upper-part_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="frontal-cover-upper-part_1" />
+                <body name="visor_1">
+                  <inertial pos="0 -0.0305393 0.907212" quat="0.440241 0.553343 -0.553343 0.440241" mass="0.48" diaginertia="0.0830025 0.0532343 0.0505585" />
+                  <geom name="visor_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="visor_1" />
+                  <body name="visor-screen_1">
+                    <inertial pos="0 -0.106213 0.869739" quat="0.52138 0.477664 0.52138 0.477664" mass="0.2" diaginertia="0.000734042 0.000537518 0.000196684" />
+                    <geom name="visor-screen_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="visor_screen_tinted_black" mesh="visor-screen_1" />
+                    <body name="eye-L_1">
+                      <inertial pos="0.035 -0.105757 0.886021" quat="0.706435 -0.0308175 0.0308175 0.706435" mass="0" diaginertia="6.46282e-07 4.43181e-07 2.03104e-07" />
+                      <geom name="eye-L_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="eye_led" mesh="eye-L_1" />
+                    </body>
+                    <body name="eye-R_1">
+                      <inertial pos="-0.035 -0.105757 0.886021" quat="0.706435 -0.0308175 0.0308175 0.706435" mass="0" diaginertia="6.46282e-07 4.43181e-07 2.03104e-07" />
+                      <geom name="eye-R_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="eye_led" mesh="eye-R_1" />
+                    </body>
+                  </body>
+                </body>
+                <body name="frontal-cover_1">
+                  <inertial pos="0 -0.101634 0.688014" quat="0.495617 0.504345 0.495617 0.504345" mass="0.29" diaginertia="0.0424321 0.02716 0.0163646" />
+                  <geom name="frontal-cover_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="frontal-cover_1" />
+                </body>
+                <body name="back-cover_1">
+                  <inertial pos="0 0.079308 0.766162" quat="0.505971 0.493957 0.505971 0.493957" mass="0.07" diaginertia="0.00300152 0.002092 0.000913936" />
+                  <geom name="back-cover_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="back-cover_1" />
+                </body>
+                <body name="back-cover-left-holder_1">
+                  <inertial pos="0.10372 0.0738744 0.77125" quat="0.85812 -0.009103 -0.0120592 0.513227" mass="0.015" diaginertia="0.000305911 0.000300109 1.44574e-05" />
+                  <geom name="back-cover-left-holder_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="back-cover-left-holder_1" />
+                </body>
+                <body name="back-cover-right-holder_1">
+                  <inertial pos="-0.10372 0.0738744 0.77125" quat="0.513227 0.0120592 0.009103 0.85812" mass="0.015" diaginertia="0.000305911 0.000300109 1.44574e-05" />
+                  <geom name="back-cover-right-holder_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="back-cover-right-holder_1" />
+                </body>
+                <body name="torso-plate-left_1">
+                  <inertial pos="0.114 -0.0127911 0.743874" quat="0.998864 -0.0476507 0 0" mass="0.2" diaginertia="0.0134751 0.00958363 0.00389504" />
+                  <geom name="torso-plate-left_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="torso-plate-left_1" />
+                  <body name="90deg-bracket_1" pos="-0.00799693 0.00210307 0.7459" quat="0.707107 0 0 0.707107">
+                    <inertial pos="-0.00694345 -0.115722 -0.123735" quat="0.375653 0.59907 0.375653 0.59907" mass="0.00195" diaginertia="3.17067e-05 2.94279e-05 3.47089e-06" />
+                    <geom name="90deg-bracket_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="90deg-bracket_1" />
+                  </body>
+                  <body name="torso-cover-left_1">
+                    <inertial pos="0.128213 -0.0130233 0.741142" quat="0.998689 -0.0511532 -0.00199399 3.47001e-05" mass="0.28" diaginertia="0.0762673 0.0546043 0.0224953" />
+                    <geom name="torso-cover-left_1_geom" pos="0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="torso-cover-left_1" />
+                    <body name="torso-support-rod-1_1">
+                      <inertial pos="0 -0.0808404 0.670167" quat="0.469251 0.528965 0.469251 0.528965" mass="0.04" diaginertia="0.00130136 0.00130136 1.38499e-05" />
+                      <geom name="torso-support-rod-1_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="torso-support-rod-1_1" />
+                    </body>
+                    <body name="left-shoulder-pitch_1" pos="0.2759 -0.0149547 0.786186" quat="0 0.707107 0 0.707107">
+                      <inertial pos="0.0411395 -0.0032732 -0.167884" quat="0.0946993 0.70843 -0.134371 0.68637" mass="1.1" diaginertia="0.00505939 0.00452982 0.00446181" />
+                      <geom name="left-shoulder-pitch_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="left-shoulder-pitch_1" />
+                      <body name="shoulder-roll-bracket-left_1" pos="-0.786186 -0.0149547 -0.2759" quat="0 0.707107 0 0.707107">
+                        <inertial pos="0.184747 -0.00925152 0.825872" quat="0.690908 -0.0520401 -0.0694783 0.717712" mass="0.095" diaginertia="0.00290925 0.00232627 0.00212657" />
+                        <joint name="shoulder_pitch_left" armature="0.16" damping="0.25" frictionloss="0.81" pos="0.148 -0.012054 0.82717" axis="-1 0 0" />
+                        <geom name="shoulder-roll-bracket-left_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="shoulder-roll-bracket-left_1" />
+                        <geom name="isla_box_shoulder-roll-bracket-left_1" size="0.0426612 0.0485869 0.0437295" pos="0.189698 -0.0138474 0.8275" quat="-0.462764 -0.538817 0.487415 0.507891" type="box" contype="0" group="3" rgba="1 1 1 0" />
+                        <body name="left-shoulder-roll_1" pos="0.192988 0.0196861 0.798347" quat="0 0 0.707107 -0.707107">
+                          <inertial pos="0.00341428 -0.0269746 0.0430577" quat="0.613079 0.013434 -0.0122399 0.789812" mass="0.32" diaginertia="0.000754674 0.00075277 0.000627357" />
+                          <geom name="left-shoulder-roll_1_geom" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="left-shoulder-roll_1" />
+                          <body name="shoulder-yaw-left-bracket_1" pos="0.192988 0.798347 0.0196861" quat="0 0 0.707107 -0.707107">
+                            <inertial pos="0.20202 -0.0137482 0.768315" quat="0.651156 0.7492 -0.0789315 0.0920036" mass="0.1" diaginertia="0.0037985 0.0025083 0.00243892" />
+                            <joint name="shoulder_roll_left" range="-2.96706 0.174533" armature="0.03" pos="0.189547 -0.053854 0.825498" axis="0 1 0" limited="true" />
+                            <geom name="shoulder-yaw-left-bracket_1_geom" pos="0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="shoulder-yaw-left-bracket_1" />
+                            <geom name="isla_box_shoulder-yaw-left-bracket_1" size="0.0743114 0.048908 0.0415931" pos="0.19971 -0.0138827 0.785059" quat="0.0035513 0.644434 0.00649737 0.764624" type="box" contype="0" group="3" rgba="1 1 1 0" />
+                            <body name="shoulder-yaw-left-bracket-cover-F_1">
+                              <inertial pos="0.189547 -0.0603542 0.825498" quat="0.707107 0 0 0.707107" mass="0.004" diaginertia="8.66566e-06 4.35969e-06 4.35969e-06" />
+                              <geom name="shoulder-yaw-left-bracket-cover-F_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="shoulder-yaw-left-bracket-cover-F_1" />
+                            </body>
+                            <body name="shoulder-yaw-left-bracket-cover-R_1">
+                              <inertial pos="0.189403 0.0326458 0.82566" quat="0.707107 0 0 0.707107" mass="0.004" diaginertia="8.66566e-06 4.35969e-06 4.35969e-06" />
+                              <geom name="shoulder-yaw-left-bracket-cover-R_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="shoulder-yaw-left-bracket-cover-R_1" />
+                            </body>
+                            <body name="shoulder-yaw-left_1">
+                              <inertial pos="0.206543 -0.0138279 0.743953" quat="0.991036 0.00425882 -0.0629909 -0.117733" mass="0.32" diaginertia="0.000753728 0.000751673 0.000627194" />
+                              <geom name="shoulder-yaw-left_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="shoulder-yaw-left_1" />
+                              <body name="elbow-pitch-left-bracket_1">
+                                <inertial pos="0.209586 -0.0138539 0.674704" quat="0.999605 0.000409986 -0.028098 0.00010638" mass="0.042" diaginertia="0.000848165 0.000600523 0.00044986" />
+                                <joint name="shoulder_yaw_left" armature="0.03" pos="0.209375 -0.013854 0.7136" axis="-0.087156 0 0.996195" />
+                                <geom name="elbow-pitch-left-bracket_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="elbow-pitch-left-bracket_1" />
+                                <geom name="isla_box_elbow-pitch-left-bracket_1" size="0.0370635 0.0444308 0.0409323" pos="0.20738 -0.0135638 0.670769" quat="0.041101 0.032775 0.713051 0.699139" type="box" contype="0" group="3" rgba="1 1 1 0" />
+                                <body name="elbow-pitch-left_1" pos="0.960322 0 0.490999" quat="0.707107 0 -0.707107 0">
+                                  <inertial pos="0.175921 -0.0140305 0.749714" quat="0.794131 -0.0148595 -0.0491715 0.605571" mass="0.32" diaginertia="0.000753522 0.000751717 0.000627239" />
+                                  <geom name="elbow-pitch-left_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="elbow-pitch-left_1" />
+                                  <body name="upper-shin-inner-left_1" pos="-0.490999 0 0.960322" quat="0.707107 0 0.707107 0">
+                                    <inertial pos="0.245123 -0.0138542 0.670224" quat="0.999099 -4.84484e-06 -0.0424391 -2.1053e-07" mass="0.02" diaginertia="0.000249059 0.000126751 0.000125819" />
+                                    <joint name="elbow_pitch_left" range="-1.91986 1.91986" armature="0.03" pos="0.240974 -0.013854 0.669603" axis="-0.996195 0 -0.087156" limited="true" />
+                                    <geom name="upper-shin-inner-left_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="upper-shin-inner-left_1" />
+                                    <geom name="isla_box_upper-shin-inner-left_1" size="0.09 0.04 0.0145" pos="0.259777 -0.0138542 0.621057" quat="0.737277 -2.64353e-07 0.67559 -1.04763e-07" type="box" contype="0" group="3" rgba="1 1 1 0" />
+                                    <body name="upper-shin-outer-left_1">
+                                      <inertial pos="0.259329 -0.0138542 0.67447" quat="0.998531 2.34601e-05 -0.0541791 1.64767e-06" mass="0.032" diaginertia="0.000517458 0.000284718 0.000278073" />
+                                      <geom name="upper-shin-outer-left_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="upper-shin-outer-left_1" />
+                                      <body name="upper-shin-cover-left_1">
+                                        <inertial pos="0.268868 -0.0138542 0.672043" quat="0.999047 -0.00162157 -0.0436193 -7.07992e-05" mass="0.004" diaginertia="5.7771e-06 2.89651e-06 2.89651e-06" />
+                                        <geom name="upper-shin-cover-left_1_geom" pos="0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="upper-shin-cover-left_1" />
+                                      </body>
+                                      <body name="18mm-CF-tube-shin-left-F_1" pos="7.97182e-06 0.00134943 -9.11184e-05">
+                                        <inertial pos="0.261263 -0.0372037 0.621279" quat="0.996533 -0.00309309 -0.0435096 0.0708434" mass="0.014" diaginertia="6.83288e-05 6.83288e-05 5.12959e-06" />
+                                        <geom name="18mm-CF-tube-shin-left-F_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="18mm-CF-tube-shin-left-F_1" />
+                                        <body name="lower-shin-outer-left_1">
+                                          <inertial pos="0.268602 -0.0152037 0.568469" quat="0.999454 -2.8526e-05 -0.0330539 -6.73468e-07" mass="0.032" diaginertia="0.000517457 0.000284717 0.000278073" />
+                                          <geom name="lower-shin-outer-left_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="lower-shin-outer-left_1" />
+                                          <body name="lower-shin-cover-left_1">
+                                            <inertial pos="0.277575 -0.0152037 0.572515" quat="0.999047 -0.00152818 -0.0436193 -6.67219e-05" mass="0.004" diaginertia="5.7771e-06 2.89651e-06 2.89651e-06" />
+                                            <geom name="lower-shin-cover-left_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="lower-shin-cover-left_1" />
+                                          </body>
+                                          <body name="lower-shin-inner-left_1">
+                                            <inertial pos="0.253876 -0.0152037 0.570184" quat="0.998996 2.53654e-06 -0.0447995 1.12976e-07" mass="0.02" diaginertia="0.000249059 0.000126751 0.000125819" />
+                                            <geom name="lower-shin-inner-left_1_geom" pos="0 0 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_black" mesh="lower-shin-inner-left_1" />
+                                            <body name="wrist-pitch-left_1" pos="0.960322 0 0.390999" quat="0.707107 0 -0.707107 0">
+                                              <inertial pos="0.176393 -0.01538 0.741006" quat="0.793397 -0.0148349 -0.0490161 0.606546" mass="0.32" diaginertia="0.000753661 0.000751846 0.000627251" />
+                                              <joint name="wrist_pitch_left" range="-2.0944 2.0944" armature="0.03" pos="0.179076 -0.0152034 0.71064" axis="0.087156 0 -0.996195" limited="true" />
+                                              <geom name="wrist-pitch-left_1_geom" pos="0 0 0" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="wrist-pitch-left_1" />
+                                              <geom name="isla_box_wrist-pitch-left_1" size="0.0366517 0.043987 0.0409732" pos="0.171937 -0.0151938 0.743643" quat="0.480958 0.449517 -0.493756 0.568172" type="box" contype="0" group="3" rgba="1 1 1 0" />
+                                              <body name="wrist-pitch-left-bracket_1" pos="-0.390999 0 0.960322" quat="0.707107 0 0.707107 0">
+                                                <inertial pos="0.219659 -0.0152034 0.559576" quat="0.998545 0.000338047 -0.053929 0.000126355" mass="0.042" diaginertia="0.000845823 0.000598332 0.000450011" />
+                                                <geom name="wrist-pitch-left-bracket_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_white" mesh="wrist-pitch-left-bracket_1" />
+                                              </body>
+                                            </body>
+                                          </body>
+                                        </body>
+                                      </body>
+                                      <body name="18mm-CF-tube-shin-left-R_1" pos="7.97182e-06 0.00134943 -9.11184e-05">
+                                        <inertial pos="0.261263 0.00679633 0.621279" quat="0.999048 0 -0.0436194 0" mass="0.014" diaginertia="6.83288e-05 6.83288e-05 5.12959e-06" />
+                                        <geom name="18mm-CF-tube-shin-left-R_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="carbon_fiber_dark_gray" mesh="18mm-CF-tube-shin-left-R_1" />
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                        <body name="left-shoulder-roll-CRBTF305AT-Bearing_1" pos="0.1968 0.0323861 0.796003" quat="0.707107 0 0 0.707107">
+                          <inertial pos="-0.00878046 0.00738186 0.029669" quat="0.745355 0.666668 0 0" mass="0.021" diaginertia="5.0519e-05 2.54379e-05 2.54379e-05" />
+                          <geom name="left-shoulder-roll-CRBTF305AT-Bearing_1_geom" type="mesh" contype="0" conaffinity="0" group="2" material="component_metal" mesh="left-shoulder-roll-CRBTF305AT-Bearing_1" />
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+            <body name="isla_virtual_mass" pos="-0.000234235 -0.0123659 0.744651">
+              <inertial pos="0 0 0" mass="5.36676" diaginertia="0.0243293 0.0357784 0.0243293" />
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="isla_gantry" mocap="true" />
+  </worldbody>
+
+  <tendon>
+    <spatial name="isla_strut_front_right" limited="true" range="0.0667571 0.0987571" width="0.005" stiffness="26000" damping="380" rgba="0.95 0.95 0.95 1" springlength="0.0997571">
+      <site site="isla_strut_front_right_upper" />
+      <site site="isla_strut_front_right_lower" />
+    </spatial>
+    <spatial name="isla_strut_back_right" limited="true" range="0.086908 0.118908" width="0.005" stiffness="29000" damping="410" rgba="0.95 0.95 0.95 1" springlength="0.120408">
+      <site site="isla_strut_back_right_upper" />
+      <site site="isla_strut_back_right_lower" />
+    </spatial>
+    <spatial name="isla_strut_front_left" limited="true" range="0.0667571 0.0987571" width="0.005" stiffness="26000" damping="380" rgba="0.95 0.95 0.95 1" springlength="0.0997571">
+      <site site="isla_strut_front_left_upper" />
+      <site site="isla_strut_front_left_lower" />
+    </spatial>
+    <spatial name="isla_strut_back_left" limited="true" range="0.086908 0.118908" width="0.005" stiffness="29000" damping="410" rgba="0.95 0.95 0.95 1" springlength="0.120408">
+      <site site="isla_strut_back_left_upper" />
+      <site site="isla_strut_back_left_lower" />
+    </spatial>
+  </tendon>
+
+  <equality>
+    <weld name="isla_gantry" body1="base_link" body2="isla_gantry" relpose="0 0 0 1 0 0 0" active="false" solref="0.05" />
+  </equality>
+
+  <actuator>
+    <general name="hip_yaw_right_macro" joint="hip_yaw_right" ctrlrange="-0.5 0.5" ctrllimited="true" forcelimited="true" forcerange="-44.7317 44.7317" biastype="affine" gainprm="160" biasprm="0 -160 -5.35" />
+    <general name="hip_roll_right_macro" joint="hip_roll_right" ctrlrange="-0.5 0.25" ctrllimited="true" forcelimited="true" forcerange="-44.7317 44.7317" biastype="affine" gainprm="160" biasprm="0 -160 -5.35" />
+    <general name="hip_pitch_right_macro" joint="hip_pitch_right" ctrlrange="-1.6 0.6" ctrllimited="true" forcelimited="true" forcerange="-44.7317 44.7317" biastype="affine" gainprm="160" biasprm="0 -160 -5.35" />
+    <general name="knee_pitch_right_macro" joint="knee_pitch_right" ctrlrange="-1.75 0.05" ctrllimited="true" forcelimited="true" forcerange="-44.7317 44.7317" biastype="affine" gainprm="160" biasprm="0 -160 -5.35" />
+    <general name="hip_yaw_left_macro" joint="hip_yaw_left" ctrlrange="-0.5 0.5" ctrllimited="true" forcelimited="true" forcerange="-44.7317 44.7317" biastype="affine" gainprm="160" biasprm="0 -160 -5.35" />
+    <general name="hip_roll_left_macro" joint="hip_roll_left" ctrlrange="-0.25 0.5" ctrllimited="true" forcelimited="true" forcerange="-44.7317 44.7317" biastype="affine" gainprm="160" biasprm="0 -160 -5.35" />
+    <general name="hip_pitch_left_macro" joint="hip_pitch_left" ctrlrange="-0.6 1.6" ctrllimited="true" forcelimited="true" forcerange="-44.7317 44.7317" biastype="affine" gainprm="160" biasprm="0 -160 -5.35" />
+    <general name="knee_pitch_left_macro" joint="knee_pitch_left" ctrlrange="-0.05 1.75" ctrllimited="true" forcelimited="true" forcerange="-44.7317 44.7317" biastype="affine" gainprm="160" biasprm="0 -160 -5.35" />
+    <general name="waist_yaw_macro" joint="waist_yaw" ctrlrange="-1.2 1.2" ctrllimited="true" forcelimited="true" forcerange="-44.7317 44.7317" biastype="affine" gainprm="160" biasprm="0 -160 -5.35" />
+    <general name="shoulder_pitch_right_macro" joint="shoulder_pitch_right" ctrlrange="-3.14159 3.14159" ctrllimited="true" forcelimited="true" forcerange="-44.7317 44.7317" biastype="affine" gainprm="160" biasprm="0 -160 -5.35" />
+    <general name="shoulder_pitch_left_macro" joint="shoulder_pitch_left" ctrlrange="-3.14159 3.14159" ctrllimited="true" forcelimited="true" forcerange="-44.7317 44.7317" biastype="affine" gainprm="160" biasprm="0 -160 -5.35" />
+    <general name="shoulder_roll_right_micro" joint="shoulder_roll_right" ctrlrange="-0.174533 2.96706" ctrllimited="true" forcelimited="true" forcerange="-23.39 23.39" biastype="affine" gainprm="45" biasprm="0 -45 -1.02" />
+    <general name="shoulder_yaw_right_micro" joint="shoulder_yaw_right" ctrlrange="-3.14159 3.14159" ctrllimited="true" forcelimited="true" forcerange="-23.39 23.39" biastype="affine" gainprm="45" biasprm="0 -45 -1.02" />
+    <general name="elbow_pitch_right_micro" joint="elbow_pitch_right" ctrlrange="-1.91986 1.91986" ctrllimited="true" forcelimited="true" forcerange="-23.39 23.39" biastype="affine" gainprm="45" biasprm="0 -45 -1.02" />
+    <general name="wrist_pitch_right_micro" joint="wrist_pitch_right" ctrlrange="-2.0944 2.0944" ctrllimited="true" forcelimited="true" forcerange="-23.39 23.39" biastype="affine" gainprm="45" biasprm="0 -45 -1.02" />
+    <general name="shoulder_roll_left_micro" joint="shoulder_roll_left" ctrlrange="-2.96706 0.174533" ctrllimited="true" forcelimited="true" forcerange="-23.39 23.39" biastype="affine" gainprm="45" biasprm="0 -45 -1.02" />
+    <general name="shoulder_yaw_left_micro" joint="shoulder_yaw_left" ctrlrange="-3.14159 3.14159" ctrllimited="true" forcelimited="true" forcerange="-23.39 23.39" biastype="affine" gainprm="45" biasprm="0 -45 -1.02" />
+    <general name="elbow_pitch_left_micro" joint="elbow_pitch_left" ctrlrange="-1.91986 1.91986" ctrllimited="true" forcelimited="true" forcerange="-23.39 23.39" biastype="affine" gainprm="45" biasprm="0 -45 -1.02" />
+    <general name="wrist_pitch_left_micro" joint="wrist_pitch_left" ctrlrange="-2.0944 2.0944" ctrllimited="true" forcelimited="true" forcerange="-23.39 23.39" biastype="affine" gainprm="45" biasprm="0 -45 -1.02" />
+  </actuator>
+
+  <sensor>
+    <accelerometer site="imu_site" name="torso_imu_accelerometer" />
+    <gyro site="imu_site" name="torso_imu_gyroscope" />
+    <framequat objtype="site" objname="imu_site" name="torso_imu_orientation" />
+    <touch site="isla_touch_right" name="isla_touch_right" />
+    <framepos objtype="site" objname="isla_sole_right" name="isla_sole_right_pos" />
+    <framelinvel objtype="site" objname="isla_sole_right" name="isla_sole_right_vel" />
+    <touch site="isla_touch_left" name="isla_touch_left" />
+    <framepos objtype="site" objname="isla_sole_left" name="isla_sole_left_pos" />
+    <framelinvel objtype="site" objname="isla_sole_left" name="isla_sole_left_vel" />
+
+    <tendonpos tendon="isla_strut_front_right" name="isla_strut_front_right_length" />
+
+    <tendonpos tendon="isla_strut_back_right" name="isla_strut_back_right_length" />
+
+    <tendonpos tendon="isla_strut_front_left" name="isla_strut_front_left_length" />
+
+    <tendonpos tendon="isla_strut_back_left" name="isla_strut_back_left_length" />
+  </sensor>
+
+  <keyframe>
+    <key name="isla_stand" qpos="0 0 0.0916864 0.999188 0.040279 0 0 0 0 -0.23058 -0.15 0 0 0 0.23058 0.15 0 0 0 0 0 0 0 0 0 0 0 0" ctrl="0 0 -0.23058 -0.15 0 0 0.23058 0.15 0 0 0 0 0 0 0 0 0 0 0" />
+  </keyframe>
+</mujoco>

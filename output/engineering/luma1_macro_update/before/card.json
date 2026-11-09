@@ -1,0 +1,1 @@
+{"id":"luma_1","name":"Luma-1","about":"Isla Technologies' first humanoid: 19 actuators (36:1 macro, 54.54:1 micro), carbon-fibre rod legs, passive ankles on four shock absorbers.","height":1.034,"mass":25.56,"motors":19,"skill":"walk","commands":{"forward":[-0.3,0.6],"sideways":0.25,"turning":0.8},"steps":216858624,"published":"2026-10-31T08:22:44+00:00"}

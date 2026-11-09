@@ -1,0 +1,21 @@
+{
+  "status": "PROTOTYPE RFQ - not an importable robot profile",
+  "thigh_rod_cut_mm": 242,
+  "shin_rod_cut_mm": 156,
+  "quantity_each": 4,
+  "front": {
+    "extended_eye_mm": 98.757143,
+    "compressed_eye_mm": 66.757143,
+    "spring_N_per_mm": 26,
+    "damping_Ns_per_m": 380,
+    "preload_mm_at_full_extension": 1
+  },
+  "rear": {
+    "extended_eye_mm": 118.908009,
+    "compressed_eye_mm": 86.908009,
+    "spring_N_per_mm": 29,
+    "damping_Ns_per_m": 410,
+    "preload_mm_at_full_extension": 1.5
+  },
+  "note": "32 mm stroke, asymmetric about CAD pose: 15 mm from full extension and 17 mm from full compression. Existing scalar strut_stroke builder cannot represent these endpoints without the endstop adjustment used by run_review.py."
+}

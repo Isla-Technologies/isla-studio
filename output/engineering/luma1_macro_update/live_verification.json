@@ -1,0 +1,85 @@
+{
+  "deployment": "dpl_5hPjtLqRD9eXvdxxojXhinUpxxee",
+  "url": "https://isla-demo.vercel.app",
+  "client_build": "index-raUtFIgk.js",
+  "files": [
+    {
+      "file": "card.json",
+      "sha256": "584081e1a616515656c310175b68b52cc8d5164bd8df44919acf2fadb1f9dbc3",
+      "bytes": 358,
+      "matched": true
+    },
+    {
+      "file": "edges.bin.gz",
+      "sha256": "c504466f79ccee3321a061e2732258b93a05100af44f283f3090d897355ab868",
+      "bytes": 485949,
+      "matched": true
+    },
+    {
+      "file": "engineering-results.json",
+      "sha256": "23901edcdb0cb3bd7b630334690f14531fb2f8987820b1188a5f0c51e0c40646",
+      "bytes": 4427,
+      "matched": true
+    },
+    {
+      "file": "engineering.html",
+      "sha256": "d6c2129887d4d95a2874dc4a485dcf09936fe9e03d75c2cf7fd6c741226a8b9f",
+      "bytes": 13202,
+      "matched": true
+    },
+    {
+      "file": "hardware.json",
+      "sha256": "025593467430be42afaceff22eb3ae990c48c24f631eade059797f4797943f76",
+      "bytes": 1869,
+      "matched": true
+    },
+    {
+      "file": "meshes.bin.gz",
+      "sha256": "5e281bb1f1ab8bd293408c437fe8bf4268ff573e0a083a7846eab1515bbe7dbf",
+      "bytes": 2909594,
+      "matched": true
+    },
+    {
+      "file": "meta.json",
+      "sha256": "cddf9e1d1a4302de8d5255f22246cc1e3deb353118f83402e8cc547bcbda7bee",
+      "bytes": 103396,
+      "matched": true
+    },
+    {
+      "file": "metrics.json",
+      "sha256": "bfde937ccbc1b0948f31594ac54b04630c58adb45e13113821fe0ba4285e97f5",
+      "bytes": 15374,
+      "matched": true
+    },
+    {
+      "file": "model.xml",
+      "sha256": "afa2f4a27df5bbf6d2756060ee6a0178b1b554f48c3e2f19e086f71c133b67e2",
+      "bytes": 68257,
+      "matched": true
+    },
+    {
+      "file": "motors.json",
+      "sha256": "200cf2637ede9d9774d9c6d6d47858a3cd3b189fd380573548d1c34060999b84",
+      "bytes": 1835,
+      "matched": true
+    },
+    {
+      "file": "policy.json",
+      "sha256": "b8e0cbffa89f7ca1af50ac33ca7e392af5c17cf76c85713c38935697b17c391f",
+      "bytes": 278345,
+      "matched": true
+    },
+    {
+      "file": "training.json",
+      "sha256": "7578f16d736739896f6817b2288ea6542867fe39ceb1928868ac2be311813b62",
+      "bytes": 15838,
+      "matched": true
+    },
+    {
+      "file": "validation.json",
+      "sha256": "27f7cc946ed6f62945c69a3243033d3aa5f14abf382413816caa106efa26ccfa",
+      "bytes": 298430,
+      "matched": true
+    }
+  ]
+}

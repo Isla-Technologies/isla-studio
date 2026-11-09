@@ -1,0 +1,344 @@
+{
+  "format": "odrive-actuator-bench/simulation-model",
+  "version": 1,
+  "actuator": "Macro",
+  "created": "2026-11-08T23:24:43",
+  "conditions": {
+    "battery_voltage_V": 48.0,
+    "peak_current_A": 20.0,
+    "motor_temp_limit_C": 75.0,
+    "driver_phase_voltage_per_bus_volt": 0.46188021535170065,
+    "driver_phase_voltage_limit_V": null,
+    "controller": "ODrive V3.6 (firmware 0.5.x)"
+  },
+  "actuator_type": {
+    "gear_ratio": 36.0072,
+    "torque_constant": 2.98211,
+    "peak_torque": 59.6423,
+    "no_load_speed": 10.682,
+    "corner_speed": 8.79916,
+    "armature": -0.160981,
+    "frictionloss": -0.810605,
+    "damping": 0.0,
+    "measured": [
+      "gear_ratio",
+      "torque_constant",
+      "peak_torque",
+      "no_load_speed",
+      "corner_speed",
+      "armature",
+      "frictionloss",
+      "damping"
+    ],
+    "note": "Measured on a bench with an ODrive V3.6 (firmware 0.5.x) and FOC Actuator Bench 0.3.0. Calibration 2026-11-08, Friction test 2026-11-08, Gear ratio check 2026-11-08, Inertia test 2026-11-08, Speed test 2026-11-08."
+  },
+  "not_measured": [
+    "continuous_current",
+    "continuous_torque",
+    "backlash",
+    "stiffness"
+  ],
+  "values": [
+    {
+      "key": "gear_ratio",
+      "label": "Gear ratio",
+      "value": 36.00722999999999,
+      "unit": ": 1",
+      "source": "measured",
+      "note": ""
+    },
+    {
+      "key": "torque_constant",
+      "label": "Torque per amp at the output",
+      "value": 2.982114349233116,
+      "unit": "N·m/A",
+      "source": "measured",
+      "note": ""
+    },
+    {
+      "key": "peak_torque",
+      "label": "Peak torque",
+      "value": 59.64228698466232,
+      "unit": "N·m",
+      "source": "calculated",
+      "note": "at 20 A peak current"
+    },
+    {
+      "key": "continuous_current",
+      "label": "Continuous current",
+      "value": null,
+      "unit": "A",
+      "source": "not measured",
+      "note": ""
+    },
+    {
+      "key": "continuous_torque",
+      "label": "Continuous torque",
+      "value": null,
+      "unit": "N·m",
+      "source": "not measured",
+      "note": ""
+    },
+    {
+      "key": "no_load_speed",
+      "label": "No-load speed",
+      "value": 10.682032544062158,
+      "unit": "rad/s",
+      "source": "measured",
+      "note": "at 48 V"
+    },
+    {
+      "key": "corner_speed",
+      "label": "Corner speed (full torque up to here)",
+      "value": 8.799162258157544,
+      "unit": "rad/s",
+      "source": "calculated",
+      "note": "at 48 V and 20 A"
+    },
+    {
+      "key": "armature",
+      "label": "Reflected inertia (armature)",
+      "value": -0.16098094804313404,
+      "unit": "kg·m²",
+      "source": "measured",
+      "note": ""
+    },
+    {
+      "key": "frictionloss",
+      "label": "Friction (Coulomb)",
+      "value": -0.8106054674016296,
+      "unit": "N·m",
+      "source": "measured",
+      "note": "± 0.069 N·m"
+    },
+    {
+      "key": "damping",
+      "label": "Damping (viscous friction)",
+      "value": 0.0,
+      "unit": "N·m·s/rad",
+      "source": "measured",
+      "note": "± 0 N·m·s/rad"
+    },
+    {
+      "key": "backlash",
+      "label": "Backlash",
+      "value": null,
+      "unit": "rad",
+      "source": "not measured",
+      "note": ""
+    },
+    {
+      "key": "stiffness",
+      "label": "Gearbox stiffness",
+      "value": null,
+      "unit": "N·m/rad",
+      "source": "not measured",
+      "note": ""
+    }
+  ],
+  "extra": {
+    "motor": {
+      "flux_Vs_per_rad": 0.05764040019280093,
+      "phase_resistance_ohm": 0.113472,
+      "phase_inductance_H": 6.6e-05,
+      "pole_pairs": 20,
+      "kt_backemf_Nm_per_A": 0.0864606002892014,
+      "kv_backemf_rpm_per_V": 95.65050407165506
+    },
+    "gearbox_efficiency_from_back_emf": 0.9578915301535105,
+    "torque_speed_curve": [
+      {
+        "speed_rad_s": 0.0,
+        "torque_Nm": 59.6423
+      },
+      {
+        "speed_rad_s": 1.0682,
+        "torque_Nm": 59.6423
+      },
+      {
+        "speed_rad_s": 2.1364,
+        "torque_Nm": 59.6423
+      },
+      {
+        "speed_rad_s": 3.2046,
+        "torque_Nm": 59.6423
+      },
+      {
+        "speed_rad_s": 4.2728,
+        "torque_Nm": 59.6423
+      },
+      {
+        "speed_rad_s": 5.341,
+        "torque_Nm": 59.6423
+      },
+      {
+        "speed_rad_s": 6.4092,
+        "torque_Nm": 59.6423
+      },
+      {
+        "speed_rad_s": 7.4774,
+        "torque_Nm": 59.6423
+      },
+      {
+        "speed_rad_s": 8.5456,
+        "torque_Nm": 59.6423
+      },
+      {
+        "speed_rad_s": 9.6138,
+        "torque_Nm": 37.91
+      },
+      {
+        "speed_rad_s": 10.682,
+        "torque_Nm": 0.0
+      }
+    ]
+  },
+  "tests": {
+    "inertia": {
+      "swing_deg": 40.0,
+      "attached_inertia_kgm2": 0.0,
+      "notes": [],
+      "inertia_kgm2": -0.16098094804313404,
+      "spring_Nm_per_rad": -0.0005103309959360033,
+      "damping_equivalent_Nms_per_rad": -0.3243597125976339,
+      "spread": 0.004404628719030545,
+      "swings": [
+        {
+          "frequency": 1.193662073189215,
+          "speed_amplitude": 5.82065383856458,
+          "torque_amplitude": 7.4307208880339815,
+          "apparent_inertia": -0.16164958894292078,
+          "damping": -0.3998680298659599,
+          "samples": 216
+        },
+        {
+          "frequency": 1.7904931097838224,
+          "speed_amplitude": 4.653977441729216,
+          "torque_amplitude": 8.483957889157463,
+          "apparent_inertia": -0.15999799636925752,
+          "damping": -0.28847840350668796,
+          "samples": 143
+        },
+        {
+          "frequency": 2.6857396646757334,
+          "speed_amplitude": 4.8536499132453,
+          "torque_amplitude": 13.281818118381727,
+          "apparent_inertia": -0.16128036191243153,
+          "damping": -0.2847327044202539,
+          "samples": 94
+        }
+      ],
+      "date": "2026-11-08"
+    },
+    "speed": {
+      "runs": [
+        {
+          "direction": 1,
+          "speed_motor_turns_s": 60.11898712765958,
+          "current_A": 3.225734872340426,
+          "vbus_V": 47.99589442553192,
+          "voltage_limited": true
+        },
+        {
+          "direction": -1,
+          "speed_motor_turns_s": 60.119949999999996,
+          "current_A": 3.0455373958333336,
+          "vbus_V": 48.06432454166667,
+          "voltage_limited": true
+        }
+      ],
+      "phase_resistance_ohm": 0.113472,
+      "phase_inductance_H": 6.6e-05,
+      "pole_pairs": 20,
+      "resistance_measured": true,
+      "phase_resistance_source": "controller",
+      "phase_inductance_source": "controller",
+      "pole_pairs_source": "controller",
+      "no_load_speed_rad_s": 10.492826709880564,
+      "no_load_speed_rpm": 100.19911427304963,
+      "no_load_current_A": 3.13563613408688,
+      "vbus_V": 48.0301094835993,
+      "phase_voltage_per_bus_volt": 0.46188021535170065,
+      "phase_voltage_limit_V": null,
+      "zero_torque_speed_rad_s": 10.690879833052565,
+      "motor": {
+        "flux_Vs_per_rad": 0.05764040019280093,
+        "phase_resistance_ohm": 0.113472,
+        "phase_inductance_H": 6.6e-05,
+        "pole_pairs": 20,
+        "kt_backemf_Nm_per_A": 0.0864606002892014,
+        "kv_backemf_rpm_per_V": 95.65050407165506
+      },
+      "date": "2026-11-08"
+    },
+    "gear_ratio": {
+      "motor_turns": 36.00722999999999,
+      "output_turns": 1.0,
+      "ratio": 36.00722999999999,
+      "date": "2026-11-08"
+    },
+    "friction": {
+      "travel_deg": 120.0,
+      "speeds_rad_s": [
+        0.2493327502849042,
+        0.5708295007722461,
+        1.3068733192071968,
+        2.9919930034188504
+      ],
+      "skipped_speeds_rad_s": [],
+      "coulomb_Nm": -0.8106054674016296,
+      "viscous_Nms_per_rad": 0.0,
+      "bias_Nm": -0.02394076527674792,
+      "coulomb_error_Nm": 0.0693064901136809,
+      "viscous_error_Nms_per_rad": 0.0,
+      "r_squared": -0.5066252325128977,
+      "levels": [
+        {
+          "speed": 0.2493327502849042,
+          "torque_forward": -0.7228090211067841,
+          "torque_backward": 0.7199602049230479,
+          "samples_forward": 155,
+          "samples_backward": 109,
+          "noise_forward": 0.031799484990277224,
+          "noise_backward": 0.03213866426153231,
+          "friction": -0.721384613014916,
+          "bias": -0.0014244080918681123
+        },
+        {
+          "speed": 0.5708295007722461,
+          "torque_forward": -0.870875062668058,
+          "torque_backward": 0.8264748576558606,
+          "samples_forward": 132,
+          "samples_backward": 142,
+          "noise_forward": 0.028894099819955013,
+          "noise_backward": 0.026983219761681724,
+          "friction": -0.8486749601619593,
+          "bias": -0.022200102506098718
+        },
+        {
+          "speed": 1.3068733192071968,
+          "torque_forward": -1.1132492639856848,
+          "torque_backward": 0.8985141866851265,
+          "samples_forward": 43,
+          "samples_backward": 41,
+          "noise_forward": 0.07665832705165891,
+          "noise_backward": 0.09814082316127871,
+          "friction": -1.0058817253354055,
+          "bias": -0.10736753865027915
+        },
+        {
+          "speed": 2.9919930034188504,
+          "torque_forward": -1.4151673772212705,
+          "torque_backward": 1.4856253535037791,
+          "samples_forward": 17,
+          "samples_backward": 15,
+          "noise_forward": 0.1863279862735194,
+          "noise_backward": 0.24655543262125793,
+          "friction": -1.4503963653625247,
+          "bias": 0.0352289881412543
+        }
+      ],
+      "date": "2026-11-08"
+    }
+  }
+}

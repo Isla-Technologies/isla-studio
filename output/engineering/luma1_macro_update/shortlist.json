@@ -1,0 +1,71 @@
+[
+  {
+    "trials": 18,
+    "falls": 0,
+    "minimum_clearance": 3.94,
+    "peak": 44.73,
+    "rms": 16.36,
+    "speed_error": 0.04253918059128553,
+    "candidate": {
+      "design": {
+        "thigh_rod": 4.0,
+        "shin_rod": 51.0,
+        "front_k": 28.0,
+        "back_k": 29.5,
+        "front_c": 260.0,
+        "back_c": 510.0,
+        "front_preload": 0.5,
+        "back_preload": 0.5
+      },
+      "stroke": 32.0
+    },
+    "screen_score": 23.89350382635257,
+    "index": 0
+  },
+  {
+    "trials": 18,
+    "falls": 0,
+    "minimum_clearance": 2.19,
+    "peak": 44.73,
+    "rms": 17.01,
+    "speed_error": 0.04054762607787943,
+    "candidate": {
+      "design": {
+        "thigh_rod": 20.0,
+        "shin_rod": 46.0,
+        "front_k": 26.0,
+        "back_k": 29.0,
+        "front_c": 380.0,
+        "back_c": 410.0,
+        "front_preload": 1.0,
+        "back_preload": 1.5
+      },
+      "stroke": 32.0
+    },
+    "screen_score": 24.877528678096297,
+    "index": 1
+  },
+  {
+    "trials": 18,
+    "falls": 0,
+    "minimum_clearance": 3.93,
+    "peak": 44.73,
+    "rms": 17.38,
+    "speed_error": 0.03828898009274123,
+    "candidate": {
+      "design": {
+        "thigh_rod": 22.0,
+        "shin_rod": 43.0,
+        "front_k": 25.0,
+        "back_k": 25.0,
+        "front_c": 265.0,
+        "back_c": 540.0,
+        "front_preload": 0.5,
+        "back_preload": 1.5
+      },
+      "stroke": 32.0
+    },
+    "screen_score": 24.93723440128648,
+    "index": 2
+  }
+]

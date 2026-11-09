@@ -1,0 +1,150 @@
+{
+  "design": {
+    "thigh_rod": 42.0,
+    "shin_rod": 46.0,
+    "front_k": 26.0,
+    "back_k": 29.0,
+    "front_c": 380.0,
+    "back_c": 410.0,
+    "front_preload": 1.0,
+    "back_preload": 1.5
+  },
+  "size": {
+    "height": 1.0341031337323958,
+    "hip_height": 0.49269437125398874,
+    "com_height": 0.6661122181445109,
+    "lean_deg": 4.616885992408698,
+    "mass": 29.999999999999904,
+    "leg_length": 0.44399953065488396
+  },
+  "rods": {
+    "thigh": {
+      "segment_cad": 0.15999985595618516,
+      "segment": 0.20199985595618516,
+      "rod_length": 0.24200002534467088
+    },
+    "shin": {
+      "segment_cad": 0.19599967469869878,
+      "segment": 0.24199967469869876,
+      "rod_length": 0.1560000106215177
+    }
+  },
+  "ankle": {
+    "stiffness": 236.8203834673773,
+    "preload_torque": 0.3276786291724676,
+    "cop_shift": 0.0022268340412672006,
+    "toe_down_deg": 13.193667562542311,
+    "toe_up_deg": 13.976121693327977,
+    "passive_ratio": 2.4160805756880714,
+    "rocking_hz": 0.7268167347586555,
+    "damping_ratio": 0.05124682654851345,
+    "struts": [
+      {
+        "position": "front",
+        "length": 0.08375714302356063,
+        "stroke_used": 0.53125,
+        "force": 416.0,
+        "rate_n_per_mm": 26.0,
+        "rate_lb_per_in": 148.46387993399605,
+        "damping": 380.0,
+        "moment_arm": 0.06755034399438808,
+        "eye_to_eye_range": [
+          0.06675714302356063,
+          0.09875714302356063
+        ]
+      },
+      {
+        "position": "back",
+        "length": 0.10390800880338327,
+        "stroke_used": 0.5312500000000009,
+        "force": 478.4999999999992,
+        "rate_n_per_mm": 29.0,
+        "rate_lb_per_in": 165.5943276186879,
+        "damping": 410.0,
+        "moment_arm": 0.058042350000453435,
+        "eye_to_eye_range": [
+          0.08690800880338324,
+          0.11890800880338324
+        ]
+      }
+    ]
+  },
+  "standing": {
+    "seconds": 2.0,
+    "drift_deg": 110.27928077546466,
+    "unaided": false
+  },
+  "motors": {
+    "stand": {
+      "hip_pitch_left": 0.392147643560055,
+      "hip_roll_left": -0.49842168847550383,
+      "hip_yaw_left": 0.04038490451198313,
+      "knee_pitch_left": -6.4713457122271825,
+      "hip_pitch_right": -0.39531154743480723,
+      "hip_roll_right": 0.49842273494069617,
+      "hip_yaw_right": -0.04011499367443732,
+      "knee_pitch_right": 6.4745096197511165,
+      "waist_yaw": 0.0025785329173382485
+    },
+    "crouch": {
+      "hip_pitch_left": -10.915998971804559,
+      "hip_roll_left": -0.44974405918150406,
+      "hip_yaw_left": 0.2193069298030523,
+      "knee_pitch_left": -6.47134571222721,
+      "hip_pitch_right": 10.91283514538644,
+      "hip_roll_right": 0.449745003434762,
+      "hip_yaw_right": -0.21784120101100718,
+      "knee_pitch_right": 6.474509619751107,
+      "waist_yaw": 0.014002512679704149
+    },
+    "crouch_lean_deg": 25.919567332648796,
+    "peaks": {
+      "hip_pitch_left": 44.731715,
+      "hip_roll_left": 44.731715,
+      "hip_yaw_left": 44.731715,
+      "knee_pitch_left": 44.731715,
+      "hip_pitch_right": 44.731715,
+      "hip_roll_right": 44.731715,
+      "hip_yaw_right": 44.731715,
+      "knee_pitch_right": 44.731715,
+      "shoulder_pitch_left": 44.731715,
+      "shoulder_roll_left": 23.39,
+      "shoulder_yaw_left": 23.39,
+      "elbow_pitch_left": 23.39,
+      "wrist_pitch_left": 23.39,
+      "shoulder_pitch_right": 44.731715,
+      "shoulder_roll_right": 23.39,
+      "shoulder_yaw_right": 23.39,
+      "elbow_pitch_right": 23.39,
+      "wrist_pitch_right": 23.39,
+      "waist_yaw": 44.731715
+    },
+    "crouch_load": 0.2440326504763915
+  },
+  "walking": {
+    "period": 0.7,
+    "no_load_speed": 8.90169,
+    "rows": [
+      {
+        "speed": 0.3,
+        "hip_rate": 1.7021422280675556,
+        "share": 0.19121562625384117
+      },
+      {
+        "speed": 0.5,
+        "hip_rate": 2.848914496755983,
+        "share": 0.32004198042798426
+      },
+      {
+        "speed": 0.8,
+        "hip_rate": 4.60703615000112,
+        "share": 0.5175462356025788
+      },
+      {
+        "speed": 1.0,
+        "hip_rate": 5.818400168799721,
+        "share": 0.6536287119411843
+      }
+    ]
+  }
+}

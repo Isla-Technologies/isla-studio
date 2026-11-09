@@ -1,0 +1,16 @@
+{
+  "selected_trials": 53,
+  "selected_seconds": 803.0000000000306,
+  "all_trials": 128,
+  "falls": 0,
+  "min_clearance_mm": 2.57,
+  "max_macro_peak_Nm": 44.73,
+  "max_macro_rms_Nm": 19.52,
+  "max_macro_speed_rad_s": 6.48,
+  "max_shock_force_N": 809.5,
+  "max_shaft_speed_m_s": 0.499,
+  "max_tilt_deg": 9.91362129471838,
+  "max_ground_force_BW": 3.0852887564744553,
+  "max_positive_mechanical_W": 236.40787441674968,
+  "max_negative_mechanical_W": 120.4803548553056
+}

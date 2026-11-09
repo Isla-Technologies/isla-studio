@@ -1,0 +1,36 @@
+{
+  "review_date_singapore": "2026-11-09",
+  "git_commit": "a65260eec981d52d53b2c14dbd24c579029e24d9",
+  "sources": [
+    {
+      "path": "C:\\Users\\Teh Bing Quan\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalState\\sessions\\C12D1A5BFDCED775F36CC1AD6371894DB387B6A1\\transfers\\2026-45\\macro.json",
+      "sha256": "7f573ebe992a992dc06eea8697520f5bc4875906a4d2bce76785846174720cd9"
+    },
+    {
+      "path": "C:\\Users\\Teh Bing Quan\\Desktop\\isla-technologies\\isla-studio\\robots\\luma_1\\robot.json",
+      "sha256": "11368779022922bc12fd3744dbf3136b76d06da976ea85f3e7fe0cf128b4c2df"
+    },
+    {
+      "path": "C:\\Users\\Teh Bing Quan\\Desktop\\isla-technologies\\isla-studio\\robots\\luma_1\\source\\URDF.xml",
+      "sha256": "c79350f871e014da10fa9504aef2290188e16447080019c4f06ba834242989a3"
+    },
+    {
+      "path": "C:\\Users\\Teh Bing Quan\\Desktop\\isla-technologies\\isla-studio\\examples\\runs\\luma1-walk\\policy.json",
+      "sha256": "2415bada46dafba53f64f56fa68895def03929a0bb4cb3aef3feeb0b33d10e30"
+    }
+  ],
+  "review_artifacts": [
+    {
+      "file": "run_review.py",
+      "sha256": "68df57cf42e7ae239af1f170da8390ad06ce4dd139ca89681c0107fccccee7fa"
+    },
+    {
+      "file": "final.json",
+      "sha256": "1661478f35604e9e07e1059e950d3dc1347ce428fc14e90cb6816e4c945c53a1"
+    },
+    {
+      "file": "prototype_specification.json",
+      "sha256": "0694120d97058f3590031b1c616c43acff1afde1833e696992b2b3b8bcfba956"
+    }
+  ]
+}

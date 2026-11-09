@@ -1,0 +1,5632 @@
+[
+  {
+    "case": {
+      "name": "nominal",
+      "mass": 30,
+      "torque": 59.64228698466232,
+      "corner": 8.799162258157544,
+      "no_load": 10.682032544062158,
+      "inertia": 0.16,
+      "friction": 0.81,
+      "damping": 0.25,
+      "mu": 0.6,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0.3,
+      0,
+      0
+    ],
+    "push": null,
+    "requested_seconds": 15,
+    "simulated_seconds": 15.000000000001455,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": 0.28600969219924627,
+      "left": 0.0055376280223851625,
+      "turn": 0.00016307664819771575,
+      "sway": 1.4632263574426303,
+      "wobble": 12.7277866587459,
+      "bounce": 0.06494698140103874
+    },
+    "max_tilt_deg": 8.00073877190813,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 13.5,
+        "closest_to_bottom_mm": 8.67,
+        "closest_to_top_mm": 9.83,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.268,
+        "spring_force_peak": 595.8,
+        "force_peak": 600.3,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 11.54,
+        "closest_to_bottom_mm": 10.52,
+        "closest_to_top_mm": 9.94,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.214,
+        "spring_force_peak": 574.5,
+        "force_peak": 624.7,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 16.3,
+        "closest_to_bottom_mm": 7.26,
+        "closest_to_top_mm": 8.44,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.318,
+        "spring_force_peak": 631.0,
+        "force_peak": 638.2,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 13.94,
+        "closest_to_bottom_mm": 9.22,
+        "closest_to_top_mm": 8.83,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.251,
+        "spring_force_peak": 606.9,
+        "force_peak": 639.4,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 6.49,
+        "torque_rms": 2.48,
+        "speed_peak": 0.25,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 21.14,
+        "torque_rms": 12.01,
+        "speed_peak": 0.36,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 15.31,
+        "torque_rms": 5.96,
+        "speed_peak": 2.96,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 38.42,
+        "torque_rms": 14.17,
+        "speed_peak": 5.7,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 5.84,
+        "torque_rms": 2.81,
+        "speed_peak": 0.53,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 22.91,
+        "torque_rms": 12.21,
+        "speed_peak": 0.54,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 18.33,
+        "torque_rms": 5.16,
+        "speed_peak": 3.21,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 38.33,
+        "torque_rms": 14.64,
+        "speed_peak": 6.06,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 5.0,
+        "torque_rms": 1.82,
+        "speed_peak": 0.28,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.17,
+        "torque_rms": 0.15,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.17,
+        "torque_rms": 0.15,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.88,
+        "torque_rms": 0.44,
+        "speed_peak": 0.2,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.02,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.11,
+        "torque_rms": 0.05,
+        "speed_peak": 0.04,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.96,
+        "torque_rms": 0.45,
+        "speed_peak": 0.23,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.1,
+        "torque_rms": 0.05,
+        "speed_peak": 0.03,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        44,
+        43
+      ],
+      "single_support_share": [
+        0.36906666666666665,
+        0.3589333333333333
+      ],
+      "ground_force_peak_bodyweights": 2.390228439166942
+    },
+    "mechanical_power_W": {
+      "positive_peak": 173.15239776502375,
+      "negative_peak": 99.82434205497088
+    },
+    "stroke_clearance_mm": 7.26
+  },
+  {
+    "case": {
+      "name": "adverse",
+      "mass": 30,
+      "torque": 44.73171523849674,
+      "corner": 6.5,
+      "no_load": 8.901693786718466,
+      "inertia": 0.25,
+      "friction": 1.2,
+      "damping": 0.4,
+      "mu": 0.4,
+      "push_time": 3.1,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0.3,
+      0,
+      0
+    ],
+    "push": [
+      0.0,
+      0.2
+    ],
+    "requested_seconds": 12,
+    "simulated_seconds": 12.000000000001343,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": 0.31399166134420786,
+      "left": 0.0011326828801572974,
+      "turn": 0.0008149242449001702,
+      "sway": 1.6233389461279863,
+      "wobble": 13.606010144626346,
+      "bounce": 0.06417216396326356
+    },
+    "max_tilt_deg": 8.574234359268376,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 17.22,
+        "closest_to_bottom_mm": 6.24,
+        "closest_to_top_mm": 8.54,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.341,
+        "spring_force_peak": 656.4,
+        "force_peak": 658.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 14.64,
+        "closest_to_bottom_mm": 9.32,
+        "closest_to_top_mm": 8.04,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.266,
+        "spring_force_peak": 604.6,
+        "force_peak": 661.4,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 20.54,
+        "closest_to_bottom_mm": 3.93,
+        "closest_to_top_mm": 7.53,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.413,
+        "spring_force_peak": 714.2,
+        "force_peak": 718.5,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 17.35,
+        "closest_to_bottom_mm": 8.37,
+        "closest_to_top_mm": 6.28,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.322,
+        "spring_force_peak": 628.2,
+        "force_peak": 670.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 8.63,
+        "torque_rms": 2.61,
+        "speed_peak": 0.34,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 22.78,
+        "torque_rms": 11.96,
+        "speed_peak": 0.35,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 27.32,
+        "torque_rms": 7.02,
+        "speed_peak": 2.69,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 44.67,
+        "torque_rms": 16.03,
+        "speed_peak": 5.34,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0002
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 6.64,
+        "torque_rms": 2.88,
+        "speed_peak": 0.77,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 24.07,
+        "torque_rms": 12.13,
+        "speed_peak": 0.53,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 20.02,
+        "torque_rms": 5.82,
+        "speed_peak": 2.94,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 44.04,
+        "torque_rms": 16.66,
+        "speed_peak": 5.73,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0002
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 9.07,
+        "torque_rms": 1.99,
+        "speed_peak": 0.37,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.16,
+        "torque_rms": 0.14,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.17,
+        "torque_rms": 0.14,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.88,
+        "torque_rms": 0.44,
+        "speed_peak": 0.22,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.05,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.2,
+        "torque_rms": 0.05,
+        "speed_peak": 0.08,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.02,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.96,
+        "torque_rms": 0.44,
+        "speed_peak": 0.23,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.05,
+        "torque_rms": 0.01,
+        "speed_peak": 0.03,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.16,
+        "torque_rms": 0.05,
+        "speed_peak": 0.05,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        55,
+        53
+      ],
+      "single_support_share": [
+        0.35933333333333334,
+        0.35283333333333333
+      ],
+      "ground_force_peak_bodyweights": 2.567362945513348
+    },
+    "mechanical_power_W": {
+      "positive_peak": 193.13519196235418,
+      "negative_peak": 100.97425698385143
+    },
+    "stroke_clearance_mm": 3.93
+  },
+  {
+    "case": {
+      "name": "adverse",
+      "mass": 30,
+      "torque": 44.73171523849674,
+      "corner": 6.5,
+      "no_load": 8.901693786718466,
+      "inertia": 0.25,
+      "friction": 1.2,
+      "damping": 0.4,
+      "mu": 0.4,
+      "push_time": 3.1,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0.3,
+      0,
+      0
+    ],
+    "push": [
+      0.7853981633974483,
+      0.2
+    ],
+    "requested_seconds": 12,
+    "simulated_seconds": 12.000000000001343,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": 0.3121575540277026,
+      "left": 0.00523370092572563,
+      "turn": 0.002326474993067261,
+      "sway": 1.625074802875412,
+      "wobble": 13.593748281526082,
+      "bounce": 0.06422246595849829
+    },
+    "max_tilt_deg": 8.574234359268376,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 16.5,
+        "closest_to_bottom_mm": 6.97,
+        "closest_to_top_mm": 8.54,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.313,
+        "spring_force_peak": 638.3,
+        "force_peak": 642.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 14.08,
+        "closest_to_bottom_mm": 9.32,
+        "closest_to_top_mm": 8.61,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.246,
+        "spring_force_peak": 604.6,
+        "force_peak": 661.4,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 20.11,
+        "closest_to_bottom_mm": 4.37,
+        "closest_to_top_mm": 7.53,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.402,
+        "spring_force_peak": 703.3,
+        "force_peak": 705.0,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 17.02,
+        "closest_to_bottom_mm": 8.37,
+        "closest_to_top_mm": 6.6,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.307,
+        "spring_force_peak": 628.2,
+        "force_peak": 670.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 8.01,
+        "torque_rms": 2.59,
+        "speed_peak": 0.22,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 22.16,
+        "torque_rms": 11.93,
+        "speed_peak": 0.37,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 22.91,
+        "torque_rms": 6.97,
+        "speed_peak": 2.61,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 43.49,
+        "torque_rms": 15.98,
+        "speed_peak": 5.32,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 6.68,
+        "torque_rms": 2.88,
+        "speed_peak": 0.62,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 24.07,
+        "torque_rms": 12.12,
+        "speed_peak": 0.53,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 18.51,
+        "torque_rms": 5.72,
+        "speed_peak": 2.94,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 44.04,
+        "torque_rms": 16.72,
+        "speed_peak": 5.84,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0002
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 7.54,
+        "torque_rms": 1.97,
+        "speed_peak": 0.36,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.16,
+        "torque_rms": 0.14,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.17,
+        "torque_rms": 0.15,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.97,
+        "torque_rms": 0.45,
+        "speed_peak": 0.32,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.04,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.15,
+        "torque_rms": 0.05,
+        "speed_peak": 0.05,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.96,
+        "torque_rms": 0.45,
+        "speed_peak": 0.28,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.04,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.14,
+        "torque_rms": 0.05,
+        "speed_peak": 0.05,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        52,
+        53
+      ],
+      "single_support_share": [
+        0.3571666666666667,
+        0.356
+      ],
+      "ground_force_peak_bodyweights": 2.7291671397012474
+    },
+    "mechanical_power_W": {
+      "positive_peak": 196.41784868759552,
+      "negative_peak": 100.97425698385143
+    },
+    "stroke_clearance_mm": 4.37
+  },
+  {
+    "case": {
+      "name": "adverse",
+      "mass": 30,
+      "torque": 44.73171523849674,
+      "corner": 6.5,
+      "no_load": 8.901693786718466,
+      "inertia": 0.25,
+      "friction": 1.2,
+      "damping": 0.4,
+      "mu": 0.4,
+      "push_time": 3.1,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0.3,
+      0,
+      0
+    ],
+    "push": [
+      1.5707963267948966,
+      0.2
+    ],
+    "requested_seconds": 12,
+    "simulated_seconds": 12.000000000001343,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": 0.3064677923617543,
+      "left": 0.008302388663663004,
+      "turn": 0.0033488881794660613,
+      "sway": 1.6053842505382911,
+      "wobble": 13.527965506377521,
+      "bounce": 0.06372133347089844
+    },
+    "max_tilt_deg": 8.574234359268376,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 15.34,
+        "closest_to_bottom_mm": 8.13,
+        "closest_to_top_mm": 8.54,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.268,
+        "spring_force_peak": 609.3,
+        "force_peak": 613.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 13.17,
+        "closest_to_bottom_mm": 9.32,
+        "closest_to_top_mm": 9.52,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.213,
+        "spring_force_peak": 604.6,
+        "force_peak": 661.4,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 18.94,
+        "closest_to_bottom_mm": 5.53,
+        "closest_to_top_mm": 7.53,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.35,
+        "spring_force_peak": 674.3,
+        "force_peak": 679.7,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 16.14,
+        "closest_to_bottom_mm": 8.37,
+        "closest_to_top_mm": 7.49,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.271,
+        "spring_force_peak": 628.2,
+        "force_peak": 683.3,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 7.17,
+        "torque_rms": 2.53,
+        "speed_peak": 0.24,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 22.32,
+        "torque_rms": 11.97,
+        "speed_peak": 0.53,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 20.57,
+        "torque_rms": 6.94,
+        "speed_peak": 2.61,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 43.49,
+        "torque_rms": 16.05,
+        "speed_peak": 5.32,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 6.66,
+        "torque_rms": 2.85,
+        "speed_peak": 0.45,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 24.07,
+        "torque_rms": 12.22,
+        "speed_peak": 0.93,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 17.79,
+        "torque_rms": 5.76,
+        "speed_peak": 2.94,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 44.04,
+        "torque_rms": 16.91,
+        "speed_peak": 5.87,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0002
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 6.2,
+        "torque_rms": 1.91,
+        "speed_peak": 0.27,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.16,
+        "torque_rms": 0.14,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.16,
+        "torque_rms": 0.14,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 1.1,
+        "torque_rms": 0.45,
+        "speed_peak": 0.4,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.13,
+        "torque_rms": 0.05,
+        "speed_peak": 0.05,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 1.06,
+        "torque_rms": 0.45,
+        "speed_peak": 0.37,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.12,
+        "torque_rms": 0.05,
+        "speed_peak": 0.04,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        52,
+        51
+      ],
+      "single_support_share": [
+        0.35383333333333333,
+        0.3586666666666667
+      ],
+      "ground_force_peak_bodyweights": 2.6003663066853426
+    },
+    "mechanical_power_W": {
+      "positive_peak": 206.19828122685783,
+      "negative_peak": 106.24496608400888
+    },
+    "stroke_clearance_mm": 5.53
+  },
+  {
+    "case": {
+      "name": "adverse",
+      "mass": 30,
+      "torque": 44.73171523849674,
+      "corner": 6.5,
+      "no_load": 8.901693786718466,
+      "inertia": 0.25,
+      "friction": 1.2,
+      "damping": 0.4,
+      "mu": 0.4,
+      "push_time": 3.1,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0.3,
+      0,
+      0
+    ],
+    "push": [
+      2.356194490192345,
+      0.2
+    ],
+    "requested_seconds": 12,
+    "simulated_seconds": 12.000000000001343,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": 0.2999775810732348,
+      "left": 0.0028609392253355764,
+      "turn": 0.002275378490634162,
+      "sway": 1.6364555461681425,
+      "wobble": 13.56593080401702,
+      "bounce": 0.06168001211994109
+    },
+    "max_tilt_deg": 8.574234359268376,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 15.68,
+        "closest_to_bottom_mm": 8.5,
+        "closest_to_top_mm": 7.82,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.255,
+        "spring_force_peak": 600.0,
+        "force_peak": 604.3,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 13.54,
+        "closest_to_bottom_mm": 8.65,
+        "closest_to_top_mm": 9.81,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.211,
+        "spring_force_peak": 621.3,
+        "force_peak": 661.4,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 18.15,
+        "closest_to_bottom_mm": 6.86,
+        "closest_to_top_mm": 6.99,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.308,
+        "spring_force_peak": 641.0,
+        "force_peak": 646.3,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 15.61,
+        "closest_to_bottom_mm": 7.86,
+        "closest_to_top_mm": 8.52,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.242,
+        "spring_force_peak": 640.9,
+        "force_peak": 688.2,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 7.46,
+        "torque_rms": 2.48,
+        "speed_peak": 0.18,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 22.44,
+        "torque_rms": 12.06,
+        "speed_peak": 0.61,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 18.83,
+        "torque_rms": 6.91,
+        "speed_peak": 2.64,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 44.73,
+        "torque_rms": 16.25,
+        "speed_peak": 5.44,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0003
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 6.73,
+        "torque_rms": 2.83,
+        "speed_peak": 0.48,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 24.07,
+        "torque_rms": 12.23,
+        "speed_peak": 0.58,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 17.79,
+        "torque_rms": 5.93,
+        "speed_peak": 3.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 44.09,
+        "torque_rms": 17.19,
+        "speed_peak": 5.91,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0003
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 5.61,
+        "torque_rms": 1.83,
+        "speed_peak": 0.23,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.16,
+        "torque_rms": 0.13,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.16,
+        "torque_rms": 0.13,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 1.04,
+        "torque_rms": 0.45,
+        "speed_peak": 0.35,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.14,
+        "torque_rms": 0.05,
+        "speed_peak": 0.06,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.96,
+        "torque_rms": 0.45,
+        "speed_peak": 0.33,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.12,
+        "torque_rms": 0.05,
+        "speed_peak": 0.07,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        52,
+        51
+      ],
+      "single_support_share": [
+        0.35533333333333333,
+        0.35733333333333334
+      ],
+      "ground_force_peak_bodyweights": 2.567362945513348
+    },
+    "mechanical_power_W": {
+      "positive_peak": 197.28732904596467,
+      "negative_peak": 104.49857668758249
+    },
+    "stroke_clearance_mm": 6.86
+  },
+  {
+    "case": {
+      "name": "adverse",
+      "mass": 30,
+      "torque": 44.73171523849674,
+      "corner": 6.5,
+      "no_load": 8.901693786718466,
+      "inertia": 0.25,
+      "friction": 1.2,
+      "damping": 0.4,
+      "mu": 0.4,
+      "push_time": 3.1,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0.3,
+      0,
+      0
+    ],
+    "push": [
+      3.141592653589793,
+      0.2
+    ],
+    "requested_seconds": 12,
+    "simulated_seconds": 12.000000000001343,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": 0.29554716368252376,
+      "left": 0.0022455421572334044,
+      "turn": 0.0028523717901954245,
+      "sway": 1.700983311904998,
+      "wobble": 13.550636722211522,
+      "bounce": 0.06026256711047996
+    },
+    "max_tilt_deg": 8.574234359268376,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 15.08,
+        "closest_to_bottom_mm": 8.5,
+        "closest_to_top_mm": 8.42,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.254,
+        "spring_force_peak": 599.9,
+        "force_peak": 604.2,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 12.98,
+        "closest_to_bottom_mm": 9.21,
+        "closest_to_top_mm": 9.81,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.203,
+        "spring_force_peak": 607.4,
+        "force_peak": 661.4,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 18.01,
+        "closest_to_bottom_mm": 6.86,
+        "closest_to_top_mm": 7.12,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.308,
+        "spring_force_peak": 641.0,
+        "force_peak": 646.3,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 15.49,
+        "closest_to_bottom_mm": 7.99,
+        "closest_to_top_mm": 8.52,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.242,
+        "spring_force_peak": 637.8,
+        "force_peak": 684.5,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 7.39,
+        "torque_rms": 2.46,
+        "speed_peak": 0.18,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 23.65,
+        "torque_rms": 12.13,
+        "speed_peak": 0.46,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 18.84,
+        "torque_rms": 6.88,
+        "speed_peak": 2.64,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 43.69,
+        "torque_rms": 16.29,
+        "speed_peak": 5.37,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 6.88,
+        "torque_rms": 2.83,
+        "speed_peak": 0.45,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 25.22,
+        "torque_rms": 12.34,
+        "speed_peak": 0.65,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 21.94,
+        "torque_rms": 6.08,
+        "speed_peak": 2.98,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 44.04,
+        "torque_rms": 17.38,
+        "speed_peak": 5.76,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0003
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 5.61,
+        "torque_rms": 1.82,
+        "speed_peak": 0.23,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.16,
+        "torque_rms": 0.12,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.16,
+        "torque_rms": 0.13,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.92,
+        "torque_rms": 0.45,
+        "speed_peak": 0.23,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.17,
+        "torque_rms": 0.05,
+        "speed_peak": 0.06,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 1.02,
+        "torque_rms": 0.45,
+        "speed_peak": 0.25,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.16,
+        "torque_rms": 0.05,
+        "speed_peak": 0.08,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        52,
+        55
+      ],
+      "single_support_share": [
+        0.358,
+        0.3545
+      ],
+      "ground_force_peak_bodyweights": 2.567362945513348
+    },
+    "mechanical_power_W": {
+      "positive_peak": 194.57924675656298,
+      "negative_peak": 101.82698092301032
+    },
+    "stroke_clearance_mm": 6.86
+  },
+  {
+    "case": {
+      "name": "adverse",
+      "mass": 30,
+      "torque": 44.73171523849674,
+      "corner": 6.5,
+      "no_load": 8.901693786718466,
+      "inertia": 0.25,
+      "friction": 1.2,
+      "damping": 0.4,
+      "mu": 0.4,
+      "push_time": 3.1,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0.3,
+      0,
+      0
+    ],
+    "push": [
+      3.9269908169872414,
+      0.2
+    ],
+    "requested_seconds": 12,
+    "simulated_seconds": 12.000000000001343,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": 0.29906154838472404,
+      "left": -0.0007422453441672113,
+      "turn": 0.0015473456879182676,
+      "sway": 1.6259900077993978,
+      "wobble": 13.457813353779372,
+      "bounce": 0.061449212641309855
+    },
+    "max_tilt_deg": 8.574234359268376,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 14.98,
+        "closest_to_bottom_mm": 8.51,
+        "closest_to_top_mm": 8.51,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.254,
+        "spring_force_peak": 599.7,
+        "force_peak": 604.0,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 12.89,
+        "closest_to_bottom_mm": 9.29,
+        "closest_to_top_mm": 9.82,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.203,
+        "spring_force_peak": 605.2,
+        "force_peak": 661.4,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 17.55,
+        "closest_to_bottom_mm": 6.92,
+        "closest_to_top_mm": 7.53,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.306,
+        "spring_force_peak": 639.5,
+        "force_peak": 644.9,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 15.06,
+        "closest_to_bottom_mm": 8.37,
+        "closest_to_top_mm": 8.57,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.24,
+        "spring_force_peak": 628.2,
+        "force_peak": 670.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 6.98,
+        "torque_rms": 2.48,
+        "speed_peak": 0.18,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 22.08,
+        "torque_rms": 12.08,
+        "speed_peak": 0.37,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 18.81,
+        "torque_rms": 6.88,
+        "speed_peak": 2.69,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 43.83,
+        "torque_rms": 16.24,
+        "speed_peak": 5.44,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 6.64,
+        "torque_rms": 2.83,
+        "speed_peak": 0.55,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 27.16,
+        "torque_rms": 12.33,
+        "speed_peak": 0.88,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 18.92,
+        "torque_rms": 5.94,
+        "speed_peak": 2.98,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 44.04,
+        "torque_rms": 17.16,
+        "speed_peak": 5.82,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0002
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 5.59,
+        "torque_rms": 1.82,
+        "speed_peak": 0.23,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.16,
+        "torque_rms": 0.13,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.16,
+        "torque_rms": 0.13,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.88,
+        "torque_rms": 0.44,
+        "speed_peak": 0.23,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.13,
+        "torque_rms": 0.05,
+        "speed_peak": 0.05,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 1.09,
+        "torque_rms": 0.45,
+        "speed_peak": 0.28,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.13,
+        "torque_rms": 0.05,
+        "speed_peak": 0.06,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        52,
+        52
+      ],
+      "single_support_share": [
+        0.36083333333333334,
+        0.352
+      ],
+      "ground_force_peak_bodyweights": 2.5865743079195997
+    },
+    "mechanical_power_W": {
+      "positive_peak": 199.8878521453789,
+      "negative_peak": 101.55671885646211
+    },
+    "stroke_clearance_mm": 6.92
+  },
+  {
+    "case": {
+      "name": "adverse",
+      "mass": 30,
+      "torque": 44.73171523849674,
+      "corner": 6.5,
+      "no_load": 8.901693786718466,
+      "inertia": 0.25,
+      "friction": 1.2,
+      "damping": 0.4,
+      "mu": 0.4,
+      "push_time": 3.1,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0.3,
+      0,
+      0
+    ],
+    "push": [
+      4.71238898038469,
+      0.2
+    ],
+    "requested_seconds": 12,
+    "simulated_seconds": 12.000000000001343,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": 0.3054696708123533,
+      "left": -0.0017854081642223348,
+      "turn": 0.0015063017458620245,
+      "sway": 1.5798029455526974,
+      "wobble": 13.411267792569685,
+      "bounce": 0.06309253280857548
+    },
+    "max_tilt_deg": 8.574234359268376,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 15.38,
+        "closest_to_bottom_mm": 8.08,
+        "closest_to_top_mm": 8.54,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.272,
+        "spring_force_peak": 610.4,
+        "force_peak": 615.0,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 13.2,
+        "closest_to_bottom_mm": 9.32,
+        "closest_to_top_mm": 9.48,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.216,
+        "spring_force_peak": 604.6,
+        "force_peak": 661.4,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 17.61,
+        "closest_to_bottom_mm": 6.86,
+        "closest_to_top_mm": 7.53,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.308,
+        "spring_force_peak": 641.1,
+        "force_peak": 646.4,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 15.11,
+        "closest_to_bottom_mm": 8.37,
+        "closest_to_top_mm": 8.52,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.242,
+        "spring_force_peak": 628.2,
+        "force_peak": 670.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 6.99,
+        "torque_rms": 2.53,
+        "speed_peak": 0.18,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 22.29,
+        "torque_rms": 11.98,
+        "speed_peak": 0.37,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 22.06,
+        "torque_rms": 6.98,
+        "speed_peak": 2.63,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 44.62,
+        "torque_rms": 16.2,
+        "speed_peak": 5.48,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0002
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 6.64,
+        "torque_rms": 2.85,
+        "speed_peak": 0.62,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 24.07,
+        "torque_rms": 12.22,
+        "speed_peak": 0.84,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 17.79,
+        "torque_rms": 5.77,
+        "speed_peak": 2.94,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 44.04,
+        "torque_rms": 16.89,
+        "speed_peak": 5.73,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0002
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 5.62,
+        "torque_rms": 1.87,
+        "speed_peak": 0.23,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.16,
+        "torque_rms": 0.14,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.16,
+        "torque_rms": 0.14,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.88,
+        "torque_rms": 0.44,
+        "speed_peak": 0.22,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.15,
+        "torque_rms": 0.05,
+        "speed_peak": 0.06,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.02,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.99,
+        "torque_rms": 0.45,
+        "speed_peak": 0.26,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.11,
+        "torque_rms": 0.05,
+        "speed_peak": 0.03,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        53,
+        52
+      ],
+      "single_support_share": [
+        0.3605,
+        0.3501666666666667
+      ],
+      "ground_force_peak_bodyweights": 2.940930854342088
+    },
+    "mechanical_power_W": {
+      "positive_peak": 197.2887333756398,
+      "negative_peak": 100.97425698385143
+    },
+    "stroke_clearance_mm": 6.86
+  },
+  {
+    "case": {
+      "name": "adverse",
+      "mass": 30,
+      "torque": 44.73171523849674,
+      "corner": 6.5,
+      "no_load": 8.901693786718466,
+      "inertia": 0.25,
+      "friction": 1.2,
+      "damping": 0.4,
+      "mu": 0.4,
+      "push_time": 3.1,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0.3,
+      0,
+      0
+    ],
+    "push": [
+      5.497787143782138,
+      0.2
+    ],
+    "requested_seconds": 12,
+    "simulated_seconds": 12.000000000001343,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": 0.3102945723944065,
+      "left": -0.0017408644196753237,
+      "turn": -0.00017477463656813766,
+      "sway": 1.6078413794298776,
+      "wobble": 13.53285714022358,
+      "bounce": 0.06376223766241969
+    },
+    "max_tilt_deg": 8.574234359268376,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 16.78,
+        "closest_to_bottom_mm": 6.68,
+        "closest_to_top_mm": 8.54,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.32,
+        "spring_force_peak": 645.6,
+        "force_peak": 650.0,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 14.3,
+        "closest_to_bottom_mm": 9.32,
+        "closest_to_top_mm": 8.38,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.251,
+        "spring_force_peak": 604.6,
+        "force_peak": 661.4,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 19.97,
+        "closest_to_bottom_mm": 4.5,
+        "closest_to_top_mm": 7.53,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.389,
+        "spring_force_peak": 699.9,
+        "force_peak": 703.4,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 16.92,
+        "closest_to_bottom_mm": 8.37,
+        "closest_to_top_mm": 6.71,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.298,
+        "spring_force_peak": 628.2,
+        "force_peak": 670.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 7.63,
+        "torque_rms": 2.58,
+        "speed_peak": 0.37,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 22.7,
+        "torque_rms": 11.96,
+        "speed_peak": 0.4,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 25.98,
+        "torque_rms": 6.99,
+        "speed_peak": 2.73,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 44.73,
+        "torque_rms": 16.1,
+        "speed_peak": 5.41,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0003
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 6.77,
+        "torque_rms": 2.87,
+        "speed_peak": 0.63,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 24.07,
+        "torque_rms": 12.19,
+        "speed_peak": 0.62,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 19.2,
+        "torque_rms": 5.8,
+        "speed_peak": 2.94,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 44.04,
+        "torque_rms": 16.76,
+        "speed_peak": 5.73,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0002
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 8.36,
+        "torque_rms": 1.95,
+        "speed_peak": 0.37,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.16,
+        "torque_rms": 0.14,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 44.73171523849674,
+        "torque_peak": 0.16,
+        "torque_rms": 0.14,
+        "speed_peak": 0.0,
+        "no_load_speed": 8.901693786718466,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.88,
+        "torque_rms": 0.44,
+        "speed_peak": 0.22,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.05,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.18,
+        "torque_rms": 0.05,
+        "speed_peak": 0.08,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.02,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.96,
+        "torque_rms": 0.45,
+        "speed_peak": 0.23,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.05,
+        "torque_rms": 0.01,
+        "speed_peak": 0.03,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.15,
+        "torque_rms": 0.05,
+        "speed_peak": 0.06,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        52,
+        51
+      ],
+      "single_support_share": [
+        0.3606666666666667,
+        0.3515
+      ],
+      "ground_force_peak_bodyweights": 2.567362945513348
+    },
+    "mechanical_power_W": {
+      "positive_peak": 193.2087083822023,
+      "negative_peak": 100.97425698385143
+    },
+    "stroke_clearance_mm": 4.5
+  },
+  {
+    "case": {
+      "name": "nominal",
+      "mass": 30,
+      "torque": 59.64228698466232,
+      "corner": 8.799162258157544,
+      "no_load": 10.682032544062158,
+      "inertia": 0.16,
+      "friction": 0.81,
+      "damping": 0.25,
+      "mu": 0.6,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0,
+      0,
+      0
+    ],
+    "push": null,
+    "requested_seconds": 15,
+    "simulated_seconds": 15.000000000001455,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": -0.031232357501286015,
+      "left": 0.0014650668800172666,
+      "turn": 0.007861483049106766,
+      "sway": 1.2982494167801941,
+      "wobble": 11.877575137212524,
+      "bounce": 0.02485385764370955
+    },
+    "max_tilt_deg": 8.00073877190813,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 5.61,
+        "closest_to_bottom_mm": 11.21,
+        "closest_to_top_mm": 15.18,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.093,
+        "spring_force_peak": 532.3,
+        "force_peak": 535.2,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 4.72,
+        "closest_to_bottom_mm": 15.29,
+        "closest_to_top_mm": 11.99,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.077,
+        "spring_force_peak": 455.1,
+        "force_peak": 459.2,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 4.63,
+        "closest_to_bottom_mm": 13.21,
+        "closest_to_top_mm": 14.16,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.063,
+        "spring_force_peak": 482.2,
+        "force_peak": 486.9,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 3.96,
+        "closest_to_bottom_mm": 14.4,
+        "closest_to_top_mm": 13.64,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.054,
+        "spring_force_peak": 477.4,
+        "force_peak": 479.3,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 4.66,
+        "torque_rms": 2.17,
+        "speed_peak": 0.24,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 19.85,
+        "torque_rms": 11.46,
+        "speed_peak": 0.25,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 12.11,
+        "torque_rms": 3.61,
+        "speed_peak": 1.97,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 18.48,
+        "torque_rms": 6.35,
+        "speed_peak": 3.16,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 3.78,
+        "torque_rms": 1.94,
+        "speed_peak": 0.42,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 19.4,
+        "torque_rms": 11.1,
+        "speed_peak": 0.48,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 10.33,
+        "torque_rms": 3.88,
+        "speed_peak": 1.9,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 17.9,
+        "torque_rms": 9.71,
+        "speed_peak": 3.14,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 2.81,
+        "torque_rms": 1.16,
+        "speed_peak": 0.12,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.21,
+        "torque_rms": 0.2,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.21,
+        "torque_rms": 0.2,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.84,
+        "torque_rms": 0.45,
+        "speed_peak": 0.16,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.02,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.08,
+        "torque_rms": 0.05,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.0,
+        "torque_rms": 0.0,
+        "speed_peak": 0.0,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.89,
+        "torque_rms": 0.47,
+        "speed_peak": 0.15,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.02,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.12,
+        "torque_rms": 0.06,
+        "speed_peak": 0.04,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.0,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        44,
+        42
+      ],
+      "single_support_share": [
+        0.31933333333333336,
+        0.20173333333333332
+      ],
+      "ground_force_peak_bodyweights": 1.8554910091088
+    },
+    "mechanical_power_W": {
+      "positive_peak": 61.36611497905104,
+      "negative_peak": 25.140509907776185
+    },
+    "stroke_clearance_mm": 11.21
+  },
+  {
+    "case": {
+      "name": "nominal",
+      "mass": 30,
+      "torque": 59.64228698466232,
+      "corner": 8.799162258157544,
+      "no_load": 10.682032544062158,
+      "inertia": 0.16,
+      "friction": 0.81,
+      "damping": 0.25,
+      "mu": 0.6,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0.2,
+      0,
+      0
+    ],
+    "push": null,
+    "requested_seconds": 15,
+    "simulated_seconds": 15.000000000001455,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": 0.20323800645215329,
+      "left": 0.003611932835147535,
+      "turn": -0.002215614060929375,
+      "sway": 1.4391896855382702,
+      "wobble": 13.03745749302254,
+      "bounce": 0.057312556058326365
+    },
+    "max_tilt_deg": 8.00073877190813,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 8.72,
+        "closest_to_bottom_mm": 9.78,
+        "closest_to_top_mm": 13.5,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.228,
+        "spring_force_peak": 568.0,
+        "force_peak": 573.1,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 7.35,
+        "closest_to_bottom_mm": 13.82,
+        "closest_to_top_mm": 10.83,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.186,
+        "spring_force_peak": 492.0,
+        "force_peak": 527.1,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 11.19,
+        "closest_to_bottom_mm": 9.75,
+        "closest_to_top_mm": 11.06,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.229,
+        "spring_force_peak": 568.7,
+        "force_peak": 575.2,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 9.55,
+        "closest_to_bottom_mm": 11.64,
+        "closest_to_top_mm": 10.81,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.185,
+        "spring_force_peak": 546.6,
+        "force_peak": 593.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 5.35,
+        "torque_rms": 2.29,
+        "speed_peak": 0.28,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 20.4,
+        "torque_rms": 11.69,
+        "speed_peak": 0.51,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 14.12,
+        "torque_rms": 4.41,
+        "speed_peak": 2.48,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 28.37,
+        "torque_rms": 10.9,
+        "speed_peak": 4.52,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 5.35,
+        "torque_rms": 2.49,
+        "speed_peak": 0.45,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 21.58,
+        "torque_rms": 12.18,
+        "speed_peak": 0.56,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 14.78,
+        "torque_rms": 4.22,
+        "speed_peak": 2.84,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 30.93,
+        "torque_rms": 12.7,
+        "speed_peak": 5.1,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 3.83,
+        "torque_rms": 1.51,
+        "speed_peak": 0.3,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.19,
+        "torque_rms": 0.18,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.19,
+        "torque_rms": 0.18,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.86,
+        "torque_rms": 0.44,
+        "speed_peak": 0.19,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.02,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.09,
+        "torque_rms": 0.05,
+        "speed_peak": 0.03,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.0,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.96,
+        "torque_rms": 0.46,
+        "speed_peak": 0.21,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.02,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.1,
+        "torque_rms": 0.06,
+        "speed_peak": 0.03,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.0,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        43,
+        42
+      ],
+      "single_support_share": [
+        0.3582666666666667,
+        0.3621333333333333
+      ],
+      "ground_force_peak_bodyweights": 2.749751082546012
+    },
+    "mechanical_power_W": {
+      "positive_peak": 141.97592814613816,
+      "negative_peak": 64.82862927883822
+    },
+    "stroke_clearance_mm": 9.75
+  },
+  {
+    "case": {
+      "name": "nominal",
+      "mass": 30,
+      "torque": 59.64228698466232,
+      "corner": 8.799162258157544,
+      "no_load": 10.682032544062158,
+      "inertia": 0.16,
+      "friction": 0.81,
+      "damping": 0.25,
+      "mu": 0.6,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0.4,
+      0,
+      0
+    ],
+    "push": null,
+    "requested_seconds": 15,
+    "simulated_seconds": 15.000000000001455,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": 0.3617110199072588,
+      "left": 0.00892631317992138,
+      "turn": -0.005711093741002383,
+      "sway": 1.5527672513897186,
+      "wobble": 12.61474879327751,
+      "bounce": 0.0676733767249582
+    },
+    "max_tilt_deg": 8.00073877190813,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 17.13,
+        "closest_to_bottom_mm": 7.38,
+        "closest_to_top_mm": 7.49,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.305,
+        "spring_force_peak": 628.0,
+        "force_peak": 633.0,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 14.74,
+        "closest_to_bottom_mm": 8.34,
+        "closest_to_top_mm": 8.93,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.241,
+        "spring_force_peak": 629.1,
+        "force_peak": 669.2,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 18.71,
+        "closest_to_bottom_mm": 5.79,
+        "closest_to_top_mm": 7.5,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.366,
+        "spring_force_peak": 667.9,
+        "force_peak": 673.8,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 15.97,
+        "closest_to_bottom_mm": 8.35,
+        "closest_to_top_mm": 7.69,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.284,
+        "spring_force_peak": 628.9,
+        "force_peak": 660.8,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 7.33,
+        "torque_rms": 2.83,
+        "speed_peak": 0.39,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 22.23,
+        "torque_rms": 12.3,
+        "speed_peak": 0.6,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 18.66,
+        "torque_rms": 7.04,
+        "speed_peak": 3.36,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 43.7,
+        "torque_rms": 15.62,
+        "speed_peak": 6.37,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 7.03,
+        "torque_rms": 3.03,
+        "speed_peak": 0.58,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 24.51,
+        "torque_rms": 12.23,
+        "speed_peak": 0.57,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 21.51,
+        "torque_rms": 5.88,
+        "speed_peak": 3.44,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 41.16,
+        "torque_rms": 15.81,
+        "speed_peak": 6.84,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 6.28,
+        "torque_rms": 2.19,
+        "speed_peak": 0.29,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.17,
+        "torque_rms": 0.14,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.17,
+        "torque_rms": 0.14,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.89,
+        "torque_rms": 0.44,
+        "speed_peak": 0.21,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.04,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.12,
+        "torque_rms": 0.05,
+        "speed_peak": 0.05,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.95,
+        "torque_rms": 0.44,
+        "speed_peak": 0.23,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.04,
+        "torque_rms": 0.02,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.13,
+        "torque_rms": 0.06,
+        "speed_peak": 0.05,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        64,
+        44
+      ],
+      "single_support_share": [
+        0.3722666666666667,
+        0.36666666666666664
+      ],
+      "ground_force_peak_bodyweights": 2.0099487183555533
+    },
+    "mechanical_power_W": {
+      "positive_peak": 243.3840318082475,
+      "negative_peak": 123.58252906569051
+    },
+    "stroke_clearance_mm": 5.79
+  },
+  {
+    "case": {
+      "name": "nominal",
+      "mass": 30,
+      "torque": 59.64228698466232,
+      "corner": 8.799162258157544,
+      "no_load": 10.682032544062158,
+      "inertia": 0.16,
+      "friction": 0.81,
+      "damping": 0.25,
+      "mu": 0.6,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      -0.15,
+      0,
+      0
+    ],
+    "push": null,
+    "requested_seconds": 15,
+    "simulated_seconds": 15.000000000001455,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": -0.10589712908046177,
+      "left": -0.0010832458445803684,
+      "turn": 0.010886028044442508,
+      "sway": 1.737666699042059,
+      "wobble": 13.313814024451645,
+      "bounce": 0.03042608572039658
+    },
+    "max_tilt_deg": 8.00073877190813,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 7.55,
+        "closest_to_bottom_mm": 10.56,
+        "closest_to_top_mm": 13.89,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.086,
+        "spring_force_peak": 548.5,
+        "force_peak": 550.8,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 6.38,
+        "closest_to_bottom_mm": 14.16,
+        "closest_to_top_mm": 11.46,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.072,
+        "spring_force_peak": 483.4,
+        "force_peak": 494.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 8.82,
+        "closest_to_bottom_mm": 11.62,
+        "closest_to_top_mm": 11.56,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.158,
+        "spring_force_peak": 522.1,
+        "force_peak": 525.8,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 7.58,
+        "closest_to_bottom_mm": 12.09,
+        "closest_to_top_mm": 12.32,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.141,
+        "spring_force_peak": 535.1,
+        "force_peak": 542.5,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 4.68,
+        "torque_rms": 1.63,
+        "speed_peak": 0.36,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 20.17,
+        "torque_rms": 11.48,
+        "speed_peak": 0.29,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 16.16,
+        "torque_rms": 5.95,
+        "speed_peak": 2.17,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 18.73,
+        "torque_rms": 10.02,
+        "speed_peak": 3.29,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 5.02,
+        "torque_rms": 1.95,
+        "speed_peak": 0.39,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 20.32,
+        "torque_rms": 11.68,
+        "speed_peak": 0.61,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 16.07,
+        "torque_rms": 7.76,
+        "speed_peak": 2.37,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 23.3,
+        "torque_rms": 12.89,
+        "speed_peak": 3.93,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 3.8,
+        "torque_rms": 1.55,
+        "speed_peak": 0.26,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.19,
+        "torque_rms": 0.08,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.2,
+        "torque_rms": 0.08,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.88,
+        "torque_rms": 0.45,
+        "speed_peak": 0.15,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.11,
+        "torque_rms": 0.04,
+        "speed_peak": 0.04,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.0,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.9,
+        "torque_rms": 0.48,
+        "speed_peak": 0.16,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.13,
+        "torque_rms": 0.03,
+        "speed_peak": 0.04,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.0,
+        "torque_rms": 0.0,
+        "speed_peak": 0.0,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        52,
+        62
+      ],
+      "single_support_share": [
+        0.3804,
+        0.3004
+      ],
+      "ground_force_peak_bodyweights": 2.0428304174690326
+    },
+    "mechanical_power_W": {
+      "positive_peak": 82.72307801008216,
+      "negative_peak": 42.45890482129056
+    },
+    "stroke_clearance_mm": 10.56
+  },
+  {
+    "case": {
+      "name": "nominal",
+      "mass": 30,
+      "torque": 59.64228698466232,
+      "corner": 8.799162258157544,
+      "no_load": 10.682032544062158,
+      "inertia": 0.16,
+      "friction": 0.81,
+      "damping": 0.25,
+      "mu": 0.6,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0,
+      0.1,
+      0
+    ],
+    "push": null,
+    "requested_seconds": 15,
+    "simulated_seconds": 15.000000000001455,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": -0.02464336615164696,
+      "left": 0.050622290979776066,
+      "turn": 0.0018201772593830464,
+      "sway": 1.2812257927568258,
+      "wobble": 11.688499289364403,
+      "bounce": 0.019923146273382864
+    },
+    "max_tilt_deg": 8.00073877190813,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 5.38,
+        "closest_to_bottom_mm": 11.44,
+        "closest_to_top_mm": 15.18,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.078,
+        "spring_force_peak": 526.5,
+        "force_peak": 529.3,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 4.53,
+        "closest_to_bottom_mm": 15.29,
+        "closest_to_top_mm": 12.18,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.065,
+        "spring_force_peak": 455.2,
+        "force_peak": 459.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 3.91,
+        "closest_to_bottom_mm": 13.6,
+        "closest_to_top_mm": 14.49,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.097,
+        "spring_force_peak": 472.5,
+        "force_peak": 479.0,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 3.34,
+        "closest_to_bottom_mm": 14.69,
+        "closest_to_top_mm": 13.97,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.081,
+        "spring_force_peak": 470.2,
+        "force_peak": 472.8,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 4.35,
+        "torque_rms": 2.13,
+        "speed_peak": 0.34,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 22.05,
+        "torque_rms": 12.82,
+        "speed_peak": 0.66,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 12.31,
+        "torque_rms": 3.87,
+        "speed_peak": 1.98,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 18.09,
+        "torque_rms": 7.09,
+        "speed_peak": 3.18,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 3.68,
+        "torque_rms": 1.63,
+        "speed_peak": 0.42,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 18.49,
+        "torque_rms": 9.81,
+        "speed_peak": 0.66,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 11.95,
+        "torque_rms": 4.23,
+        "speed_peak": 2.25,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 21.16,
+        "torque_rms": 9.99,
+        "speed_peak": 3.67,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 2.97,
+        "torque_rms": 1.18,
+        "speed_peak": 0.13,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.2,
+        "torque_rms": 0.19,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.2,
+        "torque_rms": 0.19,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.93,
+        "torque_rms": 0.46,
+        "speed_peak": 0.18,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.02,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.09,
+        "torque_rms": 0.05,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.0,
+        "torque_rms": 0.0,
+        "speed_peak": 0.0,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.92,
+        "torque_rms": 0.48,
+        "speed_peak": 0.2,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.02,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.12,
+        "torque_rms": 0.05,
+        "speed_peak": 0.04,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.0,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        46,
+        63
+      ],
+      "single_support_share": [
+        0.3552,
+        0.20826666666666666
+      ],
+      "ground_force_peak_bodyweights": 1.7665876291009601
+    },
+    "mechanical_power_W": {
+      "positive_peak": 70.57149227734351,
+      "negative_peak": 30.817310921113318
+    },
+    "stroke_clearance_mm": 11.44
+  },
+  {
+    "case": {
+      "name": "nominal",
+      "mass": 30,
+      "torque": 59.64228698466232,
+      "corner": 8.799162258157544,
+      "no_load": 10.682032544062158,
+      "inertia": 0.16,
+      "friction": 0.81,
+      "damping": 0.25,
+      "mu": 0.6,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0,
+      -0.1,
+      0
+    ],
+    "push": null,
+    "requested_seconds": 15,
+    "simulated_seconds": 15.000000000001455,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": -0.029663083148192618,
+      "left": -0.03638636621526635,
+      "turn": 0.008799648797106993,
+      "sway": 1.2533473753033217,
+      "wobble": 11.375454730676793,
+      "bounce": 0.0243848254632716
+    },
+    "max_tilt_deg": 8.00073877190813,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 6.31,
+        "closest_to_bottom_mm": 10.51,
+        "closest_to_top_mm": 15.17,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.12,
+        "spring_force_peak": 549.7,
+        "force_peak": 552.2,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 5.29,
+        "closest_to_bottom_mm": 15.29,
+        "closest_to_top_mm": 11.42,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.1,
+        "spring_force_peak": 455.4,
+        "force_peak": 460.1,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 4.93,
+        "closest_to_bottom_mm": 13.32,
+        "closest_to_top_mm": 13.75,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.111,
+        "spring_force_peak": 479.5,
+        "force_peak": 484.8,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 4.23,
+        "closest_to_bottom_mm": 14.05,
+        "closest_to_top_mm": 13.73,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.093,
+        "spring_force_peak": 486.4,
+        "force_peak": 489.4,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 5.02,
+        "torque_rms": 2.34,
+        "speed_peak": 0.26,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 18.87,
+        "torque_rms": 10.42,
+        "speed_peak": 0.42,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 12.0,
+        "torque_rms": 3.24,
+        "speed_peak": 2.18,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 18.35,
+        "torque_rms": 6.2,
+        "speed_peak": 3.42,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 3.94,
+        "torque_rms": 1.97,
+        "speed_peak": 0.44,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 20.72,
+        "torque_rms": 13.05,
+        "speed_peak": 0.63,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 9.77,
+        "torque_rms": 3.5,
+        "speed_peak": 1.66,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 16.63,
+        "torque_rms": 10.08,
+        "speed_peak": 2.72,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 3.15,
+        "torque_rms": 1.18,
+        "speed_peak": 0.14,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.21,
+        "torque_rms": 0.2,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.21,
+        "torque_rms": 0.2,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.82,
+        "torque_rms": 0.44,
+        "speed_peak": 0.16,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.02,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.1,
+        "torque_rms": 0.05,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.0,
+        "torque_rms": 0.0,
+        "speed_peak": 0.0,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.86,
+        "torque_rms": 0.46,
+        "speed_peak": 0.15,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.02,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.13,
+        "torque_rms": 0.06,
+        "speed_peak": 0.04,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.0,
+        "torque_rms": 0.0,
+        "speed_peak": 0.0,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        46,
+        42
+      ],
+      "single_support_share": [
+        0.28626666666666667,
+        0.21546666666666667
+      ],
+      "ground_force_peak_bodyweights": 1.8121571682582438
+    },
+    "mechanical_power_W": {
+      "positive_peak": 69.33261761114512,
+      "negative_peak": 28.045536707109314
+    },
+    "stroke_clearance_mm": 10.51
+  },
+  {
+    "case": {
+      "name": "nominal",
+      "mass": 30,
+      "torque": 59.64228698466232,
+      "corner": 8.799162258157544,
+      "no_load": 10.682032544062158,
+      "inertia": 0.16,
+      "friction": 0.81,
+      "damping": 0.25,
+      "mu": 0.6,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0,
+      0,
+      0.3
+    ],
+    "push": null,
+    "requested_seconds": 15,
+    "simulated_seconds": 15.000000000001455,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": 0.0065394353753492306,
+      "left": -0.0019697346545080353,
+      "turn": 0.2733859845336845,
+      "sway": 1.4239297260181571,
+      "wobble": 12.603072504322874,
+      "bounce": 0.027020214114976227
+    },
+    "max_tilt_deg": 8.00073877190813,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 5.41,
+        "closest_to_bottom_mm": 11.41,
+        "closest_to_top_mm": 15.18,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.082,
+        "spring_force_peak": 527.2,
+        "force_peak": 530.3,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 4.55,
+        "closest_to_bottom_mm": 15.29,
+        "closest_to_top_mm": 12.16,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.068,
+        "spring_force_peak": 455.3,
+        "force_peak": 462.0,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 5.74,
+        "closest_to_bottom_mm": 13.24,
+        "closest_to_top_mm": 13.02,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.088,
+        "spring_force_peak": 481.6,
+        "force_peak": 485.2,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 4.94,
+        "closest_to_bottom_mm": 13.4,
+        "closest_to_top_mm": 13.66,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.077,
+        "spring_force_peak": 502.5,
+        "force_peak": 505.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 6.85,
+        "torque_rms": 3.04,
+        "speed_peak": 0.43,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 19.35,
+        "torque_rms": 11.0,
+        "speed_peak": 0.29,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 12.37,
+        "torque_rms": 3.45,
+        "speed_peak": 2.06,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 18.01,
+        "torque_rms": 6.73,
+        "speed_peak": 3.11,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 7.23,
+        "torque_rms": 1.89,
+        "speed_peak": 1.12,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 20.13,
+        "torque_rms": 11.2,
+        "speed_peak": 0.7,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 13.55,
+        "torque_rms": 5.95,
+        "speed_peak": 2.24,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 23.14,
+        "torque_rms": 11.71,
+        "speed_peak": 3.62,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 3.12,
+        "torque_rms": 1.24,
+        "speed_peak": 0.17,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.19,
+        "torque_rms": 0.16,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.2,
+        "torque_rms": 0.16,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.78,
+        "torque_rms": 0.43,
+        "speed_peak": 0.15,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.11,
+        "torque_rms": 0.05,
+        "speed_peak": 0.03,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.0,
+        "torque_rms": 0.0,
+        "speed_peak": 0.0,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.91,
+        "torque_rms": 0.46,
+        "speed_peak": 0.16,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.02,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.12,
+        "torque_rms": 0.05,
+        "speed_peak": 0.04,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.0,
+        "torque_rms": 0.0,
+        "speed_peak": 0.0,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        43,
+        42
+      ],
+      "single_support_share": [
+        0.3464,
+        0.2084
+      ],
+      "ground_force_peak_bodyweights": 1.918276290584191
+    },
+    "mechanical_power_W": {
+      "positive_peak": 70.07148074301013,
+      "negative_peak": 39.78317013258437
+    },
+    "stroke_clearance_mm": 11.41
+  },
+  {
+    "case": {
+      "name": "nominal",
+      "mass": 30,
+      "torque": 59.64228698466232,
+      "corner": 8.799162258157544,
+      "no_load": 10.682032544062158,
+      "inertia": 0.16,
+      "friction": 0.81,
+      "damping": 0.25,
+      "mu": 0.6,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0,
+      0,
+      -0.3
+    ],
+    "push": null,
+    "requested_seconds": 15,
+    "simulated_seconds": 15.000000000001455,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": 0.004848119465268258,
+      "left": -0.00024301668987736151,
+      "turn": -0.2468089572114996,
+      "sway": 1.3140617613125987,
+      "wobble": 11.785844907785753,
+      "bounce": 0.027218019282758663
+    },
+    "max_tilt_deg": 8.00073877190813,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 5.59,
+        "closest_to_bottom_mm": 11.25,
+        "closest_to_top_mm": 15.15,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.096,
+        "spring_force_peak": 531.2,
+        "force_peak": 533.8,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 4.71,
+        "closest_to_bottom_mm": 15.27,
+        "closest_to_top_mm": 12.02,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.08,
+        "spring_force_peak": 455.7,
+        "force_peak": 461.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 3.97,
+        "closest_to_bottom_mm": 13.53,
+        "closest_to_top_mm": 14.5,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.099,
+        "spring_force_peak": 474.3,
+        "force_peak": 479.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 3.4,
+        "closest_to_bottom_mm": 14.7,
+        "closest_to_top_mm": 13.9,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.083,
+        "spring_force_peak": 470.0,
+        "force_peak": 471.1,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 7.83,
+        "torque_rms": 2.26,
+        "speed_peak": 0.96,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 21.04,
+        "torque_rms": 12.28,
+        "speed_peak": 0.37,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 11.84,
+        "torque_rms": 4.75,
+        "speed_peak": 2.1,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 18.84,
+        "torque_rms": 7.08,
+        "speed_peak": 3.26,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 6.41,
+        "torque_rms": 2.89,
+        "speed_peak": 0.64,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 19.47,
+        "torque_rms": 11.79,
+        "speed_peak": 0.51,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 10.84,
+        "torque_rms": 3.81,
+        "speed_peak": 1.94,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 19.71,
+        "torque_rms": 10.63,
+        "speed_peak": 3.32,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 3.22,
+        "torque_rms": 1.24,
+        "speed_peak": 0.17,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.19,
+        "torque_rms": 0.17,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.18,
+        "torque_rms": 0.16,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.98,
+        "torque_rms": 0.47,
+        "speed_peak": 0.23,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.02,
+        "torque_rms": 0.01,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.09,
+        "torque_rms": 0.05,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.0,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.92,
+        "torque_rms": 0.48,
+        "speed_peak": 0.24,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.15,
+        "torque_rms": 0.05,
+        "speed_peak": 0.06,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.0,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        49,
+        77
+      ],
+      "single_support_share": [
+        0.3662666666666667,
+        0.27053333333333335
+      ],
+      "ground_force_peak_bodyweights": 1.8271619029403794
+    },
+    "mechanical_power_W": {
+      "positive_peak": 59.720191889525935,
+      "negative_peak": 27.532836349028106
+    },
+    "stroke_clearance_mm": 11.25
+  },
+  {
+    "case": {
+      "name": "nominal",
+      "mass": 30,
+      "torque": 59.64228698466232,
+      "corner": 8.799162258157544,
+      "no_load": 10.682032544062158,
+      "inertia": 0.16,
+      "friction": 0.81,
+      "damping": 0.25,
+      "mu": 0.6,
+      "stroke": 32.0
+    },
+    "design": {
+      "thigh_rod": 22.0,
+      "shin_rod": 43.0,
+      "front_k": 25.0,
+      "back_k": 25.0,
+      "front_c": 265.0,
+      "back_c": 540.0,
+      "front_preload": 0.5,
+      "back_preload": 1.5
+    },
+    "command": [
+      0.3,
+      0,
+      0.3
+    ],
+    "push": null,
+    "requested_seconds": 15,
+    "simulated_seconds": 15.000000000001455,
+    "settled": true,
+    "survived": true,
+    "mass": 29.999999999999886,
+    "movement": {
+      "forward": -0.15470459310332293,
+      "left": -0.018221825773544493,
+      "turn": 0.25550347382710403,
+      "sway": 1.489215491669971,
+      "wobble": 12.847368924946547,
+      "bounce": 0.061234772088271744
+    },
+    "max_tilt_deg": 8.00073877190813,
+    "shocks": [
+      {
+        "name": "front_right",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 15.79,
+        "closest_to_bottom_mm": 7.69,
+        "closest_to_top_mm": 8.53,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.298,
+        "spring_force_peak": 620.4,
+        "force_peak": 625.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_right",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 13.53,
+        "closest_to_bottom_mm": 9.31,
+        "closest_to_top_mm": 9.17,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.236,
+        "spring_force_peak": 604.8,
+        "force_peak": 646.5,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      },
+      {
+        "name": "front_left",
+        "position": "front",
+        "stroke_mm": 32.0,
+        "used_mm": 14.64,
+        "closest_to_bottom_mm": 8.9,
+        "closest_to_top_mm": 8.46,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.264,
+        "spring_force_peak": 590.0,
+        "force_peak": 594.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 12.5
+      },
+      {
+        "name": "back_left",
+        "position": "back",
+        "stroke_mm": 32.0,
+        "used_mm": 12.63,
+        "closest_to_bottom_mm": 9.24,
+        "closest_to_top_mm": 10.13,
+        "on_stop_share": 0.0,
+        "shaft_speed_peak": 0.211,
+        "spring_force_peak": 606.4,
+        "force_peak": 633.6,
+        "stop_force_peak": 0.0,
+        "preload_force": 37.5
+      }
+    ],
+    "motors": [
+      {
+        "joint": "hip_yaw_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 7.09,
+        "torque_rms": 2.96,
+        "speed_peak": 0.37,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 21.54,
+        "torque_rms": 12.71,
+        "speed_peak": 0.49,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 18.62,
+        "torque_rms": 6.43,
+        "speed_peak": 3.19,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 42.96,
+        "torque_rms": 15.16,
+        "speed_peak": 6.09,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_yaw_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 8.72,
+        "torque_rms": 2.69,
+        "speed_peak": 0.91,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_roll_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 22.35,
+        "torque_rms": 11.86,
+        "speed_peak": 0.63,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "hip_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 20.71,
+        "torque_rms": 5.96,
+        "speed_peak": 3.06,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "knee_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 36.01,
+        "torque_rms": 14.86,
+        "speed_peak": 5.78,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "waist_yaw",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 4.52,
+        "torque_rms": 1.52,
+        "speed_peak": 0.25,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_right",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.17,
+        "torque_rms": 0.13,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_pitch_left",
+        "type": "macro",
+        "rating": 59.64228698466232,
+        "torque_peak": 0.18,
+        "torque_rms": 0.13,
+        "speed_peak": 0.0,
+        "no_load_speed": 10.682032544062158,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.82,
+        "torque_rms": 0.41,
+        "speed_peak": 0.19,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.12,
+        "torque_rms": 0.04,
+        "speed_peak": 0.05,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_right",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_roll_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.94,
+        "torque_rms": 0.46,
+        "speed_peak": 0.21,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "shoulder_yaw_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.03,
+        "torque_rms": 0.01,
+        "speed_peak": 0.02,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "elbow_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.08,
+        "torque_rms": 0.04,
+        "speed_peak": 0.03,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      },
+      {
+        "joint": "wrist_pitch_left",
+        "type": "micro",
+        "rating": 23.39,
+        "torque_peak": 0.01,
+        "torque_rms": 0.0,
+        "speed_peak": 0.01,
+        "no_load_speed": 14.0,
+        "saturated_share": 0.0
+      }
+    ],
+    "gantry_active": false,
+    "foot_contacts": {
+      "touchdowns": [
+        64,
+        43
+      ],
+      "single_support_share": [
+        0.3758666666666667,
+        0.34613333333333335
+      ],
+      "ground_force_peak_bodyweights": 2.0251817531345098
+    },
+    "mechanical_power_W": {
+      "positive_peak": 187.39922080601195,
+      "negative_peak": 91.4589478154352
+    },
+    "stroke_clearance_mm": 7.69
+  }
+]

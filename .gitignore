@@ -19,6 +19,7 @@ MUJOCO_LOG.TXT
 # Working files.
 .scratch/
 *.isla.urdf
+/tmp/
 
 # CAD exports as they arrive: importing one copies it into robots/<id>/source.
 /*.zip
