@@ -110,4 +110,4 @@ Bug reports and pull requests are welcome. [CONTRIBUTING.md](CONTRIBUTING.md) ex
 
 Isla Studio's source and Luma-1's model in `robots/luma_1` are open source under the [MIT licence](LICENSE). It builds on [MuJoCo](https://github.com/google-deepmind/mujoco) (Apache 2.0); generated MuJoCo API declarations retain their [upstream licence](crates/isla-sim/LICENSE-MUJOCO). It ships the Michroma, Chakra Petch and Inter fonts (SIL Open Font License) and Tabler icons (MIT), each with its licence in `ui/src/brand`.
 
-Made by [Isla Technologies](https://github.com/Isla-Technologies) in Penang, Malaysia. Luma-1's actuators are open source too: the [Macro-Actuator](https://github.com/Isla-Technologies/Macro-Actuator) and the [Micro-Actuator](https://github.com/Isla-Technologies/Micro-Actuator).
+Made by [Isla Technologies](https://github.com/Isla-Technologies) in Penang, Malaysia. Luma-1's actuators are open source too: the [Macro-Actuator](https://github.com/Isla-Technologies/macro-actuator) and the [Micro-Actuator](https://github.com/Isla-Technologies/micro-actuator).

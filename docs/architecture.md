@@ -31,7 +31,7 @@ separately and the [migration status](rust-migration.md) before changing default
 | Hardware control | Python, [`isla_rl/hardware/`](../isla_rl/hardware/) | Run the policy and safety filter in Studio, communicate with drivers and handle arming, limits and stops |
 | Robot-side relay | Python, [`isla_rl/runtime/`](../isla_rl/runtime/) | Stream motor/IMU readings, apply commands from Studio and relax motors after a disconnect or watchdog timeout |
 | Studio interface | TypeScript/Preact/Three.js, [`ui/src/`](../ui/src/) | Pages, controls, charts, the live 3D view and X-ray actuators |
-| Public demo | Separate `isla-demo` repository, TypeScript and MuJoCo WebAssembly | Run its exported policy and physics in the visitor's browser; it does not use the desktop shell or a Python server |
+| Public website & showcase | Separate `isla-website` repository, TypeScript and MuJoCo WebAssembly | Run its exported policy and physics in the visitor's browser; it does not use the desktop shell or a Python server |
 
 The current robot-side relay does not load or evaluate a policy. Studio's `HardwareLink` owns that policy loop. Moving policy execution onto the robot would be an additional behavior change requiring its own validation.
 
